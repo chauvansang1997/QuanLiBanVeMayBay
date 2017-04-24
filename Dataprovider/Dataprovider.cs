@@ -67,16 +67,16 @@ namespace Dataprovider
             }
 
         }
-        public int ExcuteScaler(string query)
-        {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(query, con);
+        //public int ExcuteScaler(string query)
+        //{
+        //    using (SqlConnection con = new SqlConnection(connectionString))
+        //    {
+        //        SqlCommand command = new SqlCommand(query, con);
 
-                con.Close();
+        //        con.Close();
 
-                return command.ex
-            }
-        }
+        //        return command.ExecuteScalar
+        //    }
+        //}
     }
 }
