@@ -10,6 +10,7 @@ namespace Dataprovider
 {
     class Dataprovider
     {
+        //Chuổi kết nối với sql
         private string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=QuanLyBanVeMayBay;Integrated Security=True";
 
         private static Dataprovider instance;
@@ -30,6 +31,13 @@ namespace Dataprovider
         {
 
         }
+
+        /// <summary>
+        /// Phương thức này có vai trò lấy dữ liệu là các bảng trong SQL
+        /// </summary>
+        /// <param name="query">Chuỗi truy vấn được đưa xuống SQL</param>
+        /// <param name="sqlparameters"> mảng SqlParameter được thêm vào command(có thể không có)</param>
+        /// <returns>Phương thức trả về kiểu dũ liệu DataTable</returns>
         public DataTable ExcuteQuery(string query,SqlParameter[] sqlparameters = null)
         {
             DataTable table = new DataTable();
@@ -54,6 +62,12 @@ namespace Dataprovider
             
             return table;
         }
+
+        /// <summary>
+        /// Phương thức thực hiện truy vấn xuống SQL và trả về số dòng thành công
+        /// </summary>
+        /// <param name="query">Chuỗi truy vấn được đưa xuống SQL</param>
+        /// <returns>Số dòng thành công</returns>
         public int ExcuteNonQuery(string query)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
