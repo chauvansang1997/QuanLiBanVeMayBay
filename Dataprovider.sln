@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dataprovider", "Dataprovider\Dataprovider.csproj", "{2211B33E-753D-4455-B0B4-F746B780CF7E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{605E7D19-6447-4D20-A76B-7DDDD53EBDE5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{5F251647-2E55-4960-B388-6F0F3B18E2FF}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2211B33E-753D-4455-B0B4-F746B780CF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2211B33E-753D-4455-B0B4-F746B780CF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2211B33E-753D-4455-B0B4-F746B780CF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2211B33E-753D-4455-B0B4-F746B780CF7E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{605E7D19-6447-4D20-A76B-7DDDD53EBDE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{605E7D19-6447-4D20-A76B-7DDDD53EBDE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{605E7D19-6447-4D20-A76B-7DDDD53EBDE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
