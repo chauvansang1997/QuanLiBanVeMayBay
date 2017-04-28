@@ -60,6 +60,12 @@
     <Compile Include="FORM_QUANLY.Designer.cs">
       <DependentUpon>FORM_QUANLY.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORM_THEMCHUYENBAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM_THEMCHUYENBAY.Designer.cs">
+      <DependentUpon>FORM_THEMCHUYENBAY.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORM_THONGTINNHANVIEN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORM_QUANLY.resx">
       <DependentUpon>FORM_QUANLY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM_THEMCHUYENBAY.resx">
+      <DependentUpon>FORM_THEMCHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORM_THONGTINNHANVIEN.resx">
       <DependentUpon>FORM_THONGTINNHANVIEN.cs</DependentUpon>

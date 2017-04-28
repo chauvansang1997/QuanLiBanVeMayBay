@@ -46,5 +46,10 @@ namespace GUI
                 errorPassword.SetError(tbPassword, "Ok");
             }
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
