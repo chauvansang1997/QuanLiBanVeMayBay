@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(133, 25);
             this.label1.Name = "label1";
@@ -58,6 +58,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 69);
             this.label2.Name = "label2";
@@ -76,6 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label3.Location = new System.Drawing.Point(12, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 16);
@@ -93,6 +95,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.Location = new System.Drawing.Point(12, 156);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 16);
@@ -102,6 +105,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label5.Location = new System.Drawing.Point(128, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 16);
@@ -111,6 +115,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label6.Location = new System.Drawing.Point(303, 156);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 16);
@@ -119,21 +124,23 @@
             // 
             // bnt_luu
             // 
+            this.bnt_luu.BackColor = System.Drawing.Color.SandyBrown;
             this.bnt_luu.Location = new System.Drawing.Point(15, 188);
             this.bnt_luu.Name = "bnt_luu";
             this.bnt_luu.Size = new System.Drawing.Size(102, 23);
             this.bnt_luu.TabIndex = 10;
             this.bnt_luu.Text = "Tìm";
-            this.bnt_luu.UseVisualStyleBackColor = true;
+            this.bnt_luu.UseVisualStyleBackColor = false;
             // 
             // bnt_thoat
             // 
+            this.bnt_thoat.BackColor = System.Drawing.Color.SandyBrown;
             this.bnt_thoat.Location = new System.Drawing.Point(398, 409);
             this.bnt_thoat.Name = "bnt_thoat";
             this.bnt_thoat.Size = new System.Drawing.Size(75, 23);
             this.bnt_thoat.TabIndex = 12;
             this.bnt_thoat.Text = "Thoát";
-            this.bnt_thoat.UseVisualStyleBackColor = true;
+            this.bnt_thoat.UseVisualStyleBackColor = false;
             // 
             // dateTimePicker1
             // 

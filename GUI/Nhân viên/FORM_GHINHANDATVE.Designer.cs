@@ -59,10 +59,11 @@
             // 
             // label4
             // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(248, 0);
+            this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(236, 35);
+            this.label4.Size = new System.Drawing.Size(733, 32);
             this.label4.TabIndex = 1;
             this.label4.Text = "GHI NHẬN ĐẶT VÉ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,21 +170,23 @@
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.SandyBrown;
             this.btnSave.Location = new System.Drawing.Point(450, 263);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 33);
             this.btnSave.TabIndex = 55;
             this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.SandyBrown;
             this.button2.Location = new System.Drawing.Point(622, 263);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 33);
             this.button2.TabIndex = 56;
             this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -214,7 +217,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 30);
             this.label1.TabIndex = 58;
-            this.label1.Text = "Giá Tiền:";
+            this.label1.Text = "Hạng vé:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FORM_GHINHANDATVE

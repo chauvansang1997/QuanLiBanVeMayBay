@@ -48,40 +48,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DANGNHAP.cs">
+    <Compile Include="Đăng nhập\DANGNHAP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DANGNHAP.Designer.cs">
+    <Compile Include="Đăng nhập\DANGNHAP.Designer.cs">
       <DependentUpon>DANGNHAP.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORM_GHINHANDATVE.cs">
+    <Compile Include="Nhân viên\FORM_GHINHANDATVE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORM_GHINHANDATVE.Designer.cs">
+    <Compile Include="Nhân viên\FORM_GHINHANDATVE.Designer.cs">
       <DependentUpon>FORM_GHINHANDATVE.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORM_QUANLY.cs">
+    <Compile Include="Quản lý\FORM_QUANLY.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORM_QUANLY.Designer.cs">
+    <Compile Include="Quản lý\FORM_QUANLY.Designer.cs">
       <DependentUpon>FORM_QUANLY.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORM_THEMCHUYENBAY.cs">
+    <Compile Include="Thay doi chuyen bay\FORM_THAYDOICHUYENBAY.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORM_THEMCHUYENBAY.Designer.cs">
+    <Compile Include="Thay doi chuyen bay\FORM_THAYDOICHUYENBAY.Designer.cs">
+      <DependentUpon>FORM_THAYDOICHUYENBAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhân viên\FORM_THEMCHUYENBAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân viên\FORM_THEMCHUYENBAY.Designer.cs">
       <DependentUpon>FORM_THEMCHUYENBAY.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORM_THONGTINNHANVIEN.cs">
+    <Compile Include="Nhân viên\FORM_THONGTINNHANVIEN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORM_THONGTINNHANVIEN.Designer.cs">
+    <Compile Include="Nhân viên\FORM_THONGTINNHANVIEN.Designer.cs">
       <DependentUpon>FORM_THONGTINNHANVIEN.cs</DependentUpon>
     </Compile>
-    <Compile Include="NHANVIEN.cs">
+    <Compile Include="TraCuu\FORM_TRACUU_THONGTIN_KH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NHANVIEN.Designer.cs">
+    <Compile Include="TraCuu\FORM_TRACUU_THONGTIN_KH.Designer.cs">
+      <DependentUpon>FORM_TRACUU_THONGTIN_KH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhân viên\NHANVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân viên\NHANVIEN.Designer.cs">
       <DependentUpon>NHANVIEN.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -92,28 +104,34 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="TraCuu.cs">
+    <Compile Include="TraCuu\FORM_TRACUU_CHUYENBAY.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TraCuu.Designer.cs">
-      <DependentUpon>TraCuu.cs</DependentUpon>
+    <Compile Include="TraCuu\FORM_TRACUU_CHUYENBAY.Designer.cs">
+      <DependentUpon>FORM_TRACUU_CHUYENBAY.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DANGNHAP.resx">
+    <EmbeddedResource Include="Đăng nhập\DANGNHAP.resx">
       <DependentUpon>DANGNHAP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORM_GHINHANDATVE.resx">
+    <EmbeddedResource Include="Nhân viên\FORM_GHINHANDATVE.resx">
       <DependentUpon>FORM_GHINHANDATVE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORM_QUANLY.resx">
+    <EmbeddedResource Include="Quản lý\FORM_QUANLY.resx">
       <DependentUpon>FORM_QUANLY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORM_THEMCHUYENBAY.resx">
+    <EmbeddedResource Include="Thay doi chuyen bay\FORM_THAYDOICHUYENBAY.resx">
+      <DependentUpon>FORM_THAYDOICHUYENBAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhân viên\FORM_THEMCHUYENBAY.resx">
       <DependentUpon>FORM_THEMCHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORM_THONGTINNHANVIEN.resx">
+    <EmbeddedResource Include="Nhân viên\FORM_THONGTINNHANVIEN.resx">
       <DependentUpon>FORM_THONGTINNHANVIEN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NHANVIEN.resx">
+    <EmbeddedResource Include="TraCuu\FORM_TRACUU_THONGTIN_KH.resx">
+      <DependentUpon>FORM_TRACUU_THONGTIN_KH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhân viên\NHANVIEN.resx">
       <DependentUpon>NHANVIEN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -129,8 +147,8 @@
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TraCuu.resx">
-      <DependentUpon>TraCuu.cs</DependentUpon>
+    <EmbeddedResource Include="TraCuu\FORM_TRACUU_CHUYENBAY.resx">
+      <DependentUpon>FORM_TRACUU_CHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
