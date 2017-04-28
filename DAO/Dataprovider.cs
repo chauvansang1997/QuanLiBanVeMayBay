@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dataprovider
 {
-    class Dataprovider
+    public class Dataprovider
     {
         //Chuổi kết nối với sql
         private string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=QuanLyBanVeMayBay;Integrated Security=True";
@@ -48,8 +48,9 @@ namespace Dataprovider
 
                 SqlCommand command = new SqlCommand(query, con);
 
-                command.Parameters.AddRange(sqlparameters);
-
+                if(sqlparameters!=null)
+                    command.Parameters.AddRange(sqlparameters);
+               
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
 

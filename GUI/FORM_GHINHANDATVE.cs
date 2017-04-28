@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class TraCuu : Form
+    public partial class FORM_GHINHANDATVE : Form
     {
-        public TraCuu()
+        public FORM_GHINHANDATVE()
         {
             InitializeComponent();
-            this.Icon = Properties.Resources.Search_icon1;
+            
         }
     }
 }

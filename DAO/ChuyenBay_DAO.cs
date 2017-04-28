@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using Dataprovider;
+using System.Data;
+
 namespace DAO
 {
     public class ChuyenBay_DAO
@@ -20,11 +23,13 @@ namespace DAO
             }
            
         }
-        public List<ChuyenBay> XemChuyenBay()
+        public DataTable XemChuyenBay()
         {
-            List<ChuyenBay> chuyenbay = new List<ChuyenBay>();
-            string query = "";
-            
+            DataTable chuyenbay = new DataTable();
+
+            string query = "Select * from CHUYENBAY";
+            //Dataprovider.Dataprovider.Instance.ExcuteNonQuery();
+            chuyenbay = Dataprovider.Dataprovider.Instance.ExcuteQuery(query);
             return chuyenbay;
         }
     }

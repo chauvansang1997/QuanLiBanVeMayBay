@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS;
 namespace GUI
 {
-    public partial class TraCuu : Form
+    public partial class Test : Form
     {
-        public TraCuu()
+        public Test()
         {
             InitializeComponent();
-            this.Icon = Properties.Resources.Search_icon1;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BUS.ChuyenBay_BUS.Instance.XemChuyenBay(dataGridView1);
         }
     }
 }

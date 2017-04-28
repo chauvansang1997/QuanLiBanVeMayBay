@@ -54,6 +54,12 @@
     <Compile Include="DANGNHAP.Designer.cs">
       <DependentUpon>DANGNHAP.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORM_GHINHANDATVE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM_GHINHANDATVE.Designer.cs">
+      <DependentUpon>FORM_GHINHANDATVE.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORM_QUANLY.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="TraCuu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +100,9 @@
     </Compile>
     <EmbeddedResource Include="DANGNHAP.resx">
       <DependentUpon>DANGNHAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM_GHINHANDATVE.resx">
+      <DependentUpon>FORM_GHINHANDATVE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORM_QUANLY.resx">
       <DependentUpon>FORM_QUANLY.cs</DependentUpon>
@@ -111,6 +126,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TraCuu.resx">
       <DependentUpon>TraCuu.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +210,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fix-it-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert-plane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Travel-Airplane-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventory-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
