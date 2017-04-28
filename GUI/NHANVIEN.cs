@@ -15,6 +15,7 @@ namespace GUI
         public NHANVIEN()
         {
             InitializeComponent();
+            this.Icon = Properties.Resources.staff_icon;
         }
     }
 }

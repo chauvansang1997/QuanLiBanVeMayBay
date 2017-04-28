@@ -139,5 +139,11 @@
   <ItemGroup>
     <None Include="Resources\error-icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
