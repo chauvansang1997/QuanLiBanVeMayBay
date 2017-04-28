@@ -54,6 +54,18 @@
     <Compile Include="DANGNHAP.Designer.cs">
       <DependentUpon>DANGNHAP.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORM_QUANLY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM_QUANLY.Designer.cs">
+      <DependentUpon>FORM_QUANLY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_THONGTINNHANVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM_THONGTINNHANVIEN.Designer.cs">
+      <DependentUpon>FORM_THONGTINNHANVIEN.cs</DependentUpon>
+    </Compile>
     <Compile Include="NHANVIEN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     <EmbeddedResource Include="DANGNHAP.resx">
       <DependentUpon>DANGNHAP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORM_QUANLY.resx">
+      <DependentUpon>FORM_QUANLY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM_THONGTINNHANVIEN.resx">
+      <DependentUpon>FORM_THONGTINNHANVIEN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NHANVIEN.resx">
       <DependentUpon>NHANVIEN.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +102,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TraCuu.resx">
+      <DependentUpon>TraCuu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -144,6 +165,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plane.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sign-Shutdown-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Log-Off-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\k-job-viewer-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -47,8 +47,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(115, 25);
+            this.label1.Location = new System.Drawing.Point(133, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 20);
             this.label1.TabIndex = 0;
@@ -58,7 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 70);
+            this.label2.Location = new System.Drawing.Point(12, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 16);
             this.label2.TabIndex = 1;
@@ -71,12 +72,11 @@
             this.cb_1.Name = "cb_1";
             this.cb_1.Size = new System.Drawing.Size(191, 24);
             this.cb_1.TabIndex = 2;
-            
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 115);
+            this.label3.Location = new System.Drawing.Point(12, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 16);
             this.label3.TabIndex = 3;
@@ -125,17 +125,15 @@
             this.bnt_luu.TabIndex = 10;
             this.bnt_luu.Text = "Tìm";
             this.bnt_luu.UseVisualStyleBackColor = true;
-       
             // 
             // bnt_thoat
             // 
-            this.bnt_thoat.Location = new System.Drawing.Point(15, 409);
+            this.bnt_thoat.Location = new System.Drawing.Point(398, 409);
             this.bnt_thoat.Name = "bnt_thoat";
             this.bnt_thoat.Size = new System.Drawing.Size(75, 23);
             this.bnt_thoat.TabIndex = 12;
             this.bnt_thoat.Text = "Thoát";
             this.bnt_thoat.UseVisualStyleBackColor = true;
-          
             // 
             // dateTimePicker1
             // 
@@ -148,25 +146,27 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(340, 154);
+            this.dateTimePicker2.Location = new System.Drawing.Point(341, 155);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(133, 22);
             this.dateTimePicker2.TabIndex = 14;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 223);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(461, 180);
             this.dataGridView1.TabIndex = 15;
-        
             // 
-            // Form1
+            // TraCuu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackgroundImage = global::GUI.Properties.Resources.plane2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(485, 444);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dateTimePicker2);
@@ -185,7 +185,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TraCuu";
             this.Text = "Tra Cứu Chuyến Bay";
-           
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
