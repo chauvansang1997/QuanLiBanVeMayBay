@@ -48,16 +48,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Nhân viên\Chức năng\Lập phiếu đặt chỗ\FORM_THEMPHIEUDATCHO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân viên\Chức năng\Lập phiếu đặt chỗ\FORM_THEMPHIEUDATCHO.Designer.cs">
+      <DependentUpon>FORM_THEMPHIEUDATCHO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.Designer.cs">
+      <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhân viên\Thông tin nhân viên\FORM_DOIMATKHAU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân viên\Thông tin nhân viên\FORM_DOIMATKHAU.Designer.cs">
+      <DependentUpon>FORM_DOIMATKHAU.cs</DependentUpon>
+    </Compile>
     <Compile Include="Đăng nhập\DANGNHAP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Đăng nhập\DANGNHAP.Designer.cs">
       <DependentUpon>DANGNHAP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nhân viên\FORM_GHINHANDATVE.cs">
+    <Compile Include="Nhân viên\Chức năng\Ghi nhận đặt vé\FORM_GHINHANDATVE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nhân viên\FORM_GHINHANDATVE.Designer.cs">
+    <Compile Include="Nhân viên\Chức năng\Ghi nhận đặt vé\FORM_GHINHANDATVE.Designer.cs">
       <DependentUpon>FORM_GHINHANDATVE.cs</DependentUpon>
     </Compile>
     <Compile Include="Quản lý\FORM_QUANLY.cs">
@@ -66,22 +84,22 @@
     <Compile Include="Quản lý\FORM_QUANLY.Designer.cs">
       <DependentUpon>FORM_QUANLY.cs</DependentUpon>
     </Compile>
-    <Compile Include="Thay doi chuyen bay\FORM_THAYDOICHUYENBAY.cs">
+    <Compile Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_THAYDOICHUYENBAY.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Thay doi chuyen bay\FORM_THAYDOICHUYENBAY.Designer.cs">
+    <Compile Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_THAYDOICHUYENBAY.Designer.cs">
       <DependentUpon>FORM_THAYDOICHUYENBAY.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nhân viên\FORM_THEMCHUYENBAY.cs">
+    <Compile Include="Nhân viên\Chức năng\Thêm lịch chuyến bay\FORM_THEMCHUYENBAY.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nhân viên\FORM_THEMCHUYENBAY.Designer.cs">
+    <Compile Include="Nhân viên\Chức năng\Thêm lịch chuyến bay\FORM_THEMCHUYENBAY.Designer.cs">
       <DependentUpon>FORM_THEMCHUYENBAY.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nhân viên\FORM_THONGTINNHANVIEN.cs">
+    <Compile Include="Nhân viên\Thông tin nhân viên\FORM_THONGTINNHANVIEN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nhân viên\FORM_THONGTINNHANVIEN.Designer.cs">
+    <Compile Include="Nhân viên\Thông tin nhân viên\FORM_THONGTINNHANVIEN.Designer.cs">
       <DependentUpon>FORM_THONGTINNHANVIEN.cs</DependentUpon>
     </Compile>
     <Compile Include="TraCuu\FORM_TRACUU_THONGTIN_KH.cs">
@@ -110,22 +128,31 @@
     <Compile Include="TraCuu\FORM_TRACUU_CHUYENBAY.Designer.cs">
       <DependentUpon>FORM_TRACUU_CHUYENBAY.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Nhân viên\Chức năng\Lập phiếu đặt chỗ\FORM_THEMPHIEUDATCHO.resx">
+      <DependentUpon>FORM_THEMPHIEUDATCHO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.resx">
+      <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhân viên\Thông tin nhân viên\FORM_DOIMATKHAU.resx">
+      <DependentUpon>FORM_DOIMATKHAU.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Đăng nhập\DANGNHAP.resx">
       <DependentUpon>DANGNHAP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nhân viên\FORM_GHINHANDATVE.resx">
+    <EmbeddedResource Include="Nhân viên\Chức năng\Ghi nhận đặt vé\FORM_GHINHANDATVE.resx">
       <DependentUpon>FORM_GHINHANDATVE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\FORM_QUANLY.resx">
       <DependentUpon>FORM_QUANLY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Thay doi chuyen bay\FORM_THAYDOICHUYENBAY.resx">
+    <EmbeddedResource Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_THAYDOICHUYENBAY.resx">
       <DependentUpon>FORM_THAYDOICHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nhân viên\FORM_THEMCHUYENBAY.resx">
+    <EmbeddedResource Include="Nhân viên\Chức năng\Thêm lịch chuyến bay\FORM_THEMCHUYENBAY.resx">
       <DependentUpon>FORM_THEMCHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nhân viên\FORM_THONGTINNHANVIEN.resx">
+    <EmbeddedResource Include="Nhân viên\Thông tin nhân viên\FORM_THONGTINNHANVIEN.resx">
       <DependentUpon>FORM_THONGTINNHANVIEN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuu\FORM_TRACUU_THONGTIN_KH.resx">
@@ -247,5 +274,6 @@
   <ItemGroup>
     <None Include="Resources\Inventory-icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

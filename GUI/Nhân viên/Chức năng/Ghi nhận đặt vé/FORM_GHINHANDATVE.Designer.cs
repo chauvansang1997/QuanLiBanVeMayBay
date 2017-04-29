@@ -243,7 +243,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "FORM_GHINHANDATVE";
-            this.Text = "FORM_GHINHANDATVE";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

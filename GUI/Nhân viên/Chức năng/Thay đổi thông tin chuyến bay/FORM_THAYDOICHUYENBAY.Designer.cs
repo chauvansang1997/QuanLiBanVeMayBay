@@ -42,7 +42,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(0, 32);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(961, 207);
+            this.dataGridView1.Size = new System.Drawing.Size(961, 227);
             this.dataGridView1.TabIndex = 3;
             // 
             // label1
@@ -59,30 +59,33 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(679, 280);
+            this.button1.BackColor = System.Drawing.Color.SandyBrown;
+            this.button1.Location = new System.Drawing.Point(689, 275);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 23);
+            this.button1.Size = new System.Drawing.Size(106, 33);
             this.button1.TabIndex = 5;
             this.button1.Text = "Hủy chuyến bay";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(552, 280);
+            this.button2.BackColor = System.Drawing.Color.SandyBrown;
+            this.button2.Location = new System.Drawing.Point(552, 275);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 23);
+            this.button2.Size = new System.Drawing.Size(106, 33);
             this.button2.TabIndex = 6;
             this.button2.Text = "Sừu chuyến bay";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(823, 280);
+            this.button3.BackColor = System.Drawing.Color.SandyBrown;
+            this.button3.Location = new System.Drawing.Point(821, 275);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 23);
+            this.button3.Size = new System.Drawing.Size(106, 33);
             this.button3.TabIndex = 7;
             this.button3.Text = "Thoát";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // FORM_THAYDOICHUYENBAY
             // 
