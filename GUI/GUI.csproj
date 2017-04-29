@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,6 +66,30 @@
     </Compile>
     <Compile Include="Nhân viên\Thông tin nhân viên\FORM_DOIMATKHAU.Designer.cs">
       <DependentUpon>FORM_DOIMATKHAU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Lập báo cáo\Lập báo cáo năm\FORM_BAOCAONAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Lập báo cáo\Lập báo cáo năm\FORM_BAOCAONAM.Designer.cs">
+      <DependentUpon>FORM_BAOCAONAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Lập báo cáo\Lập báo cáo tháng\FORM_BAOCAOTHANG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Lập báo cáo\Lập báo cáo tháng\FORM_BAOCAOTHANG.Designer.cs">
+      <DependentUpon>FORM_BAOCAOTHANG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Quản lý nhân viên\FORM_QUANLYNHANVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Quản lý nhân viên\FORM_QUANLYNHANVIEN.Designer.cs">
+      <DependentUpon>FORM_QUANLYNHANVIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi giá vé\FORM_GIAVE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi giá vé\FORM_GIAVE.Designer.cs">
+      <DependentUpon>FORM_GIAVE.cs</DependentUpon>
     </Compile>
     <Compile Include="Đăng nhập\DANGNHAP.cs">
       <SubType>Form</SubType>
@@ -136,6 +161,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nhân viên\Thông tin nhân viên\FORM_DOIMATKHAU.resx">
       <DependentUpon>FORM_DOIMATKHAU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Lập báo cáo\Lập báo cáo năm\FORM_BAOCAONAM.resx">
+      <DependentUpon>FORM_BAOCAONAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Lập báo cáo\Lập báo cáo tháng\FORM_BAOCAOTHANG.resx">
+      <DependentUpon>FORM_BAOCAOTHANG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Quản lý nhân viên\FORM_QUANLYNHANVIEN.resx">
+      <DependentUpon>FORM_QUANLYNHANVIEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Thay đổi giá vé\FORM_GIAVE.resx">
+      <DependentUpon>FORM_GIAVE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Đăng nhập\DANGNHAP.resx">
       <DependentUpon>DANGNHAP.cs</DependentUpon>
