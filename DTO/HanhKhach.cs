@@ -13,11 +13,61 @@ namespace DTO
         private string diaChi;
         private string soDT;
         private string cmnd;
-        public string Name { get => name; set => name = value; }
-        public string MaHK { get => maHK; set => maHK = value; }
-        public string DiaChi { get => diaChi; set => diaChi = value; }
-        public string SoDT { get => soDT; set => soDT = value; }
-        public string CMND { get => cmnd; set => cmnd = value; }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public string MaHK
+        {
+            get
+            {
+                return maHK;
+            }
+            set
+            {
+                maHK = value;
+            }
+        }
+        public string DiaChi
+        {
+            get
+            {
+                return diaChi;
+            }
+            set
+            {
+                diaChi = value;
+            }
+        }
+        public string SoDT
+        {
+            get
+            {
+                return soDT;
+            }
+            set
+            {
+                soDT = value;
+            }
+        }
+        public string CMND
+        {
+            get
+            {
+                return cmnd;
+            }
+            set
+            {
+                cmnd = value;
+            }
+        }
 
         public HanhKhach()
         {

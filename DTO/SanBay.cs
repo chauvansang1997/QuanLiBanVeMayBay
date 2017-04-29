@@ -12,9 +12,39 @@ namespace DTO
         private string tenSanBay;
         private string maCB;
 
-        public string MaSanBay { get => maSanBay; set => maSanBay = value; }
-        public string TenSanBay { get => tenSanBay; set => tenSanBay = value; }
-        public string MaCB { get => maCB; set => maCB = value; }
+        public string MaSanBay
+        {
+            get
+            {
+                return maSanBay;
+            }
+            set
+            {
+                maSanBay = value;
+            }
+        }
+        public string TenSanBay
+        {
+            get
+            {
+                return tenSanBay;
+            }
+            set
+            {
+                tenSanBay = value;
+            }
+        }
+        public string MaCB
+        {
+            get
+            {
+                return maCB;
+            }
+            set
+            {
+                maCB = value;
+            }
+        }
 
         public SanBay()
         {

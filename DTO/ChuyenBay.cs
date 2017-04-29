@@ -15,12 +15,59 @@ namespace DTO
         private DateTime ngayGioKH;
 
 
-        public string MaCB { get => maCB; set => maCB = value; }
-        public string SanBayDi { get => sanBayDi; set => sanBayDi = value; }
-        public string SanBayDen { get => sanBayDen; set => sanBayDen = value; }
-        public TimeSpan ThoiGianBay { get => thoiGianBay; set => thoiGianBay = value; }
-        public DateTime NgayGioKH { get => ngayGioKH; set => ngayGioKH = value; }
-
+        public string MaCB
+        {
+            get
+            {
+                return maCB;
+            }
+            set
+            {
+                maCB = value;
+            }
+        }
+        public string SanBayDi
+        {
+            get
+            {
+                return sanBayDi;
+            }
+            set
+            {
+                sanBayDi = value;
+            }
+        }
+        public string SanBayDen { get
+            {
+                return sanBayDen;
+            }
+            set
+            {
+                sanBayDen = value;
+            }
+        }
+        public TimeSpan ThoiGianBay
+        {
+            get
+            {
+                return thoiGianBay;
+            }
+            set
+            {
+                thoiGianBay = value;
+            }
+        }
+        public DateTime NgayGioKH
+        {
+            get
+            {
+                return ngayGioKH;
+            }
+            set
+            {
+                ngayGioKH = value;
+            }
+        }
         public ChuyenBay()
         {
 
