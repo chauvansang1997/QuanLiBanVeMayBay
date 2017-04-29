@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -85,11 +86,35 @@
     <Compile Include="Quản lý\Quản lý nhân viên\FORM_QUANLYNHANVIEN.Designer.cs">
       <DependentUpon>FORM_QUANLYNHANVIEN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quản lý\Thay đổi giá vé\FORM_GIAVE.cs">
+    <Compile Include="Quản lý\Thay đổi quy định\Quản lý sân bay\FORM_QUANLYSANBAY.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quản lý\Thay đổi giá vé\FORM_GIAVE.Designer.cs">
+    <Compile Include="Quản lý\Thay đổi quy định\Quản lý sân bay\FORM_QUANLYSANBAY.Designer.cs">
+      <DependentUpon>FORM_QUANLYSANBAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.Designer.cs">
+      <DependentUpon>FORM_QUANLYTUYENBAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\Thay đổi giá vé\FORM_GIAVE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\Thay đổi giá vé\FORM_GIAVE.Designer.cs">
       <DependentUpon>FORM_GIAVE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\FORM_THAYDOIQUYDINH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\FORM_THAYDOIQUYDINH.Designer.cs">
+      <DependentUpon>FORM_THAYDOIQUYDINH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuu\FORM_TRACUUTHONGTINNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraCuu\FORM_TRACUUTHONGTINNV.Designer.cs">
+      <DependentUpon>FORM_TRACUUTHONGTINNV.cs</DependentUpon>
     </Compile>
     <Compile Include="Đăng nhập\DANGNHAP.cs">
       <SubType>Form</SubType>
@@ -171,8 +196,20 @@
     <EmbeddedResource Include="Quản lý\Quản lý nhân viên\FORM_QUANLYNHANVIEN.resx">
       <DependentUpon>FORM_QUANLYNHANVIEN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quản lý\Thay đổi giá vé\FORM_GIAVE.resx">
+    <EmbeddedResource Include="Quản lý\Thay đổi quy định\Quản lý sân bay\FORM_QUANLYSANBAY.resx">
+      <DependentUpon>FORM_QUANLYSANBAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Thay đổi quy định\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.resx">
+      <DependentUpon>FORM_QUANLYTUYENBAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Thay đổi quy định\Thay đổi giá vé\FORM_GIAVE.resx">
       <DependentUpon>FORM_GIAVE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Thay đổi quy định\FORM_THAYDOIQUYDINH.resx">
+      <DependentUpon>FORM_THAYDOIQUYDINH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuu\FORM_TRACUUTHONGTINNV.resx">
+      <DependentUpon>FORM_TRACUUTHONGTINNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Đăng nhập\DANGNHAP.resx">
       <DependentUpon>DANGNHAP.cs</DependentUpon>

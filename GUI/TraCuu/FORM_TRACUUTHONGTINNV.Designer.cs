@@ -1,7 +1,6 @@
-﻿namespace GUI
+﻿namespace GUI.TraCuu
 {
-   
-    partial class FORM_TRACUU_THONGTIN_KH
+    partial class FORM_TRACUUTHONGTINNV
     {
         /// <summary>
         /// Required designer variable.
@@ -36,12 +35,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txt_8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txt_6 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cb_1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.txt_6 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanhKhach)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             // 
             this.dgvHanhKhach.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dgvHanhKhach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHanhKhach.Location = new System.Drawing.Point(0, 239);
+            this.dgvHanhKhach.Location = new System.Drawing.Point(0, 264);
             this.dgvHanhKhach.Name = "dgvHanhKhach";
             this.dgvHanhKhach.Size = new System.Drawing.Size(735, 160);
             this.dgvHanhKhach.TabIndex = 0;
@@ -73,7 +74,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(735, 45);
             this.label4.TabIndex = 1;
-            this.label4.Text = "THÔNG TIN HÀNH KHÁCH";
+            this.label4.Text = "THÔNG TIN NHÂN VIÊN";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
@@ -94,7 +95,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 30);
             this.label11.TabIndex = 64;
-            this.label11.Text = "Hành Khách:";
+            this.label11.Text = "Tên nhân viên:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txt_8
@@ -115,18 +116,8 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 30);
             this.label9.TabIndex = 62;
-            this.label9.Text = "Điện Thoại:";
+            this.label9.Text = "Mã nhân viên:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txt_6
-            // 
-            this.txt_6.BackColor = System.Drawing.Color.LemonChiffon;
-            this.txt_6.Location = new System.Drawing.Point(520, 67);
-            this.txt_6.Multiline = true;
-            this.txt_6.Name = "txt_6";
-            this.txt_6.ReadOnly = true;
-            this.txt_6.Size = new System.Drawing.Size(195, 30);
-            this.txt_6.TabIndex = 61;
             // 
             // label7
             // 
@@ -139,20 +130,6 @@
             this.label7.Text = "CMNN:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cb_1
-            // 
-            this.cb_1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.cb_1.DropDownHeight = 123;
-            this.cb_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F);
-            this.cb_1.FormattingEnabled = true;
-            this.cb_1.IntegralHeight = false;
-            this.cb_1.ItemHeight = 20;
-            this.cb_1.Location = new System.Drawing.Point(520, 127);
-            this.cb_1.Name = "cb_1";
-            this.cb_1.Size = new System.Drawing.Size(193, 28);
-            this.cb_1.TabIndex = 59;
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -161,12 +138,12 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 30);
             this.label2.TabIndex = 58;
-            this.label2.Text = "Mã Chuyến Bay:";
+            this.label2.Text = "Địa chỉ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(24, 207);
+            this.button2.Location = new System.Drawing.Point(24, 223);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 26);
             this.button2.TabIndex = 67;
@@ -175,20 +152,64 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(632, 405);
+            this.button1.Location = new System.Drawing.Point(632, 430);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 26);
             this.button1.TabIndex = 0;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // FORM_TRACUU_THONGTIN_KH
+            // txt_6
+            // 
+            this.txt_6.BackColor = System.Drawing.Color.LemonChiffon;
+            this.txt_6.Location = new System.Drawing.Point(520, 67);
+            this.txt_6.Multiline = true;
+            this.txt_6.Name = "txt_6";
+            this.txt_6.ReadOnly = true;
+            this.txt_6.Size = new System.Drawing.Size(195, 30);
+            this.txt_6.TabIndex = 61;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.LemonChiffon;
+            this.textBox2.Location = new System.Drawing.Point(520, 127);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(195, 30);
+            this.textBox2.TabIndex = 68;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.LemonChiffon;
+            this.textBox3.Location = new System.Drawing.Point(151, 178);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(195, 30);
+            this.textBox3.TabIndex = 70;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(21, 178);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 30);
+            this.label1.TabIndex = 69;
+            this.label1.Text = "Điện Thoại:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // FORM_TRACUUTHONGTINNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.plane2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(735, 440);
+            this.ClientSize = new System.Drawing.Size(735, 477);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
@@ -197,11 +218,10 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.cb_1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvHanhKhach);
-            this.Name = "FORM_TRACUU_THONGTIN_KH";
+            this.Name = "FORM_TRACUUTHONGTINNV";
             this.Text = "FORM_TRACUU_THONGTIN_KH";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanhKhach)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -219,11 +239,13 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txt_8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cb_1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_6;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label1;
     }
 }
