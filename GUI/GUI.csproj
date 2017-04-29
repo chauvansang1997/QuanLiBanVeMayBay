@@ -62,10 +62,10 @@
     <Compile Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.Designer.cs">
       <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nhân viên\Thông tin nhân viên\FORM_DOIMATKHAU.cs">
+    <Compile Include="Thông tin người dùng\FORM_DOIMATKHAU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nhân viên\Thông tin nhân viên\FORM_DOIMATKHAU.Designer.cs">
+    <Compile Include="Thông tin người dùng\FORM_DOIMATKHAU.Designer.cs">
       <DependentUpon>FORM_DOIMATKHAU.cs</DependentUpon>
     </Compile>
     <Compile Include="Quản lý\Lập báo cáo\Lập báo cáo năm\FORM_BAOCAONAM.cs">
@@ -146,11 +146,11 @@
     <Compile Include="Nhân viên\Chức năng\Thêm lịch chuyến bay\FORM_THEMCHUYENBAY.Designer.cs">
       <DependentUpon>FORM_THEMCHUYENBAY.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nhân viên\Thông tin nhân viên\FORM_THONGTINNHANVIEN.cs">
+    <Compile Include="Thông tin người dùng\FORM_THONGTINNGUOIDUNG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nhân viên\Thông tin nhân viên\FORM_THONGTINNHANVIEN.Designer.cs">
-      <DependentUpon>FORM_THONGTINNHANVIEN.cs</DependentUpon>
+    <Compile Include="Thông tin người dùng\FORM_THONGTINNGUOIDUNG.Designer.cs">
+      <DependentUpon>FORM_THONGTINNGUOIDUNG.cs</DependentUpon>
     </Compile>
     <Compile Include="TraCuu\FORM_TRACUU_THONGTIN_KH.cs">
       <SubType>Form</SubType>
@@ -184,7 +184,7 @@
     <EmbeddedResource Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.resx">
       <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nhân viên\Thông tin nhân viên\FORM_DOIMATKHAU.resx">
+    <EmbeddedResource Include="Thông tin người dùng\FORM_DOIMATKHAU.resx">
       <DependentUpon>FORM_DOIMATKHAU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\Lập báo cáo\Lập báo cáo năm\FORM_BAOCAONAM.resx">
@@ -226,8 +226,8 @@
     <EmbeddedResource Include="Nhân viên\Chức năng\Thêm lịch chuyến bay\FORM_THEMCHUYENBAY.resx">
       <DependentUpon>FORM_THEMCHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nhân viên\Thông tin nhân viên\FORM_THONGTINNHANVIEN.resx">
-      <DependentUpon>FORM_THONGTINNHANVIEN.cs</DependentUpon>
+    <EmbeddedResource Include="Thông tin người dùng\FORM_THONGTINNGUOIDUNG.resx">
+      <DependentUpon>FORM_THONGTINNGUOIDUNG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuu\FORM_TRACUU_THONGTIN_KH.resx">
       <DependentUpon>FORM_TRACUU_THONGTIN_KH.cs</DependentUpon>
