@@ -15,6 +15,26 @@ namespace GUI.Nhân_viên.Chức_năng.Hủy_vé
         public FORM_HUYVECB()
         {
             InitializeComponent();
+            AddTable();
+        }
+
+        private void AddTable()
+        {
+            DataTable table = new DataTable();
+            table.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("Hành khách"),
+                new DataColumn("CMNN"),
+                new DataColumn("Điện thoại"),
+               
+                new DataColumn("Mã vé"),
+                new DataColumn("Hạng vé"),
+                new DataColumn("Giá tiền"),
+               
+                new DataColumn("Mã chuyến bay"),
+                 new DataColumn("Ngày giờ bay"),
+            });
+            //dataGridView1.DataSource
         }
     }
 }

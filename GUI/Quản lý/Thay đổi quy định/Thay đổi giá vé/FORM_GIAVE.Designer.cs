@@ -39,6 +39,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.clSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clMaCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,19 +80,24 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 173);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clSTT,
+            this.clMaCB});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 191);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(342, 198);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(475, 179);
             this.dataGridView1.TabIndex = 6;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.SandyBrown;
-            this.button1.Location = new System.Drawing.Point(12, 135);
+            this.button1.Location = new System.Drawing.Point(12, 123);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 35);
             this.button1.TabIndex = 7;
             this.button1.Text = "Tìm";
             this.button1.UseVisualStyleBackColor = false;
@@ -110,9 +119,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.SandyBrown;
-            this.button2.Location = new System.Drawing.Point(370, 173);
+            this.button2.Location = new System.Drawing.Point(292, 408);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 35);
             this.button2.TabIndex = 10;
             this.button2.Text = "Thay đổi";
             this.button2.UseVisualStyleBackColor = false;
@@ -120,9 +129,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.SandyBrown;
-            this.button3.Location = new System.Drawing.Point(370, 228);
+            this.button3.Location = new System.Drawing.Point(388, 408);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 35);
             this.button3.TabIndex = 11;
             this.button3.Text = "Thoát";
             this.button3.UseVisualStyleBackColor = false;
@@ -130,9 +139,9 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.SandyBrown;
-            this.button4.Location = new System.Drawing.Point(143, 394);
+            this.button4.Location = new System.Drawing.Point(97, 376);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(75, 31);
             this.button4.TabIndex = 12;
             this.button4.Text = "Tiếp theo";
             this.button4.UseVisualStyleBackColor = false;
@@ -140,12 +149,40 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.SandyBrown;
-            this.button5.Location = new System.Drawing.Point(15, 394);
+            this.button5.Location = new System.Drawing.Point(12, 376);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(75, 31);
             this.button5.TabIndex = 13;
             this.button5.Text = "Trở về";
             this.button5.UseVisualStyleBackColor = false;
+            // 
+            // clSTT
+            // 
+            this.clSTT.HeaderText = "STT";
+            this.clSTT.Name = "clSTT";
+            // 
+            // clMaCB
+            // 
+            this.clMaCB.HeaderText = "Mã chuyến bay";
+            this.clMaCB.Name = "clMaCB";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(57, 170);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(37, 20);
+            this.textBox3.TabIndex = 19;
+            this.textBox3.Text = "1";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(12, 171);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 20);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Trang:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FORM_GIAVE
             // 
@@ -153,7 +190,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.plane2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(475, 436);
+            this.ClientSize = new System.Drawing.Size(475, 455);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -185,5 +224,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSTT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clMaCB;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
     }
 }

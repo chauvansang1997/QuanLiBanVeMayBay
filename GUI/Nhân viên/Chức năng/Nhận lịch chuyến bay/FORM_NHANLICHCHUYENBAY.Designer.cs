@@ -38,7 +38,6 @@
             this.cmbSanBayDi = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,12 +55,20 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clTenSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clThoiGianDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSTT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clMaCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clTenCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenChuyenBay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSanBayDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNgayGio)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // errorTenChuyenBay
@@ -88,10 +95,11 @@
             // 
             // label4
             // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(359, 0);
+            this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(236, 52);
+            this.label4.Size = new System.Drawing.Size(1070, 56);
             this.label4.TabIndex = 0;
             this.label4.Text = "THÊM CHUYẾN BAY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -130,35 +138,29 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.SandyBrown;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(614, 357);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 34);
             this.button2.TabIndex = 98;
             this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.SandyBrown;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(417, 357);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 34);
             this.button1.TabIndex = 97;
             this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 284);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(674, 67);
-            this.dataGridView1.TabIndex = 96;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(414, 71);
             this.label8.Name = "label8";
@@ -169,6 +171,7 @@
             // 
             // label7
             // 
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(411, 114);
             this.label7.Name = "label7";
@@ -179,6 +182,7 @@
             // 
             // label6
             // 
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(414, 161);
             this.label6.Name = "label6";
@@ -189,6 +193,7 @@
             // 
             // label5
             // 
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(414, 214);
             this.label5.Name = "label5";
@@ -199,6 +204,7 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 215);
             this.label1.Name = "label1";
@@ -209,6 +215,7 @@
             // 
             // label3
             // 
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 167);
             this.label3.Name = "label3";
@@ -219,6 +226,7 @@
             // 
             // label2
             // 
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 114);
             this.label2.Name = "label2";
@@ -257,6 +265,7 @@
             // 
             // label9
             // 
+            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 70);
             this.label9.Name = "label9";
@@ -293,15 +302,21 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(236, 21);
             this.label10.TabIndex = 108;
-            this.label10.Text = "THÊM CHUYẾN BAY";
+            this.label10.Text = "SÂN BAY TRUNG GIAN";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clSTT1,
+            this.clMaCB,
+            this.clTenCB});
             this.dataGridView2.Location = new System.Drawing.Point(721, 109);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(337, 271);
             this.dataGridView2.TabIndex = 109;
             // 
@@ -316,7 +331,58 @@
             this.label11.Text = "DANH SÁCH CHUYẾN BAY ĐÃ THÊM";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FORM_THEMCHUYENBAY
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clSTT,
+            this.clTenSanBay,
+            this.clThoiGianDung,
+            this.clGhiChu});
+            this.dataGridView1.Location = new System.Drawing.Point(15, 284);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(674, 67);
+            this.dataGridView1.TabIndex = 96;
+            // 
+            // clSTT
+            // 
+            this.clSTT.HeaderText = "STT";
+            this.clSTT.Name = "clSTT";
+            // 
+            // clTenSanBay
+            // 
+            this.clTenSanBay.HeaderText = "Tên Sân Bay";
+            this.clTenSanBay.Name = "clTenSanBay";
+            // 
+            // clThoiGianDung
+            // 
+            this.clThoiGianDung.HeaderText = "Thời Gian Dừng";
+            this.clThoiGianDung.Name = "clThoiGianDung";
+            // 
+            // clGhiChu
+            // 
+            this.clGhiChu.HeaderText = "Ghi Chú";
+            this.clGhiChu.Name = "clGhiChu";
+            // 
+            // clSTT1
+            // 
+            this.clSTT1.HeaderText = "STT";
+            this.clSTT1.Name = "clSTT1";
+            // 
+            // clMaCB
+            // 
+            this.clMaCB.HeaderText = "Mã Chuyến Bay";
+            this.clMaCB.Name = "clMaCB";
+            // 
+            // clTenCB
+            // 
+            this.clTenCB.HeaderText = "Tên Chuyến Bay";
+            this.clTenCB.Name = "clTenCB";
+            // 
+            // FORM_NHANLICHCHUYENBAY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -346,14 +412,14 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtTenChuyenBay);
             this.Controls.Add(this.panel1);
-            this.Name = "FORM_THEMCHUYENBAY";
+            this.Name = "FORM_NHANLICHCHUYENBAY";
             this.Text = "FORM_THEMCHUYENBAY";
             ((System.ComponentModel.ISupportInitialize)(this.errorTenChuyenBay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSanBayDi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNgayGio)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,7 +440,6 @@
         private System.Windows.Forms.ComboBox cmbSanBayDi;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -388,5 +453,13 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtTenChuyenBay;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSTT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clTenSanBay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clThoiGianDung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clGhiChu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSTT1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clMaCB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clTenCB;
     }
 }
