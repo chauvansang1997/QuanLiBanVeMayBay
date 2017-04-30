@@ -90,7 +90,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1070, 40);
             this.label4.TabIndex = 0;
-            this.label4.Text = "THÊM CHUYẾN BAY";
+            this.label4.Text = "NHẬN LỊCH CHUYẾN BAY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBox2
