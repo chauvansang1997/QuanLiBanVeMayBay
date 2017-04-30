@@ -32,7 +32,6 @@
             this.errorTenChuyenBay = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorSanBayDi = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorNgayGio = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cmbSanBayDi = new System.Windows.Forms.ComboBox();
@@ -54,19 +53,18 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.clSTT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clMaCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clTenCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.clSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clThoiGianDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSTT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clMaCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clTenCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenChuyenBay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSanBayDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNgayGio)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -83,23 +81,14 @@
             // 
             this.errorNgayGio.ContainerControl = this;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1070, 56);
-            this.panel1.TabIndex = 3;
-            // 
             // label4
             // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1070, 56);
+            this.label4.Size = new System.Drawing.Size(1070, 40);
             this.label4.TabIndex = 0;
             this.label4.Text = "THÊM CHUYẾN BAY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -320,6 +309,21 @@
             this.dataGridView2.Size = new System.Drawing.Size(337, 271);
             this.dataGridView2.TabIndex = 109;
             // 
+            // clSTT1
+            // 
+            this.clSTT1.HeaderText = "STT";
+            this.clSTT1.Name = "clSTT1";
+            // 
+            // clMaCB
+            // 
+            this.clMaCB.HeaderText = "Mã Chuyến Bay";
+            this.clMaCB.Name = "clMaCB";
+            // 
+            // clTenCB
+            // 
+            this.clTenCB.HeaderText = "Tên Chuyến Bay";
+            this.clTenCB.Name = "clTenCB";
+            // 
             // label11
             // 
             this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -367,21 +371,6 @@
             this.clGhiChu.HeaderText = "Ghi Chú";
             this.clGhiChu.Name = "clGhiChu";
             // 
-            // clSTT1
-            // 
-            this.clSTT1.HeaderText = "STT";
-            this.clSTT1.Name = "clSTT1";
-            // 
-            // clMaCB
-            // 
-            this.clMaCB.HeaderText = "Mã Chuyến Bay";
-            this.clMaCB.Name = "clMaCB";
-            // 
-            // clTenCB
-            // 
-            this.clTenCB.HeaderText = "Tên Chuyến Bay";
-            this.clTenCB.Name = "clTenCB";
-            // 
             // FORM_NHANLICHCHUYENBAY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +378,7 @@
             this.BackgroundImage = global::GUI.Properties.Resources.plane2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1070, 403);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label10);
@@ -411,13 +401,11 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtTenChuyenBay);
-            this.Controls.Add(this.panel1);
             this.Name = "FORM_NHANLICHCHUYENBAY";
             this.Text = "FORM_THEMCHUYENBAY";
             ((System.ComponentModel.ISupportInitialize)(this.errorTenChuyenBay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSanBayDi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNgayGio)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -430,7 +418,6 @@
         private System.Windows.Forms.ErrorProvider errorTenChuyenBay;
         private System.Windows.Forms.ErrorProvider errorSanBayDi;
         private System.Windows.Forms.ErrorProvider errorNgayGio;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dataGridView2;
