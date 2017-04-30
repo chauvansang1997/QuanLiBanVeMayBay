@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class TraCuu : Form
+    public partial class FORM_TRACUU_CHUYENBAY : Form
     {
-        public TraCuu()
+        public FORM_TRACUU_CHUYENBAY()
         {
             InitializeComponent();
             this.Icon = Properties.Resources.Search_icon1;

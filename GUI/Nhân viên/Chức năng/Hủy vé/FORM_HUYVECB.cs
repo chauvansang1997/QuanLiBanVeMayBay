@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Quản_lý.Lập_báo_cáo.Lập_báo_cáo_năm
+namespace GUI.Nhân_viên.Chức_năng.Hủy_vé
 {
-    public partial class FORM_BAOCAONAM : Form
+    public partial class FORM_HUYVECB : Form
     {
-        public FORM_BAOCAONAM()
+        public FORM_HUYVECB()
         {
             InitializeComponent();
         }

@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO;
+using System.Data;
 
 namespace BUS
 {
     public class User_BUS
     {
-        private User_BUS instance;
+        private static User_BUS instance;
 
-       public User_BUS Instance
+       public static User_BUS Instance
        {
             get
             {
@@ -20,9 +22,15 @@ namespace BUS
                 return instance;
             }          
        }
-        public void DangNhap(TextBox txtUserName,TextBox txtPassword)
+        public bool DangNhap(string txtUserName,string txtPassword)
         {
 
+            return DAO.User_DAO.Instance.XemChuyenBay(txtUserName,txtPassword);
+        }
+        public DataTable DangNhap1(string txtUserName, string txtPassword)
+        {
+
+            return User_DAO.Instance.XemChuyenBay1(txtUserName,txtPassword);
         }
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Quản_lý.Lập_báo_cáo.Lập_báo_cáo_tháng
+namespace GUI
 {
-    public partial class FORM_BAOCAOTHANG : Form
+    public partial class FORM_BAOCAONAM : Form
     {
-        public FORM_BAOCAOTHANG()
+        public FORM_BAOCAONAM()
         {
             InitializeComponent();
         }

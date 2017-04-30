@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FORM_THEMCHUYENBAY : Form
+    public partial class FORM_NHANLICHCHUYENBAY : Form
     {
-        public FORM_THEMCHUYENBAY()
+        public FORM_NHANLICHCHUYENBAY()
         {
             InitializeComponent();
         }

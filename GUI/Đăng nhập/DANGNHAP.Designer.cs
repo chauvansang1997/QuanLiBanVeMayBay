@@ -33,8 +33,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.errorUser = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,6 +57,7 @@
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Thoát";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnLogin
             // 
@@ -86,26 +87,26 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Mật khẩu";
             // 
-            // tbName
+            // txtUserName
             // 
-            this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbName.Location = new System.Drawing.Point(79, 69);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(273, 20);
-            this.tbName.TabIndex = 0;
-            this.tbName.Tag = "0";
-            this.tbName.Leave += new System.EventHandler(this.tbName_Leave);
+            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUserName.Location = new System.Drawing.Point(79, 69);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(273, 20);
+            this.txtUserName.TabIndex = 0;
+            this.txtUserName.Tag = "0";
+            this.txtUserName.Leave += new System.EventHandler(this.tbName_Leave);
             // 
-            // tbPassword
+            // txtPassword
             // 
-            this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbPassword.Location = new System.Drawing.Point(79, 129);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(273, 20);
-            this.tbPassword.TabIndex = 1;
-            this.tbPassword.Tag = "1";
-            this.tbPassword.Leave += new System.EventHandler(this.tbPassword_Leave);
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Location = new System.Drawing.Point(79, 129);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(273, 20);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.Tag = "1";
+            this.txtPassword.Leave += new System.EventHandler(this.tbPassword_Leave);
             // 
             // errorUser
             // 
@@ -170,8 +171,8 @@
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tbPassword);
-            this.Controls.Add(this.tbName);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogin);
@@ -197,8 +198,8 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.ErrorProvider errorUser;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;

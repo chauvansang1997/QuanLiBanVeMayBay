@@ -7,19 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
+
 namespace GUI
 {
-    public partial class Test : Form
+    public partial class FORM_BAOCAOTHANG : Form
     {
-        public Test()
+        public FORM_BAOCAOTHANG()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource=BUS.User_BUS.Instance.DangNhap1(txtUserName.Text,txtPassword.Text);
         }
     }
 }

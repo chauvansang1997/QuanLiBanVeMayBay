@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 
 namespace DAO
 {
-    class User_DAO
+    public class User_DAO
     {
         private static User_DAO instance;
 
@@ -21,18 +22,28 @@ namespace DAO
             }
 
         }
-        public bool XemChuyenBay(TextBox userName,TextBox passWord)
+        public bool XemChuyenBay(string userName,string passWord)
         {
           
 
-            string query = "Select * from USer " +
-                            "Where UserName= "+userName.Text+"AND "+"Password= " +passWord.Text;
-
-            if (Dataprovider.Dataprovider.Instance.ExcuteNonQuery(query) > 0)
+            string query = "Select * from DangNhap " +
+                            "Where UserName= "+userName+" AND "+ " Password = " + passWord;
+            string query1 =  @"SELECT * FROM DangNhap where UserName = 'ChauVanSang' and Password = '1234' or 1 = 1";
+            if (Dataprovider.Dataprovider.Instance.ExcuteNonQuery(query1) > 0)
             {
                 return true;
             }
             return false;
+        }
+        public DataTable XemChuyenBay1(string userName, string passWord)
+        {
+
+
+            string query1 = "Select * from DangNhap " +
+                           "Where UserName= " + userName + " AND " + " Password = " + passWord;
+            string query = @"SELECT * FROM DangNhap where UserName = 'ChauVanSang' and Password = '1234' or 1 = 1";
+            return Dataprovider.Dataprovider.Instance.ExcuteQuery(query1);
+            
         }
     }
 }

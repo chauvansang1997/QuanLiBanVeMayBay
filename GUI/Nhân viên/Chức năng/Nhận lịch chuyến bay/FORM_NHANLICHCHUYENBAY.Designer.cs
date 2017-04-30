@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FORM_THEMCHUYENBAY
+    partial class FORM_NHANLICHCHUYENBAY
     {
         /// <summary>
         /// Required designer variable.

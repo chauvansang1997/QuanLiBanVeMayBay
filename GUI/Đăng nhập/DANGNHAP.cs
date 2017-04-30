@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS;
 namespace GUI
 {
     public partial class DANGNHAP : Form
@@ -19,37 +19,52 @@ namespace GUI
 
         private void tbName_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbName.Text))
+            if (string.IsNullOrEmpty(txtUserName.Text))
             {
                 errorUser.Icon = Properties.Resources.error_icon1;
-                errorUser.SetError(tbName,"Tài khoản chưa được điền");
+                errorUser.SetError(txtUserName,"Tài khoản chưa được điền");
 
             }
             else
             {
                 errorUser.Icon = Properties.Resources.ok_icon;
-                errorUser.SetError(tbName, "Ok");
+                errorUser.SetError(txtUserName, "Ok");
             }
         }
 
         private void tbPassword_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbPassword.Text))
+            if (string.IsNullOrEmpty(txtPassword.Text))
             {
                 errorPassword.Icon = Properties.Resources.error_icon1;
-                errorPassword.SetError(tbPassword, "Mật khẩu chưa được điền");
+                errorPassword.SetError(txtPassword, "Mật khẩu chưa được điền");
 
             }
             else
             {
                 errorPassword.Icon = Properties.Resources.ok_icon;
-                errorPassword.SetError(tbPassword, "Ok");
+                errorPassword.SetError(txtPassword, "Ok");
             }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (BUS.User_BUS.Instance.DangNhap(txtUserName.Text, txtPassword.Text))
+            {
+                NHANVIEN formNhanVien = new NHANVIEN();
+                formNhanVien.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Nhân viên\Chức năng\Hủy vé\FORM_HUYVECB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân viên\Chức năng\Hủy vé\FORM_HUYVECB.Designer.cs">
+      <DependentUpon>FORM_HUYVECB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nhân viên\Chức năng\Lập phiếu đặt chỗ\FORM_THEMPHIEUDATCHO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,22 +69,40 @@
     <Compile Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.Designer.cs">
       <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quản lý\Quản lý sân bay\FORM_THEMSANBAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Quản lý sân bay\FORM_THEMSANBAY.Designer.cs">
+      <DependentUpon>FORM_THEMSANBAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Quản lý tuyến bay\FORM_THEMMOITUYENBAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Quản lý tuyến bay\FORM_THEMMOITUYENBAY.Designer.cs">
+      <DependentUpon>FORM_THEMMOITUYENBAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\Thay đổi các quy định của chuyến bay\FORM_THAYDOICACQUYDINHCB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\Thay đổi các quy định của chuyến bay\FORM_THAYDOICACQUYDINHCB.Designer.cs">
+      <DependentUpon>FORM_THAYDOICACQUYDINHCB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Thông tin người dùng\FORM_DOIMATKHAU.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Thông tin người dùng\FORM_DOIMATKHAU.Designer.cs">
       <DependentUpon>FORM_DOIMATKHAU.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quản lý\Lập báo cáo\Lập báo cáo năm\FORM_BAOCAONAM.cs">
+    <Compile Include="Quản lý\Lập báo cáo năm\FORM_BAOCAONAM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quản lý\Lập báo cáo\Lập báo cáo năm\FORM_BAOCAONAM.Designer.cs">
+    <Compile Include="Quản lý\Lập báo cáo năm\FORM_BAOCAONAM.Designer.cs">
       <DependentUpon>FORM_BAOCAONAM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quản lý\Lập báo cáo\Lập báo cáo tháng\FORM_BAOCAOTHANG.cs">
+    <Compile Include="Quản lý\Lập báo cáo tháng\FORM_BAOCAOTHANG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quản lý\Lập báo cáo\Lập báo cáo tháng\FORM_BAOCAOTHANG.Designer.cs">
+    <Compile Include="Quản lý\Lập báo cáo tháng\FORM_BAOCAOTHANG.Designer.cs">
       <DependentUpon>FORM_BAOCAOTHANG.cs</DependentUpon>
     </Compile>
     <Compile Include="Quản lý\Quản lý nhân viên\FORM_QUANLYNHANVIEN.cs">
@@ -87,16 +111,16 @@
     <Compile Include="Quản lý\Quản lý nhân viên\FORM_QUANLYNHANVIEN.Designer.cs">
       <DependentUpon>FORM_QUANLYNHANVIEN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quản lý\Thay đổi quy định\Quản lý sân bay\FORM_QUANLYSANBAY.cs">
+    <Compile Include="Quản lý\Quản lý sân bay\FORM_QUANLYSANBAY.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quản lý\Thay đổi quy định\Quản lý sân bay\FORM_QUANLYSANBAY.Designer.cs">
+    <Compile Include="Quản lý\Quản lý sân bay\FORM_QUANLYSANBAY.Designer.cs">
       <DependentUpon>FORM_QUANLYSANBAY.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quản lý\Thay đổi quy định\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.cs">
+    <Compile Include="Quản lý\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quản lý\Thay đổi quy định\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.Designer.cs">
+    <Compile Include="Quản lý\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.Designer.cs">
       <DependentUpon>FORM_QUANLYTUYENBAY.cs</DependentUpon>
     </Compile>
     <Compile Include="Quản lý\Thay đổi quy định\Thay đổi giá vé\FORM_GIAVE.cs">
@@ -141,11 +165,11 @@
     <Compile Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_THAYDOICHUYENBAY.Designer.cs">
       <DependentUpon>FORM_THAYDOICHUYENBAY.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nhân viên\Chức năng\Thêm lịch chuyến bay\FORM_THEMCHUYENBAY.cs">
+    <Compile Include="Nhân viên\Chức năng\Nhận lịch chuyến bay\FORM_NHANLICHCHUYENBAY.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nhân viên\Chức năng\Thêm lịch chuyến bay\FORM_THEMCHUYENBAY.Designer.cs">
-      <DependentUpon>FORM_THEMCHUYENBAY.cs</DependentUpon>
+    <Compile Include="Nhân viên\Chức năng\Nhận lịch chuyến bay\FORM_NHANLICHCHUYENBAY.Designer.cs">
+      <DependentUpon>FORM_NHANLICHCHUYENBAY.cs</DependentUpon>
     </Compile>
     <Compile Include="Thông tin người dùng\FORM_THONGTINNGUOIDUNG.cs">
       <SubType>Form</SubType>
@@ -179,28 +203,40 @@
     <Compile Include="TraCuu\FORM_TRACUU_CHUYENBAY.Designer.cs">
       <DependentUpon>FORM_TRACUU_CHUYENBAY.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Nhân viên\Chức năng\Hủy vé\FORM_HUYVECB.resx">
+      <DependentUpon>FORM_HUYVECB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nhân viên\Chức năng\Lập phiếu đặt chỗ\FORM_THEMPHIEUDATCHO.resx">
       <DependentUpon>FORM_THEMPHIEUDATCHO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.resx">
       <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Quản lý sân bay\FORM_THEMSANBAY.resx">
+      <DependentUpon>FORM_THEMSANBAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Quản lý tuyến bay\FORM_THEMMOITUYENBAY.resx">
+      <DependentUpon>FORM_THEMMOITUYENBAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Thay đổi quy định\Thay đổi các quy định của chuyến bay\FORM_THAYDOICACQUYDINHCB.resx">
+      <DependentUpon>FORM_THAYDOICACQUYDINHCB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Thông tin người dùng\FORM_DOIMATKHAU.resx">
       <DependentUpon>FORM_DOIMATKHAU.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quản lý\Lập báo cáo\Lập báo cáo năm\FORM_BAOCAONAM.resx">
+    <EmbeddedResource Include="Quản lý\Lập báo cáo năm\FORM_BAOCAONAM.resx">
       <DependentUpon>FORM_BAOCAONAM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quản lý\Lập báo cáo\Lập báo cáo tháng\FORM_BAOCAOTHANG.resx">
+    <EmbeddedResource Include="Quản lý\Lập báo cáo tháng\FORM_BAOCAOTHANG.resx">
       <DependentUpon>FORM_BAOCAOTHANG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\Quản lý nhân viên\FORM_QUANLYNHANVIEN.resx">
       <DependentUpon>FORM_QUANLYNHANVIEN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quản lý\Thay đổi quy định\Quản lý sân bay\FORM_QUANLYSANBAY.resx">
+    <EmbeddedResource Include="Quản lý\Quản lý sân bay\FORM_QUANLYSANBAY.resx">
       <DependentUpon>FORM_QUANLYSANBAY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quản lý\Thay đổi quy định\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.resx">
+    <EmbeddedResource Include="Quản lý\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.resx">
       <DependentUpon>FORM_QUANLYTUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\Thay đổi quy định\Thay đổi giá vé\FORM_GIAVE.resx">
@@ -224,8 +260,8 @@
     <EmbeddedResource Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_THAYDOICHUYENBAY.resx">
       <DependentUpon>FORM_THAYDOICHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nhân viên\Chức năng\Thêm lịch chuyến bay\FORM_THEMCHUYENBAY.resx">
-      <DependentUpon>FORM_THEMCHUYENBAY.cs</DependentUpon>
+    <EmbeddedResource Include="Nhân viên\Chức năng\Nhận lịch chuyến bay\FORM_NHANLICHCHUYENBAY.resx">
+      <DependentUpon>FORM_NHANLICHCHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Thông tin người dùng\FORM_THONGTINNGUOIDUNG.resx">
       <DependentUpon>FORM_THONGTINNGUOIDUNG.cs</DependentUpon>

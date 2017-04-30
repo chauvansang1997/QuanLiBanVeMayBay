@@ -73,12 +73,15 @@ namespace Dataprovider
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
+                con.Open();
                 SqlCommand command = new SqlCommand(query, con);
 
                 
-                con.Close();
+                
 
-                return command.ExecuteNonQuery();
+                int temp= command.ExecuteNonQuery();
+                con.Close();
+                return temp;
             }
 
         }

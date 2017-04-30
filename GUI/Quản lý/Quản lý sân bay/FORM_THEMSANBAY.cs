@@ -7,19 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
-namespace GUI
+
+namespace GUI.Quản_lý.Thay_đổi_quy_định.Quản_lý_sân_bay
 {
-    public partial class Test : Form
+    public partial class FORM_THEMSANBAY : Form
     {
-        public Test()
+        public FORM_THEMSANBAY()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource=BUS.User_BUS.Instance.DangNhap1(txtUserName.Text,txtPassword.Text);
         }
     }
 }

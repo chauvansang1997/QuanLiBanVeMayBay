@@ -1,4 +1,4 @@
-﻿namespace GUI.Quản_lý.Quản_lý_nhân_viên
+﻿namespace GUI
 {
     partial class FORM_QUANLYNHANVIEN
     {

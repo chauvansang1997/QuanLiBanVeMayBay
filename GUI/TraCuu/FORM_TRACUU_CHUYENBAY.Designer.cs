@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class TraCuu
+    partial class FORM_TRACUU_CHUYENBAY
     {
         /// <summary>
         /// Required designer variable.
