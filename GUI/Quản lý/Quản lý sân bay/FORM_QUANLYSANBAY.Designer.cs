@@ -1,4 +1,4 @@
-﻿namespace GUI.Quản_lý.Quản_lý_san_bay
+﻿namespace GUI
 {
     partial class FORM_QUANLYSANBAY
     {

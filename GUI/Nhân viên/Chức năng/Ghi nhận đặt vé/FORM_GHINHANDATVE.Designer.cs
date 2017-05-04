@@ -30,20 +30,22 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cb_1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_8 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,38 +70,13 @@
             this.label4.Text = "GHI NHẬN ĐẶT VÉ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(45, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 30);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Mã Chuyến Bay:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cb_1
-            // 
-            this.cb_1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.cb_1.DropDownHeight = 123;
-            this.cb_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F);
-            this.cb_1.FormattingEnabled = true;
-            this.cb_1.IntegralHeight = false;
-            this.cb_1.ItemHeight = 20;
-            this.cb_1.Location = new System.Drawing.Point(170, 70);
-            this.cb_1.Name = "cb_1";
-            this.cb_1.Size = new System.Drawing.Size(193, 28);
-            this.cb_1.TabIndex = 29;
-            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(45, 130);
+            this.label7.Location = new System.Drawing.Point(402, 74);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 30);
+            this.label7.Size = new System.Drawing.Size(87, 30);
             this.label7.TabIndex = 40;
             this.label7.Text = "CMNN:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,7 +84,7 @@
             // txt_6
             // 
             this.txt_6.BackColor = System.Drawing.Color.LemonChiffon;
-            this.txt_6.Location = new System.Drawing.Point(170, 130);
+            this.txt_6.Location = new System.Drawing.Point(526, 74);
             this.txt_6.Multiline = true;
             this.txt_6.Name = "txt_6";
             this.txt_6.ReadOnly = true;
@@ -118,7 +95,7 @@
             // 
             this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(401, 130);
+            this.label9.Location = new System.Drawing.Point(45, 126);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 30);
             this.label9.TabIndex = 44;
@@ -128,7 +105,7 @@
             // txt_8
             // 
             this.txt_8.BackColor = System.Drawing.Color.LemonChiffon;
-            this.txt_8.Location = new System.Drawing.Point(531, 130);
+            this.txt_8.Location = new System.Drawing.Point(175, 126);
             this.txt_8.Multiline = true;
             this.txt_8.Name = "txt_8";
             this.txt_8.ReadOnly = true;
@@ -139,7 +116,7 @@
             // 
             this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(400, 190);
+            this.label10.Location = new System.Drawing.Point(401, 182);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 30);
             this.label10.TabIndex = 48;
@@ -150,28 +127,17 @@
             // 
             this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(400, 70);
+            this.label11.Location = new System.Drawing.Point(45, 74);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 30);
             this.label11.TabIndex = 53;
             this.label11.Text = "Hành Khách:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(530, 190);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(193, 28);
-            this.comboBox1.TabIndex = 54;
-            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnSave.Location = new System.Drawing.Point(450, 263);
+            this.btnSave.Location = new System.Drawing.Point(403, 315);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 33);
             this.btnSave.TabIndex = 55;
@@ -181,7 +147,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.SandyBrown;
-            this.button2.Location = new System.Drawing.Point(622, 263);
+            this.button2.Location = new System.Drawing.Point(575, 315);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 33);
             this.button2.TabIndex = 56;
@@ -191,7 +157,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox1.Location = new System.Drawing.Point(530, 70);
+            this.textBox1.Location = new System.Drawing.Point(175, 74);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -204,7 +170,7 @@
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(170, 190);
+            this.comboBox2.Location = new System.Drawing.Point(170, 184);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(193, 28);
             this.comboBox2.TabIndex = 59;
@@ -213,12 +179,66 @@
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(45, 190);
+            this.label1.Location = new System.Drawing.Point(45, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 30);
             this.label1.TabIndex = 58;
             this.label1.Text = "Hạng vé:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.AllowDrop = true;
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.dateTimePicker1.CustomFormat = "hh:mm:ss  MM/dd/ yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(168, 242);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(195, 26);
+            this.dateTimePicker1.TabIndex = 112;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Location = new System.Drawing.Point(45, 242);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 26);
+            this.label3.TabIndex = 111;
+            this.label3.Text = "Ngày-Giờ Đặt";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.LemonChiffon;
+            this.textBox2.Location = new System.Drawing.Point(531, 182);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(190, 30);
+            this.textBox2.TabIndex = 113;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.LemonChiffon;
+            this.textBox3.Location = new System.Drawing.Point(526, 126);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(195, 30);
+            this.textBox3.TabIndex = 115;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(401, 126);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 30);
+            this.label2.TabIndex = 114;
+            this.label2.Text = "Mã chuyến bay";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FORM_GHINHANDATVE
             // 
@@ -226,21 +246,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.plane2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(753, 334);
+            this.ClientSize = new System.Drawing.Size(753, 360);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txt_8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.cb_1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "FORM_GHINHANDATVE";
             this.panel1.ResumeLayout(false);
@@ -253,19 +275,21 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cb_1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label2;
     }
 }

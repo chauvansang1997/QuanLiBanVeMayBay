@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Quản_lý.Quản_lý_tuyến_bay
+namespace GUI
 {
     public partial class FORM_QUANLYTUYENBAY : Form
     {

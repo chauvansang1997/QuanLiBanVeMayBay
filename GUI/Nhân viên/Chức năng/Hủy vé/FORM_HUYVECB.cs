@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Nhân_viên.Chức_năng.Hủy_vé
+namespace GUI
 {
     public partial class FORM_HUYVECB : Form
     {

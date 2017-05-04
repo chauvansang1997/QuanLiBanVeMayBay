@@ -1,4 +1,4 @@
-﻿namespace GUI.Quản_lý.Thay_đổi_quy_định.Quản_lý_sân_bay
+﻿namespace GUI
 {
     partial class FORM_THEMSANBAY
     {
