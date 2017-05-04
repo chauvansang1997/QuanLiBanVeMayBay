@@ -47,7 +47,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTenChuyenBay = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -62,6 +61,7 @@
             this.clTenSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clThoiGianDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenChuyenBay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSanBayDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNgayGio)).BeginInit();
@@ -95,6 +95,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Cần Thơ",
@@ -105,13 +106,14 @@
             "Singapore",
             "Campuchia",
             "ThaiLand"});
-            this.comboBox2.Location = new System.Drawing.Point(549, 115);
+            this.comboBox2.Location = new System.Drawing.Point(549, 114);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 21);
+            this.comboBox2.Size = new System.Drawing.Size(140, 28);
             this.comboBox2.TabIndex = 93;
             // 
             // cmbSanBayDi
             // 
+            this.cmbSanBayDi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSanBayDi.FormattingEnabled = true;
             this.cmbSanBayDi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbSanBayDi.Items.AddRange(new object[] {
@@ -122,7 +124,7 @@
             "TP HCM"});
             this.cmbSanBayDi.Location = new System.Drawing.Point(176, 115);
             this.cmbSanBayDi.Name = "cmbSanBayDi";
-            this.cmbSanBayDi.Size = new System.Drawing.Size(162, 21);
+            this.cmbSanBayDi.Size = new System.Drawing.Size(162, 28);
             this.cmbSanBayDi.TabIndex = 88;
             // 
             // button2
@@ -153,7 +155,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(414, 71);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 20);
+            this.label8.Size = new System.Drawing.Size(109, 26);
             this.label8.TabIndex = 106;
             this.label8.Text = "Giá vé:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,7 +166,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(411, 114);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 20);
+            this.label7.Size = new System.Drawing.Size(112, 28);
             this.label7.TabIndex = 105;
             this.label7.Text = "Sân bay đến:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -175,7 +177,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(414, 161);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 20);
+            this.label6.Size = new System.Drawing.Size(112, 26);
             this.label6.TabIndex = 104;
             this.label6.Text = "Thời gian bay:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -184,9 +186,9 @@
             // 
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(414, 214);
+            this.label5.Location = new System.Drawing.Point(414, 208);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 20);
+            this.label5.Size = new System.Drawing.Size(129, 26);
             this.label5.TabIndex = 103;
             this.label5.Text = "Số lượng ghế hạng 2:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -197,7 +199,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 215);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 20);
+            this.label1.Size = new System.Drawing.Size(143, 26);
             this.label1.TabIndex = 102;
             this.label1.Text = "Số lượng ghế hạng 1:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,9 +208,9 @@
             // 
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 167);
+            this.label3.Location = new System.Drawing.Point(12, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.Size = new System.Drawing.Size(80, 26);
             this.label3.TabIndex = 101;
             this.label3.Text = "Ngày giờ:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,38 +221,34 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.Size = new System.Drawing.Size(107, 28);
             this.label2.TabIndex = 100;
             this.label2.Text = "Sân bay đi:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(549, 215);
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(549, 208);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(140, 20);
+            this.textBox6.Size = new System.Drawing.Size(87, 26);
             this.textBox6.TabIndex = 95;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(549, 161);
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(549, 160);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(140, 20);
+            this.textBox4.Size = new System.Drawing.Size(140, 26);
             this.textBox4.TabIndex = 94;
             // 
             // textBox5
             // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(176, 215);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(162, 20);
+            this.textBox5.Size = new System.Drawing.Size(97, 26);
             this.textBox5.TabIndex = 91;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(549, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 92;
             // 
             // label9
             // 
@@ -258,16 +256,17 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 70);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 20);
+            this.label9.Size = new System.Drawing.Size(110, 27);
             this.label9.TabIndex = 99;
             this.label9.Text = "Tên chuyến bay:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtTenChuyenBay
             // 
+            this.txtTenChuyenBay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenChuyenBay.Location = new System.Drawing.Point(176, 71);
             this.txtTenChuyenBay.Name = "txtTenChuyenBay";
-            this.txtTenChuyenBay.Size = new System.Drawing.Size(162, 20);
+            this.txtTenChuyenBay.Size = new System.Drawing.Size(162, 26);
             this.txtTenChuyenBay.TabIndex = 87;
             this.txtTenChuyenBay.Leave += new System.EventHandler(this.txtTenChuyenBay_Leave);
             // 
@@ -276,7 +275,7 @@
             this.dateTimePicker1.AllowDrop = true;
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.dateTimePicker1.CustomFormat = "hh:mm:ss  MM/dd/ yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(176, 161);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -371,6 +370,14 @@
             this.clGhiChu.HeaderText = "Ghi Chú";
             this.clGhiChu.Name = "clGhiChu";
             // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(549, 71);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(140, 26);
+            this.textBox2.TabIndex = 92;
+            // 
             // FORM_NHANLICHCHUYENBAY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,7 +444,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtTenChuyenBay;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -448,5 +454,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clSTT1;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaCB;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenCB;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
