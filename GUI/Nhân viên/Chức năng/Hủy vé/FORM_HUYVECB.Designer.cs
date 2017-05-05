@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_6 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cb_1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.clHanhKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +51,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,18 +67,6 @@
             this.label1.TabIndex = 111;
             this.label1.Text = "HỦY VÉ CHUYẾN BAY";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.LemonChiffon;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            this.comboBox2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(495, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(187, 28);
-            this.comboBox2.TabIndex = 123;
             // 
             // label2
             // 
@@ -115,7 +103,7 @@
             // txt_6
             // 
             this.txt_6.BackColor = System.Drawing.Color.LemonChiffon;
-            this.txt_6.Location = new System.Drawing.Point(136, 110);
+            this.txt_6.Location = new System.Drawing.Point(139, 110);
             this.txt_6.Multiline = true;
             this.txt_6.Name = "txt_6";
             this.txt_6.ReadOnly = true;
@@ -132,21 +120,6 @@
             this.label7.TabIndex = 114;
             this.label7.Text = "CMNN:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cb_1
-            // 
-            this.cb_1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.cb_1.DropDownHeight = 123;
-            this.cb_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F);
-            this.cb_1.ForeColor = System.Drawing.SystemColors.Info;
-            this.cb_1.FormattingEnabled = true;
-            this.cb_1.IntegralHeight = false;
-            this.cb_1.ItemHeight = 20;
-            this.cb_1.Location = new System.Drawing.Point(495, 110);
-            this.cb_1.Name = "cb_1";
-            this.cb_1.Size = new System.Drawing.Size(192, 28);
-            this.cb_1.TabIndex = 113;
             // 
             // label3
             // 
@@ -246,7 +219,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 36);
             this.button3.TabIndex = 127;
-            this.button3.Text = "Trỏ về";
+            this.button3.Text = "Trở về";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button5
@@ -287,6 +260,24 @@
             this.label6.Text = "Trang:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(493, 111);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(152, 28);
+            this.comboBox1.TabIndex = 137;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(493, 53);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(152, 28);
+            this.comboBox2.TabIndex = 138;
+            // 
             // FORM_HUYVECB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,6 +285,8 @@
             this.BackgroundImage = global::GUI.Properties.Resources.plane2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(832, 478);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button4);
@@ -302,13 +295,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txt_6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.cb_1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "FORM_HUYVECB";
@@ -321,13 +312,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txt_6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cb_1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
@@ -345,5 +334,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clNgayGioBay;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

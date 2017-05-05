@@ -49,6 +49,8 @@
             this.clThoiGianDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
+            this.bnt_luu = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,8 +60,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cb_1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.bnt_luu = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -79,10 +79,10 @@
             this.clThoiGianBay,
             this.clSoGheH1,
             this.clSoGheH2});
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 255);
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 279);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(961, 149);
+            this.dataGridView1.Size = new System.Drawing.Size(962, 149);
             this.dataGridView1.TabIndex = 3;
             // 
             // clMaCB
@@ -145,7 +145,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.SandyBrown;
-            this.button3.Location = new System.Drawing.Point(834, 541);
+            this.button3.Location = new System.Drawing.Point(834, 544);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 33);
             this.button3.TabIndex = 7;
@@ -155,7 +155,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.SandyBrown;
-            this.button4.Location = new System.Drawing.Point(-1, 498);
+            this.button4.Location = new System.Drawing.Point(-1, 522);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 33);
             this.button4.TabIndex = 8;
@@ -165,7 +165,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.SandyBrown;
-            this.button5.Location = new System.Drawing.Point(94, 498);
+            this.button5.Location = new System.Drawing.Point(94, 522);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 33);
             this.button5.TabIndex = 9;
@@ -174,7 +174,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(0, 205);
+            this.label2.Location = new System.Drawing.Point(0, 229);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 20);
             this.label2.TabIndex = 10;
@@ -183,7 +183,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 206);
+            this.textBox1.Location = new System.Drawing.Point(45, 230);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(37, 20);
             this.textBox1.TabIndex = 11;
@@ -201,10 +201,10 @@
             this.clTenSanBay,
             this.clThoiGianDung,
             this.clGhiChu});
-            this.dataGridView2.Location = new System.Drawing.Point(-1, 420);
+            this.dataGridView2.Location = new System.Drawing.Point(-1, 444);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(961, 72);
+            this.dataGridView2.Size = new System.Drawing.Size(962, 72);
             this.dataGridView2.TabIndex = 12;
             // 
             // clSTT
@@ -231,100 +231,17 @@
             // 
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(-1, 388);
+            this.label3.Location = new System.Drawing.Point(-1, 412);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(961, 32);
+            this.label3.Size = new System.Drawing.Size(962, 32);
             this.label3.TabIndex = 13;
             this.label3.Text = "SÂN BAY TRUNG GIAN";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(372, 124);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(133, 20);
-            this.dateTimePicker2.TabIndex = 23;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(189, 124);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(133, 20);
-            this.dateTimePicker1.TabIndex = 22;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label6.Location = new System.Drawing.Point(334, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 21);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Đến:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label5.Location = new System.Drawing.Point(159, 124);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 21);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Từ:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Location = new System.Drawing.Point(43, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 20);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Ngày Khởi Hành:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cb_2
-            // 
-            this.cb_2.FormattingEnabled = true;
-            this.cb_2.Location = new System.Drawing.Point(162, 80);
-            this.cb_2.Name = "cb_2";
-            this.cb_2.Size = new System.Drawing.Size(191, 21);
-            this.cb_2.TabIndex = 18;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label7.Location = new System.Drawing.Point(43, 80);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 21);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Sân Bay Đến:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cb_1
-            // 
-            this.cb_1.FormattingEnabled = true;
-            this.cb_1.Location = new System.Drawing.Point(162, 38);
-            this.cb_1.Name = "cb_1";
-            this.cb_1.Size = new System.Drawing.Size(191, 21);
-            this.cb_1.TabIndex = 16;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(43, 38);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 21);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Sân Bay Đi:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // bnt_luu
             // 
             this.bnt_luu.BackColor = System.Drawing.Color.SandyBrown;
-            this.bnt_luu.Location = new System.Drawing.Point(-1, 159);
+            this.bnt_luu.Location = new System.Drawing.Point(-1, 191);
             this.bnt_luu.Name = "bnt_luu";
             this.bnt_luu.Size = new System.Drawing.Size(83, 33);
             this.bnt_luu.TabIndex = 24;
@@ -335,12 +252,103 @@
             // 
             this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(0, 225);
+            this.label9.Location = new System.Drawing.Point(0, 249);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(961, 32);
             this.label9.TabIndex = 25;
             this.label9.Text = "DANH SÁCH SÂN BAY";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(482, 130);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(133, 26);
+            this.dateTimePicker2.TabIndex = 34;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(266, 129);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(133, 26);
+            this.dateTimePicker1.TabIndex = 33;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(414, 129);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 29);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Đến:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(223, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 28);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Từ:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(56, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(141, 28);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Ngày Khởi Hành:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cb_2
+            // 
+            this.cb_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_2.FormattingEnabled = true;
+            this.cb_2.Location = new System.Drawing.Point(208, 86);
+            this.cb_2.Name = "cb_2";
+            this.cb_2.Size = new System.Drawing.Size(191, 28);
+            this.cb_2.TabIndex = 29;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(56, 86);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 28);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Sân Bay Đến:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cb_1
+            // 
+            this.cb_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_1.FormattingEnabled = true;
+            this.cb_1.Location = new System.Drawing.Point(208, 44);
+            this.cb_1.Name = "cb_1";
+            this.cb_1.Size = new System.Drawing.Size(191, 28);
+            this.cb_1.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(56, 44);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(113, 28);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Sân Bay Đi:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FORM_TRACUU_CHUYENBAY
             // 
@@ -349,8 +357,6 @@
             this.BackgroundImage = global::GUI.Properties.Resources.plane2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(961, 589);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.bnt_luu);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
@@ -360,6 +366,8 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cb_1);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.bnt_luu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.textBox1);
@@ -401,6 +409,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clThoiGianDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn clGhiChu;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button bnt_luu;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
@@ -410,7 +420,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cb_1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button bnt_luu;
-        private System.Windows.Forms.Label label9;
     }
 }

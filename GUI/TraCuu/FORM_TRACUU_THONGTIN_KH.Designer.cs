@@ -128,7 +128,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 30);
             this.label7.TabIndex = 114;
-            this.label7.Text = "CMNN:";
+            this.label7.Text = "CMND:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dataGridView1

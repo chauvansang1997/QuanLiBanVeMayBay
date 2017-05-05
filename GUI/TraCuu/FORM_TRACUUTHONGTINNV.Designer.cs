@@ -36,11 +36,9 @@
             this.txt_8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txt_6 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanhKhach)).BeginInit();
@@ -127,23 +125,12 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 30);
             this.label7.TabIndex = 60;
-            this.label7.Text = "CMNN:";
+            this.label7.Text = "CMND:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(395, 127);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 30);
-            this.label2.TabIndex = 58;
-            this.label2.Text = "Địa chỉ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(24, 223);
+            this.button2.Location = new System.Drawing.Point(0, 232);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 26);
             this.button2.TabIndex = 67;
@@ -169,20 +156,10 @@
             this.txt_6.Size = new System.Drawing.Size(195, 30);
             this.txt_6.TabIndex = 61;
             // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox2.Location = new System.Drawing.Point(520, 127);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(195, 30);
-            this.textBox2.TabIndex = 68;
-            // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox3.Location = new System.Drawing.Point(151, 178);
+            this.textBox3.Location = new System.Drawing.Point(525, 127);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -193,7 +170,7 @@
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(21, 178);
+            this.label1.Location = new System.Drawing.Point(395, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 30);
             this.label1.TabIndex = 69;
@@ -209,7 +186,6 @@
             this.ClientSize = new System.Drawing.Size(735, 477);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
@@ -218,7 +194,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvHanhKhach);
             this.Name = "FORM_TRACUUTHONGTINNV";
@@ -240,11 +215,9 @@
         private System.Windows.Forms.TextBox txt_8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_6;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
     }
