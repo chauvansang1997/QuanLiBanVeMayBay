@@ -25,11 +25,7 @@ namespace GUI
                 errorUser.SetError(txtUserName,"Tài khoản chưa được điền");
 
             }
-            else
-            {
-                errorUser.Icon = Properties.Resources.ok_icon;
-                errorUser.SetError(txtUserName, "Ok");
-            }
+     
         }
 
         private void tbPassword_Leave(object sender, EventArgs e)
@@ -40,11 +36,7 @@ namespace GUI
                 errorPassword.SetError(txtPassword, "Mật khẩu chưa được điền");
 
             }
-            else
-            {
-                errorPassword.Icon = Properties.Resources.ok_icon;
-                errorPassword.SetError(txtPassword, "Ok");
-            }
+          
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

@@ -48,7 +48,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +103,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(727, 32);
             this.label4.TabIndex = 2;
-            this.label4.Text = "BÁO CÁO NĂM 2017";
+            this.label4.Text = "BÁO CÁO THÁNG";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
@@ -170,6 +169,7 @@
             this.button5.TabIndex = 11;
             this.button5.Text = "Tiếp theo";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -206,15 +206,6 @@
             this.textBox2.Size = new System.Drawing.Size(106, 20);
             this.textBox2.TabIndex = 14;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(83, 110);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "label5";
-            // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.SandyBrown;
@@ -233,7 +224,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(727, 401);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -275,7 +265,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaCB;
         private System.Windows.Forms.DataGridViewTextBoxColumn clGiaVe;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
     }
 }

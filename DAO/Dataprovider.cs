@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dataprovider
+namespace DAO
 {
     public class Dataprovider
     {
         //Chuổi kết nối với sql
-        private string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=QuanLyBanVeMayBay;Integrated Security=True";
+        private string connectionString = @"Data Source=.\Sqlexpress;Initial Catalog=QLBV;Integrated Security=True";
 
         private static Dataprovider instance;
 
@@ -69,18 +69,19 @@ namespace Dataprovider
         /// </summary>
         /// <param name="query">Chuỗi truy vấn được đưa xuống SQL</param>
         /// <returns>Số dòng thành công</returns>
-        public int ExcuteNonQuery(string query)
+        public int ExcuteNonQuery(string query, SqlParameter[] sqlparameters = null)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 SqlCommand command = new SqlCommand(query, con);
 
-                
-                
+                if (sqlparameters != null)
+                    command.Parameters.AddRange(sqlparameters);
+
 
                 int temp= command.ExecuteNonQuery();
-                con.Close();
+               
                 return temp;
             }
 

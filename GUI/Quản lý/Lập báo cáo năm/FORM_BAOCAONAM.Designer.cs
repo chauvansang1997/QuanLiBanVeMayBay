@@ -100,7 +100,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(727, 32);
             this.label4.TabIndex = 2;
-            this.label4.Text = "BÁO CÁO NĂM 2017";
+            this.label4.Text = "BÁO CÁO NĂM";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1

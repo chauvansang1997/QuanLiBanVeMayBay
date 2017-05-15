@@ -12,9 +12,25 @@ namespace GUI.TraCuu
 {
     public partial class FORM_TRACUUTHONGTINNV : Form
     {
+        private const int pageSize = 10;
+        private int pageNumber;
+        private int totalPage;
+
         public FORM_TRACUUTHONGTINNV()
         {
             InitializeComponent();
+        }
+
+        
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

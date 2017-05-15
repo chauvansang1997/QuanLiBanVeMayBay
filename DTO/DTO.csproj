@@ -47,8 +47,10 @@
     <Compile Include="ChuyenBay_TraCuu.cs" />
     <Compile Include="HanhKhach.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="PhieuDatCho.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanBay.cs" />
+    <Compile Include="SanBayTrungGian.cs" />
     <Compile Include="VeDat.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>

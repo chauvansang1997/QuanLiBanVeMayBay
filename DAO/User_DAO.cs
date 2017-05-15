@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,12 +25,20 @@ namespace DAO
         }
         public bool XemChuyenBay(string userName,string passWord)
         {
-          
 
-            string query = "Select * from DangNhap " +
-                            "Where UserName= "+userName+" AND "+ " Password = " + passWord;
-            string query1 =  @"SELECT * FROM DangNhap where UserName = 'ChauVanSang' and Password = '1234' or 1 = 1";
-            if (Dataprovider.Dataprovider.Instance.ExcuteNonQuery(query1) > 0)
+
+            string query = "Select * from DangNhap Where UserName=@UserName AND Password =@PassWord";
+            
+
+            List<SqlParameter> sqlParameter = new List<SqlParameter>()
+            {
+                new SqlParameter("@UserName",SqlDbType.Char){ SqlValue=userName},
+                new SqlParameter("@PassWord",SqlDbType.Char){ SqlValue=passWord},
+            };
+
+
+            DataTable table = Dataprovider.Instance.ExcuteQuery(query, sqlParameter.ToArray());
+            if (table.Rows.Count == 1)
             {
                 return true;
             }
@@ -42,7 +51,7 @@ namespace DAO
             string query1 = "Select * from DangNhap " +
                            "Where UserName= " + userName + " AND " + " Password = " + passWord;
             string query = @"SELECT * FROM DangNhap where UserName = 'ChauVanSang' and Password = '1234' or 1 = 1";
-            return Dataprovider.Dataprovider.Instance.ExcuteQuery(query1);
+            return Dataprovider.Instance.ExcuteQuery(query1);
             
         }
     }

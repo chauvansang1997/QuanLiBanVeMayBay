@@ -33,7 +33,7 @@
             this.errorSanBayDi = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorNgayGio = new System.Windows.Forms.ErrorProvider(this.components);
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbSanBayDen = new System.Windows.Forms.ComboBox();
             this.cmbSanBayDi = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -93,11 +93,14 @@
             this.label4.Text = "NHẬN LỊCH CHUYẾN BAY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox2
+            // cmbSanBayDen
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbSanBayDen.DropDownHeight = 80;
+            this.cmbSanBayDen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSanBayDen.FormattingEnabled = true;
+            this.cmbSanBayDen.IntegralHeight = false;
+            this.cmbSanBayDen.ItemHeight = 20;
+            this.cmbSanBayDen.Items.AddRange(new object[] {
             "Cần Thơ",
             "Đà Nẵng",
             "Hải Phòng",
@@ -106,10 +109,14 @@
             "Singapore",
             "Campuchia",
             "ThaiLand"});
-            this.comboBox2.Location = new System.Drawing.Point(549, 114);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 28);
-            this.comboBox2.TabIndex = 93;
+            this.cmbSanBayDen.Location = new System.Drawing.Point(549, 114);
+            this.cmbSanBayDen.Name = "cmbSanBayDen";
+            this.cmbSanBayDen.Size = new System.Drawing.Size(140, 28);
+            this.cmbSanBayDen.TabIndex = 93;
+            this.cmbSanBayDen.DropDown += new System.EventHandler(this.cmbSanBayDen_DropDown);
+            this.cmbSanBayDen.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cmbSanBayDen.SelectionChangeCommitted += new System.EventHandler(this.comboBox2_SelectionChangeCommitted);
+            this.cmbSanBayDen.MouseEnter += new System.EventHandler(this.cmbSanBayDen_MouseEnter);
             // 
             // cmbSanBayDi
             // 
@@ -142,7 +149,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.SandyBrown;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(417, 357);
+            this.button1.Location = new System.Drawing.Point(448, 357);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 34);
             this.button1.TabIndex = 97;
@@ -390,7 +397,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbSanBayDen);
             this.Controls.Add(this.cmbSanBayDi);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -430,7 +437,7 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbSanBayDen;
         private System.Windows.Forms.ComboBox cmbSanBayDi;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

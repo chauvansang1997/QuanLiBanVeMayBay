@@ -83,6 +83,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel {
+            get {
+                object obj = ResourceManager.GetObject("cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap change_password_icon {
             get {
                 object obj = ResourceManager.GetObject("change_password_icon", resourceCulture);
@@ -257,6 +267,16 @@ namespace GUI.Properties {
             get {
                 object obj = ResourceManager.GetObject("Search_icon1", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search2_icon {
+            get {
+                object obj = ResourceManager.GetObject("Search2_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

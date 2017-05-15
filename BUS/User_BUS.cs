@@ -22,10 +22,10 @@ namespace BUS
                 return instance;
             }          
        }
-        public bool DangNhap(string txtUserName,string txtPassword)
+        public bool DangNhap(string _userName,string _password)
         {
 
-            return DAO.User_DAO.Instance.XemChuyenBay(txtUserName,txtPassword);
+            return DAO.User_DAO.Instance.XemChuyenBay(_userName,_password);
         }
         public DataTable DangNhap1(string txtUserName, string txtPassword)
         {

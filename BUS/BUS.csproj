@@ -44,9 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChuyenBay_BUS.cs" />
+    <Compile Include="PhieuDatCho_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanBay_BUS.cs" />
     <Compile Include="TraCuu_BUS.cs" />
     <Compile Include="User_BUS.cs" />
+    <Compile Include="VeDat_BUS.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>

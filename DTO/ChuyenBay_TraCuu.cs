@@ -7,17 +7,61 @@ namespace DTO
 {
     public class ChuyenBay_TraCuu
     {
-        private static ChuyenBay_TraCuu instance;
+        private string sanBayDi;
+        private string sanBayDen;
+        private DateTime ngayKHTu;
+        private DateTime ngayKHDen;
 
-        public static ChuyenBay_TraCuu Instance
+        public string SanBayDi
         {
             get
             {
-                if (instance == null)
-                    instance = new ChuyenBay_TraCuu();
-                return instance;
+                return sanBayDi;
             }
 
+            set
+            {
+                sanBayDi = value;
+            }
+        }
+
+        public string SanBayDen
+        {
+            get
+            {
+                return sanBayDen;
+            }
+
+            set
+            {
+                sanBayDen = value;
+            }
+        }
+
+        public DateTime NgayKHTu
+        {
+            get
+            {
+                return ngayKHTu;
+            }
+
+            set
+            {
+                ngayKHTu = value;
+            }
+        }
+
+        public DateTime NgayKHDen
+        {
+            get
+            {
+                return ngayKHDen;
+            }
+
+            set
+            {
+                ngayKHDen = value;
+            }
         }
     }
 }

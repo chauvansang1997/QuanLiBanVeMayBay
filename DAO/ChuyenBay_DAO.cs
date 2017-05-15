@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using Dataprovider;
 using System.Data;
 
 namespace DAO
@@ -23,14 +22,24 @@ namespace DAO
             }
            
         }
-        public DataTable XemChuyenBay()
-        {
-            DataTable chuyenbay = new DataTable();
 
-            string query = "Select * from CHUYENBAY";
-            //Dataprovider.Dataprovider.Instance.ExcuteNonQuery();
-            chuyenbay = Dataprovider.Dataprovider.Instance.ExcuteQuery(query);
-            return chuyenbay;
+        
+
+        public List<string> LoadMaCB()
+        {
+            
+
+            string query = "Select MaChuyenBay from CHUYENBAY";
+            DataTable table= Dataprovider.Instance.ExcuteQuery(query); ;
+            //Chuyển Table thành List
+            List<string> danhSachMCB = table.AsEnumerable()
+            .Select(row =>row.Field<string>("MaChuyenBay")).ToList();
+           
+            return danhSachMCB;
+        }
+        public void NhanLichCB()
+        {
+
         }
     }
 }

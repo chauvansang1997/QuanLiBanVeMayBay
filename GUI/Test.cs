@@ -19,7 +19,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource=BUS.User_BUS.Instance.DangNhap1(txtUserName.Text,txtPassword.Text);
+            dataGridView1.DataSource=BUS.User_BUS.Instance.DangNhap(txtUserName.Text,txtPassword.Text);
         }
     }
 }

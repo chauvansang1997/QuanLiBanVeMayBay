@@ -34,7 +34,12 @@ namespace GUI
                 new DataColumn("Mã chuyến bay"),
                  new DataColumn("Ngày giờ bay"),
             });
-            //dataGridView1.DataSource
+            
+        }
+
+        private void LoadMaCB()
+        {
+
         }
     }
 }

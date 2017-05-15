@@ -12,7 +12,7 @@ namespace DTO
         private string soDT;
         private string maCB;
         private string cmnd;
-        private int Giatien;
+        private int giaTien;
         private DateTime ngayGioDat;
         private string hangVe;
 
@@ -68,16 +68,16 @@ namespace DTO
             }
         }
 
-        public int Giatien1
+        public int GiaTien
         {
             get
             {
-                return Giatien;
+                return giaTien;
             }
 
             set
             {
-                Giatien = value;
+                giaTien = value;
             }
         }
 

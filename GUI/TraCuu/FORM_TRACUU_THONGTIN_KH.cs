@@ -12,6 +12,10 @@ namespace GUI
 {
     public partial class FORM_TRACUU_THONGTIN_KH : Form
     {
+        private const int pageSize = 10;
+        private int pageNumber;
+        private int totalPage;
+
         public FORM_TRACUU_THONGTIN_KH()
         {
             InitializeComponent();

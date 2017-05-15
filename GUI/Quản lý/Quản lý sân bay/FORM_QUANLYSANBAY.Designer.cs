@@ -37,8 +37,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnTrangSau = new System.Windows.Forms.Button();
+            this.btnTrangTruoc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_1 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -136,25 +136,27 @@
             this.label3.Text = "Trang:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button5
+            // btnTrangSau
             // 
-            this.button5.BackColor = System.Drawing.Color.SandyBrown;
-            this.button5.Location = new System.Drawing.Point(127, 305);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 33);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Tiếp theo";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnTrangSau.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnTrangSau.Location = new System.Drawing.Point(127, 305);
+            this.btnTrangSau.Name = "btnTrangSau";
+            this.btnTrangSau.Size = new System.Drawing.Size(75, 33);
+            this.btnTrangSau.TabIndex = 17;
+            this.btnTrangSau.Text = "Tiếp theo";
+            this.btnTrangSau.UseVisualStyleBackColor = false;
+            this.btnTrangSau.Click += new System.EventHandler(this.btnTrangSau_Click);
             // 
-            // button3
+            // btnTrangTruoc
             // 
-            this.button3.BackColor = System.Drawing.Color.SandyBrown;
-            this.button3.Location = new System.Drawing.Point(0, 305);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 33);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Trở về";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnTrangTruoc.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnTrangTruoc.Location = new System.Drawing.Point(0, 305);
+            this.btnTrangTruoc.Name = "btnTrangTruoc";
+            this.btnTrangTruoc.Size = new System.Drawing.Size(75, 33);
+            this.btnTrangTruoc.TabIndex = 16;
+            this.btnTrangTruoc.Text = "Trở về";
+            this.btnTrangTruoc.UseVisualStyleBackColor = false;
+            this.btnTrangTruoc.Click += new System.EventHandler(this.btnTrangTruoc_Click);
             // 
             // label1
             // 
@@ -194,8 +196,8 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnTrangSau);
+            this.Controls.Add(this.btnTrangTruoc);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button4);
@@ -222,8 +224,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenSanBay;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnTrangSau;
+        private System.Windows.Forms.Button btnTrangTruoc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_1;
         private System.Windows.Forms.Button button7;

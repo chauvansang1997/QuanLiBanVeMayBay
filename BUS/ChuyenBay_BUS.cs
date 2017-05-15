@@ -25,9 +25,24 @@ namespace BUS
         {
 
         }
-        public void XemChuyenBay(DataGridView data)
+
+        public int DemSoChuyenBay(string _sanBayDi,string _sanBayDen,string, DateTime _ngayKHTu,DateTime _ngayKHDen)
         {
-            data.DataSource = ChuyenBay_DAO.Instance.XemChuyenBay();
+            return 0;
+        }
+
+        public void XemChuyenBay(DataGridView _danhsachCB,DataGridView _danhsachSBTG,int pageSize,int pageNumber)
+        {
+            //data.DataSource = ChuyenBay_DAO.Instance.XemChuyenBay(pageNumber,pageNumber);
+        }
+        public void NhanLichChuyenBay()
+        {
+
+        }
+
+        public List<string> LoadMaCB()
+        {
+            return ChuyenBay_DAO.Instance.LoadMaCB();
         }
     }
 }
