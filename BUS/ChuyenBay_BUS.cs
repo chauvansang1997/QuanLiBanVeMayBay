@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DTO;
+
 namespace BUS
 {
     public class ChuyenBay_BUS
@@ -26,19 +28,34 @@ namespace BUS
 
         }
 
-        public int DemSoChuyenBay(string _sanBayDi,string _sanBayDen,string, DateTime _ngayKHTu,DateTime _ngayKHDen)
+        
+
+        public bool NhanLichChuyenBay(string _sanBayDi,string _sanBayDen,int _giaVe,int _thoiGianBay,DateTime _ngayGioKH, List<int> _soGheCacHangVe)
         {
-            return 0;
+            ChuyenBay chuyenbay = new ChuyenBay()
+            {
+                SanBayDen = _sanBayDen,
+                SanBayDi = _sanBayDi,
+                GiaVe = _giaVe,
+                ThoiGianBay = _thoiGianBay,
+                NgayGioKH = _ngayGioKH,
+                SoGheCacHangVe = _soGheCacHangVe,
+                
+            };
+            return ChuyenBay_DAO.Instance.NhanLichCB(chuyenbay);
         }
 
-        public void XemChuyenBay(DataGridView _danhsachCB,DataGridView _danhsachSBTG,int pageSize,int pageNumber)
+        public bool ThayDoiChuyenBay(string _maChuyenBay,DateTime _ngayGioKH, List<int> _soGheCacHangVe)
         {
-            //data.DataSource = ChuyenBay_DAO.Instance.XemChuyenBay(pageNumber,pageNumber);
-        }
-        public void NhanLichChuyenBay()
-        {
+            ChuyenBay chuyenbay = new ChuyenBay()
+            {
+                NgayGioKH = _ngayGioKH,
+                SoGheCacHangVe = _soGheCacHangVe,
+            };
 
+            return ChuyenBay_DAO.Instance.ThayDoiChuyenBay(_maChuyenBay, chuyenbay);
         }
+        
 
         public List<string> LoadMaCB()
         {

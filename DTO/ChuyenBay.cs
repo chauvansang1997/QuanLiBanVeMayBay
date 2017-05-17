@@ -9,9 +9,12 @@ namespace DTO
     public class ChuyenBay
     {
         private string maCB;
+        private List<int> soGheCacHangVe;
         private string sanBayDi;
         private string sanBayDen;
-        private TimeSpan thoiGianBay;
+        private int thoiGianBay;
+        private int giaVe;
+
         private DateTime ngayGioKH;
 
 
@@ -46,7 +49,7 @@ namespace DTO
                 sanBayDen = value;
             }
         }
-        public TimeSpan ThoiGianBay
+        public int ThoiGianBay
         {
             get
             {
@@ -68,19 +71,39 @@ namespace DTO
                 ngayGioKH = value;
             }
         }
+
+      
+
+        public int GiaVe
+        {
+            get
+            {
+                return giaVe;
+            }
+
+            set
+            {
+                giaVe = value;
+            }
+        }
+
+        public List<int> SoGheCacHangVe
+        {
+            get
+            {
+                return soGheCacHangVe;
+            }
+
+            set
+            {
+                soGheCacHangVe = value;
+            }
+        }
+
         public ChuyenBay()
         {
 
         }
-        public ChuyenBay(string macb,string sanbaydi,string sanbayden,TimeSpan thoigianbay,DateTime ngaygiokh)
-        {
-            MaCB = macb;
-            SanBayDi = sanbaydi;
-            SanBayDen = sanbayden;
-            ThoiGianBay = thoigianbay;
-            NgayGioKH = ngaygiokh;
-        }
-
-       
+ 
     }
 }

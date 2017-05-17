@@ -16,5 +16,25 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void btnChangeSLSB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChangeSLTB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChangeCB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChangeSLHV_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
