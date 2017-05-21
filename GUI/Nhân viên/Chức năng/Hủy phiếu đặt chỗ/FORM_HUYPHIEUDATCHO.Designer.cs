@@ -66,7 +66,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(832, 32);
             this.label1.TabIndex = 111;
-            this.label1.Text = "HỦY VÉ CHUYẾN BAY";
+            this.label1.Text = "HỦY PHIẾU ĐẶT CHỖ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -76,9 +76,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(460, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 30);
+            this.label2.Size = new System.Drawing.Size(109, 30);
             this.label2.TabIndex = 122;
-            this.label2.Text = "Mã vé:";
+            this.label2.Text = "Mã phiếu đặt chỗ:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox1
@@ -249,7 +249,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 35);
             this.button4.TabIndex = 130;
-            this.button4.Text = "Hủy vé";
+            this.button4.Text = "Hủy";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // textBox3
@@ -289,7 +289,7 @@
             this.comboBox2.Size = new System.Drawing.Size(152, 28);
             this.comboBox2.TabIndex = 138;
             // 
-            // FORM_HUYVECB
+            // FORM_HUYPHIEUDATCHO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -314,7 +314,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "FORM_HUYVECB";
+            this.Name = "FORM_HUYPHIEUDATCHO";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

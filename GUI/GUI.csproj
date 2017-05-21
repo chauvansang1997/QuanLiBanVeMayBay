@@ -206,6 +206,9 @@
     <Compile Include="TraCuu\FORM_TRACUU_CHUYENBAY.Designer.cs">
       <DependentUpon>FORM_TRACUU_CHUYENBAY.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Nhân viên\Chức năng\Hủy phiếu đặt chỗ\FORM_HUYPHIEUDATCHO.resx">
+      <DependentUpon>FORM_HUYPHIEUDATCHO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nhân viên\Chức năng\Hủy vé\FORM_HUYVECB.resx">
       <DependentUpon>FORM_HUYVECB.cs</DependentUpon>
     </EmbeddedResource>

@@ -175,9 +175,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(52, 212);
+            this.label1.Location = new System.Drawing.Point(52, 219);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 35);
+            this.label1.Size = new System.Drawing.Size(105, 28);
             this.label1.TabIndex = 58;
             this.label1.Text = "Hạng vé:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
