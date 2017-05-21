@@ -31,20 +31,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnChangeSLSB = new System.Windows.Forms.ToolStripButton();
-            this.btnChangeSLTB = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnChangeCB = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.BackColor = System.Drawing.Color.Teal;
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(735, 32);
@@ -63,47 +63,27 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnChangeSLSB,
             this.toolStripSeparator2,
-            this.btnChangeSLTB,
             this.toolStripLabel4,
-            this.toolStripSeparator3,
-            this.btnChangeCB});
+            this.btnChangeCB,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 32);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(735, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(87, 22);
-            this.toolStripLabel1.Text = "Thay đổi giá vé";
-            // 
             // btnChangeSLSB
             // 
             this.btnChangeSLSB.Image = global::GUI.Properties.Resources.change_document;
             this.btnChangeSLSB.Name = "btnChangeSLSB";
-            this.btnChangeSLSB.Size = new System.Drawing.Size(165, 22);
-            this.btnChangeSLSB.Text = "Thay đổi số lượng sân bay";
+            this.btnChangeSLSB.Size = new System.Drawing.Size(166, 22);
+            this.btnChangeSLSB.Text = "Thay đổi quy định sân bay";
             this.btnChangeSLSB.Click += new System.EventHandler(this.btnChangeSLSB_Click);
             // 
-            // btnChangeSLTB
+            // toolStripSeparator2
             // 
-            this.btnChangeSLTB.Image = global::GUI.Properties.Resources.change_document;
-            this.btnChangeSLTB.Name = "btnChangeSLTB";
-            this.btnChangeSLTB.Size = new System.Drawing.Size(177, 22);
-            this.btnChangeSLTB.Text = "Thay đổi số lượng tuyến bay";
-            this.btnChangeSLTB.Click += new System.EventHandler(this.btnChangeSLTB_Click);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // btnChangeCB
             // 
@@ -112,6 +92,19 @@
             this.btnChangeCB.Size = new System.Drawing.Size(187, 22);
             this.btnChangeCB.Text = "Thay đổi quy định chuyến bay";
             this.btnChangeCB.Click += new System.EventHandler(this.btnChangeCB_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(87, 22);
+            this.toolStripLabel1.Text = "Thay đổi giá vé";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::GUI.Properties.Resources.change_document;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(202, 22);
+            this.toolStripButton1.Text = "Thay đổi quy định vé chuyến bay";
             // 
             // FORM_THAYDOIQUYDINH
             // 
@@ -123,6 +116,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label4);
             this.Name = "FORM_THAYDOIQUYDINH";
+            this.ShowIcon = false;
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -136,10 +130,9 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton btnChangeSLSB;
-        private System.Windows.Forms.ToolStripButton btnChangeSLTB;
         private System.Windows.Forms.ToolStripButton btnChangeCB;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

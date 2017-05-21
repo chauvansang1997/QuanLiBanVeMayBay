@@ -91,6 +91,18 @@
     <Compile Include="Quản lý\Thay đổi quy định\FORM_THAYDOICACQUYDINHCB.Designer.cs">
       <DependentUpon>FORM_THAYDOICACQUYDINHCB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\FORM_THAYDOIQUYDINHVE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\FORM_THAYDOIQUYDINHVE.Designer.cs">
+      <DependentUpon>FORM_THAYDOIQUYDINHVE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\FORM_THAYDOISANBAY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Thay đổi quy định\FORM_THAYDOISANBAY.Designer.cs">
+      <DependentUpon>FORM_THAYDOISANBAY.cs</DependentUpon>
+    </Compile>
     <Compile Include="Thông tin người dùng\FORM_DOIMATKHAU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +239,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\Thay đổi quy định\FORM_THAYDOICACQUYDINHCB.resx">
       <DependentUpon>FORM_THAYDOICACQUYDINHCB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Thay đổi quy định\FORM_THAYDOIQUYDINHVE.resx">
+      <DependentUpon>FORM_THAYDOIQUYDINHVE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Thay đổi quy định\FORM_THAYDOISANBAY.resx">
+      <DependentUpon>FORM_THAYDOISANBAY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Thông tin người dùng\FORM_DOIMATKHAU.resx">
       <DependentUpon>FORM_DOIMATKHAU.cs</DependentUpon>

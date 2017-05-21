@@ -30,6 +30,12 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCMNN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSODT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -38,12 +44,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.clSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCMNN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSODT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +76,36 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(724, 157);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // clSTT
+            // 
+            this.clSTT.HeaderText = "STT";
+            this.clSTT.Name = "clSTT";
+            // 
+            // clMaNV
+            // 
+            this.clMaNV.HeaderText = "Mã Nhân Viên";
+            this.clMaNV.Name = "clMaNV";
+            // 
+            // clTenNV
+            // 
+            this.clTenNV.HeaderText = "Tên Nhân Viên";
+            this.clTenNV.Name = "clTenNV";
+            // 
+            // clCMNN
+            // 
+            this.clCMNN.HeaderText = "CMNN";
+            this.clCMNN.Name = "clCMNN";
+            // 
+            // clSODT
+            // 
+            this.clSODT.HeaderText = "Điện Thoại";
+            this.clSODT.Name = "clSODT";
+            // 
+            // clDiaChi
+            // 
+            this.clDiaChi.HeaderText = "Địa Chỉ";
+            this.clDiaChi.Name = "clDiaChi";
             // 
             // button1
             // 
@@ -155,41 +185,10 @@
             this.label3.Text = "Trang:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // clSTT
-            // 
-            this.clSTT.HeaderText = "STT";
-            this.clSTT.Name = "clSTT";
-            // 
-            // clMaNV
-            // 
-            this.clMaNV.HeaderText = "Mã Nhân Viên";
-            this.clMaNV.Name = "clMaNV";
-            // 
-            // clTenNV
-            // 
-            this.clTenNV.HeaderText = "Tên Nhân Viên";
-            this.clTenNV.Name = "clTenNV";
-            // 
-            // clCMNN
-            // 
-            this.clCMNN.HeaderText = "CMNN";
-            this.clCMNN.Name = "clCMNN";
-            // 
-            // clSODT
-            // 
-            this.clSODT.HeaderText = "Điện Thoại";
-            this.clSODT.Name = "clSODT";
-            // 
-            // clDiaChi
-            // 
-            this.clDiaChi.HeaderText = "Địa Chỉ";
-            this.clDiaChi.Name = "clDiaChi";
-            // 
             // FORM_QUANLYNHANVIEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GUI.Properties.Resources.plane2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(724, 328);
             this.Controls.Add(this.textBox1);

@@ -18,8 +18,8 @@ namespace GUI
         public FORM_QUANLYSANBAY()
         {
             InitializeComponent();
-            KhoiTao();
-            LoadSanBay();
+           // KhoiTao();
+           // LoadSanBay();
         }
 
         private void KhoiTao()
