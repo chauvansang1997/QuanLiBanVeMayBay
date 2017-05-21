@@ -23,7 +23,7 @@ namespace GUI
 
         private void bnt_Tim_Click(object sender, EventArgs e)
         {
-            ChuyenBay_BUS.Instance.XemChuyenBay(dGVDanhSachCB, dGVDanhSachSBTG, pageSize, pageNumber);
+            //ChuyenBay_BUS.Instance.XemChuyenBay(dGVDanhSachCB, dGVDanhSachSBTG, pageSize, pageNumber);
         }
 
         private void button4_Click(object sender, EventArgs e)

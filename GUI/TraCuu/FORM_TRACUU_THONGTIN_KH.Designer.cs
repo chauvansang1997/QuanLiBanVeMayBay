@@ -55,18 +55,20 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.BackColor = System.Drawing.Color.Teal;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(996, 32);
+            this.label1.Size = new System.Drawing.Size(996, 45);
             this.label1.TabIndex = 111;
             this.label1.Text = "TRA CỨU THÔNG TIN KHÁCH HÀNG";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,7 +76,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox1.Location = new System.Drawing.Point(192, 51);
+            this.textBox1.Location = new System.Drawing.Point(192, 70);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -84,9 +86,9 @@
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(11, 51);
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(11, 70);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(144, 30);
             this.label11.TabIndex = 119;
@@ -96,7 +98,7 @@
             // txt_8
             // 
             this.txt_8.BackColor = System.Drawing.Color.LemonChiffon;
-            this.txt_8.Location = new System.Drawing.Point(557, 51);
+            this.txt_8.Location = new System.Drawing.Point(557, 70);
             this.txt_8.Multiline = true;
             this.txt_8.Name = "txt_8";
             this.txt_8.ReadOnly = true;
@@ -106,9 +108,9 @@
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(426, 51);
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(426, 70);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 30);
             this.label9.TabIndex = 116;
@@ -118,7 +120,7 @@
             // txt_6
             // 
             this.txt_6.BackColor = System.Drawing.Color.LemonChiffon;
-            this.txt_6.Location = new System.Drawing.Point(192, 110);
+            this.txt_6.Location = new System.Drawing.Point(192, 129);
             this.txt_6.Multiline = true;
             this.txt_6.Name = "txt_6";
             this.txt_6.ReadOnly = true;
@@ -128,9 +130,9 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(11, 110);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(11, 129);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(157, 30);
             this.label7.TabIndex = 114;
@@ -211,7 +213,7 @@
             // 
             // btnFind
             // 
-            this.btnFind.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnFind.BackColor = System.Drawing.Color.Teal;
             this.btnFind.ForeColor = System.Drawing.Color.White;
             this.btnFind.Location = new System.Drawing.Point(0, 173);
             this.btnFind.Name = "btnFind";
@@ -222,7 +224,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.SandyBrown;
+            this.button2.BackColor = System.Drawing.Color.Teal;
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(533, 388);
             this.button2.Name = "button2";
@@ -233,7 +235,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.SandyBrown;
+            this.button3.BackColor = System.Drawing.Color.Teal;
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(440, 388);
             this.button3.Name = "button3";
@@ -244,7 +246,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.SandyBrown;
+            this.button5.BackColor = System.Drawing.Color.Teal;
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(888, 388);
             this.button5.Name = "button5";
@@ -280,13 +282,36 @@
             this.textBox2.Text = "1";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(638, 388);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 36);
+            this.button1.TabIndex = 138;
+            this.button1.Text = "Trang cuối";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Teal;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(342, 388);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 36);
+            this.button4.TabIndex = 139;
+            this.button4.Text = "Trang đầu";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // FORM_TRACUU_THONGTIN_KH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GUI.Properties.Resources.plane2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(996, 454);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label6);
@@ -336,5 +361,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clGiaTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaCB;
         private System.Windows.Forms.DataGridViewTextBoxColumn clNgayGioBay;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
     }
 }

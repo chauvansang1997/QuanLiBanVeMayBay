@@ -1,4 +1,4 @@
-﻿namespace GUI.TraCuu
+﻿namespace GUI
 {
     partial class FORM_TRACUUTHONGTINNV
     {
@@ -44,6 +44,8 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanhKhach)).BeginInit();
@@ -61,6 +63,7 @@
             // 
             // label4
             // 
+            this.label4.BackColor = System.Drawing.Color.Teal;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
@@ -68,7 +71,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(735, 45);
             this.label4.TabIndex = 1;
-            this.label4.Text = "THÔNG TIN NHÂN VIÊN";
+            this.label4.Text = "TRA CỨU THÔNG TIN NHÂN VIÊN";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
@@ -84,8 +87,8 @@
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(21, 67);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(98, 30);
@@ -106,11 +109,11 @@
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(21, 127);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 30);
+            this.label9.Size = new System.Drawing.Size(107, 30);
             this.label9.TabIndex = 62;
             this.label9.Text = "Mã nhân viên:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,18 +121,18 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(395, 67);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(367, 67);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 30);
+            this.label7.Size = new System.Drawing.Size(147, 30);
             this.label7.TabIndex = 60;
-            this.label7.Text = "CMND:";
+            this.label7.Text = "Chứng minh nhân dân:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnFind
             // 
-            this.btnFind.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnFind.BackColor = System.Drawing.Color.Teal;
             this.btnFind.Location = new System.Drawing.Point(0, 191);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 35);
@@ -140,8 +143,8 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnThoat.Location = new System.Drawing.Point(640, 513);
+            this.btnThoat.BackColor = System.Drawing.Color.Teal;
+            this.btnThoat.Location = new System.Drawing.Point(648, 518);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 35);
             this.btnThoat.TabIndex = 0;
@@ -162,7 +165,7 @@
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.LemonChiffon;
-            this.textBox3.Location = new System.Drawing.Point(525, 127);
+            this.textBox3.Location = new System.Drawing.Point(520, 127);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -172,13 +175,13 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(395, 127);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(371, 127);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 30);
+            this.label1.Size = new System.Drawing.Size(114, 30);
             this.label1.TabIndex = 69;
-            this.label1.Text = "Điện Thoại:";
+            this.label1.Text = "Số điện thoại:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox2
@@ -219,35 +222,58 @@
             this.panel1.Size = new System.Drawing.Size(735, 45);
             this.panel1.TabIndex = 1;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Teal;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(193, 513);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 36);
+            this.button4.TabIndex = 144;
+            this.button4.Text = "Trang đầu";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(489, 513);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 36);
+            this.button1.TabIndex = 143;
+            this.button1.Text = "Trang cuối";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.SandyBrown;
+            this.button3.BackColor = System.Drawing.Color.Teal;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(302, 513);
+            this.button3.Location = new System.Drawing.Point(291, 513);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 36);
             this.button3.TabIndex = 142;
-            this.button3.Text = "Trỏ về";
+            this.button3.Text = "Trang sau";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.SandyBrown;
+            this.button2.BackColor = System.Drawing.Color.Teal;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(395, 513);
+            this.button2.Location = new System.Drawing.Point(384, 513);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 36);
             this.button2.TabIndex = 141;
-            this.button2.Text = "Tiếp theo";
+            this.button2.Text = "Trang trước";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // FORM_TRACUUTHONGTINNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GUI.Properties.Resources.plane2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(735, 560);
+            this.ClientSize = new System.Drawing.Size(735, 565);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
@@ -293,6 +319,8 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
     }

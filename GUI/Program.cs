@@ -16,7 +16,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FORM_TRACUU_CHUYENBAY());
+            Application.Run(new FORM_THAYDOICHUYENBAY());
         }
     }
 }

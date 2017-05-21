@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.TraCuu
+namespace GUI
 {
     public partial class FORM_TRACUUTHONGTINNV : Form
     {

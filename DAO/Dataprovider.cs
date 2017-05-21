@@ -23,8 +23,6 @@ namespace DAO
                     instance = new Dataprovider();
                 return instance;
             }
-
-            private set => instance = value;
         }
 
         private Dataprovider()

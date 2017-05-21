@@ -33,16 +33,16 @@ namespace GUI
 
         private void txtTenChuyenBay_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTenChuyenBay.Text))
-            {
-                errorTenChuyenBay.Icon = Properties.Resources.error_icon1;
-                errorTenChuyenBay.SetError(txtTenChuyenBay, "Tên chuyến bay rỗng");
-            }
-            else
-            {
-                errorTenChuyenBay.Icon = Properties.Resources.ok_icon;
-                errorTenChuyenBay.SetError(txtTenChuyenBay, "Ok");
-            }
+        //    if (string.IsNullOrEmpty(txtTenChuyenBay.Text))
+        //    {
+        //        errorTenChuyenBay.Icon = Properties.Resources.error_icon1;
+        //        errorTenChuyenBay.SetError(txtTenChuyenBay, "Tên chuyến bay rỗng");
+        //    }
+        //    else
+        //    {
+        //        errorTenChuyenBay.Icon = Properties.Resources.ok_icon;
+        //        errorTenChuyenBay.SetError(txtTenChuyenBay, "Ok");
+        //    }
         }
 
         private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)

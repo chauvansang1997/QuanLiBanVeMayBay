@@ -26,7 +26,7 @@ namespace GUI
         private void bnt_Find_Click(object sender, EventArgs e)
         {           
 
-            ChuyenBay_BUS.Instance.XemChuyenBay(dGVDachSanhSB, dGVSanBayTG, pageSize, pageNumber);
+            //ChuyenBay_BUS.Instance.XemChuyenBay(dGVDachSanhSB, dGVSanBayTG, pageSize, pageNumber);
         }
 
         private void btnPrevPage_Click(object sender, EventArgs e)
