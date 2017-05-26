@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Quản_lý.Thay_đổi_quy_định.Thay_đổi_các_quy_định_chung
+namespace GUI
 {
     public partial class FORM_THAYDOICACQUYDINHCB : Form
     {

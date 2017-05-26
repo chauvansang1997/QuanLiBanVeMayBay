@@ -1,4 +1,4 @@
-﻿namespace GUI.Quản_lý.Thay_đổi_quy_định
+﻿namespace GUI
 {
     partial class FORM_THAYDOIQUYDINHVE
     {
@@ -47,9 +47,9 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(437, 76);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 19);
+            this.label9.Size = new System.Drawing.Size(45, 19);
             this.label9.TabIndex = 28;
-            this.label9.Text = "Phút";
+            this.label9.Text = "Ngày";
             // 
             // label8
             // 
@@ -59,9 +59,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(437, 118);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 19);
+            this.label8.Size = new System.Drawing.Size(45, 19);
             this.label8.TabIndex = 27;
-            this.label8.Text = "Phút";
+            this.label8.Text = "Ngày";
             // 
             // textBox2
             // 
@@ -144,6 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(505, 240);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label9);

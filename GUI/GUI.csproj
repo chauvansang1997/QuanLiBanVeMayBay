@@ -139,12 +139,6 @@
     <Compile Include="Quản lý\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.Designer.cs">
       <DependentUpon>FORM_QUANLYTUYENBAY.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quản lý\Thay đổi quy định\Thay đổi giá vé\FORM_GIAVE.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Quản lý\Thay đổi quy định\Thay đổi giá vé\FORM_GIAVE.Designer.cs">
-      <DependentUpon>FORM_GIAVE.cs</DependentUpon>
-    </Compile>
     <Compile Include="Quản lý\Thay đổi quy định\FORM_THAYDOIQUYDINH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,9 +257,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\Quản lý tuyến bay\FORM_QUANLYTUYENBAY.resx">
       <DependentUpon>FORM_QUANLYTUYENBAY.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Quản lý\Thay đổi quy định\Thay đổi giá vé\FORM_GIAVE.resx">
-      <DependentUpon>FORM_GIAVE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\Thay đổi quy định\FORM_THAYDOIQUYDINH.resx">
       <DependentUpon>FORM_THAYDOIQUYDINH.cs</DependentUpon>

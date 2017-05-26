@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Nhân_viên.Thông_tin_nhân_viên
+namespace GUI
 {
     public partial class FORM_DOIMATKHAU : Form
     {

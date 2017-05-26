@@ -1,4 +1,4 @@
-﻿namespace GUI.Quản_lý.Thay_đổi_quy_định.Thay_đổi_các_quy_định_chung
+﻿namespace GUI
 {
     partial class FORM_THAYDOICACQUYDINHCB
     {
@@ -159,7 +159,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(490, 39);
             this.label5.TabIndex = 10;
-            this.label5.Text = "QUY ĐỊNH CỦA MỘT CHUYẾN BAY";
+            this.label5.Text = "QUY ĐỊNH CHUYẾN BAY";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
