@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -52,15 +53,44 @@ namespace DAO
             }
             return false;
         }
-        public List<string> LoadMSB()
+        public List<string> LoadSanBayDi()
         {
-            string query = "Select MaChuyenBay from SANBAY";
-            DataTable table = Dataprovider.Instance.ExcuteQuery(query); ;
-            //Chuyển Table thành List
-            List<string> danhSachMCB = table.AsEnumerable()
-            .Select(row => row.Field<string>("MaSanBay")).ToList();
+            
+            //Câu truy vấn
+            string query = "SELECT DISTINCT SB.TenSanBay FROM (TUYENBAY AS TB JOIN SANBAY AS SB ON TB.SanBayDi =SB.MaSanBay)";
 
-            return danhSachMCB;
+            //Lấy dữ liệu lên
+            DataTable table = Dataprovider.Instance.ExcuteQuery(query);
+
+
+            //Chuyển Table thành List gồm có tên sân bay đi  và tên sân bay đến
+            List<string> danhsachSBDi = table.AsEnumerable().ToList().ConvertAll(x => 
+                 x[0].ToString());
+            
+
+            return danhsachSBDi;
+        }
+        public List<string> LoadSanBayDen(string _sanBayDi)
+        {
+            //Câu truy vấn
+            string query = "SELECT  TB1.SanBayDen FROM(TUYENBAY AS TB1 JOIN SANBAY AS SB1  ON TB1.SanBayDi = SB1.MaSanBay) WHERE SB1.TenSanBay = @TenSanBay";
+
+            //Thêm parameter vào command tránh sql injection
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@TenSanBay",SqlDbType.NVarChar){Value= _sanBayDi }
+            };
+
+            //Lấy dữ liệu lên
+            DataTable table = Dataprovider.Instance.ExcuteQuery(query,parameters.ToArray());
+
+
+            //Chuyển Table thành List gồm có tên sân bay đi  và tên sân bay đến
+            List<string> danhsachSBDen = table.AsEnumerable().ToList().ConvertAll(x =>
+                 x[0].ToString());
+
+
+            return danhsachSBDen;
         }
     }
 }

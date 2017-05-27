@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace CalculateMonthAndYear_InCome
 {
     static class Program
     {
@@ -14,9 +14,7 @@ namespace GUI
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FORM_NHANLICHCHUYENBAY());
+            
         }
     }
 }

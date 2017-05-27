@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
 using DTO;
+using System.Data;
 
 namespace BUS
 {
@@ -30,30 +31,61 @@ namespace BUS
 
         
 
-        public bool NhanLichChuyenBay(string _sanBayDi,string _sanBayDen,int _giaVe,int _thoiGianBay,DateTime _ngayGioKH, List<int> _soGheCacHangVe)
+        public bool NhanLichChuyenBay(string _sanBayDi,string _sanBayDen,int _giaVe,int _thoiGianBay,DateTime _ngayGioKH, DataGridView _danhSachHangGhe)
         {
-            ChuyenBay chuyenbay = new ChuyenBay()
+            try
             {
-                SanBayDen = _sanBayDen,
-                SanBayDi = _sanBayDi,
-                GiaVe = _giaVe,
-                ThoiGianBay = _thoiGianBay,
-                NgayGioKH = _ngayGioKH,
-                SoGheCacHangVe = _soGheCacHangVe,
-                
-            };
-            return ChuyenBay_DAO.Instance.NhanLichCB(chuyenbay);
+                List<int> _soGheCacHangVe = new List<int>();
+
+                foreach (DataRow item in _danhSachHangGhe.Rows)
+                {
+                    _soGheCacHangVe.Add(Convert.ToInt32(item[1]));
+                }
+
+                ChuyenBay chuyenbay = new ChuyenBay()
+                {
+                    SanBayDen = _sanBayDen,
+                    SanBayDi = _sanBayDi,
+                    GiaVe = _giaVe,
+                    ThoiGianBay = _thoiGianBay,
+                    NgayGioKH = _ngayGioKH,
+                    SoGheCacHangVe = _soGheCacHangVe,
+
+                };
+                return ChuyenBay_DAO.Instance.NhanLichCB(chuyenbay);
+            }
+            catch (Exception )
+            {
+                return false;
+            }
+           
         }
 
-        public bool ThayDoiChuyenBay(string _maChuyenBay,DateTime _ngayGioKH, List<int> _soGheCacHangVe)
+        public bool ThayDoiChuyenBay(string _maChuyenBay,DateTime _ngayGioKH, DataGridView _danhSachHangGhe)
         {
-            ChuyenBay chuyenbay = new ChuyenBay()
+            try
             {
-                NgayGioKH = _ngayGioKH,
-                SoGheCacHangVe = _soGheCacHangVe,
-            };
+                List<int> _soGheCacHangVe = new List<int>();
 
-            return ChuyenBay_DAO.Instance.ThayDoiChuyenBay(_maChuyenBay, chuyenbay);
+                foreach (DataRow item in _danhSachHangGhe.Rows)
+                {
+                    _soGheCacHangVe.Add(Convert.ToInt32(item[1]));
+                }
+
+                ChuyenBay chuyenbay = new ChuyenBay()
+                {
+                    NgayGioKH = _ngayGioKH,
+                    SoGheCacHangVe = _soGheCacHangVe,
+                };
+
+                return ChuyenBay_DAO.Instance.ThayDoiChuyenBay(_maChuyenBay, chuyenbay);
+            }
+            catch (Exception)
+            {
+                return false;
+                
+            }
+            
         }
         
 

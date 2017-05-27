@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.dGVDanhSachCB = new System.Windows.Forms.DataGridView();
+            this.clMaCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clTenCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSanBayDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSanBayDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clGiaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clNgayGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clThoiGianBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -55,19 +62,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHangGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
-            this.clMaCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clTenCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSanBayDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSanBayDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clGiaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clNgayGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clThoiGianBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHangGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachCB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachSBTG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -86,11 +86,46 @@
             this.clGiaVe,
             this.clNgayGio,
             this.clThoiGianBay});
-            this.dGVDanhSachCB.Location = new System.Drawing.Point(-1, 255);
+            this.dGVDanhSachCB.Location = new System.Drawing.Point(3, 252);
             this.dGVDanhSachCB.Name = "dGVDanhSachCB";
             this.dGVDanhSachCB.RowHeadersVisible = false;
             this.dGVDanhSachCB.Size = new System.Drawing.Size(1010, 149);
             this.dGVDanhSachCB.TabIndex = 3;
+            // 
+            // clMaCB
+            // 
+            this.clMaCB.HeaderText = "Mã Chuyến Bay";
+            this.clMaCB.Name = "clMaCB";
+            // 
+            // clTenCB
+            // 
+            this.clTenCB.HeaderText = "Tên Chuyến Bay";
+            this.clTenCB.Name = "clTenCB";
+            // 
+            // clSanBayDi
+            // 
+            this.clSanBayDi.HeaderText = "Sân Bay Đi";
+            this.clSanBayDi.Name = "clSanBayDi";
+            // 
+            // clSanBayDen
+            // 
+            this.clSanBayDen.HeaderText = "Sân Bay Đến";
+            this.clSanBayDen.Name = "clSanBayDen";
+            // 
+            // clGiaVe
+            // 
+            this.clGiaVe.HeaderText = "Giá Vé";
+            this.clGiaVe.Name = "clGiaVe";
+            // 
+            // clNgayGio
+            // 
+            this.clNgayGio.HeaderText = "Ngày-Giờ bay";
+            this.clNgayGio.Name = "clNgayGio";
+            // 
+            // clThoiGianBay
+            // 
+            this.clThoiGianBay.HeaderText = "Thời Gian Bay";
+            this.clThoiGianBay.Name = "clThoiGianBay";
             // 
             // label1
             // 
@@ -351,23 +386,13 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.TenHangGhe});
+            this.TenHangGhe,
+            this.SoLuongGhe});
             this.dataGridView1.Location = new System.Drawing.Point(-2, 430);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1011, 69);
             this.dataGridView1.TabIndex = 40;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // TenHangGhe
-            // 
-            this.TenHangGhe.HeaderText = "Tên hạng ghế";
-            this.TenHangGhe.Name = "TenHangGhe";
             // 
             // button4
             // 
@@ -417,40 +442,15 @@
             this.btnPrevPage.Text = "Trang trước";
             this.btnPrevPage.UseVisualStyleBackColor = false;
             // 
-            // clMaCB
+            // TenHangGhe
             // 
-            this.clMaCB.HeaderText = "Mã Chuyến Bay";
-            this.clMaCB.Name = "clMaCB";
+            this.TenHangGhe.HeaderText = "Tên hạng ghế";
+            this.TenHangGhe.Name = "TenHangGhe";
             // 
-            // clTenCB
+            // SoLuongGhe
             // 
-            this.clTenCB.HeaderText = "Tên Chuyến Bay";
-            this.clTenCB.Name = "clTenCB";
-            // 
-            // clSanBayDi
-            // 
-            this.clSanBayDi.HeaderText = "Sân Bay Đi";
-            this.clSanBayDi.Name = "clSanBayDi";
-            // 
-            // clSanBayDen
-            // 
-            this.clSanBayDen.HeaderText = "Sân Bay Đến";
-            this.clSanBayDen.Name = "clSanBayDen";
-            // 
-            // clGiaVe
-            // 
-            this.clGiaVe.HeaderText = "Giá Vé";
-            this.clGiaVe.Name = "clGiaVe";
-            // 
-            // clNgayGio
-            // 
-            this.clNgayGio.HeaderText = "Ngày-Giờ bay";
-            this.clNgayGio.Name = "clNgayGio";
-            // 
-            // clThoiGianBay
-            // 
-            this.clThoiGianBay.HeaderText = "Thời Gian Bay";
-            this.clThoiGianBay.Name = "clThoiGianBay";
+            this.SoLuongGhe.HeaderText = "Số lượng ghế";
+            this.SoLuongGhe.Name = "SoLuongGhe";
             // 
             // FORM_THAYDOICHUYENBAY
             // 
@@ -523,8 +523,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHangGhe;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaCB;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenCB;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSanBayDi;
@@ -536,5 +534,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnPrevPage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenHangGhe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongGhe;
     }
 }

@@ -6,29 +6,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAO
+namespace Calculate_YearAndMonth_InCome
 {
-    /// <summary>
-    /// Lớp được tạo với cấu trúc singleton
-    /// </summary>
-    public class Dataprovider
+    public class DataProvider
     {
         //Chuổi kết nối với sql
-        private string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=QLBV;Integrated Security=True";
+        private string connectionString = @"Data Source=.\Sqlexpress;Initial Catalog=QLBV;Integrated Security=True";
 
-        private static Dataprovider instance;
+        private static DataProvider instance;
 
-        public static Dataprovider Instance
+        public static DataProvider Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new Dataprovider();
+                    instance = new DataProvider();
                 return instance;
             }
         }
 
-        private Dataprovider()
+        private DataProvider()
         {
 
         }
@@ -39,7 +36,7 @@ namespace DAO
         /// <param name="query">Chuỗi truy vấn được đưa xuống SQL</param>
         /// <param name="sqlparameters"> mảng SqlParameter được thêm vào command(có thể không có)</param>
         /// <returns>Phương thức trả về kiểu dũ liệu DataTable</returns>
-        public DataTable ExcuteQuery(string query,SqlParameter[] sqlparameters = null)
+        public DataTable ExcuteQuery(string query, SqlParameter[] sqlparameters = null)
         {
             DataTable table = new DataTable();
 
@@ -49,9 +46,9 @@ namespace DAO
 
                 SqlCommand command = new SqlCommand(query, con);
 
-                if(sqlparameters!=null)
+                if (sqlparameters != null)
                     command.Parameters.AddRange(sqlparameters);
-               
+
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
 
@@ -61,7 +58,7 @@ namespace DAO
                 con.Close();
             }
 
-            
+
             return table;
         }
 
@@ -72,7 +69,6 @@ namespace DAO
         /// <returns>Số dòng thành công</returns>
         public int ExcuteNonQuery(string query, SqlParameter[] sqlparameters = null)
         {
-            int temp = 0;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
@@ -81,10 +77,12 @@ namespace DAO
                 if (sqlparameters != null)
                     command.Parameters.AddRange(sqlparameters);
 
-                temp = command.ExecuteNonQuery();
 
+                int temp = command.ExecuteNonQuery();
+
+                return temp;
             }
-            return temp;
+
         }
     }
 }

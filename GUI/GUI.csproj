@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Exel handle">
+      <HintPath>..\Build\Exel handle.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceProcess" />
@@ -49,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Nhân viên\Chức năng\Hủy phiếu đặt chỗ\FORM_HUYPHIEUDATCHO.cs">
       <SubType>Form</SubType>
     </Compile>

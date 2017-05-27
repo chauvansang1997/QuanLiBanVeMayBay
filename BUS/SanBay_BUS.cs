@@ -43,9 +43,11 @@ namespace BUS
 
         }
 
-        public List<string> LoadMSB()
+        public void LoadSanBayDi(ComboBox _sanbaydi)
         {
-            return null;
+            List<string> danhsachSB = SanBay_DAO.Instance.LoadSanBayDi();
+
+            _sanbaydi.DataSource = danhsachSB;          
         }
     }
 }
