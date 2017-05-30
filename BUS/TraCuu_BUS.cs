@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using System.Data;
+
 namespace BUS
 {
     public class TraCuu_BUS
@@ -88,19 +90,28 @@ namespace BUS
         /// <summary>
         /// Tra cứu thông tin chuyến bay
         /// </summary>
-        /// <param name="_sanBayDi"></param>
-        /// <param name="_sanBayDen"></param>
-        /// <param name="_ngayKHTu"></param>
-        /// <param name="_ngayKHDen"></param>
-        /// <param name="_danhsachCB"></param>
-        /// <param name="pageSize"></param>
-        /// <param name="pageNumber"></param>
-        public void TraCuuChuyenBay(string _sanBayDi, string _sanBayDen, DateTime _ngayKHTu, DateTime _ngayKHDen,DataGridView _danhsachCB,int pageSize,int pageNumber)
+        /// <param name="_sanBayDi"> sân bay đi </param>
+        /// <param name="_sanBayDen"> sân bay đến </param>
+        /// <param name="_ngayKHTu"> ngày khởi hành từ </param>
+        /// <param name="_ngayKHDen"> ngày khởi hành đến </param>
+        /// <param name="_danhsachCB"> danh sách chuyến bay </param>
+        /// <param name="pageSize"> kích thước của một trang </param>
+        /// <param name="pageNumber"> trang hiện tại cần xuất </param>
+        public DataTable TraCuuChuyenBay(string _sanBayDi, string _sanBayDen, int pageSize, int pageNumber,DateTime? _ngayKHTu, DateTime? _ngayKHDen)
         {
             ChuyenBay_TraCuu chuyenbay = new ChuyenBay_TraCuu() { SanBayDi=_sanBayDi,SanBayDen=_sanBayDen, NgayKHTu=_ngayKHTu,NgayKHDen=_ngayKHDen};
-            _danhsachCB.DataSource = TraCuu_DAO.Instance.TraCuuChuyenBay(chuyenbay, pageSize, pageNumber);
-        }
 
+            //Bảng chứa thông tin chuyến bay và số ghế các hạng vé
+            DataTable danhSachChuyenBay= TraCuu_DAO.Instance.TraCuuChuyenBay(chuyenbay, pageSize, pageNumber);
+
+            return danhSachChuyenBay;
+        }
+        public int DemChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
+        {
+            ChuyenBay_TraCuu chuyenbay = new ChuyenBay_TraCuu() { SanBayDi=_sanBayDi,SanBayDen=_sanBayDen,NgayKHTu=_ngayKHTu,NgayKHDen=_ngayKHDen};
+
+            return TraCuu_DAO.Instance.DemSoChuyenBay(chuyenbay);
+        }
         /// <summary>
         /// Đếm số lượng chuyến bay
         /// </summary>
@@ -110,12 +121,7 @@ namespace BUS
         /// <param name="_ngayKHDen"></param>
         /// <param name="_danhsachCB"></param>
         /// <returns></returns>
-        public int DemSoChuyenBay(string _sanBayDi, string _sanBayDen, DateTime _ngayKHTu, DateTime _ngayKHDen, DataGridView _danhsachCB)
-        {
-            ChuyenBay_TraCuu chuyenbay = new ChuyenBay_TraCuu() { SanBayDi = _sanBayDi, SanBayDen = _sanBayDen, NgayKHTu = _ngayKHTu, NgayKHDen = _ngayKHDen };
-
-            return TraCuu_DAO.Instance.DemSoChuyenBay(chuyenbay);
-        }
+      
 
     }
 }

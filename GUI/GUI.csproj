@@ -328,6 +328,10 @@
       <Project>{69402fd7-7979-4978-bf69-206ae2b73a05}</Project>
       <Name>BUS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{5F251647-2E55-4960-B388-6F0F3B18E2FF}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Key-icon.png" />

@@ -1,4 +1,5 @@
 ﻿using DAO;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,9 +46,18 @@ namespace BUS
 
         public void LoadSanBayDi(ComboBox _sanbaydi)
         {
-            List<string> danhsachSB = SanBay_DAO.Instance.LoadSanBayDi();
+            List<SanBay> danhsachSBDi = SanBay_DAO.Instance.LoadSanBayDi();
 
-            _sanbaydi.DataSource = danhsachSB;          
+            _sanbaydi.DataSource = danhsachSBDi;
+            _sanbaydi.DisplayMember = "tenSanBay";
+        }
+
+        public void LoadSanBayDen(string _sanBayDi,ComboBox _sanBayDen)
+        {
+            List<SanBay> danhsachSBDen = SanBay_DAO.Instance.LoadSanBayDen(_sanBayDi);
+
+            _sanBayDen.DataSource = danhsachSBDen;
+            _sanBayDen.DisplayMember = "tenSanBay";
         }
     }
 }

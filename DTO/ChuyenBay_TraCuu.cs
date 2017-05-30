@@ -9,8 +9,8 @@ namespace DTO
     {
         private string sanBayDi;
         private string sanBayDen;
-        private DateTime ngayKHTu;
-        private DateTime ngayKHDen;
+        private DateTime? ngayKHTu;
+        private DateTime? ngayKHDen;
 
         public string SanBayDi
         {
@@ -38,7 +38,7 @@ namespace DTO
             }
         }
 
-        public DateTime NgayKHTu
+        public DateTime? NgayKHTu
         {
             get
             {
@@ -51,7 +51,7 @@ namespace DTO
             }
         }
 
-        public DateTime NgayKHDen
+        public DateTime? NgayKHDen
         {
             get
             {

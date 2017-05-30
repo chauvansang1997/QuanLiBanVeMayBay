@@ -53,32 +53,41 @@ namespace DAO
             }
             return false;
         }
-        public List<string> LoadSanBayDi()
+
+        /// <summary>
+        /// Lấy danh sách các sân bay đi
+        /// </summary>
+        /// <returns></returns>
+        public List<SanBay> LoadSanBayDi()
         {
-            
             //Câu truy vấn
-            string query = "SELECT DISTINCT SB.TenSanBay FROM (TUYENBAY AS TB JOIN SANBAY AS SB ON TB.SanBayDi =SB.MaSanBay)";
+            string query = "EXEC LOADSANBAYDI";
 
             //Lấy dữ liệu lên
             DataTable table = Dataprovider.Instance.ExcuteQuery(query);
 
-
             //Chuyển Table thành List gồm có tên sân bay đi  và tên sân bay đến
-            List<string> danhsachSBDi = table.AsEnumerable().ToList().ConvertAll(x => 
-                 x[0].ToString());
+            List<SanBay> danhsachSBDi = table.AsEnumerable().ToList().ConvertAll(x => 
+                 new SanBay(){TenSanBay=x[0].ToString(),MaSanBay=x[1].ToString()});
             
 
             return danhsachSBDi;
         }
-        public List<string> LoadSanBayDen(string _sanBayDi)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_sanBayDi"></param>
+        /// <returns></returns>
+        public List<SanBay> LoadSanBayDen(string _sanBayDi)
         {
             //Câu truy vấn
-            string query = "SELECT  TB1.SanBayDen FROM(TUYENBAY AS TB1 JOIN SANBAY AS SB1  ON TB1.SanBayDi = SB1.MaSanBay) WHERE SB1.TenSanBay = @TenSanBay";
+            string query = "EXEC LOADSANBAYDEN @SanBayDi";
 
             //Thêm parameter vào command tránh sql injection
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@TenSanBay",SqlDbType.NVarChar){Value= _sanBayDi }
+                new SqlParameter("@SanBayDi",SqlDbType.VarChar){Value= _sanBayDi }
             };
 
             //Lấy dữ liệu lên
@@ -86,8 +95,8 @@ namespace DAO
 
 
             //Chuyển Table thành List gồm có tên sân bay đi  và tên sân bay đến
-            List<string> danhsachSBDen = table.AsEnumerable().ToList().ConvertAll(x =>
-                 x[0].ToString());
+            List<SanBay> danhsachSBDen = table.AsEnumerable().ToList().ConvertAll(x =>
+                new SanBay() { TenSanBay=x[0].ToString(),MaSanBay=x[1].ToString() });
 
 
             return danhsachSBDen;
