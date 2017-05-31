@@ -206,7 +206,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(904, 56);
+            this.label4.Size = new System.Drawing.Size(904, 52);
             this.label4.TabIndex = 1;
             this.label4.Text = "GHI NHẬN ĐẶT VÉ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -217,7 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(904, 382);
+            this.ClientSize = new System.Drawing.Size(904, 372);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.comboBox2);

@@ -14,6 +14,7 @@ namespace DAO
     /// </summary>
     public class TraCuu_DAO
     {
+        
         private static TraCuu_DAO instance;
 
         /// <summary>
@@ -30,6 +31,10 @@ namespace DAO
 
         }
 
+        private TraCuu_DAO()
+        {
+
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -51,9 +56,14 @@ namespace DAO
             };
 ;
 
-            DataTable count = Dataprovider.Instance.ExcuteQuery(query,parameters.ToArray());
-
-            return count.Rows.Count;
+            try
+            {
+                return Convert.ToInt32(Dataprovider.Instance.ExcuteScalar(query, parameters.ToArray()));
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
         /// <summary>
         /// 
@@ -87,9 +97,19 @@ namespace DAO
             return dSchuyenbay;
         }
 
-        private void TraCuuSoGhe(string _maChuyenBay)
+        public DataTable TraCuuSoGhe(string _maChuyenBay)
         {
+            string query = "EXEC TRACUU_SOGHETRONG @machuyenbay";
 
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@machuyenbay",SqlDbType.VarChar){Value=_maChuyenBay},
+            };
+
+            DataTable danhsachSoGhe = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
+
+
+            return danhsachSoGhe;
         }
 
         /// <summary>
@@ -97,30 +117,20 @@ namespace DAO
         /// </summary>
         /// <param name="_maCB"></param>
         /// <returns></returns>
-        public List<SanBayTrungGian> TraCuuSanBayTG(string _maCB)
+        public DataTable TraCuuSanBayTG(string _maCB)
         {
-            DataTable _sanbayTG = new DataTable();
+            DataTable sanbayTG = new DataTable();
 
-            string query="";
+            string query= "EXEC TRACUU_SANBAYTG @maChuyenBay";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@MaCB",SqlDbType.VarChar){Value=_maCB},
+                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value=_maCB},
             };
 
-            _sanbayTG = Dataprovider.Instance.ExcuteQuery(query,parameters.ToArray());
+            sanbayTG = Dataprovider.Instance.ExcuteQuery(query,parameters.ToArray());
 
-            List<SanBayTrungGian> list_sanbayTG=new List<SanBayTrungGian>();
-            int sTT = 1;
-            foreach (var item in _sanbayTG.AsEnumerable())
-            {
-                SanBayTrungGian sanbayTG = new SanBayTrungGian() { TenSanBay = item["TenSanBay"].ToString(), STT = sTT,
-                                                                GhiChu=item["GhiChu"].ToString(), ThoiGianDung = Convert.ToInt32( item["ThoiGianDung"]) };
-                list_sanbayTG.Add(sanbayTG);
-                sTT++;
-            }
-
-            return list_sanbayTG;
+            return sanbayTG;
         }
 
         /// <summary>
@@ -134,9 +144,9 @@ namespace DAO
            
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@TenKH",SqlDbType.NVarChar){Value=_hanhKhach.Name },
-                new SqlParameter("@CMND",SqlDbType.VarChar){Value=_hanhKhach.CMND},
-                new SqlParameter("@SoDT",SqlDbType.VarChar){Value=_hanhKhach.SoDT },
+                new SqlParameter("@TenKH",SqlDbType.NVarChar){IsNullable=true,Value=_hanhKhach.Name?? (Object)DBNull.Value },
+                new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_hanhKhach.CMND?? (Object)DBNull.Value},
+                new SqlParameter("@SoDT",SqlDbType.VarChar){IsNullable=true,Value=_hanhKhach.SoDT ?? (Object)DBNull.Value},
             };
 
             DataTable danhsachKH = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
@@ -178,18 +188,21 @@ namespace DAO
         /// <returns></returns>
         public DataTable TraCuuNV(NhanVien _nhanVien,int pageSize, int pageNumber)
         {
-            string query = "";
+            string query = "EXEC sp_TimNhanVien @MaNhanVien,@TenNhanVien,@SoDT,@CMND,@pageSize,@pageNumber";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@MaNhanVien",SqlDbType.NVarChar){Value = _nhanVien.MaNV},
+                new SqlParameter("@MaNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.MaNV?? (Object)DBNull.Value},
 
-                new SqlParameter("@TenNhanVien",SqlDbType.NVarChar){Value = _nhanVien.TenNV},
+                new SqlParameter("@TenNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.TenNV?? (Object)DBNull.Value},
 
-                new SqlParameter("@CMND",SqlDbType.VarChar){Value=_nhanVien.CMND},
+                new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.CMND?? (Object)DBNull.Value},
 
-                new SqlParameter("@SoDT",SqlDbType.VarChar){Value=_nhanVien.SoDT},
+                new SqlParameter("@SoDT",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.SoDT?? (Object)DBNull.Value},
 
+                new SqlParameter("@pageSize",SqlDbType.VarChar){Value=pageSize},
+
+                new SqlParameter("@pageNumber",SqlDbType.VarChar){Value=pageNumber},
             };
 
             DataTable danhsachNV = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
@@ -205,23 +218,28 @@ namespace DAO
         public int DemSoNhanVien(NhanVien _nhanVien)
         {
 
-            string query = "";
+            string query = "EXEC DEM_NHAN_VIEN @MaNhanVien,@TenNhanVien,@SoDT,@CMND";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@MaNhanVien",SqlDbType.NVarChar){Value = _nhanVien.MaNV},
+                new SqlParameter("@MaNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.MaNV?? (Object)DBNull.Value},
 
-                new SqlParameter("@TenNhanVien",SqlDbType.NVarChar){Value = _nhanVien.TenNV},
+                new SqlParameter("@TenNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.TenNV?? (Object)DBNull.Value},
 
-                new SqlParameter("@CMND",SqlDbType.VarChar){Value=_nhanVien.CMND},
+                new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.CMND?? (Object)DBNull.Value},
 
-                new SqlParameter("@SoDT",SqlDbType.VarChar){Value=_nhanVien.SoDT},
+                new SqlParameter("@SoDT",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.SoDT?? (Object)DBNull.Value},
 
             };
-
-            DataTable count = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
-
-            return count.Rows.Count;
+            try
+            {
+                return Convert.ToInt32(Dataprovider.Instance.ExcuteScalar(query, parameters.ToArray()));
+            }
+            catch (Exception)
+            {
+                return 0;
+                
+            }       
         }
     }
 }

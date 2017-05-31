@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="CrossThreadExtensions.cs" />
     <Compile Include="ChuyenBay_BUS.cs" />
+    <Compile Include="NhanVien_BUS.cs" />
     <Compile Include="PhieuDatCho_BUS.cs" />
+    <Compile Include="HelpFuction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanBay_BUS.cs" />
     <Compile Include="Test_BUS.cs" />

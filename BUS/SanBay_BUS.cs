@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,9 +30,9 @@ namespace BUS
         {
 
         }
-        public void XemSanBay(DataGridView data,int _page,int _pageSize)
+        public DataTable XemSanBay(DataGridView data,int _page,int _pageSize)
         {
-            data.DataSource = SanBay_DAO.Instance.XemSanBay(_page,_pageSize);
+            return SanBay_DAO.Instance.XemSanBay(_page,_pageSize);
         }
       
         public void ThemSanBay(string _sanBayDen,string _sanBayDi)

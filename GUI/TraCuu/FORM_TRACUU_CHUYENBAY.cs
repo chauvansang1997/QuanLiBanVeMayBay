@@ -26,6 +26,7 @@ namespace GUI
             this.Icon = Properties.Resources.Search_icon1;
             pageNumber = 1;
             dGVDachSanhCB.SelectionChanged += DGVDachSanhCB_SelectionChanged;
+
         }
 
         /// <summary>
@@ -37,44 +38,57 @@ namespace GUI
         private void DGVDachSanhCB_SelectionChanged(object sender, EventArgs e)
         {
             DataGridView dataGV = sender as DataGridView;
-            if (dataGV.SelectedRows != null)
+
+
+
+            if (dataGV.SelectedRows.Count == 0)
             {
+
+                dGVDSHangGhe.DataSource = TraCuu_BUS.Instance.TraCuuSoGhe("");
+                dGVSanBayTG.DataSource = TraCuu_BUS.Instance.TraCuuSBTG("");
+            }
+            if (dataGV.SelectedRows.Count > 0)
+            {
+                dGVDSHangGhe.Columns.Clear();
+                dGVDSHangGhe.DataSource = TraCuu_BUS.Instance.TraCuuSoGhe(dataGV.SelectedRows[0].Cells[0].Value.ToString());
+
+                ThreadPool.QueueUserWorkItem((p) =>
+                {
+                    dGVSanBayTG.PerformSafely(() =>
+                    {
+                        dGVSanBayTG.Columns.Clear();
+                        dGVSanBayTG.DataSource = TraCuu_BUS.Instance.TraCuuSBTG(dataGV.SelectedRows[0].Cells[0].Value.ToString());
+                    });
+                });
 
             }
         }
+
+
 
         private void bnt_Find_Click(object sender, EventArgs e)
         {
             isClick = true;
             string sanbaydi = cmbSanBayDi.Text;
             string sanbayden = cmbSanBayDen.Text;
-            DateTime ngayKHTu =  dtPKNgayKHTu.Value;
+            DateTime ngayKHTu = dtPKNgayKHTu.Value;
             DateTime ngayKHDen = dtPKNgayKhDen.Value;
-            ThreadPool.QueueUserWorkItem((p) =>
-            {
-                totalPage = TraCuu_BUS.Instance.DemChuyenBay(sanbaydi, sanbayden, ngayKHTu, ngayKHDen);
-                if (totalPage == 0)
-                {
-                    txtTotalPage.PerformSafely(() =>
-                    {
-                        txtTotalPage.Text = "1";
-                    });
 
-                }
-                else
-                {
-                    txtTotalPage.PerformSafely(()=>{
-                        txtTotalPage.Text = totalPage.ToString();
-                    });
+            totalPage = TraCuu_BUS.Instance.DemChuyenBay(sanbaydi, sanbayden, ngayKHTu, ngayKHDen);
 
-                }
-            });
+            totalPage=HelpFuction.TinhKichThuocTrang(totalPage,pageSize);
+
+            pageNumber = 1;
+            txtPageNumber.Text = pageNumber.ToString();
+
+
+            txtTotalPage.Text = totalPage.ToString();
            
             //dGVDachSanhCB.Columns.Clear();
-            dGVDachSanhCB.DataSource= TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text,cmbSanBayDen.Text, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+            dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, ngayKHTu, ngayKHDen);
         }
 
-   
+
         /// <summary>
         /// Sự kiện nhấn vào trang đầu
         /// </summary>
@@ -82,7 +96,16 @@ namespace GUI
         /// <param name="e"></param>
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
-
+            pageNumber = 1;
+            txtPageNumber.Text = pageNumber.ToString();
+            if (isClick)
+            {
+                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+            }
+            else
+            {
+                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+            }
         }
         /// <summary>
         /// Sự kiện nhấn vào trang cuối
@@ -91,7 +114,16 @@ namespace GUI
         /// <param name="e"></param>
         private void btnLastPage_Click(object sender, EventArgs e)
         {
-
+            pageNumber = totalPage;
+            txtPageNumber.Text = pageNumber.ToString();
+            if (isClick)
+            {
+                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+            }
+            else
+            {
+                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+            }
         }
         /// <summary>
         /// Sự kiện nhấn vào trang trước
@@ -100,7 +132,7 @@ namespace GUI
         /// <param name="e"></param>
         private void btnPrevPage_Click(object sender, EventArgs e)
         {
-            if (pageNumber - 1 == 0 )
+            if (pageNumber - 1 == 0)
             {
                 pageNumber = 1;
             }
@@ -108,6 +140,7 @@ namespace GUI
             {
                 --pageNumber;
             }
+            txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
                 dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
@@ -132,6 +165,7 @@ namespace GUI
             {
                 ++pageNumber;
             }
+            txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
                 dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
@@ -142,7 +176,7 @@ namespace GUI
             }
         }
 
-       
+
 
         //Sự kiện load form
         private void FORM_TRACUU_CHUYENBAY_Load(object sender, EventArgs e)
@@ -150,26 +184,16 @@ namespace GUI
             SanBay_BUS.Instance.LoadSanBayDi(cmbSanBayDi);
             string sanbaydi = cmbSanBayDi.Text;
             string sanbayden = cmbSanBayDen.Text;
-            ThreadPool.QueueUserWorkItem((p) => {
-                
-                totalPage = TraCuu_BUS.Instance.DemChuyenBay(null,null , null, null);
-                if (totalPage == 0)
-                {
-                    txtTotalPage.PerformSafely(() =>
-                    {
-                        txtTotalPage.Text = "1";
-                    });
-                }
-                else
-                {
-                    txtTotalPage.PerformSafely(() =>
-                    {
-                        txtTotalPage.Text = totalPage.ToString();
-                    });
-                   
-                }
-            });
-            dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber,null,null);
+
+            totalPage = TraCuu_BUS.Instance.DemChuyenBay(null, null, null, null);
+
+            totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
+
+
+            txtTotalPage.Text = totalPage.ToString();
+
+
+            dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
         }
         //Sự kiện khi thay đổi chọn giá trị trong sân bay đi
         private void cmbSanBayDi_SelectedIndexChanged(object sender, EventArgs e)
@@ -180,14 +204,38 @@ namespace GUI
                 if (combobox.SelectedItem != null)
                 {
                     SanBay sanbay = combobox.SelectedItem as SanBay;
-                    
+
                     SanBay_BUS.Instance.LoadSanBayDen(sanbay.MaSanBay, cmbSanBayDen);
                 }
 
             }
-            
+
         }
 
+        private void txtPageNumber_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToUInt32(txtPageNumber.Text) <= totalPage)
+                {
+                    pageNumber = (int)Convert.ToUInt32(txtPageNumber.Text);
 
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+
+                txtPageNumber.Text = pageNumber.ToString();
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

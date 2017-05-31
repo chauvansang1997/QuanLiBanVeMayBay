@@ -86,5 +86,28 @@ namespace DAO
             }
             return temp;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="sqlparameters"></param>
+        /// <returns></returns>
+        public object ExcuteScalar(string query, SqlParameter[] sqlparameters = null)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand(query, con);
+
+                if (sqlparameters != null)
+                    command.Parameters.AddRange(sqlparameters);
+
+
+                object temp = command.ExecuteScalar();
+
+                return temp;
+            }
+        }
     }
 }

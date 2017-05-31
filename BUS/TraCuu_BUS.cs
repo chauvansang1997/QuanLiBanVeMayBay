@@ -35,10 +35,10 @@ namespace BUS
         /// <param name="_danhSachNV"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageNumber"></param>
-        public void TraCuuNhanVien(string _tenNV,string _cmnd,string _maNV,string _soDT,DataGridView _danhSachNV,int pageSize, int pageNumber)
+        public DataTable TraCuuNhanVien(string _tenNV,string _cmnd,string _maNV,string _soDT,int pageSize, int pageNumber)
         {
             NhanVien nhanvien = new NhanVien(_tenNV,_maNV,_cmnd,_soDT);
-
+            return TraCuu_DAO.Instance.TraCuuNV(nhanvien, pageSize, pageNumber);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace BUS
         /// <param name="_soDT"></param>
         /// <param name="_danhSachNV"></param>
         /// <returns></returns>
-        public int DemSoNhanVien(string _tenNV, string _cmnd, string _maNV, string _soDT, DataGridView _danhSachNV)
+        public int DemSoNhanVien(string _tenNV, string _cmnd, string _maNV, string _soDT)
         {
             NhanVien nhanvien = new NhanVien(_tenNV, _maNV, _cmnd, _soDT);
 
@@ -106,12 +106,6 @@ namespace BUS
 
             return danhSachChuyenBay;
         }
-        public int DemChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
-        {
-            ChuyenBay_TraCuu chuyenbay = new ChuyenBay_TraCuu() { SanBayDi=_sanBayDi,SanBayDen=_sanBayDen,NgayKHTu=_ngayKHTu,NgayKHDen=_ngayKHDen};
-
-            return TraCuu_DAO.Instance.DemSoChuyenBay(chuyenbay);
-        }
         /// <summary>
         /// Đếm số lượng chuyến bay
         /// </summary>
@@ -119,9 +113,22 @@ namespace BUS
         /// <param name="_sanBayDen"></param>
         /// <param name="_ngayKHTu"></param>
         /// <param name="_ngayKHDen"></param>
-        /// <param name="_danhsachCB"></param>
         /// <returns></returns>
-      
+        public int DemChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
+        {
+            ChuyenBay_TraCuu chuyenbay = new ChuyenBay_TraCuu() { SanBayDi=_sanBayDi,SanBayDen=_sanBayDen,NgayKHTu=_ngayKHTu,NgayKHDen=_ngayKHDen};
+
+            return TraCuu_DAO.Instance.DemSoChuyenBay(chuyenbay);
+        }
+        public DataTable TraCuuSoGhe(string _maChyenBay)
+        {
+           return TraCuu_DAO.Instance.TraCuuSoGhe(_maChyenBay);
+        }
+        
+        public DataTable TraCuuSBTG(string _maChuyenBay)
+        {
+            return TraCuu_DAO.Instance.TraCuuSanBayTG(_maChuyenBay);
+        }
 
     }
 }
