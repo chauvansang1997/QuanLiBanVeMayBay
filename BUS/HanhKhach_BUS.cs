@@ -46,5 +46,6 @@ namespace BUS
 
             return HanhKhach_DAO.Instance.DemSoHanhKhach(hanhkhach);
         }
+
     }
 }

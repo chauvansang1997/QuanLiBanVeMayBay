@@ -16,7 +16,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FORM_TRACUUTHONGTINNV());
+            Application.Run(new FORM_TRACUU_THONGTIN_KH());
         }
     }
 }

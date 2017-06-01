@@ -55,11 +55,11 @@ namespace DAO
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@TenHanhKhach",SqlDbType.NVarChar){Value=_hanhKhach.Name},
+                new SqlParameter("@TenHanhKhach",SqlDbType.NVarChar){IsNullable=true,Value=_hanhKhach.Name?? (Object)DBNull.Value},
 
-                new SqlParameter("@CMND",SqlDbType.VarChar){Value=_hanhKhach.CMND},
+                new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_hanhKhach.CMND?? (Object)DBNull.Value},
 
-                new SqlParameter("@SoDienThoai",SqlDbType.VarChar){Value=_hanhKhach.SoDT},
+                new SqlParameter("@SoDienThoai",SqlDbType.VarChar){IsNullable=true,Value=_hanhKhach.SoDT?? (Object)DBNull.Value},
 
             };
 

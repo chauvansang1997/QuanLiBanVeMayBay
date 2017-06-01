@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAO;
+using DTO;
+
 namespace BUS
 {
     public class NhanVien_BUS
@@ -35,6 +37,12 @@ namespace BUS
             AutoCompleteStringCollection data = new AutoCompleteStringCollection();
             data.AddRange(temp.ToArray());
             _nhanvien.AutoCompleteCustomSource = data;
+        }
+        public int DemSoNhanVien(string _tenNV, string _cmnd, string _maNV, string _soDT)
+        {
+            NhanVien nhanvien = new NhanVien(_tenNV, _maNV, _cmnd, _soDT);
+
+            return NhanVien_DAO.Instance.DemSoNhanVien(nhanvien);
         }
 
     }

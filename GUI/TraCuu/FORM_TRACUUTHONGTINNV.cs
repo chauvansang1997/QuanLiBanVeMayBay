@@ -49,7 +49,7 @@ namespace GUI
         {
             isClick = true;
 
-            totalPage = TraCuu_BUS.Instance.DemSoNhanVien(cmbTenNV.Text, txtCMND.Text,txtMaNhanVien.Text,txtSoDT.Text);
+            totalPage = NhanVien_BUS.Instance.DemSoNhanVien(cmbTenNV.Text, txtCMND.Text,txtMaNhanVien.Text,txtSoDT.Text);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 
@@ -172,7 +172,7 @@ namespace GUI
         private void FORM_TRACUUTHONGTINNV_Load(object sender, EventArgs e)
         {
 
-            totalPage = TraCuu_BUS.Instance.DemSoNhanVien(null, null, null, null);
+            totalPage = NhanVien_BUS.Instance.DemSoNhanVien(null, null, null, null);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 

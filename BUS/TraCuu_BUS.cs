@@ -50,13 +50,7 @@ namespace BUS
         /// <param name="_soDT"></param>
         /// <param name="_danhSachNV"></param>
         /// <returns></returns>
-        public int DemSoNhanVien(string _tenNV, string _cmnd, string _maNV, string _soDT)
-        {
-            NhanVien nhanvien = new NhanVien(_tenNV, _maNV, _cmnd, _soDT);
-
-            return NhanVien_DAO.Instance.DemSoNhanVien(nhanvien);
-        }
-
+       
         /// <summary>
         /// Tra cứu thông tin hành khách
         /// </summary>
@@ -81,12 +75,7 @@ namespace BUS
         /// <param name="_soDT"></param>
         /// <param name="_danhsachKH"></param>
         /// <returns></returns>
-        public int DemSoHanhKhach(string _tenNV, string _cmnd, string _soDT, DataGridView _danhsachKH)
-        {
-            HanhKhach hanhkhach = new HanhKhach() { Name = _tenNV, CMND = _cmnd, SoDT = _soDT };
-
-            return HanhKhach_DAO.Instance.DemSoHanhKhach(hanhkhach);
-        }
+      
 
         /// <summary>
         /// Tra cứu thông tin chuyến bay
@@ -115,12 +104,7 @@ namespace BUS
         /// <param name="_ngayKHTu"></param>
         /// <param name="_ngayKHDen"></param>
         /// <returns></returns>
-        public int DemChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
-        {
-            ChuyenBay_TraCuu chuyenbay = new ChuyenBay_TraCuu() { SanBayDi=_sanBayDi,SanBayDen=_sanBayDen,NgayKHTu=_ngayKHTu,NgayKHDen=_ngayKHDen};
-
-            return ChuyenBay_DAO.Instance.DemSoChuyenBay(chuyenbay);
-        }
+      
         public DataTable TraCuuSoGhe(string _maChyenBay)
         {
            return TraCuu_DAO.Instance.TraCuuSoGhe(_maChyenBay);

@@ -74,7 +74,7 @@ namespace GUI
             DateTime ngayKHTu = dtPKNgayKHTu.Value;
             DateTime ngayKHDen = dtPKNgayKhDen.Value;
 
-            totalPage = TraCuu_BUS.Instance.DemChuyenBay(sanbaydi, sanbayden, ngayKHTu, ngayKHDen);
+            totalPage = ChuyenBay_BUS.Instance.DemChuyenBay(sanbaydi, sanbayden, ngayKHTu, ngayKHDen);
 
             totalPage=HelpFuction.TinhKichThuocTrang(totalPage,pageSize);
 
@@ -184,7 +184,7 @@ namespace GUI
             SanBay_BUS.Instance.LoadSanBayDi(cmbSanBayDi);
            
 
-            totalPage = TraCuu_BUS.Instance.DemChuyenBay(null, null, null, null);
+            totalPage = ChuyenBay_BUS.Instance.DemChuyenBay(null, null, null, null);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 

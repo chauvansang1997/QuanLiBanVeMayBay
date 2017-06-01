@@ -17,11 +17,15 @@ namespace GUI
         {
             InitializeComponent();
             
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtTenHanhKhach.Text == "")
+            {
 
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

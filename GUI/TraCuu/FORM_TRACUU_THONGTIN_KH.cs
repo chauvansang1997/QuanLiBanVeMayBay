@@ -21,7 +21,8 @@ namespace GUI
         public FORM_TRACUU_THONGTIN_KH()
         {
             InitializeComponent();
-            
+            this.Icon = Properties.Resources.Search_icon1;
+            pageNumber = 1;
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -45,27 +46,114 @@ namespace GUI
 
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
-
+            pageNumber = 1;
+            txtPageNumber.Text = pageNumber.ToString();
+            if (isClick)
+            {
+                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+            }
+            else
+            {
+                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+            }
         }
 
         private void btnPrevPage_Click(object sender, EventArgs e)
         {
-
+            if (pageNumber - 1 == 0)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                --pageNumber;
+            }
+            txtPageNumber.Text = pageNumber.ToString();
+            if (isClick)
+            {
+                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+            }
+            else
+            {
+                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+            }
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)
         {
-
+            if (pageNumber + 1 > totalPage)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                ++pageNumber;
+            }
+            txtPageNumber.Text = pageNumber.ToString();
+            if (isClick)
+            {
+                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+            }
+            else
+            {
+                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+            }
         }
 
         private void btnLastPage_Click(object sender, EventArgs e)
         {
-
+            pageNumber = totalPage;
+            txtPageNumber.Text = pageNumber.ToString();
+            if (isClick)
+            {
+                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+            }
+            else
+            {
+                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+            }
         }
 
         private void dGVDanhSachHK_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtPageNumber_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToUInt32(txtPageNumber.Text) <= totalPage)
+                {
+                    pageNumber = (int)Convert.ToUInt32(txtPageNumber.Text);
+
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+
+                txtPageNumber.Text = pageNumber.ToString();
+            }
+        }
+
+        private void FORM_TRACUU_THONGTIN_KH_Load(object sender, EventArgs e)
+        {
+            HanhKhach_BUS.Instance.LoadHanhKhach(cmbTenHK);
+
+
+            totalPage = HanhKhach_BUS.Instance.DemHanhKhach(null, null, null);
+
+            totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
+
+
+            txtTotalPage.Text = totalPage.ToString();
+
+            dGVDanhSachHK.Columns.Clear();
+            dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
         }
     }
 }

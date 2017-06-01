@@ -35,16 +35,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dGVDanhSachHK = new System.Windows.Forms.DataGridView();
-            this.clMaHK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clHanhKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCMNN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clMaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clHangVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clGiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clMaCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clNgayGioBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
@@ -57,6 +47,12 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.cmbTenHK = new System.Windows.Forms.ComboBox();
+            this.clMaHK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clHanhKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCMNN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clMaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clGiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachHK)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,12 +115,8 @@
             this.clHanhKhach,
             this.clCMNN,
             this.clDT,
-            this.clDiaChi,
             this.clMaVe,
-            this.clHangVe,
-            this.clGiaTien,
-            this.clMaCB,
-            this.clNgayGioBay});
+            this.clGiaTien});
             this.dGVDanhSachHK.Location = new System.Drawing.Point(0, 232);
             this.dGVDanhSachHK.Name = "dGVDanhSachHK";
             this.dGVDanhSachHK.RowHeadersVisible = false;
@@ -132,56 +124,6 @@
             this.dGVDanhSachHK.Size = new System.Drawing.Size(996, 214);
             this.dGVDanhSachHK.TabIndex = 124;
             this.dGVDanhSachHK.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDanhSachHK_CellEnter);
-            // 
-            // clMaHK
-            // 
-            this.clMaHK.HeaderText = "Mã hành khách";
-            this.clMaHK.Name = "clMaHK";
-            // 
-            // clHanhKhach
-            // 
-            this.clHanhKhach.HeaderText = "Tên hành khách";
-            this.clHanhKhach.Name = "clHanhKhach";
-            // 
-            // clCMNN
-            // 
-            this.clCMNN.HeaderText = "CMND";
-            this.clCMNN.Name = "clCMNN";
-            // 
-            // clDT
-            // 
-            this.clDT.HeaderText = "Điện thoại";
-            this.clDT.Name = "clDT";
-            // 
-            // clDiaChi
-            // 
-            this.clDiaChi.HeaderText = "Địa chỉ";
-            this.clDiaChi.Name = "clDiaChi";
-            // 
-            // clMaVe
-            // 
-            this.clMaVe.HeaderText = "Mã vé";
-            this.clMaVe.Name = "clMaVe";
-            // 
-            // clHangVe
-            // 
-            this.clHangVe.HeaderText = "Hạng vé";
-            this.clHangVe.Name = "clHangVe";
-            // 
-            // clGiaTien
-            // 
-            this.clGiaTien.HeaderText = "Giá tiền";
-            this.clGiaTien.Name = "clGiaTien";
-            // 
-            // clMaCB
-            // 
-            this.clMaCB.HeaderText = "Mã chuyến bay";
-            this.clMaCB.Name = "clMaCB";
-            // 
-            // clNgayGioBay
-            // 
-            this.clNgayGioBay.HeaderText = "Ngày giờ bay";
-            this.clNgayGioBay.Name = "clNgayGioBay";
             // 
             // txtPageNumber
             // 
@@ -191,6 +133,7 @@
             this.txtPageNumber.TabIndex = 136;
             this.txtPageNumber.Text = "1";
             this.txtPageNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPageNumber.TextChanged += new System.EventHandler(this.txtPageNumber_TextChanged);
             // 
             // label6
             // 
@@ -318,6 +261,36 @@
             this.cmbTenHK.Size = new System.Drawing.Size(195, 23);
             this.cmbTenHK.TabIndex = 155;
             // 
+            // clMaHK
+            // 
+            this.clMaHK.HeaderText = "Mã hành khách";
+            this.clMaHK.Name = "clMaHK";
+            // 
+            // clHanhKhach
+            // 
+            this.clHanhKhach.HeaderText = "Tên hành khách";
+            this.clHanhKhach.Name = "clHanhKhach";
+            // 
+            // clCMNN
+            // 
+            this.clCMNN.HeaderText = "CMND";
+            this.clCMNN.Name = "clCMNN";
+            // 
+            // clDT
+            // 
+            this.clDT.HeaderText = "Điện thoại";
+            this.clDT.Name = "clDT";
+            // 
+            // clMaVe
+            // 
+            this.clMaVe.HeaderText = "Mã vé";
+            this.clMaVe.Name = "clMaVe";
+            // 
+            // clGiaTien
+            // 
+            this.clGiaTien.HeaderText = "Giá tiền";
+            this.clGiaTien.Name = "clGiaTien";
+            // 
             // FORM_TRACUU_THONGTIN_KH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +315,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Name = "FORM_TRACUU_THONGTIN_KH";
+            this.Load += new System.EventHandler(this.FORM_TRACUU_THONGTIN_KH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachHK)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -358,16 +332,6 @@
         private System.Windows.Forms.TextBox txtPageNumber;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTotalPage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clMaHK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clHanhKhach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clCMNN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clDiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clMaVe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clHangVe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clGiaTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clMaCB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clNgayGioBay;
         private System.Windows.Forms.TextBox txtSoDT;
         private System.Windows.Forms.TextBox txtCMND;
         private System.Windows.Forms.Button btnFirstPage;
@@ -377,5 +341,11 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.ComboBox cmbTenHK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clMaHK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clHanhKhach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clCMNN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clMaVe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clGiaTien;
     }
 }

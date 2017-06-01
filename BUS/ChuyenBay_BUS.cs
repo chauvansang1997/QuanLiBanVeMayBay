@@ -93,5 +93,11 @@ namespace BUS
         {
             return ChuyenBay_DAO.Instance.LoadMaCB();
         }
+        public int DemChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
+        {
+            ChuyenBay_TraCuu chuyenbay = new ChuyenBay_TraCuu() { SanBayDi = _sanBayDi, SanBayDen = _sanBayDen, NgayKHTu = _ngayKHTu, NgayKHDen = _ngayKHDen };
+
+            return ChuyenBay_DAO.Instance.DemSoChuyenBay(chuyenbay);
+        }
     }
 }
