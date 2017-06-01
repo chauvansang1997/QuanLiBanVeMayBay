@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,16 +16,55 @@ namespace GUI
         private const int pageSize = 10;
         private int pageNumber;
         private int totalPage;
+        private bool isClick;
 
         public FORM_TRACUU_THONGTIN_KH()
         {
             InitializeComponent();
-            AddColumns();
+            
         }
 
-        private void AddColumns()
+        private void btnFind_Click(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
+
+            isClick = true;
+
+            totalPage = HanhKhach_BUS.Instance.DemHanhKhach(cmbTenHK.Text,txtSoDT.Text,txtCMND.Text);
+
+            totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
+
+            pageNumber = 1;
+            txtPageNumber.Text = pageNumber.ToString();
+
+           
+            txtTotalPage.Text = totalPage.ToString();
+
+            //dGVDachSanhCB.Columns.Clear();
+            dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text,pageSize,pageNumber);
+        }
+
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrevPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dGVDanhSachHK_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

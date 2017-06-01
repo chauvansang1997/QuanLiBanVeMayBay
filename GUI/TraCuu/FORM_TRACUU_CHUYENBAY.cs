@@ -27,6 +27,7 @@ namespace GUI
             pageNumber = 1;
             dGVDachSanhCB.SelectionChanged += DGVDachSanhCB_SelectionChanged;
 
+
         }
 
         /// <summary>
@@ -34,7 +35,6 @@ namespace GUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void DGVDachSanhCB_SelectionChanged(object sender, EventArgs e)
         {
             DataGridView dataGV = sender as DataGridView;
@@ -182,8 +182,7 @@ namespace GUI
         private void FORM_TRACUU_CHUYENBAY_Load(object sender, EventArgs e)
         {
             SanBay_BUS.Instance.LoadSanBayDi(cmbSanBayDi);
-            string sanbaydi = cmbSanBayDi.Text;
-            string sanbayden = cmbSanBayDen.Text;
+           
 
             totalPage = TraCuu_BUS.Instance.DemChuyenBay(null, null, null, null);
 

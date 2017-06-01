@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,5 +43,36 @@ namespace DAO
             return danhsachNV;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_nhanVien"></param>
+        /// <returns></returns>
+        public int DemSoNhanVien(NhanVien _nhanVien)
+        {
+
+            string query = "EXEC DEM_NHAN_VIEN @MaNhanVien,@TenNhanVien,@SoDT,@CMND";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@MaNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.MaNV?? (Object)DBNull.Value},
+
+                new SqlParameter("@TenNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.TenNV?? (Object)DBNull.Value},
+
+                new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.CMND?? (Object)DBNull.Value},
+
+                new SqlParameter("@SoDT",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.SoDT?? (Object)DBNull.Value},
+
+            };
+            try
+            {
+                return Convert.ToInt32(Dataprovider.Instance.ExcuteScalar(query, parameters.ToArray()));
+            }
+            catch (Exception)
+            {
+                return 0;
+
+            }
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace BUS
         {
             NhanVien nhanvien = new NhanVien(_tenNV, _maNV, _cmnd, _soDT);
 
-            return TraCuu_DAO.Instance.DemSoNhanVien(nhanvien);
+            return NhanVien_DAO.Instance.DemSoNhanVien(nhanvien);
         }
 
         /// <summary>
@@ -66,10 +66,11 @@ namespace BUS
         /// <param name="_danhsachKH"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageNumber"></param>
-        public void TraCuuHanhKhach(string _tenNV, string _cmnd, string _soDT, DataGridView _danhsachKH, int pageSize, int pageNumber)
+        public DataTable TraCuuHanhKhach(string _tenNV, string _cmnd, string _soDT, int pageSize, int pageNumber)
         {
             HanhKhach hanhkhach = new HanhKhach() { Name=_tenNV,CMND=_cmnd,SoDT=_soDT};
-            _danhsachKH.DataSource = TraCuu_DAO.Instance.TraCuuHK(hanhkhach,pageSize,pageNumber);
+
+            return TraCuu_DAO.Instance.TraCuuHK(hanhkhach,pageSize,pageNumber);
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace BUS
         {
             HanhKhach hanhkhach = new HanhKhach() { Name = _tenNV, CMND = _cmnd, SoDT = _soDT };
 
-            return TraCuu_DAO.Instance.DemSoHanhKhach(hanhkhach);
+            return HanhKhach_DAO.Instance.DemSoHanhKhach(hanhkhach);
         }
 
         /// <summary>
@@ -118,7 +119,7 @@ namespace BUS
         {
             ChuyenBay_TraCuu chuyenbay = new ChuyenBay_TraCuu() { SanBayDi=_sanBayDi,SanBayDen=_sanBayDen,NgayKHTu=_ngayKHTu,NgayKHDen=_ngayKHDen};
 
-            return TraCuu_DAO.Instance.DemSoChuyenBay(chuyenbay);
+            return ChuyenBay_DAO.Instance.DemSoChuyenBay(chuyenbay);
         }
         public DataTable TraCuuSoGhe(string _maChyenBay)
         {

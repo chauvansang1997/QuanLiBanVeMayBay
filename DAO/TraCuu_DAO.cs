@@ -35,36 +35,7 @@ namespace DAO
         {
 
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="chuyenbay"></param>
-        /// <returns></returns>
-        public int DemSoChuyenBay(ChuyenBay_TraCuu chuyenbay)
-        {
-            string query = "EXEC DEM_CHUYENBAY @SanBayDi,@SanBayDen,@NgayKHTu,@NgayKHDen";
-
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@SanBayDi",SqlDbType.NVarChar){IsNullable=true,Value=chuyenbay.SanBayDi??(Object)DBNull.Value},
-
-                new SqlParameter("@SanBayDen",SqlDbType.NVarChar){IsNullable=true,Value=chuyenbay.SanBayDen??(Object)DBNull.Value},
-
-                new SqlParameter("@NgayKHTu",SqlDbType.DateTime){  IsNullable=true, Value = chuyenbay.NgayKHTu ??(Object)DBNull.Value},
-
-                new SqlParameter("@NgayKHDen",SqlDbType.DateTime){IsNullable=true, Value = chuyenbay.NgayKHDen ??(Object)DBNull.Value},
-            };
-;
-
-            try
-            {
-                return Convert.ToInt32(Dataprovider.Instance.ExcuteScalar(query, parameters.ToArray()));
-            }
-            catch (Exception)
-            {
-                return 0;
-            }
-        }
+       
         /// <summary>
         /// 
         /// </summary>
@@ -154,30 +125,7 @@ namespace DAO
             return danhsachKH;
         }  
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="_hanhKhach"></param>
-        /// <returns></returns>
-        public int DemSoHanhKhach(HanhKhach _hanhKhach)
-        {
-
-            string query = "";
-
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@SanBayDi",SqlDbType.NVarChar){Value=_hanhKhach.Name},
-
-                new SqlParameter("@SanBayDen",SqlDbType.VarChar){Value=_hanhKhach.CMND},
-
-                new SqlParameter("@NgayKHTu",SqlDbType.VarChar){Value=_hanhKhach.SoDT},
-
-            };
-
-            DataTable count = Dataprovider.Instance.ExcuteQuery(query,parameters.ToArray());
-
-            return count.Rows.Count;
-        }
+        
 
         /// <summary>
         /// 
@@ -210,36 +158,6 @@ namespace DAO
             return danhsachNV;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="_nhanVien"></param>
-        /// <returns></returns>
-        public int DemSoNhanVien(NhanVien _nhanVien)
-        {
-
-            string query = "EXEC DEM_NHAN_VIEN @MaNhanVien,@TenNhanVien,@SoDT,@CMND";
-
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@MaNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.MaNV?? (Object)DBNull.Value},
-
-                new SqlParameter("@TenNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.TenNV?? (Object)DBNull.Value},
-
-                new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.CMND?? (Object)DBNull.Value},
-
-                new SqlParameter("@SoDT",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.SoDT?? (Object)DBNull.Value},
-
-            };
-            try
-            {
-                return Convert.ToInt32(Dataprovider.Instance.ExcuteScalar(query, parameters.ToArray()));
-            }
-            catch (Exception)
-            {
-                return 0;
-                
-            }       
-        }
+       
     }
 }
