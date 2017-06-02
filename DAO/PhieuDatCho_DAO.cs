@@ -23,7 +23,11 @@ namespace DAO
             }
 
         }
-
+        /// <summary>
+        /// Lập phiếu đặt chỗ
+        /// </summary>
+        /// <param name="_phieudatcho"></param>
+        /// <returns></returns>
         public bool LapPhieuDatCho(PhieuDatCho _phieudatcho)
         {
 
@@ -67,7 +71,11 @@ namespace DAO
 
             
         }
-
+        /// <summary>
+        /// Hủy phiếu đặt chỗ
+        /// </summary>
+        /// <param name="_maPhieuDatCho">mã phiếu đặt chỗ</param>
+        /// <returns></returns>
         public bool HuyPhieuDatCho(string _maPhieuDatCho)
         {
             string query = "";
@@ -94,7 +102,11 @@ namespace DAO
            
 
         }
-
+        /// <summary>
+        /// Dếm số phiếu đặt chỗ hiện tại
+        /// </summary>
+        /// <param name="_phieudatcho"></param>
+        /// <returns></returns>
         public int DemPhieuDatCho(PhieuDatCho _phieudatcho)
         {
             string query = "";
@@ -118,6 +130,62 @@ namespace DAO
             catch (Exception)
             {
                 return 0;
+            }
+        }
+
+        /// <summary>
+        /// Load phiếu đặt chỗ
+        /// </summary>
+        /// <returns></returns>
+        public List<string> LoadPhieuDatCho()
+        {
+            string query = "SELECT MaPhieuDatCho FROM PHIEUDATCHO";
+
+            try
+            {
+                DataTable table = Dataprovider.Instance.ExcuteQuery(query);
+
+                return  table.AsEnumerable().ToList().ConvertAll(x => x[0].ToString());
+
+            }
+            catch (Exception)
+            {
+                return null;
+                
+            }
+       
+        }
+        /// <summary>
+        /// Tra cứu phiếu đặt chỗ
+        /// </summary>
+        /// <param name="_phieuDatCho"></param>
+        /// <returns></returns>
+        public DataTable TraCuuPhieuDatCho(PhieuDatCho _phieuDatCho,int pageSize,int pageNumber)
+        {
+            string query = "SELECT * FROM PHIEUDATCHO";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@tenHanhKhach",SqlDbType.NVarChar){IsNullable=true,Value=_phieuDatCho.TenHanhKhach??(Object)DBNull.Value},
+
+                new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_phieuDatCho.CMND??(Object)DBNull.Value},
+
+                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){IsNullable=true,Value=_phieuDatCho.MaCB??(Object)DBNull.Value},
+
+                new SqlParameter("@maPhieuDatCho",SqlDbType.VarChar){IsNullable=true,Value=_phieuDatCho.MaPhieuDatCho??(Object)DBNull.Value},
+
+                new SqlParameter("@pageSize",SqlDbType.Int){Value=pageSize},
+
+                new SqlParameter("@pageNumber",SqlDbType.Int){Value=pageNumber},
+            };
+            //Tránh lỗi kết nối cơ sở dữ liệu
+            try
+            {
+                return Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
+            }
+            catch (Exception)
+            {
+                return null;              
             }
         }
     }

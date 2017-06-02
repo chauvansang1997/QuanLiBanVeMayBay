@@ -39,11 +39,11 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbMaCB = new System.Windows.Forms.ComboBox();
             this.cmbPhieuDC = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
@@ -184,14 +184,14 @@
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // textBox3
+            // txtPageNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(47, 242);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(37, 20);
-            this.textBox3.TabIndex = 136;
-            this.textBox3.Text = "1";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPageNumber.Location = new System.Drawing.Point(47, 242);
+            this.txtPageNumber.Name = "txtPageNumber";
+            this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
+            this.txtPageNumber.TabIndex = 136;
+            this.txtPageNumber.Text = "1";
+            this.txtPageNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -221,15 +221,15 @@
             this.cmbPhieuDC.Size = new System.Drawing.Size(189, 23);
             this.cmbPhieuDC.TabIndex = 138;
             // 
-            // textBox2
+            // txtTotalPage
             // 
-            this.textBox2.Location = new System.Drawing.Point(84, 242);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(37, 20);
-            this.textBox2.TabIndex = 139;
-            this.textBox2.Text = "1";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTotalPage.Location = new System.Drawing.Point(84, 242);
+            this.txtTotalPage.Name = "txtTotalPage";
+            this.txtTotalPage.ReadOnly = true;
+            this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
+            this.txtTotalPage.TabIndex = 139;
+            this.txtTotalPage.Text = "1";
+            this.txtTotalPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnLastPage
             // 
@@ -307,10 +307,10 @@
             this.Controls.Add(this.btnFirstPage);
             this.Controls.Add(this.btnPrevPage);
             this.Controls.Add(this.btnNextPage);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtTotalPage);
             this.Controls.Add(this.cmbPhieuDC);
             this.Controls.Add(this.cmbMaCB);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPageNumber);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnThoat);
@@ -325,6 +325,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "FORM_HUYPHIEUDATCHO";
+            this.Load += new System.EventHandler(this.FORM_HUYPHIEUDATCHO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVDSPDC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -344,11 +345,11 @@
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPageNumber;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbMaCB;
         private System.Windows.Forms.ComboBox cmbPhieuDC;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTotalPage;
         private System.Windows.Forms.Button btnLastPage;
         private System.Windows.Forms.Button btnFirstPage;
         private System.Windows.Forms.Button btnPrevPage;

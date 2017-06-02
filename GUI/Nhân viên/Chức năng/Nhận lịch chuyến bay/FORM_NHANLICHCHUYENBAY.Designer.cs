@@ -55,9 +55,9 @@
             this.clTenSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dGVSanBayTG = new System.Windows.Forms.DataGridView();
             this.dgvDanhSachGhe = new System.Windows.Forms.DataGridView();
+            this.cmbSanBayDen = new Custom.MyComboBox();
             this.TenHangGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbSanBayDen = new Custom.MyComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenChuyenBay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSanBayDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNgayGio)).BeginInit();
@@ -217,7 +217,7 @@
             // 
             this.label10.BackColor = System.Drawing.Color.Teal;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(12, 324);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(674, 21);
@@ -229,6 +229,7 @@
             // 
             this.dGVChuyenBayThem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVChuyenBayThem.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dGVChuyenBayThem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVChuyenBayThem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVChuyenBayThem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clSTT1,
@@ -253,7 +254,7 @@
             // 
             this.label11.BackColor = System.Drawing.Color.Teal;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(773, 66);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(337, 20);
@@ -273,7 +274,7 @@
             // 
             this.label9.BackColor = System.Drawing.Color.Teal;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(12, 236);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(674, 21);
@@ -300,6 +301,7 @@
             // 
             this.dGVSanBayTG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVSanBayTG.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dGVSanBayTG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVSanBayTG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVSanBayTG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clTenSanBay,
@@ -313,8 +315,13 @@
             // 
             // dgvDanhSachGhe
             // 
+            this.dgvDanhSachGhe.AllowUserToAddRows = false;
+            this.dgvDanhSachGhe.AllowUserToDeleteRows = false;
+            this.dgvDanhSachGhe.AllowUserToResizeColumns = false;
+            this.dgvDanhSachGhe.AllowUserToResizeRows = false;
             this.dgvDanhSachGhe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachGhe.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgvDanhSachGhe.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDanhSachGhe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachGhe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TenHangGhe,
@@ -324,16 +331,6 @@
             this.dgvDanhSachGhe.RowHeadersVisible = false;
             this.dgvDanhSachGhe.Size = new System.Drawing.Size(674, 67);
             this.dgvDanhSachGhe.TabIndex = 112;
-            // 
-            // TenHangGhe
-            // 
-            this.TenHangGhe.HeaderText = "Tên hạng ghế";
-            this.TenHangGhe.Name = "TenHangGhe";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số lượng ghế";
-            this.SoLuong.Name = "SoLuong";
             // 
             // cmbSanBayDen
             // 
@@ -362,6 +359,16 @@
             this.cmbSanBayDen.Name = "cmbSanBayDen";
             this.cmbSanBayDen.Size = new System.Drawing.Size(162, 27);
             this.cmbSanBayDen.TabIndex = 113;
+            // 
+            // TenHangGhe
+            // 
+            this.TenHangGhe.HeaderText = "Tên hạng vé";
+            this.TenHangGhe.Name = "TenHangGhe";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số lượng ghế";
+            this.SoLuong.Name = "SoLuong";
             // 
             // FORM_NHANLICHCHUYENBAY
             // 
@@ -432,8 +439,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clGhiChu;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSTT1;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaCB;
+        private Custom.MyComboBox cmbSanBayDen;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenHangGhe;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private Custom.MyComboBox cmbSanBayDen;
     }
 }

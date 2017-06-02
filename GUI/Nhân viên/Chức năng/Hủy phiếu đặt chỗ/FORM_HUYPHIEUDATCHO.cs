@@ -14,7 +14,9 @@ namespace GUI
     public partial class FORM_HUYPHIEUDATCHO : Form
     {
         private const int pageSize = 10;
+
         private int pageNumber;
+
         private int totalPage;
 
         private bool isClick = false;
@@ -32,7 +34,7 @@ namespace GUI
             isClick = true;
 
 
-            totalPage = PhieuDatCho_BUS.Instance.Dem;
+            totalPage = PhieuDatCho_BUS.Instance.DemPhieuDatCho(txtTenHK.Text,txtCMND.Text,cmbPhieuDC.Text,cmbMaCB.Text);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 
@@ -43,20 +45,21 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
             //dGVDachSanhCB.Columns.Clear();
-            dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+            dGVDSPDC.DataSource = PhieuDatCho_BUS.Instance.TraCuuPhieuDatCho(txtTenHK.Text, txtCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text,pageSize,pageNumber);
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
             txtPageNumber.Text = pageNumber.ToString();
+
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDSPDC.DataSource = PhieuDatCho_BUS.Instance.TraCuuPhieuDatCho(txtTenHK.Text, txtCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDSPDC.DataSource = PhieuDatCho_BUS.Instance.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -73,11 +76,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDSPDC.DataSource = PhieuDatCho_BUS.Instance.TraCuuPhieuDatCho(txtTenHK.Text, txtCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDSPDC.DataSource = PhieuDatCho_BUS.Instance.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -94,11 +97,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDSPDC.DataSource = PhieuDatCho_BUS.Instance.TraCuuPhieuDatCho(txtTenHK.Text, txtCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDSPDC.DataSource = PhieuDatCho_BUS.Instance.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -108,22 +111,39 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDSPDC.DataSource = PhieuDatCho_BUS.Instance.TraCuuPhieuDatCho(txtTenHK.Text, txtCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDSPDC.DataSource = PhieuDatCho_BUS.Instance.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
             }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FORM_HUYPHIEUDATCHO_Load(object sender, EventArgs e)
+        {
+            cmbPhieuDC.DataSource = PhieuDatCho_BUS.Instance.LoadPhieuDatCho();
+
+            cmbMaCB.DataSource =  ChuyenBay_BUS.Instance.LoadMaCB();
+
+            totalPage = PhieuDatCho_BUS.Instance.DemPhieuDatCho(null, null, null, null);
+
+            totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
+
+
+            txtTotalPage.Text = totalPage.ToString();
+
+
+            dGVDSPDC.DataSource = PhieuDatCho_BUS.Instance.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
         }
     }
 }
