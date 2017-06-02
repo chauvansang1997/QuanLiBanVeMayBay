@@ -125,19 +125,19 @@ namespace DAO
         /// </summary>
         /// <param name="chuyenbay"></param>
         /// <returns></returns>
-        public int DemSoChuyenBay(ChuyenBay_TraCuu chuyenbay)
+        public int DemSoChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
         {
             string query = "EXEC DEM_CHUYENBAY @SanBayDi,@SanBayDen,@NgayKHTu,@NgayKHDen";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@SanBayDi",SqlDbType.NVarChar){IsNullable=true,Value=chuyenbay.SanBayDi??(Object)DBNull.Value},
+                new SqlParameter("@SanBayDi",SqlDbType.NVarChar){IsNullable=true,Value=_sanBayDi??(Object)DBNull.Value},
 
-                new SqlParameter("@SanBayDen",SqlDbType.NVarChar){IsNullable=true,Value=chuyenbay.SanBayDen??(Object)DBNull.Value},
+                new SqlParameter("@SanBayDen",SqlDbType.NVarChar){IsNullable=true,Value=_sanBayDen??(Object)DBNull.Value},
 
-                new SqlParameter("@NgayKHTu",SqlDbType.DateTime){  IsNullable=true, Value = chuyenbay.NgayKHTu ??(Object)DBNull.Value},
+                new SqlParameter("@NgayKHTu",SqlDbType.DateTime){  IsNullable=true, Value = _ngayKHTu ??(Object)DBNull.Value},
 
-                new SqlParameter("@NgayKHDen",SqlDbType.DateTime){IsNullable=true, Value = chuyenbay.NgayKHDen ??(Object)DBNull.Value},
+                new SqlParameter("@NgayKHDen",SqlDbType.DateTime){IsNullable=true, Value =_ngayKHDen ??(Object)DBNull.Value},
             };
             ;
 
@@ -149,6 +149,73 @@ namespace DAO
             {
                 return 0;
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="chuyenbay"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="pageNumber"></param>
+        /// <returns></returns>
+        public DataTable TraCuuChuyenBay(string SanBayDi, string SanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen, int pageSize, int pageNumber)
+        {
+            string query = "EXEC TRACUU_CHUYENBAY @SanBayDi,@SanBayDen,@ngayKHTu,@NgayKHDen,@pageSize,@pageNumber";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@SanBayDi",SqlDbType.NVarChar){IsNullable=true,Value=SanBayDi??(Object)DBNull.Value},
+
+                new SqlParameter("@SanBayDen",SqlDbType.NVarChar){IsNullable=true,Value=SanBayDen??(Object)DBNull.Value},
+
+                new SqlParameter("@NgayKHTu",SqlDbType.DateTime){  IsNullable=true, Value = _ngayKHTu ??(Object)DBNull.Value},
+
+                new SqlParameter("@NgayKHDen",SqlDbType.DateTime){IsNullable=true, Value = _ngayKHDen ??(Object)DBNull.Value},
+
+                new SqlParameter("@pageSize",SqlDbType.Int){Value=pageSize},
+
+                new SqlParameter("@pageNumber",SqlDbType.Int){Value=pageNumber},
+            };
+
+            DataTable dSchuyenbay = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
+
+
+            return dSchuyenbay;
+        }
+        public DataTable TraCuuSoGhe(string _maChuyenBay)
+        {
+            string query = "EXEC TRACUU_SOGHETRONG @machuyenbay";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@machuyenbay",SqlDbType.VarChar){Value=_maChuyenBay},
+            };
+
+            DataTable danhsachSoGhe = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
+
+
+            return danhsachSoGhe;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_maCB"></param>
+        /// <returns></returns>
+        public DataTable TraCuuSanBayTG(string _maCB)
+        {
+            DataTable sanbayTG = new DataTable();
+
+            string query = "EXEC TRACUU_SANBAYTG @maChuyenBay";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value=_maCB},
+            };
+
+            sanbayTG = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
+
+            return sanbayTG;
         }
     }
 }

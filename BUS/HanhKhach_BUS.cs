@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,20 @@ namespace BUS
 
             return HanhKhach_DAO.Instance.DemSoHanhKhach(hanhkhach);
         }
+        /// <summary>
+        /// Tra cứu thông tin hành khách
+        /// </summary>
+        /// <param name="_tenNV"></param>
+        /// <param name="_cmnd"></param>
+        /// <param name="_soDT"></param>
+        /// <param name="_danhsachKH"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="pageNumber"></param>
+        public DataTable TraCuuHanhKhach(string _tenNV, string _cmnd, string _soDT, int pageSize, int pageNumber)
+        {
+            HanhKhach hanhkhach = new HanhKhach() { Name = _tenNV, CMND = _cmnd, SoDT = _soDT };
 
+            return HanhKhach_DAO.Instance.TraCuuHK(hanhkhach, pageSize, pageNumber);
+        }
     }
 }

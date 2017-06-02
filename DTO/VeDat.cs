@@ -13,7 +13,6 @@ namespace DTO
         private string maCB;
         private string cmnd;
         private int giaTien;
-        private DateTime ngayGioDat;
         private string hangVe;
 
         public string TenHanhKhach
@@ -81,18 +80,6 @@ namespace DTO
             }
         }
 
-        public DateTime NgayGioDat
-        {
-            get
-            {
-                return ngayGioDat;
-            }
-
-            set
-            {
-                ngayGioDat = value;
-            }
-        }
 
         public string HangVe
         {

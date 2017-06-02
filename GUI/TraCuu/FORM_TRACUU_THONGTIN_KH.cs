@@ -41,7 +41,7 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
             //dGVDachSanhCB.Columns.Clear();
-            dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text,pageSize,pageNumber);
+            dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text,pageSize,pageNumber);
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
@@ -50,11 +50,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -71,11 +71,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -92,11 +92,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -106,11 +106,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -153,7 +153,7 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
             dGVDanhSachHK.Columns.Clear();
-            dGVDanhSachHK.DataSource = TraCuu_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+            dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
         }
     }
 }

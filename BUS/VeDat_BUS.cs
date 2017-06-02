@@ -23,9 +23,9 @@ namespace BUS
 
         }
 
-        public bool GhiNhanDatVe(string _tenHanhKhach, string _soDT, string _maCB,string _cmnd, int _giatien,DateTime _ngayGioDat,string _hangVe)
+        public bool GhiNhanDatVe(string _tenHanhKhach, string _soDT, string _maCB,string _cmnd, int _giatien,string _hangVe)
         {
-            VeDat vetdat = new VeDat() { TenHanhKhach=_tenHanhKhach,CMND=_cmnd,GiaTien=_giatien,HangVe=_hangVe,MaCB=_maCB,NgayGioDat=_ngayGioDat,SoDT=_soDT};
+            VeDat vetdat = new VeDat() { TenHanhKhach=_tenHanhKhach,CMND=_cmnd,GiaTien=_giatien,HangVe=_hangVe,MaCB=_maCB,SoDT=_soDT};
 
             return VeDat_DAO.Instance.GhiNhanDatVe(vetdat);
         }

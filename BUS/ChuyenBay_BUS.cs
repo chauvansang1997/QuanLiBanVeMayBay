@@ -95,9 +95,55 @@ namespace BUS
         }
         public int DemChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
         {
-            ChuyenBay_TraCuu chuyenbay = new ChuyenBay_TraCuu() { SanBayDi = _sanBayDi, SanBayDen = _sanBayDen, NgayKHTu = _ngayKHTu, NgayKHDen = _ngayKHDen };
+       
 
-            return ChuyenBay_DAO.Instance.DemSoChuyenBay(chuyenbay);
+            return ChuyenBay_DAO.Instance.DemSoChuyenBay( _sanBayDi,  _sanBayDen,  _ngayKHTu, _ngayKHDen);
         }
+
+        /// <summary>
+        /// Tra cứu thông tin chuyến bay
+        /// </summary>
+        /// <param name="_sanBayDi"> sân bay đi </param>
+        /// <param name="_sanBayDen"> sân bay đến </param>
+        /// <param name="_ngayKHTu"> ngày khởi hành từ </param>
+        /// <param name="_ngayKHDen"> ngày khởi hành đến </param>
+        /// <param name="_danhsachCB"> danh sách chuyến bay </param>
+        /// <param name="pageSize"> kích thước của một trang </param>
+        /// <param name="pageNumber"> trang hiện tại cần xuất </param>
+        public DataTable TraCuuChuyenBay(string _sanBayDi, string _sanBayDen, int pageSize, int pageNumber, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
+        {
+
+
+            //Bảng chứa thông tin chuyến bay và số ghế các hạng vé
+            DataTable danhSachChuyenBay = ChuyenBay_DAO.Instance.TraCuuChuyenBay(_sanBayDi, _sanBayDen, _ngayKHTu, _ngayKHDen, pageSize, pageNumber);
+
+            return danhSachChuyenBay;
+        }
+
+        /// <summary>
+        /// Đếm số lượng chuyến bay
+        /// </summary>
+        /// <param name="_sanBayDi"></param>
+        /// <param name="_sanBayDen"></param>
+        /// <param name="_ngayKHTu"></param>
+        /// <param name="_ngayKHDen"></param>
+        /// <returns></returns>
+
+        public DataTable TraCuuSoGhe(string _maChyenBay)
+        {
+            return ChuyenBay_DAO.Instance.TraCuuSoGhe(_maChyenBay);
+        }
+
+        public DataTable TraCuuSBTG(string _maChuyenBay)
+        {
+            return ChuyenBay_DAO.Instance.TraCuuSanBayTG(_maChuyenBay);
+        }
+
+
+        public bool HuyChuyenBay(string _maChyenBay)
+        {
+            return ChuyenBay_DAO.Instance.HuyChuyenBay(_maChyenBay);
+        }
+
     }
 }

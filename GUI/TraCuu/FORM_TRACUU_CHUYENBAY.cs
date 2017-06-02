@@ -44,20 +44,20 @@ namespace GUI
             if (dataGV.SelectedRows.Count == 0)
             {
 
-                dGVDSHangGhe.DataSource = TraCuu_BUS.Instance.TraCuuSoGhe("");
-                dGVSanBayTG.DataSource = TraCuu_BUS.Instance.TraCuuSBTG("");
+                dGVDSHangGhe.DataSource = ChuyenBay_BUS.Instance.TraCuuSoGhe("");
+                dGVSanBayTG.DataSource = ChuyenBay_BUS.Instance.TraCuuSBTG("");
             }
             if (dataGV.SelectedRows.Count > 0)
             {
                 dGVDSHangGhe.Columns.Clear();
-                dGVDSHangGhe.DataSource = TraCuu_BUS.Instance.TraCuuSoGhe(dataGV.SelectedRows[0].Cells[0].Value.ToString());
+                dGVDSHangGhe.DataSource = ChuyenBay_BUS.Instance.TraCuuSoGhe(dataGV.SelectedRows[0].Cells[0].Value.ToString());
 
                 ThreadPool.QueueUserWorkItem((p) =>
                 {
                     dGVSanBayTG.PerformSafely(() =>
                     {
                         dGVSanBayTG.Columns.Clear();
-                        dGVSanBayTG.DataSource = TraCuu_BUS.Instance.TraCuuSBTG(dataGV.SelectedRows[0].Cells[0].Value.ToString());
+                        dGVSanBayTG.DataSource = ChuyenBay_BUS.Instance.TraCuuSBTG(dataGV.SelectedRows[0].Cells[0].Value.ToString());
                     });
                 });
 
@@ -85,7 +85,7 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
            
             //dGVDachSanhCB.Columns.Clear();
-            dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+            dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, ngayKHTu, ngayKHDen);
         }
 
 
@@ -100,11 +100,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
             }
             else
             {
-                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
             }
         }
         /// <summary>
@@ -118,11 +118,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
             }
             else
             {
-                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
             }
         }
         /// <summary>
@@ -143,11 +143,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
             }
             else
             {
-                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
             }
         }
         /// <summary>
@@ -168,11 +168,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
             }
             else
             {
-                dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
             }
         }
 
@@ -192,7 +192,7 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
 
-            dGVDachSanhCB.DataSource = TraCuu_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+            dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
         }
         //Sự kiện khi thay đổi chọn giá trị trong sân bay đi
         private void cmbSanBayDi_SelectedIndexChanged(object sender, EventArgs e)

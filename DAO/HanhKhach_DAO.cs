@@ -74,5 +74,33 @@ namespace DAO
 
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_hanhKhach"></param>
+        /// <returns></returns>
+        public DataTable TraCuuHK(HanhKhach _hanhKhach, int pageSize, int pageNumber)
+        {
+            string query = "EXEC sp_TimHanhKhach @TenKH,@CMND,@SoDT,@pageSize,@pageNumber";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@TenKH",SqlDbType.NVarChar){IsNullable=true,Value=_hanhKhach.Name?? (Object)DBNull.Value },
+
+                new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_hanhKhach.CMND?? (Object)DBNull.Value},
+
+                new SqlParameter("@SoDT",SqlDbType.VarChar){IsNullable=true,Value=_hanhKhach.SoDT ?? (Object)DBNull.Value},
+
+
+                new SqlParameter("@pageSize",SqlDbType.VarChar){Value=pageSize},
+
+                new SqlParameter("@pageNumber",SqlDbType.VarChar){Value=pageNumber},
+            };
+
+            DataTable danhsachKH = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
+
+            return danhsachKH;
+        }
+
     }
 }

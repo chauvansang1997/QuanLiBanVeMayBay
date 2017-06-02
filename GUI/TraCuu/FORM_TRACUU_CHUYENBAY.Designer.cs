@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,16 +53,16 @@
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dGVDSHangGhe = new System.Windows.Forms.DataGridView();
+            this.TenHangGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoGheDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.btnFirstPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.dGVDachSanhCB = new System.Windows.Forms.DataGridView();
-            this.TenHangGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoGheDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVSanBayTG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDSHangGhe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDachSanhCB)).BeginInit();
@@ -130,14 +130,14 @@
             this.clTenSanBay,
             this.clThoiGianDung,
             this.clGhiChu});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVSanBayTG.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVSanBayTG.DefaultCellStyle = dataGridViewCellStyle1;
             this.dGVSanBayTG.Location = new System.Drawing.Point(-1, 567);
             this.dGVSanBayTG.MultiSelect = false;
             this.dGVSanBayTG.Name = "dGVSanBayTG";
@@ -331,14 +331,14 @@
             this.SoGheDat,
             this.SoGhe,
             this.GiaVe});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVDSHangGhe.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVDSHangGhe.DefaultCellStyle = dataGridViewCellStyle2;
             this.dGVDSHangGhe.Location = new System.Drawing.Point(0, 434);
             this.dGVDSHangGhe.MultiSelect = false;
             this.dGVDSHangGhe.Name = "dGVDSHangGhe";
@@ -347,6 +347,30 @@
             this.dGVDSHangGhe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDSHangGhe.Size = new System.Drawing.Size(962, 101);
             this.dGVDSHangGhe.TabIndex = 38;
+            // 
+            // TenHangGhe
+            // 
+            this.TenHangGhe.HeaderText = "Tên hạng vé";
+            this.TenHangGhe.Name = "TenHangGhe";
+            this.TenHangGhe.ReadOnly = true;
+            // 
+            // SoGheDat
+            // 
+            this.SoGheDat.HeaderText = "Số ghế đặt";
+            this.SoGheDat.Name = "SoGheDat";
+            this.SoGheDat.ReadOnly = true;
+            // 
+            // SoGhe
+            // 
+            this.SoGhe.HeaderText = "Số lượng ghế trống";
+            this.SoGhe.Name = "SoGhe";
+            this.SoGhe.ReadOnly = true;
+            // 
+            // GiaVe
+            // 
+            this.GiaVe.HeaderText = "Giá Vé";
+            this.GiaVe.Name = "GiaVe";
+            this.GiaVe.ReadOnly = true;
             // 
             // label10
             // 
@@ -423,14 +447,14 @@
             this.dGVDachSanhCB.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dGVDachSanhCB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dGVDachSanhCB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVDachSanhCB.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVDachSanhCB.DefaultCellStyle = dataGridViewCellStyle3;
             this.dGVDachSanhCB.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dGVDachSanhCB.Location = new System.Drawing.Point(0, 258);
             this.dGVDachSanhCB.MultiSelect = false;
@@ -440,30 +464,6 @@
             this.dGVDachSanhCB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDachSanhCB.Size = new System.Drawing.Size(962, 147);
             this.dGVDachSanhCB.TabIndex = 44;
-            // 
-            // TenHangGhe
-            // 
-            this.TenHangGhe.HeaderText = "Tên hạng vé";
-            this.TenHangGhe.Name = "TenHangGhe";
-            this.TenHangGhe.ReadOnly = true;
-            // 
-            // SoGheDat
-            // 
-            this.SoGheDat.HeaderText = "Số ghế đặt";
-            this.SoGheDat.Name = "SoGheDat";
-            this.SoGheDat.ReadOnly = true;
-            // 
-            // SoGhe
-            // 
-            this.SoGhe.HeaderText = "Số lượng ghế trống";
-            this.SoGhe.Name = "SoGhe";
-            this.SoGhe.ReadOnly = true;
-            // 
-            // GiaVe
-            // 
-            this.GiaVe.HeaderText = "Giá Vé";
-            this.GiaVe.Name = "GiaVe";
-            this.GiaVe.ReadOnly = true;
             // 
             // FORM_TRACUU_CHUYENBAY
             // 

@@ -41,8 +41,6 @@ namespace DAO
 
                 new SqlParameter("@GiaTien",System.Data.SqlDbType.Int){Value =_vedat.GiaTien},
 
-                new SqlParameter("@NgayDat",System.Data.SqlDbType.DateTime){Value =_vedat.NgayGioDat},
-
                 new SqlParameter("@HangVe",System.Data.SqlDbType.VarChar){Value =_vedat.TenHanhKhach},
 
             };

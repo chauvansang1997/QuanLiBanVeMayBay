@@ -45,7 +45,15 @@
             this.txtGiaVe = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errTenHanhKhach = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorCMND = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorSoDT = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorMaCB = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorHangVe = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errTenHanhKhach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCMND)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorSoDT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMaCB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorHangVe)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -65,9 +73,10 @@
             this.txtCMND.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtCMND.Location = new System.Drawing.Point(646, 85);
             this.txtCMND.Name = "txtCMND";
-            this.txtCMND.ReadOnly = true;
             this.txtCMND.Size = new System.Drawing.Size(227, 22);
             this.txtCMND.TabIndex = 41;
+            this.txtCMND.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
+            this.txtCMND.Leave += new System.EventHandler(this.txtCMND_Leave);
             // 
             // label9
             // 
@@ -86,9 +95,10 @@
             this.txtSoDT.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtSoDT.Location = new System.Drawing.Point(204, 145);
             this.txtSoDT.Name = "txtSoDT";
-            this.txtSoDT.ReadOnly = true;
             this.txtSoDT.Size = new System.Drawing.Size(227, 22);
             this.txtSoDT.TabIndex = 45;
+            this.txtSoDT.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
+            this.txtSoDT.Leave += new System.EventHandler(this.txtSoDT_Leave);
             // 
             // label10
             // 
@@ -145,9 +155,10 @@
             this.txtTenHanhKhach.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtTenHanhKhach.Location = new System.Drawing.Point(204, 85);
             this.txtTenHanhKhach.Name = "txtTenHanhKhach";
-            this.txtTenHanhKhach.ReadOnly = true;
             this.txtTenHanhKhach.Size = new System.Drawing.Size(227, 22);
             this.txtTenHanhKhach.TabIndex = 57;
+            this.txtTenHanhKhach.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
+            this.txtTenHanhKhach.Leave += new System.EventHandler(this.txtTenHanhKhach_Leave);
             // 
             // label1
             // 
@@ -181,6 +192,8 @@
             this.cmbHangVe.Name = "cmbHangVe";
             this.cmbHangVe.Size = new System.Drawing.Size(227, 28);
             this.cmbHangVe.TabIndex = 116;
+            this.cmbHangVe.TextChanged += new System.EventHandler(this.cmbMaChuyenBay_TextChanged);
+            this.cmbHangVe.Leave += new System.EventHandler(this.cmbHangVe_Leave);
             // 
             // cmbMaChuyenBay
             // 
@@ -190,6 +203,8 @@
             this.cmbMaChuyenBay.Name = "cmbMaChuyenBay";
             this.cmbMaChuyenBay.Size = new System.Drawing.Size(227, 28);
             this.cmbMaChuyenBay.TabIndex = 117;
+            this.cmbMaChuyenBay.TextChanged += new System.EventHandler(this.cmbMaChuyenBay_TextChanged);
+            this.cmbMaChuyenBay.Leave += new System.EventHandler(this.cmbMaChuyenBay_Leave);
             // 
             // txtGiaVe
             // 
@@ -215,6 +230,22 @@
             // errTenHanhKhach
             // 
             this.errTenHanhKhach.ContainerControl = this;
+            // 
+            // errorCMND
+            // 
+            this.errorCMND.ContainerControl = this;
+            // 
+            // errorSoDT
+            // 
+            this.errorSoDT.ContainerControl = this;
+            // 
+            // errorMaCB
+            // 
+            this.errorMaCB.ContainerControl = this;
+            // 
+            // errorHangVe
+            // 
+            this.errorHangVe.ContainerControl = this;
             // 
             // FORM_GHINHANDATVE
             // 
@@ -243,6 +274,10 @@
             this.Name = "FORM_GHINHANDATVE";
             this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.errTenHanhKhach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCMND)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorSoDT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMaCB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorHangVe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,5 +300,9 @@
         private System.Windows.Forms.TextBox txtGiaVe;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errTenHanhKhach;
+        private System.Windows.Forms.ErrorProvider errorCMND;
+        private System.Windows.Forms.ErrorProvider errorSoDT;
+        private System.Windows.Forms.ErrorProvider errorMaCB;
+        private System.Windows.Forms.ErrorProvider errorHangVe;
     }
 }
