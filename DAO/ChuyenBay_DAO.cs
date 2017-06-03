@@ -45,6 +45,7 @@ namespace DAO
         public bool NhanLichCB(ChuyenBay _chuyenbay)
         {
             string query = "";
+
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@SanBayDi",SqlDbType.VarChar){Value=_chuyenbay.SanBayDi},
@@ -57,20 +58,51 @@ namespace DAO
 
                 new SqlParameter("@NgayGioKH",SqlDbType.DateTime){Value=_chuyenbay.NgayGioKH},
 
+
             };
 
-          
-            for (int i = 0; i < _chuyenbay.SoGheCacHangVe.Count; i++)
-            {
-                //SqlParameter parameter=new SqlParameter()
-            }
+
             if (Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray()) > 0)
             {
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
+        
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_hangGhe"></param>
+        public void NhapChiTietCB(HangGhe _hangGhe)
+        {
+            string query = "";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value=_hangGhe.MaChuyenBay },
+
+                new SqlParameter("@maHangVe",SqlDbType.VarChar){Value=_hangGhe.MaHangVe },
+
+                new SqlParameter("@soGhe",SqlDbType.Int){Value=_hangGhe.SoGhe },
+
+            };
+
+            Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public DataTable LoadDanhSachHangGhe()
+        {
+            string query = "EXEC usp_LoadDanhSachHangGhe";
+
+            return Dataprovider.Instance.ExcuteQuery(query);
+        }
         /// <summary>
         /// Thay đổi thông tin chuyến bay bao gồm: ngày giờ bay, số lượng vé
         /// </summary>
@@ -86,12 +118,7 @@ namespace DAO
 
               
             };
-
-            for (int i = 0; i < _chuyenbay.SoGheCacHangVe.Count; i++)
-            {
-                //string 
-               // SqlParameter parameter=new SqlParameter("@")
-            }
+   
             if (Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray()) > 0)
             {
                 return true;
@@ -184,7 +211,7 @@ namespace DAO
         }
         public DataTable TraCuuSoGhe(string _maChuyenBay)
         {
-            string query = "EXEC TRACUU_SOGHETRONG @machuyenbay";
+            string query = "EXEC usp_ThongTinGhe @machuuyenbay";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {

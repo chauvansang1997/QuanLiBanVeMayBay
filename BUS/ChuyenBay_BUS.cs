@@ -28,19 +28,26 @@ namespace BUS
         {
 
         }
-
-        
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public DataTable LoadDanhSachHangGhe()
+        {
+            return ChuyenBay_DAO.Instance.LoadDanhSachHangGhe();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_sanBayDi"></param>
+        /// <param name="_sanBayDen"></param>
+        /// <param name="_giaVe"></param>
+        /// <param name="_thoiGianBay"></param>
+        /// <param name="_ngayGioKH"></param>
+        /// <param name="_danhSachHangGhe"></param>
+        /// <returns></returns>
         public bool NhanLichChuyenBay(string _sanBayDi,string _sanBayDen,int _giaVe,int _thoiGianBay,DateTime _ngayGioKH, DataGridView _danhSachHangGhe)
         {
-            try
-            {
-                List<int> _soGheCacHangVe = new List<int>();
-
-                foreach (DataRow item in _danhSachHangGhe.Rows)
-                {
-                    _soGheCacHangVe.Add(Convert.ToInt32(item[1]));
-                }
 
                 ChuyenBay chuyenbay = new ChuyenBay()
                 {
@@ -49,50 +56,47 @@ namespace BUS
                     GiaVe = _giaVe,
                     ThoiGianBay = _thoiGianBay,
                     NgayGioKH = _ngayGioKH,
-                    SoGheCacHangVe = _soGheCacHangVe,
 
                 };
                 return ChuyenBay_DAO.Instance.NhanLichCB(chuyenbay);
-            }
-            catch (Exception )
-            {
-                return false;
-            }
+
            
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_maChuyenBay"></param>
+        /// <param name="_ngayGioKH"></param>
+        /// <param name="_danhSachHangGhe"></param>
+        /// <returns></returns>
         public bool ThayDoiChuyenBay(string _maChuyenBay,DateTime _ngayGioKH, DataGridView _danhSachHangGhe)
         {
-            try
-            {
-                List<int> _soGheCacHangVe = new List<int>();
-
-                foreach (DataRow item in _danhSachHangGhe.Rows)
-                {
-                    _soGheCacHangVe.Add(Convert.ToInt32(item[1]));
-                }
+           
 
                 ChuyenBay chuyenbay = new ChuyenBay()
                 {
                     NgayGioKH = _ngayGioKH,
-                    SoGheCacHangVe = _soGheCacHangVe,
+
                 };
 
                 return ChuyenBay_DAO.Instance.ThayDoiChuyenBay(_maChuyenBay, chuyenbay);
-            }
-            catch (Exception)
-            {
-                return false;
-                
-            }
-            
         }
-        
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<string> LoadMaCB()
         {
             return ChuyenBay_DAO.Instance.LoadMaCB();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_sanBayDi"></param>
+        /// <param name="_sanBayDen"></param>
+        /// <param name="_ngayKHTu"></param>
+        /// <param name="_ngayKHDen"></param>
+        /// <returns></returns>
         public int DemChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
         {
        
@@ -121,25 +125,29 @@ namespace BUS
         }
 
         /// <summary>
-        /// Đếm số lượng chuyến bay
+        /// 
         /// </summary>
-        /// <param name="_sanBayDi"></param>
-        /// <param name="_sanBayDen"></param>
-        /// <param name="_ngayKHTu"></param>
-        /// <param name="_ngayKHDen"></param>
+        /// <param name="_maChyenBay"></param>
         /// <returns></returns>
-
         public DataTable TraCuuSoGhe(string _maChyenBay)
         {
             return ChuyenBay_DAO.Instance.TraCuuSoGhe(_maChyenBay);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_maChuyenBay"></param>
+        /// <returns></returns>
         public DataTable TraCuuSBTG(string _maChuyenBay)
         {
             return ChuyenBay_DAO.Instance.TraCuuSanBayTG(_maChuyenBay);
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_maChyenBay"></param>
+        /// <returns></returns>
         public bool HuyChuyenBay(string _maChyenBay)
         {
             return ChuyenBay_DAO.Instance.HuyChuyenBay(_maChyenBay);

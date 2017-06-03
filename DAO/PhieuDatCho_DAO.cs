@@ -78,7 +78,7 @@ namespace DAO
         /// <returns></returns>
         public bool HuyPhieuDatCho(string _maPhieuDatCho)
         {
-            string query = "";
+            string query = "DELETE FROM PHIEUDATCHO WHERE MaPhieuDatCho = @maPhieuDatCho";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@maPhieuDatCho",SqlDbType.NVarChar){Value =_maPhieuDatCho},
@@ -162,7 +162,7 @@ namespace DAO
         /// <returns></returns>
         public DataTable TraCuuPhieuDatCho(PhieuDatCho _phieuDatCho,int pageSize,int pageNumber)
         {
-            string query = "SELECT * FROM PHIEUDATCHO";
+            string query = "EXEC TRACUU_PHIEUDATCHO @tenHanhKhach,@CMND,@maChuyenBay,@maPhieuDatCho,@pageSize,@pageNumber";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {

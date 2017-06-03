@@ -7,6 +7,7 @@ namespace DTO
 {
     public class SanBayTrungGian:SanBay
     {
+        private string maChuyenBay;
         private int sTT;
         private int thoiGianDung;
         private string ghiChu;
@@ -47,6 +48,19 @@ namespace DTO
             set
             {
                 sTT = value;
+            }
+        }
+
+        public string MaChuyenBay
+        {
+            get
+            {
+                return maChuyenBay;
+            }
+
+            set
+            {
+                maChuyenBay = value;
             }
         }
     }

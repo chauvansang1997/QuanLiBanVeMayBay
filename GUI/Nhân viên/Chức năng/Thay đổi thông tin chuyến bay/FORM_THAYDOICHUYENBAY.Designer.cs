@@ -62,12 +62,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TenHangGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
-            this.TenHangGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachCB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachSBTG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -394,6 +394,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(1011, 69);
             this.dataGridView1.TabIndex = 40;
             // 
+            // TenHangGhe
+            // 
+            this.TenHangGhe.HeaderText = "Tên hạng ghế";
+            this.TenHangGhe.Name = "TenHangGhe";
+            // 
+            // SoLuongGhe
+            // 
+            this.SoLuongGhe.HeaderText = "Số lượng ghế";
+            this.SoLuongGhe.Name = "SoLuongGhe";
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Teal;
@@ -441,16 +451,6 @@
             this.btnPrevPage.TabIndex = 42;
             this.btnPrevPage.Text = "Trang trước";
             this.btnPrevPage.UseVisualStyleBackColor = false;
-            // 
-            // TenHangGhe
-            // 
-            this.TenHangGhe.HeaderText = "Tên hạng ghế";
-            this.TenHangGhe.Name = "TenHangGhe";
-            // 
-            // SoLuongGhe
-            // 
-            this.SoLuongGhe.HeaderText = "Số lượng ghế";
-            this.SoLuongGhe.Name = "SoLuongGhe";
             // 
             // FORM_THAYDOICHUYENBAY
             // 

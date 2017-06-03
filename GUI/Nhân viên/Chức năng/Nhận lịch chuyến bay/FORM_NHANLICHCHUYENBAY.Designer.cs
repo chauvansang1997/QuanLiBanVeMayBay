@@ -55,9 +55,9 @@
             this.clTenSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dGVSanBayTG = new System.Windows.Forms.DataGridView();
             this.dgvDanhSachGhe = new System.Windows.Forms.DataGridView();
-            this.cmbSanBayDen = new Custom.MyComboBox();
             this.TenHangGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbSanBayDen = new Custom.MyComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenChuyenBay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSanBayDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNgayGio)).BeginInit();
@@ -111,6 +111,7 @@
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.Color.Teal;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Location = new System.Drawing.Point(589, 418);
@@ -123,6 +124,7 @@
             // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.Color.Teal;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Location = new System.Drawing.Point(414, 418);
@@ -255,7 +257,7 @@
             this.label11.BackColor = System.Drawing.Color.Teal;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(773, 66);
+            this.label11.Location = new System.Drawing.Point(773, 67);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(337, 20);
             this.label11.TabIndex = 110;
@@ -275,7 +277,7 @@
             this.label9.BackColor = System.Drawing.Color.Teal;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(12, 236);
+            this.label9.Location = new System.Drawing.Point(12, 239);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(674, 21);
             this.label9.TabIndex = 111;
@@ -299,6 +301,10 @@
             // 
             // dGVSanBayTG
             // 
+            this.dGVSanBayTG.AllowUserToAddRows = false;
+            this.dGVSanBayTG.AllowUserToDeleteRows = false;
+            this.dGVSanBayTG.AllowUserToResizeColumns = false;
+            this.dGVSanBayTG.AllowUserToResizeRows = false;
             this.dGVSanBayTG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVSanBayTG.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dGVSanBayTG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -332,6 +338,16 @@
             this.dgvDanhSachGhe.Size = new System.Drawing.Size(674, 67);
             this.dgvDanhSachGhe.TabIndex = 112;
             // 
+            // TenHangGhe
+            // 
+            this.TenHangGhe.HeaderText = "Tên hạng vé";
+            this.TenHangGhe.Name = "TenHangGhe";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số lượng ghế";
+            this.SoLuong.Name = "SoLuong";
+            // 
             // cmbSanBayDen
             // 
             this.cmbSanBayDen.DropDownHeight = 80;
@@ -359,16 +375,6 @@
             this.cmbSanBayDen.Name = "cmbSanBayDen";
             this.cmbSanBayDen.Size = new System.Drawing.Size(162, 27);
             this.cmbSanBayDen.TabIndex = 113;
-            // 
-            // TenHangGhe
-            // 
-            this.TenHangGhe.HeaderText = "Tên hạng vé";
-            this.TenHangGhe.Name = "TenHangGhe";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số lượng ghế";
-            this.SoLuong.Name = "SoLuong";
             // 
             // FORM_NHANLICHCHUYENBAY
             // 

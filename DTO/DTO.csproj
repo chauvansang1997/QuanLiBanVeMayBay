@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChuyenBay.cs" />
+    <Compile Include="HangGhe.cs" />
     <Compile Include="HanhKhach.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="PhieuDatCho.cs" />

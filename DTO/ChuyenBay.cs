@@ -9,7 +9,6 @@ namespace DTO
     public class ChuyenBay
     {
         private string maCB;
-        private List<int> soGheCacHangVe;
         private string sanBayDi;
         private string sanBayDen;
         private int thoiGianBay;
@@ -87,18 +86,6 @@ namespace DTO
             }
         }
 
-        public List<int> SoGheCacHangVe
-        {
-            get
-            {
-                return soGheCacHangVe;
-            }
-
-            set
-            {
-                soGheCacHangVe = value;
-            }
-        }
 
         public ChuyenBay()
         {

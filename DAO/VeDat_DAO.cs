@@ -26,7 +26,7 @@ namespace DAO
         public bool GhiNhanDatVe(VeDat _vedat)
         {
 
-            string query = "Select * from CHUYENBAY where TenHanhKhach=@TenHanhKhach";
+            string query = "";
 
             //Tạo parameters tránh sql injection
             List<SqlParameter> parameters = new List<SqlParameter>()
@@ -45,13 +45,29 @@ namespace DAO
 
             };
 
-
-            if (Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+            try
             {
-                return true;
-            }
+                if (Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+                {
+                    return true;
+                }
 
-            return false;
+                return false;
+            }
+            catch (SqlException err)
+            {
+                if (err.ErrorCode == 16)
+                {
+                    
+                }
+                return false;
+            }
+            catch (Exception )
+            {
+
+                return false;
+            }
+          
         }
     }
 }
