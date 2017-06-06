@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
-using DTO;
 using System.Threading;
+using Help_Fuction;
+using DTO;
+
 
 namespace GUI
 {
@@ -20,14 +22,35 @@ namespace GUI
         private int totalPage;
 
         private bool isClick = false;
-        public FORM_TRACUU_CHUYENBAY()
+
+
+        public FORM_TRACUU_CHUYENBAY(State state)
         {
             InitializeComponent();
             this.Icon = Properties.Resources.Search_icon1;
             pageNumber = 1;
-            dGVDachSanhCB.SelectionChanged += DGVDachSanhCB_SelectionChanged;
+            dGVDanhSachCB.SelectionChanged += DGVDachSanhCB_SelectionChanged;
+
+            if (state == State.TraCuu)
+            {
+                btnDatCho.Visible = false;
+                btnDatVe.Visible = false;
+            }
+            Init();
+        }
+
+        private void Init()
+        {
 
 
+            dGVDanhSachCB.TopLeftHeaderCell.Value = "STT";
+            dGVDanhSachCB.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+
+            dGVDSHangGhe.TopLeftHeaderCell.Value = "STT";
+            dGVDSHangGhe.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+
+            dGVSanBayTG.TopLeftHeaderCell.Value = "STT";
+            dGVSanBayTG.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
         }
 
         /// <summary>
@@ -44,23 +67,20 @@ namespace GUI
             if (dataGV.SelectedRows.Count == 0)
             {
 
-                dGVDSHangGhe.DataSource = ChuyenBay_BUS.Instance.TraCuuSoGhe("");
-                dGVSanBayTG.DataSource = ChuyenBay_BUS.Instance.TraCuuSBTG("");
+                dGVDSHangGhe.DataSource = ChuyenBay_BUS.TraCuuSoGhe("");
+                dGVSanBayTG.DataSource = ChuyenBay_BUS.TraCuuSBTG("");
             }
             if (dataGV.SelectedRows.Count > 0)
             {
                 dGVDSHangGhe.Columns.Clear();
-                dGVDSHangGhe.DataSource = ChuyenBay_BUS.Instance.TraCuuSoGhe(dataGV.SelectedRows[0].Cells[0].Value.ToString());
+                dGVDSHangGhe.DataSource = ChuyenBay_BUS.TraCuuSoGhe(dataGV.SelectedRows[0].Cells[0].Value.ToString());
 
-                ThreadPool.QueueUserWorkItem((p) =>
-                {
-                    dGVSanBayTG.PerformSafely(() =>
-                    {
-                        dGVSanBayTG.Columns.Clear();
-                        dGVSanBayTG.DataSource = ChuyenBay_BUS.Instance.TraCuuSBTG(dataGV.SelectedRows[0].Cells[0].Value.ToString());
-                    });
-                });
+                this.dGVDSHangGhe.Columns[0].Visible = false;
 
+                dGVSanBayTG.Columns.Clear();
+                dGVSanBayTG.DataSource = ChuyenBay_BUS.TraCuuSBTG(dataGV.SelectedRows[0].Cells[0].Value.ToString());
+
+                this.dGVSanBayTG.Columns[0].Visible = false;
             }
         }
 
@@ -74,7 +94,7 @@ namespace GUI
             DateTime ngayKHTu = dtPKNgayKHTu.Value;
             DateTime ngayKHDen = dtPKNgayKhDen.Value;
 
-            totalPage = ChuyenBay_BUS.Instance.DemChuyenBay(sanbaydi, sanbayden, ngayKHTu, ngayKHDen);
+            totalPage = ChuyenBay_BUS.DemChuyenBay(sanbaydi, sanbayden, ngayKHTu, ngayKHDen);
 
             totalPage=HelpFuction.TinhKichThuocTrang(totalPage,pageSize);
 
@@ -85,7 +105,7 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
            
             //dGVDachSanhCB.Columns.Clear();
-            dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, ngayKHTu, ngayKHDen);
         }
 
 
@@ -100,11 +120,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
             }
             else
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
             }
         }
         /// <summary>
@@ -118,11 +138,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
             }
             else
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
             }
         }
         /// <summary>
@@ -141,13 +161,14 @@ namespace GUI
                 --pageNumber;
             }
             txtPageNumber.Text = pageNumber.ToString();
+
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
             }
             else
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
             }
         }
         /// <summary>
@@ -166,13 +187,14 @@ namespace GUI
                 ++pageNumber;
             }
             txtPageNumber.Text = pageNumber.ToString();
+
             if (isClick)
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
             }
             else
             {
-                dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
             }
         }
 
@@ -181,10 +203,10 @@ namespace GUI
         //Sự kiện load form
         private void FORM_TRACUU_CHUYENBAY_Load(object sender, EventArgs e)
         {
-            SanBay_BUS.Instance.LoadSanBayDi(cmbSanBayDi);
+            SanBay_BUS.LoadSanBay(cmbSanBayDi);
            
 
-            totalPage = ChuyenBay_BUS.Instance.DemChuyenBay(null, null, null, null);
+            totalPage = ChuyenBay_BUS.DemChuyenBay(null, null, null, null);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 
@@ -192,7 +214,7 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
 
-            dGVDachSanhCB.DataSource = ChuyenBay_BUS.Instance.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
         }
         //Sự kiện khi thay đổi chọn giá trị trong sân bay đi
         private void cmbSanBayDi_SelectedIndexChanged(object sender, EventArgs e)
@@ -204,7 +226,7 @@ namespace GUI
                 {
                     SanBay sanbay = combobox.SelectedItem as SanBay;
 
-                    SanBay_BUS.Instance.LoadSanBayDen(sanbay.MaSanBay, cmbSanBayDen);
+                    SanBay_BUS.LoadSanBayDen(sanbay.MaSanBay, cmbSanBayDen);
                 }
 
             }
@@ -235,6 +257,110 @@ namespace GUI
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dGVSanBayTG_SelectionChanged(object sender, EventArgs e)
+        {
+            dGVSanBayTG.ClearSelection();
+        }
+
+        private void dGVSanBayTG_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            dgv.setRowNumber();
+        }
+
+        private void dGVSanBayTG_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            dgv.setRowNumber();
+        }
+
+        private void dGVDSHangGhe_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            dgv.setRowNumber();
+        }
+
+        private void dGVDSHangGhe_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            dgv.setRowNumber();
+        }
+
+        private void dGVDachSanhCB_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            dgv.setRowNumber();
+        }
+
+        private void dGVDachSanhCB_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            dgv.setRowNumber();
+        }
+
+        private void btnDatCho_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dGVDanhSachCB.SelectedRows.Count > 0 && dGVDSHangGhe.SelectedRows.Count > 0)
+                {
+                    DataGridViewCellCollection cells = dGVDSHangGhe.SelectedRows[0].Cells;
+                    int soGheTrong = (int)cells[3].Value;
+                    if (soGheTrong > 0)
+                    {
+                        string maChuyenBay = dGVDanhSachCB.SelectedRows[0].Cells[0].Value.ToString();
+                        string maHangVe = cells[0].Value.ToString();
+                        string tenHangVe= cells[1].Value.ToString();
+                        string giaVe = cells[4].Value.ToString();
+                        this.Hide();
+                        FORM_THEMPHIEUDATCHO form = new FORM_THEMPHIEUDATCHO(maChuyenBay,tenHangVe,maHangVe,giaVe);
+                        form.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chuyến bay đã đầy chỗ");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+        }
+
+        private void btnDatVe_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dGVDanhSachCB.SelectedRows.Count > 0 && dGVDSHangGhe.SelectedRows.Count > 0)
+                {
+                    DataGridViewCellCollection cells = dGVDSHangGhe.SelectedRows[0].Cells;
+                    int soGheTrong = (int)cells[3].Value;
+                    if (soGheTrong > 0)
+                    {
+                        string maChuyenBay = dGVDanhSachCB.SelectedRows[0].Cells[0].Value.ToString();
+                        string maHangVe = cells[0].Value.ToString();
+                        string tenHangVe = cells[1].Value.ToString();
+                        string giaVe = cells[4].Value.ToString();
+                        this.Hide();
+                        FORM_GHINHANDATVE form = new FORM_GHINHANDATVE(maChuyenBay, tenHangVe, maHangVe, giaVe);
+                        form.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chuyến bay đã đầy chỗ");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

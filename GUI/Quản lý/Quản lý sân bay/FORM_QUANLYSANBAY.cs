@@ -29,7 +29,7 @@ namespace GUI
 
         public void LoadSanBay()
         {
-            SanBay_BUS.Instance.XemSanBay(dataGridView1, page, pageSize);
+            SanBay_BUS.XemSanBay(dataGridView1, page, pageSize);
         }
 
         private void btnTrangTruoc_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace GUI
                 page=pageSize;
             }        
             
-            SanBay_BUS.Instance.XemSanBay(dataGridView1, page, pageSize);
+            SanBay_BUS.XemSanBay(dataGridView1, page, pageSize);
         }
 
         private void btnTrangSau_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace GUI
             {
                 page = 1;
             }
-            SanBay_BUS.Instance.XemSanBay(dataGridView1, page, pageSize);
+            SanBay_BUS.XemSanBay(dataGridView1, page, pageSize);
         }
     }
 }

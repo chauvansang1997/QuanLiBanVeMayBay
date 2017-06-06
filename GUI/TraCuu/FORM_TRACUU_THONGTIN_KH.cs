@@ -1,4 +1,5 @@
 ﻿using BUS;
+using Help_Fuction;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace GUI
 
             isClick = true;
 
-            totalPage = HanhKhach_BUS.Instance.DemHanhKhach(cmbTenHK.Text,txtSoDT.Text,txtCMND.Text);
+            totalPage = HanhKhach_BUS.DemHanhKhach(cmbTenHK.Text,txtSoDT.Text,txtCMND.Text);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 
@@ -41,7 +42,7 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
             //dGVDachSanhCB.Columns.Clear();
-            dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text,pageSize,pageNumber);
+            dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text,pageSize,pageNumber);
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
@@ -50,11 +51,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -71,11 +72,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -92,11 +93,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -106,11 +107,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -142,10 +143,10 @@ namespace GUI
 
         private void FORM_TRACUU_THONGTIN_KH_Load(object sender, EventArgs e)
         {
-            HanhKhach_BUS.Instance.LoadHanhKhach(cmbTenHK);
+            HanhKhach_BUS.LoadHanhKhach(cmbTenHK);
 
 
-            totalPage = HanhKhach_BUS.Instance.DemHanhKhach(null, null, null);
+            totalPage = HanhKhach_BUS.DemHanhKhach(null, null, null);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 
@@ -153,7 +154,7 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
             dGVDanhSachHK.Columns.Clear();
-            dGVDanhSachHK.DataSource = HanhKhach_BUS.Instance.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+            dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
         }
     }
 }

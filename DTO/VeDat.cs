@@ -8,6 +8,7 @@ namespace DTO
 {
     public class VeDat
     {
+        private string maVe;
         private string tenHanhKhach;
         private string soDT;
         private string maCB;
@@ -94,5 +95,17 @@ namespace DTO
             }
         }
 
+        public string MaVe
+        {
+            get
+            {
+                return maVe;
+            }
+
+            set
+            {
+                maVe = value;
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BUS;
+using Help_Fuction;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +37,7 @@ namespace GUI
         {
             try
             {
-                dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             catch (Exception)
             {
@@ -49,7 +50,7 @@ namespace GUI
         {
             isClick = true;
 
-            totalPage = NhanVien_BUS.Instance.DemSoNhanVien(cmbTenNV.Text, txtCMND.Text,txtMaNhanVien.Text,txtSoDT.Text);
+            totalPage = NhanVien_BUS.DemSoNhanVien(cmbTenNV.Text, txtCMND.Text,txtMaNhanVien.Text,txtSoDT.Text);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 
@@ -60,7 +61,7 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
             //dGVDachSanhCB.Columns.Clear();
-            dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text,pageSize,pageNumber);
+            dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text,pageSize,pageNumber);
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
@@ -69,11 +70,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(null, null, null, null, pageSize, pageNumber);
+                dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(null, null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -91,11 +92,11 @@ namespace GUI
 
             if (isClick)
             {
-                dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(null, null, null, null, pageSize, pageNumber);
+                dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(null, null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -113,11 +114,11 @@ namespace GUI
 
             if (isClick)
             {
-                dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(null, null, null, null, pageSize, pageNumber);
+                dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(null, null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -127,11 +128,11 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text, txtMaNhanVien.Text, txtSoDT.Text, pageSize, pageNumber);
             }
             else
             {
-                dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(null, null, null, null, pageSize, pageNumber);
+                dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(null, null, null, null, pageSize, pageNumber);
             }
         }
 
@@ -172,7 +173,7 @@ namespace GUI
         private void FORM_TRACUUTHONGTINNV_Load(object sender, EventArgs e)
         {
 
-            totalPage = NhanVien_BUS.Instance.DemSoNhanVien(null, null, null, null);
+            totalPage = NhanVien_BUS.DemSoNhanVien(null, null, null, null);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 
@@ -180,14 +181,14 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
             dGVDanhSachNV.Columns.Clear();
-            dGVDanhSachNV.DataSource = NhanVien_BUS.Instance.TraCuuNhanVien(null, null, null, null, pageSize, pageNumber);
+            dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(null, null, null, null, pageSize, pageNumber);
 
             ThreadPool.QueueUserWorkItem((p) =>
             {
                 cmbTenNV.PerformSafely(() =>
                 {
                     
-                    NhanVien_BUS.Instance.LoadNhanVien(cmbTenNV);
+                    NhanVien_BUS.LoadNhanVien(cmbTenNV);
                 });
             });
         }

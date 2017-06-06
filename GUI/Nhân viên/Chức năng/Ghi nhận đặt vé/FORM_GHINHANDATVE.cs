@@ -7,44 +7,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS;
 namespace GUI
 {
     public partial class FORM_GHINHANDATVE : Form
     {
         private bool isSave;
-        public FORM_GHINHANDATVE()
+
+        private string maHangVe;
+        public FORM_GHINHANDATVE(string _maChuyenBay,string _tenHangVe,string _maHangVe,string _giaTien)
         {
             InitializeComponent();
-            
-
+            maHangVe = _maHangVe;
+            txtGiaVe.Text = _giaTien;
+            txtMaChuyenBay.Text = _maChuyenBay;
+            txtTenHangVe.Text = _tenHangVe;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
+        {           
+            
+            string message = "";
+            if (VeDat_BUS.GhiNhanDatVe(txtTenHanhKhach.Text, txtSoDT.Text, txtMaChuyenBay.Text, txtCMND.Text, maHangVe))
+            {
+                message = "Đặt vé thành công";
 
+            }
+            else
+            {
+                message = "Đặt vé không thành công";
+            }
+            MessageBox.Show(message);
+        }
+
+        private void VeDat_BUS_sqlException(object sender, System.Data.SqlClient.SqlException e)
+        {
+            MessageBox.Show(e.Message);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-
-
-
- 
 
         private void txtTenHanhKhach_Leave(object sender, EventArgs e)
         {
             if (txtTenHanhKhach.Text == "")
             {
-                errTenHanhKhach.Icon = Properties.Resources.error_icon1;
-                errTenHanhKhach.SetError(txtTenHanhKhach, "Chưa điền đầy đủ thông tin");
+                errorTenHanhKhach.Icon = Properties.Resources.error_icon1;
+                errorTenHanhKhach.SetError(txtTenHanhKhach, "Chưa điền đầy đủ thông tin");
             }
             else
             {
-                errTenHanhKhach.Clear();
+                errorTenHanhKhach.Clear();
             }
         }
 
@@ -74,31 +90,9 @@ namespace GUI
             }
         }
 
-        private void cmbMaChuyenBay_Leave(object sender, EventArgs e)
-        {
-            if (cmbMaChuyenBay.Text == "")
-            {
-                errorMaCB.Icon = Properties.Resources.error_icon1;
-                errorMaCB.SetError(cmbMaChuyenBay, "Chưa điền đầy đủ thông tin");
-            }
-            else
-            {
-                errorMaCB.Clear();
-            }
-        }
+       
 
-        private void cmbHangVe_Leave(object sender, EventArgs e)
-        {
-            if (cmbHangVe.Text == "")
-            {
-                errorHangVe.Icon = Properties.Resources.error_icon1;
-                errorHangVe.SetError(cmbHangVe, "Chưa điền đầy đủ thông tin");
-            }
-            else
-            {
-                errorHangVe.Clear();
-            }
-        }
+       
 
         private void txtTenHanhKhach_TextChanged(object sender, EventArgs e)
         {
@@ -115,25 +109,16 @@ namespace GUI
                 }
                 if (textbox==txtTenHanhKhach)
                 {
-                    errTenHanhKhach.Clear();
+                    errorTenHanhKhach.Clear();
                 }
             }
         }
 
-        private void cmbMaChuyenBay_TextChanged(object sender, EventArgs e)
+       
+        private void FORM_GHINHANDATVE_Load(object sender, EventArgs e)
         {
-            ComboBox combobox = sender as ComboBox;
-            if (combobox.Text != "")
-            {
-                if (combobox == cmbHangVe)
-                {
-                    errorHangVe.Clear();
-                }
-                else
-                {
-                    errorMaCB.Clear();
-                }
-            }
+            
+
         }
     }
 }

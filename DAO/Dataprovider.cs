@@ -11,27 +11,14 @@ namespace DAO
     /// <summary>
     /// Lớp được tạo với cấu trúc singleton
     /// </summary>
-    public class Dataprovider
+    public  static class Dataprovider
     {
         //Chuổi kết nối với sql
-        private string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=QLBV;Integrated Security=True";
+        private static string connectionString = @"Data Source=.\sqlexpress;Initial Catalog=QLBV;Integrated Security=True";
 
-        private static Dataprovider instance;
 
-        public static Dataprovider Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new Dataprovider();
-                return instance;
-            }
-        }
+   
 
-        private Dataprovider()
-        {
-
-        }
 
         /// <summary>
         /// Phương thức này có vai trò lấy dữ liệu là các bảng trong SQL
@@ -39,7 +26,7 @@ namespace DAO
         /// <param name="query">Chuỗi truy vấn được đưa xuống SQL</param>
         /// <param name="sqlparameters"> mảng SqlParameter được thêm vào command(có thể không có)</param>
         /// <returns>Phương thức trả về kiểu dũ liệu DataTable</returns>
-        public DataTable ExcuteQuery(string query,SqlParameter[] sqlparameters = null)
+        public static DataTable ExcuteQuery(string query,SqlParameter[] sqlparameters = null)
         {
             DataTable table = new DataTable();
 
@@ -70,7 +57,7 @@ namespace DAO
         /// </summary>
         /// <param name="query">Chuỗi truy vấn được đưa xuống SQL</param>
         /// <returns>Số dòng thành công</returns>
-        public int ExcuteNonQuery(string query, SqlParameter[] sqlparameters = null)
+        public static int ExcuteNonQuery(string query, SqlParameter[] sqlparameters = null)
         {
             int temp = 0;
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -93,7 +80,7 @@ namespace DAO
         /// <param name="query"></param>
         /// <param name="sqlparameters"></param>
         /// <returns></returns>
-        public object ExcuteScalar(string query, SqlParameter[] sqlparameters = null)
+        public static object ExcuteScalar(string query, SqlParameter[] sqlparameters = null)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {

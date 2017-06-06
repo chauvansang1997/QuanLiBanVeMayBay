@@ -7,34 +7,70 @@ using System.Windows.Forms;
 using DAO;
 using DTO;
 using System.Data;
+using System.Drawing;
 
 namespace BUS
 {
-    public class ChuyenBay_BUS
+    public static class ChuyenBay_BUS
     {
-        private  static ChuyenBay_BUS instance;
-
-        public static ChuyenBay_BUS Instance
+       
+        public static void NhapChiTietHangGhe(string _maChuyenBay,string _maHangVe,int _soGhe)
         {
-            get
+            HangGhe hangGhe = new HangGhe()
             {
-                if (instance == null)
-                    instance = new ChuyenBay_BUS();
-                return instance;
-            }
-           
+                MaChuyenBay = _maChuyenBay,
+                MaHangVe = _maHangVe,
+                SoGhe = _soGhe
+            };
+            ChuyenBay_DAO.NhapChiTietHangGhe(hangGhe);
         }
-        private ChuyenBay_BUS()
+        public static void NhapDonGia(string _machuyenbay, int _dongia)
         {
+            ChuyenBay_DAO.NhapDonGia(_machuyenbay, _dongia);
+        }
+        public static void NhapChiTietChuyenBay(string _maChuyenBay,string _tenSanBay,int _thoiGianDung,string _ghiChu)
+        {
+            ChuyenBay_DAO.NhapChiTietChuyenBay(new SanBayTrungGian()
+            {
+                MaChuyenBay = _maChuyenBay,
+                TenSanBay = _tenSanBay,
+                ThoiGianDung = _thoiGianDung,
+                GhiChu = _ghiChu
+            });
 
+        }
+
+        /// <summary>
+        /// Load san bay trung gian vao combobox
+        /// </summary>
+        public static void LoadDanhSachSanBayTG(ComboBox _dsSanBayTG, string _tenSanBay)
+        {
+            _dsSanBayTG.DataSource= ChuyenBay_DAO.LoadDanhSachSBTG(_tenSanBay);
+
+            _dsSanBayTG.DisplayMember = "tenSanBay";
+            _dsSanBayTG.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            _dsSanBayTG.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
+        /// <summary>
+        /// Load san bay trung gian vào datagridview
+        /// </summary>
+        /// <param name="dsSanBayTG"></param>
+        /// <param name="_tenSanBay"></param>
+        public static void LoadDanhSachSanBayTG(DataGridView dsSanBayTG)
+        {
+            dsSanBayTG.DataSource = ChuyenBay_DAO.LoadDanhSachSBTG();
+           
         }
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public DataTable LoadDanhSachHangGhe()
+        public static DataTable LoadDanhSachHangGhe()
         {
-            return ChuyenBay_DAO.Instance.LoadDanhSachHangGhe();
+            DataTable table = ChuyenBay_DAO.LoadDanhSachHangGhe();
+            table.Columns[1].ReadOnly = true;
+
+            return table; 
         }
         /// <summary>
         /// 
@@ -46,19 +82,19 @@ namespace BUS
         /// <param name="_ngayGioKH"></param>
         /// <param name="_danhSachHangGhe"></param>
         /// <returns></returns>
-        public bool NhanLichChuyenBay(string _sanBayDi,string _sanBayDen,int _giaVe,int _thoiGianBay,DateTime _ngayGioKH, DataGridView _danhSachHangGhe)
+        public static bool NhanLichChuyenBay(string _sanBayDi,string _sanBayDen,int _giaVe,int _thoiGianBay,DateTime _ngayGioKH,out string _maChuyenBay)
         {
 
-                ChuyenBay chuyenbay = new ChuyenBay()
-                {
-                    SanBayDen = _sanBayDen,
-                    SanBayDi = _sanBayDi,
-                    GiaVe = _giaVe,
-                    ThoiGianBay = _thoiGianBay,
-                    NgayGioKH = _ngayGioKH,
+         
+            ChuyenBay chuyenbay = new ChuyenBay()
+            {
+                SanBayDi = _sanBayDi,
+                SanBayDen = _sanBayDen,
+                ThoiGianBay = _thoiGianBay,
+                NgayGioKH = _ngayGioKH
+            };
 
-                };
-                return ChuyenBay_DAO.Instance.NhanLichCB(chuyenbay);
+            return ChuyenBay_DAO.NhapLichCB(chuyenbay, out _maChuyenBay);
 
            
         }
@@ -69,7 +105,7 @@ namespace BUS
         /// <param name="_ngayGioKH"></param>
         /// <param name="_danhSachHangGhe"></param>
         /// <returns></returns>
-        public bool ThayDoiChuyenBay(string _maChuyenBay,DateTime _ngayGioKH, DataGridView _danhSachHangGhe)
+        public static bool ThayDoiChuyenBay(string _maChuyenBay,DateTime _ngayGioKH, DataGridView _danhSachHangGhe)
         {
            
 
@@ -79,15 +115,15 @@ namespace BUS
 
                 };
 
-                return ChuyenBay_DAO.Instance.ThayDoiChuyenBay(_maChuyenBay, chuyenbay);
+                return ChuyenBay_DAO.ThayDoiChuyenBay(_maChuyenBay, chuyenbay);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<string> LoadMaCB()
+        public static void LoadMaChuyenBay(ComboBox _chuyenbay)
         {
-            return ChuyenBay_DAO.Instance.LoadMaCB();
+            _chuyenbay.DataSource= ChuyenBay_DAO.LoadMaChuyenBay();
         }
         /// <summary>
         /// 
@@ -97,11 +133,11 @@ namespace BUS
         /// <param name="_ngayKHTu"></param>
         /// <param name="_ngayKHDen"></param>
         /// <returns></returns>
-        public int DemChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
+        public static int DemChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
         {
        
 
-            return ChuyenBay_DAO.Instance.DemSoChuyenBay( _sanBayDi,  _sanBayDen,  _ngayKHTu, _ngayKHDen);
+            return ChuyenBay_DAO.DemSoChuyenBay( _sanBayDi,  _sanBayDen,  _ngayKHTu, _ngayKHDen);
         }
 
         /// <summary>
@@ -114,12 +150,12 @@ namespace BUS
         /// <param name="_danhsachCB"> danh sách chuyến bay </param>
         /// <param name="pageSize"> kích thước của một trang </param>
         /// <param name="pageNumber"> trang hiện tại cần xuất </param>
-        public DataTable TraCuuChuyenBay(string _sanBayDi, string _sanBayDen, int pageSize, int pageNumber, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
+        public static DataTable TraCuuChuyenBay(string _sanBayDi, string _sanBayDen, int pageSize, int pageNumber, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
         {
 
 
             //Bảng chứa thông tin chuyến bay và số ghế các hạng vé
-            DataTable danhSachChuyenBay = ChuyenBay_DAO.Instance.TraCuuChuyenBay(_sanBayDi, _sanBayDen, _ngayKHTu, _ngayKHDen, pageSize, pageNumber);
+            DataTable danhSachChuyenBay = ChuyenBay_DAO.TraCuuChuyenBay(_sanBayDi, _sanBayDen, _ngayKHTu, _ngayKHDen, pageSize, pageNumber);
 
             return danhSachChuyenBay;
         }
@@ -129,18 +165,18 @@ namespace BUS
         /// </summary>
         /// <param name="_maChyenBay"></param>
         /// <returns></returns>
-        public DataTable TraCuuSoGhe(string _maChyenBay)
+        public static DataTable TraCuuSoGhe(string _maChyenBay)
         {
-            return ChuyenBay_DAO.Instance.TraCuuSoGhe(_maChyenBay);
+            return ChuyenBay_DAO.TraCuuSoGhe(_maChyenBay);
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="_maChuyenBay"></param>
         /// <returns></returns>
-        public DataTable TraCuuSBTG(string _maChuyenBay)
+        public static DataTable TraCuuSBTG(string _maChuyenBay)
         {
-            return ChuyenBay_DAO.Instance.TraCuuSanBayTG(_maChuyenBay);
+            return ChuyenBay_DAO.TraCuuSanBayTG(_maChuyenBay);
         }
 
         /// <summary>
@@ -148,9 +184,9 @@ namespace BUS
         /// </summary>
         /// <param name="_maChyenBay"></param>
         /// <returns></returns>
-        public bool HuyChuyenBay(string _maChyenBay)
+        public static bool HuyChuyenBay(string _maChyenBay)
         {
-            return ChuyenBay_DAO.Instance.HuyChuyenBay(_maChyenBay);
+            return ChuyenBay_DAO.HuyChuyenBay(_maChyenBay);
         }
 
     }

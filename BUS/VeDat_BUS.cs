@@ -2,33 +2,39 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BUS
 {
-    public class VeDat_BUS
+    public static class VeDat_BUS
     {
-        private static VeDat_BUS instance;
 
-        public static VeDat_BUS Instance
+        public static event EventHandler<SqlException> sqlException;
+        public static bool GhiNhanDatVe(string _tenHanhKhach, string _soDT, string _maCB,string _cmnd,string _hangVe)
         {
-            get
+            VeDat vetdat = new VeDat() { TenHanhKhach=_tenHanhKhach,CMND=_cmnd,HangVe=_hangVe,MaCB=_maCB,SoDT=_soDT};
+
+           
+            VeDat_DAO.sqlException += sqlException;
+
+            return VeDat_DAO.GhiNhanDatVe(vetdat);
+        }
+
+        public static DataTable TraCuuVe(string _tenKhachHang, string _cmnd, string _maVe, string _maChuyenBay, int pageSize, int pageNumber)
+        {
+            VeDat veDat = new VeDat()
             {
-                if (instance == null)
-                    instance = new VeDat_BUS();
-                return instance;
-            }
+                TenHanhKhach = _tenKhachHang,
+                CMND = _cmnd,
+                MaCB = _maChuyenBay,
+                MaVe = _maVe
+            };
+            return VeDat_DAO.TraCuuVe(veDat,pageSize,pageNumber);
 
         }
-
-        public bool GhiNhanDatVe(string _tenHanhKhach, string _soDT, string _maCB,string _cmnd, int _giatien,string _hangVe)
-        {
-            VeDat vetdat = new VeDat() { TenHanhKhach=_tenHanhKhach,CMND=_cmnd,GiaTien=_giatien,HangVe=_hangVe,MaCB=_maCB,SoDT=_soDT};
-
-            return VeDat_DAO.Instance.GhiNhanDatVe(vetdat);
-        }
-
     }
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using DTO;
+
 namespace GUI
 {
     public partial class Test : Form
@@ -19,7 +21,11 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource= Test_BUS.Test(txtUserName.Text);
+          
+            QuyDinh_BUS.LoadQuyDinh();
+            txtScalar.Text = QuyDinh.SoLuongHangVe.ToString();
+            
         }
+        
     }
 }

@@ -10,7 +10,7 @@ namespace DTO
     {
         private string maSanBay;
         private string tenSanBay;
-        private string maCB;
+    
 
         public string MaSanBay
         {
@@ -34,25 +34,14 @@ namespace DTO
                 tenSanBay = value;
             }
         }
-        public string MaCB
-        {
-            get
-            {
-                return maCB;
-            }
-            set
-            {
-                maCB = value;
-            }
-        }
 
         public SanBay()
         {
 
         }
-        public SanBay(string masanbay,string tensanbay,string maCB = null)
+        public SanBay(string masanbay,string tensanbay)
         {
-            MaCB = maCB;
+     
             MaSanBay = masanbay;
             TenSanBay = tensanbay;
         }

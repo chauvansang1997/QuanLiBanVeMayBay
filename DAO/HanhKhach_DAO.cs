@@ -9,31 +9,49 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class HanhKhach_DAO
+    public static class HanhKhach_DAO
     {
-        private static HanhKhach_DAO instance;
-
-        public static HanhKhach_DAO Instance
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> LoadHanhKhach()
         {
-            get
-            {
-                if (instance == null)
-                    instance = new HanhKhach_DAO();
-                return instance;
-            }
+            string query = "EXEC usp_LoadHanhKhach";
 
+            DataTable table = Dataprovider.ExcuteQuery(query);
+
+            //Chuyển Table thành List tên hành khách
+            List<string> danhsachHK = table.AsEnumerable().ToList().ConvertAll(x =>
+                 x[0].ToString());
+
+            return danhsachHK;
         }
-
-        private HanhKhach_DAO()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static List<HanhKhach> LoadHanhKhachVe()
         {
+            string query = "EXEC usp_LoadHKVe";
 
+            DataTable table = Dataprovider.ExcuteQuery(query);
+
+            //Chuyển Table thành List tên hành khách
+            List<HanhKhach> danhsachHK = table.AsEnumerable().ToList().ConvertAll(x =>
+               new HanhKhach() { TenHanhKhach = x[0].ToString(),CMND = x[1].ToString() });
+
+            return danhsachHK;
         }
-
-        public List<string> LoadHanhKhach()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> LoadHanhKhachPDC()
         {
-            string query = "SELECT TenHanhKhach FROM HANHKHACH";
+            string query = "EXEC usp_LoadHKPhieuDatCho";
 
-            DataTable table = Dataprovider.Instance.ExcuteQuery(query);
+            DataTable table = Dataprovider.ExcuteQuery(query);
 
             //Chuyển Table thành List tên hành khách
             List<string> danhsachHK = table.AsEnumerable().ToList().ConvertAll(x =>
@@ -48,14 +66,14 @@ namespace DAO
         /// </summary>
         /// <param name="_hanhKhach"></param>
         /// <returns></returns>
-        public int DemSoHanhKhach(HanhKhach _hanhKhach)
+        public static int DemSoHanhKhach(HanhKhach _hanhKhach)
         {
 
             string query = "EXEC DEM_HANH_KHACH @TenHanhKhach,@CMND ,@SoDienThoai";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@TenHanhKhach",SqlDbType.NVarChar){IsNullable=true,Value=_hanhKhach.Name?? (Object)DBNull.Value},
+                new SqlParameter("@TenHanhKhach",SqlDbType.NVarChar){IsNullable=true,Value=_hanhKhach.TenHanhKhach?? (Object)DBNull.Value},
 
                 new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_hanhKhach.CMND?? (Object)DBNull.Value},
 
@@ -66,7 +84,7 @@ namespace DAO
 
             try
             {
-                return Convert.ToInt32(Dataprovider.Instance.ExcuteScalar(query, parameters.ToArray()));
+                return Convert.ToInt32(Dataprovider.ExcuteScalar(query, parameters.ToArray()));
             }
             catch (Exception)
             {
@@ -79,13 +97,13 @@ namespace DAO
         /// </summary>
         /// <param name="_hanhKhach"></param>
         /// <returns></returns>
-        public DataTable TraCuuHK(HanhKhach _hanhKhach, int pageSize, int pageNumber)
+        public static DataTable TraCuuHK(HanhKhach _hanhKhach, int pageSize, int pageNumber)
         {
             string query = "EXEC sp_TimHanhKhach @TenKH,@CMND,@SoDT,@pageSize,@pageNumber";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@TenKH",SqlDbType.NVarChar){IsNullable=true,Value=_hanhKhach.Name?? (Object)DBNull.Value },
+                new SqlParameter("@TenKH",SqlDbType.NVarChar){IsNullable=true,Value=_hanhKhach.TenHanhKhach?? (Object)DBNull.Value },
 
                 new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_hanhKhach.CMND?? (Object)DBNull.Value},
 
@@ -97,7 +115,7 @@ namespace DAO
                 new SqlParameter("@pageNumber",SqlDbType.VarChar){Value=pageNumber},
             };
 
-            DataTable danhsachKH = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
+            DataTable danhsachKH = Dataprovider.ExcuteQuery(query, parameters.ToArray());
 
             return danhsachKH;
         }

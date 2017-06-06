@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace GUI
+namespace Help_Fuction
 {
     /// <summary>
     /// Lớp này dùng để cập nhật giao diện khi đang trong tiến trình khác 

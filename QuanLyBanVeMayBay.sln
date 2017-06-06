@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculate_YearAndMonth_InCome", "Calculate_YearAndMonth_InCome\Calculate_YearAndMonth_InCome.csproj", "{7C05D2B8-FFEB-4802-BBED-BB0913B4B8CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Help_Funtion", "Help_Funtion\Help_Funtion.csproj", "{57EB6860-82F4-4EFB-A87A-98FF5F45806A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7C05D2B8-FFEB-4802-BBED-BB0913B4B8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C05D2B8-FFEB-4802-BBED-BB0913B4B8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C05D2B8-FFEB-4802-BBED-BB0913B4B8CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57EB6860-82F4-4EFB-A87A-98FF5F45806A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57EB6860-82F4-4EFB-A87A-98FF5F45806A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57EB6860-82F4-4EFB-A87A-98FF5F45806A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57EB6860-82F4-4EFB-A87A-98FF5F45806A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

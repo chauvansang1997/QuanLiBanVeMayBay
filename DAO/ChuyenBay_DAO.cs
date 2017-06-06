@@ -6,30 +6,60 @@ using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-
+using Help_Fuction;
 
 namespace DAO
 {
-    public class ChuyenBay_DAO
+    public static class ChuyenBay_DAO
     {
-        private static ChuyenBay_DAO instance;
 
-        public  static ChuyenBay_DAO Instance
+        
+        public static List<SanBay> LoadDanhSachSBTG(string _tenSanBay)
         {
-            get
+            string query = " EXEC usp_LoadTenSanBayTG @tenSanBay";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                if (instance == null)
-                    instance = new ChuyenBay_DAO();
-                return instance;
+                new SqlParameter("@tenSanBay",SqlDbType.NVarChar){IsNullable =true,Value=_tenSanBay??(Object)DBNull.Value},
+            };
+
+            try
+            {
+                List<SanBay> temp = Dataprovider.ExcuteQuery(query, parameters.ToArray()).AsEnumerable().ToList().ConvertAll(x =>
+                  new SanBay(x[0].ToString(), x[1].ToString()));
+                return temp;
             }
-           
+            catch (Exception err)
+            {
+                HelpFuction.Log(err);
+                return null;
+            }
+          
         }
 
-        public List<string> LoadMaCB()
+        
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="_tenSanBay"></param>
+       /// <returns></returns>
+        public static DataTable LoadDanhSachSBTG()
+        {
+            string query = " EXEC usp_LoadDanhSachSanBayTG ";
+
+
+            return Dataprovider.ExcuteQuery(query);
+
+        } 
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <returns></returns>
+        public static List<string> LoadMaChuyenBay()
         {
             
             string query = "Select MaChuyenBay from CHUYENBAY";
-            DataTable table= Dataprovider.Instance.ExcuteQuery(query); ;
+            DataTable table= Dataprovider.ExcuteQuery(query); ;
             //Chuyển Table thành List
             List<string> danhSachMCB = table.AsEnumerable()
             .Select(row =>row.Field<string>("MaChuyenBay")).ToList();
@@ -42,43 +72,48 @@ namespace DAO
         /// </summary>
         /// <param name="_chuyenbay">Thông tin chuyến bay</param>
         /// <returns></returns>
-        public bool NhanLichCB(ChuyenBay _chuyenbay)
+        public static bool NhapLichCB(ChuyenBay _chuyenbay,out string _maChuyenBay)
         {
-            string query = "";
+            string query = "EXEC usp_NhapThongTinChuyenBay @sanBayDi,@sanBayDen,@ngayGioKH,@thoiGianBay";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@SanBayDi",SqlDbType.VarChar){Value=_chuyenbay.SanBayDi},
+                new SqlParameter("@sanBayDi",SqlDbType.VarChar){Value=_chuyenbay.SanBayDi},
 
-                new SqlParameter("@SanBayDen",SqlDbType.VarChar){Value=_chuyenbay.SanBayDen},
+                new SqlParameter("@sanBayDen",SqlDbType.VarChar){Value=_chuyenbay.SanBayDen},
 
-                new SqlParameter("@GiaVe",SqlDbType.Int){Value=_chuyenbay.GiaVe},
 
-                new SqlParameter("@ThoiGianBay",SqlDbType.Int){Value=_chuyenbay.ThoiGianBay},
+                new SqlParameter("@thoiGianBay",SqlDbType.Int){Value=_chuyenbay.ThoiGianBay},
 
-                new SqlParameter("@NgayGioKH",SqlDbType.DateTime){Value=_chuyenbay.NgayGioKH},
+                new SqlParameter("@ngayGioKH",SqlDbType.DateTime){Value=_chuyenbay.NgayGioKH},
 
 
             };
 
-
-            if (Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+            try
             {
+                _maChuyenBay = (string)Dataprovider.ExcuteScalar(query,parameters.ToArray());
+
                 return true;
             }
-            else
+            catch (Exception err)
             {
+                HelpFuction.Log(err);
+                _maChuyenBay = null;
                 return false;
+                
             }
+            
         
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="_hangGhe"></param>
-        public void NhapChiTietCB(HangGhe _hangGhe)
+        public static void NhapChiTietHangGhe(HangGhe _hangGhe)
         {
-            string query = "";
+            string query = "EXEC usp_NhapChiTietSoGhe @maChuyenBay,@maHangVe,@soGhe";
+
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
@@ -89,19 +124,84 @@ namespace DAO
                 new SqlParameter("@soGhe",SqlDbType.Int){Value=_hangGhe.SoGhe },
 
             };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception err)
+            {
 
-            Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray());
+                HelpFuction.Log(err);
+            }
+            
+        }
+        public static void NhapDonGia(string _machuyenbay,int _dongia)
+        {
+            string query = "EXEC usp_NhapDonGia  @maChuyenBay,@donGia";
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value=_machuyenbay},
+
+                new SqlParameter("@donGia",SqlDbType.Int){Value=_dongia},
+
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception err)
+            {
+
+                HelpFuction.Log(err);
+            }
+        }
+        public static void NhapChiTietChuyenBay(SanBayTrungGian _sanbay)
+        {
+            string query = "EXEC usp_NhapChiTietChuyenBay @maChuyenBay,@maSanBay,@thoiGianDung,@ghiChu";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value=_sanbay.MaChuyenBay },
+
+                new SqlParameter("@maSanBay",SqlDbType.VarChar){Value=_sanbay.TenSanBay},
+
+                new SqlParameter("@thoiGianDung",SqlDbType.Int){Value=_sanbay.ThoiGianDung },
+
+                new SqlParameter("@ghiChu",SqlDbType.VarChar){IsNullable=true,Value=_sanbay.GhiChu??(Object)DBNull.Value },
+
+            };
+            try
+            {
+                Dataprovider.ExcuteNonQuery(query, parameters.ToArray());
+            }
+            catch (Exception err)
+            {
+
+                HelpFuction.Log(err);
+            }
+
         }
 
+
+    
+        // public static DataTable 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public DataTable LoadDanhSachHangGhe()
+        public static DataTable LoadDanhSachHangGhe()
         {
             string query = "EXEC usp_LoadDanhSachHangGhe";
-
-            return Dataprovider.Instance.ExcuteQuery(query);
+            try
+            {
+                return Dataprovider.ExcuteQuery(query);
+            }
+            catch (Exception err)
+            {
+                HelpFuction.Log(err);
+                return null;
+            }
+            
         }
         /// <summary>
         /// Thay đổi thông tin chuyến bay bao gồm: ngày giờ bay, số lượng vé
@@ -109,7 +209,7 @@ namespace DAO
         /// <param name="_maCB">Mã chuyến bay muốn thay đổi</param>
         /// <param name="_chuyenbay">Thông tin mới muốn thay đổi</param>
         /// <returns></returns>
-        public bool ThayDoiChuyenBay(string _maCB,ChuyenBay _chuyenbay)
+        public static bool ThayDoiChuyenBay(string _maCB,ChuyenBay _chuyenbay)
         {
             string query = "";
             List<SqlParameter> parameters = new List<SqlParameter>()
@@ -118,13 +218,21 @@ namespace DAO
 
               
             };
-   
-            if (Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+            try
             {
-                return true;
-            }
+                if (Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+                {
+                    return true;
+                }
 
-            return false;
+                return false;
+            }
+            catch (Exception err)
+            {
+                HelpFuction.Log(err);
+                return false;
+            }
+           
         }
 
         /// <summary>
@@ -132,7 +240,7 @@ namespace DAO
         /// </summary>
         /// <param name="_maChuyenBay">Mã chuyến bay mà ta muốn xóa</param>
         /// <returns></returns>
-        public bool HuyChuyenBay(string _maChuyenBay)
+        public static bool HuyChuyenBay(string _maChuyenBay)
         {
             string query = "";
             List<SqlParameter> parameters = new List<SqlParameter>()
@@ -140,11 +248,20 @@ namespace DAO
                 new SqlParameter("@MaChuyenBay",SqlDbType.VarChar){Value =_maChuyenBay },
             };
 
-            if (Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+            try
             {
-                return true;
+                if (Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception err)
+            {
+                HelpFuction.Log(err);
+                return false;
+            }
+            
         }
 
         /// <summary>
@@ -152,9 +269,9 @@ namespace DAO
         /// </summary>
         /// <param name="chuyenbay"></param>
         /// <returns></returns>
-        public int DemSoChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
+        public static int DemSoChuyenBay(string _sanBayDi, string _sanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen)
         {
-            string query = "EXEC DEM_CHUYENBAY @SanBayDi,@SanBayDen,@NgayKHTu,@NgayKHDen";
+            string query = "EXEC usp_DemChuyenBay @SanBayDi,@SanBayDen,@NgayKHTu,@NgayKHDen";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
@@ -170,10 +287,11 @@ namespace DAO
 
             try
             {
-                return Convert.ToInt32(Dataprovider.Instance.ExcuteScalar(query, parameters.ToArray()));
+                return Convert.ToInt32(Dataprovider.ExcuteScalar(query, parameters.ToArray()));
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                HelpFuction.Log(err);
                 return 0;
             }
         }
@@ -185,9 +303,9 @@ namespace DAO
         /// <param name="pageSize"></param>
         /// <param name="pageNumber"></param>
         /// <returns></returns>
-        public DataTable TraCuuChuyenBay(string SanBayDi, string SanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen, int pageSize, int pageNumber)
+        public static DataTable TraCuuChuyenBay(string SanBayDi, string SanBayDen, DateTime? _ngayKHTu, DateTime? _ngayKHDen, int pageSize, int pageNumber)
         {
-            string query = "EXEC TRACUU_CHUYENBAY @SanBayDi,@SanBayDen,@ngayKHTu,@NgayKHDen,@pageSize,@pageNumber";
+            string query = "EXEC usp_TraCuuChuyenBay @SanBayDi,@SanBayDen,@ngayKHTu,@NgayKHDen,@pageSize,@pageNumber";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
@@ -199,29 +317,41 @@ namespace DAO
 
                 new SqlParameter("@NgayKHDen",SqlDbType.DateTime){IsNullable=true, Value = _ngayKHDen ??(Object)DBNull.Value},
 
-                new SqlParameter("@pageSize",SqlDbType.Int){Value=pageSize},
+                new SqlParameter("@pageSize",SqlDbType.Int){Value = pageSize },
 
-                new SqlParameter("@pageNumber",SqlDbType.Int){Value=pageNumber},
+                new SqlParameter("@pageNumber",SqlDbType.Int){Value = pageNumber },
             };
 
-            DataTable dSchuyenbay = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
-
-
-            return dSchuyenbay;
+            try
+            {
+                return Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            }
+            catch (Exception err)
+            {
+                HelpFuction.Log(err);
+                return null;
+            }
+            
         }
-        public DataTable TraCuuSoGhe(string _maChuyenBay)
+        public static DataTable TraCuuSoGhe(string _maChuyenBay)
         {
-            string query = "EXEC usp_ThongTinGhe @machuuyenbay";
+            string query = "EXEC usp_ThongTinGhe @machuyenbay";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@machuyenbay",SqlDbType.VarChar){Value=_maChuyenBay},
             };
 
-            DataTable danhsachSoGhe = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
+            try
+            {
+               return Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            }
+            catch (Exception err)
+            {
+                HelpFuction.Log(err);
+                return null;                
+            }
 
-
-            return danhsachSoGhe;
         }
 
         /// <summary>
@@ -229,20 +359,29 @@ namespace DAO
         /// </summary>
         /// <param name="_maCB"></param>
         /// <returns></returns>
-        public DataTable TraCuuSanBayTG(string _maCB)
+        public static DataTable TraCuuSanBayTG(string _maCB)
         {
             DataTable sanbayTG = new DataTable();
 
-            string query = "EXEC TRACUU_SANBAYTG @maChuyenBay";
+            string query = "EXEC usp_TraCuuSanBayTG @maChuyenBay";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value=_maCB},
             };
 
-            sanbayTG = Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
+            try
+            {
+                return Dataprovider.ExcuteQuery(query, parameters.ToArray());
+            }
+            catch (Exception err)
+            {
 
-            return sanbayTG;
+                HelpFuction.Log(err);
+
+                return null;
+            }
+
         }
     }
 }

@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="69024-bunifu_ui_v1.52">
+      <HintPath>..\Build\69024-bunifu_ui_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="Exel handle">
       <HintPath>..\Build\Exel handle.dll</HintPath>
     </Reference>
@@ -72,6 +75,18 @@
     </Compile>
     <Compile Include="Nhân viên\Chức năng\Lập phiếu đặt chỗ\FORM_THEMPHIEUDATCHO.Designer.cs">
       <DependentUpon>FORM_THEMPHIEUDATCHO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhân viên\Chức năng\Nhận lịch chuyến bay\FORM_HANGGHE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân viên\Chức năng\Nhận lịch chuyến bay\FORM_HANGGHE.Designer.cs">
+      <DependentUpon>FORM_HANGGHE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhân viên\Chức năng\Nhận lịch chuyến bay\FORM_SANBAYTRUNGGIAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân viên\Chức năng\Nhận lịch chuyến bay\FORM_SANBAYTRUNGGIAN.Designer.cs">
+      <DependentUpon>FORM_SANBAYTRUNGGIAN.cs</DependentUpon>
     </Compile>
     <Compile Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.cs">
       <SubType>Form</SubType>
@@ -228,6 +243,12 @@
     <EmbeddedResource Include="Nhân viên\Chức năng\Lập phiếu đặt chỗ\FORM_THEMPHIEUDATCHO.resx">
       <DependentUpon>FORM_THEMPHIEUDATCHO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nhân viên\Chức năng\Nhận lịch chuyến bay\FORM_HANGGHE.resx">
+      <DependentUpon>FORM_HANGGHE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhân viên\Chức năng\Nhận lịch chuyến bay\FORM_SANBAYTRUNGGIAN.resx">
+      <DependentUpon>FORM_SANBAYTRUNGGIAN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.resx">
       <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,9 +349,17 @@
       <Project>{69402fd7-7979-4978-bf69-206ae2b73a05}</Project>
       <Name>BUS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{605e7d19-6447-4d20-a76b-7dddd53ebde5}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{5F251647-2E55-4960-B388-6F0F3B18E2FF}</Project>
+      <Project>{5f251647-2e55-4960-b388-6f0f3b18e2ff}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Help_Funtion\Help_Funtion.csproj">
+      <Project>{57eb6860-82f4-4efb-a87a-98ff5f45806a}</Project>
+      <Name>Help_Funtion</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

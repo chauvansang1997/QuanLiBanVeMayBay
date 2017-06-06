@@ -9,21 +9,10 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class SanBay_DAO
+    public static class SanBay_DAO
     {
-        private static SanBay_DAO instance;
-
-        public static SanBay_DAO Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new SanBay_DAO();
-                return instance;
-            }
-
-        }
-        public DataTable XemSanBay(int _page,int _pageSize)
+        
+        public static DataTable XemSanBay(int _page,int _pageSize)
         {
             DataTable sanbay = new DataTable();
 
@@ -34,37 +23,37 @@ namespace DAO
             query.AppendFormat("(SELECT TOP {0} MaSanBay FROM SANBAY ORDER BY MaSanBay)",PreviousPageOffSet);
             
 
-            sanbay = Dataprovider.Instance.ExcuteQuery(query.ToString());
+            sanbay = Dataprovider.ExcuteQuery(query.ToString());
             return sanbay;
         }
 
 
-        public bool XoaSanBay(string _maSanBay)
-        {
-            string query="Delete SanBay when MaSanBay=@MaSanBay";
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@MaSanBay",SqlDbType.VarChar){Value=_maSanBay}
-            };
+        //public static bool XoaSanBay(string _maSanBay)
+        //{
+        //    string query="Delete SanBay when MaSanBay=@MaSanBay";
+        //    List<SqlParameter> parameters = new List<SqlParameter>()
+        //    {
+        //        new SqlParameter("@MaSanBay",SqlDbType.VarChar){Value=_maSanBay}
+        //    };
 
-            if (Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray()) > 0)
-            {
-                return false;
-            }
-            return false;
-        }
+        //    if (Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+        //    {
+        //        return false;
+        //    }
+        //    return false;
+        //}
 
         /// <summary>
         /// Lấy danh sách các sân bay đi
         /// </summary>
         /// <returns></returns>
-        public List<SanBay> LoadSanBayDi()
+        public static List<SanBay> LoadSanBayDi()
         {
             //Câu truy vấn
-            string query = "EXEC LOADSANBAYDI";
+            string query = "EXEC usp_LoadSanBayDi";
 
             //Lấy dữ liệu lên
-            DataTable table = Dataprovider.Instance.ExcuteQuery(query);
+            DataTable table = Dataprovider.ExcuteQuery(query);
 
             //Chuyển Table thành List gồm có tên sân bay đi  và tên sân bay đến
             List<SanBay> danhsachSBDi = table.AsEnumerable().ToList().ConvertAll(x => 
@@ -79,10 +68,10 @@ namespace DAO
         /// </summary>
         /// <param name="_sanBayDi"></param>
         /// <returns></returns>
-        public List<SanBay> LoadSanBayDen(string _sanBayDi)
+        public static List<SanBay> LoadSanBayDen(string _sanBayDi)
         {
             //Câu truy vấn
-            string query = "EXEC LOADSANBAYDEN @SanBayDi";
+            string query = "EXEC usp_LoadSanBayDen @SanBayDi";
 
             //Thêm parameter vào command tránh sql injection
             List<SqlParameter> parameters = new List<SqlParameter>()
@@ -91,7 +80,7 @@ namespace DAO
             };
 
             //Lấy dữ liệu lên
-            DataTable table = Dataprovider.Instance.ExcuteQuery(query,parameters.ToArray());
+            DataTable table = Dataprovider.ExcuteQuery(query,parameters.ToArray());
 
 
             //Chuyển Table thành List gồm có tên sân bay đi  và tên sân bay đến

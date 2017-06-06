@@ -41,7 +41,7 @@ namespace GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (BUS.User_BUS.Instance.DangNhap(txtUserName.Text, txtPassword.Text))
+            if (BUS.User_BUS.DangNhap(txtUserName.Text, txtPassword.Text))
             {
                 NHANVIEN formNhanVien = new NHANVIEN();
                 formNhanVien.ShowDialog();

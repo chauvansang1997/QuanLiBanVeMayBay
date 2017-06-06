@@ -2,27 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class HangGhe
+    public class HangVe
     {
-        private int soGhe;
         private string maHangVe;
-        private string maChuyenBay;
+        private string tenHangVe;
 
-        public int SoGhe
-        {
-            get
-            {
-                return soGhe;
-            }
-
-            set
-            {
-                soGhe = value;
-            }
-        }
+        private static int soLuongHangVe;
 
         public string MaHangVe
         {
@@ -37,16 +26,29 @@ namespace DTO
             }
         }
 
-        public string MaChuyenBay
+        public string TenHangVe
         {
             get
             {
-                return maChuyenBay;
+                return tenHangVe;
             }
 
             set
             {
-                maChuyenBay = value;
+                tenHangVe = value;
+            }
+        }
+
+        public static int SoLuongHangVe
+        {
+            get
+            {
+                return soLuongHangVe;
+            }
+
+            set
+            {
+                soLuongHangVe = value;
             }
         }
     }

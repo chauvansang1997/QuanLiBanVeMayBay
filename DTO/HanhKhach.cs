@@ -8,31 +8,31 @@ namespace DTO
 {
     public class HanhKhach
     {
-        private string name;
-        private string maHK;
+        private string tenHanhKhach;
+        private string maHanhKhach;
         private string diaChi;
         private string soDT;
         private string cmnd;
-        public string Name
+        public string TenHanhKhach
         {
             get
             {
-                return name;
+                return tenHanhKhach;
             }
             set
             {
-                name = value;
+                tenHanhKhach = value;
             }
         }
-        public string MaHK
+        public string MaHanhKhach
         {
             get
             {
-                return maHK;
+                return maHanhKhach;
             }
             set
             {
-                maHK = value;
+                maHanhKhach = value;
             }
         }
         public string DiaChi
@@ -75,9 +75,9 @@ namespace DTO
         }
         public HanhKhach(string name,string cmnd,string mahk,string diachi,string sodt)
         {
-            Name = name;
+            TenHanhKhach = name;
             CMND = cmnd;
-            MaHK = mahk;
+            MaHanhKhach = mahk;
             DiaChi = diachi;
             SoDT = sodt;
         }

@@ -1,4 +1,5 @@
 ﻿using DTO;
+using Help_Fuction;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,51 +10,40 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class PhieuDatCho_DAO
+    public static class PhieuDatCho_DAO
     {
-        private static PhieuDatCho_DAO instance;
 
-        public static PhieuDatCho_DAO Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new PhieuDatCho_DAO();
-                return instance;
-            }
-
-        }
+        public static event EventHandler<SqlException> LapPhieuDC_sqlException;
+        public static event EventHandler<SqlException> HuyPhieuDC_sqlException;
         /// <summary>
         /// Lập phiếu đặt chỗ
         /// </summary>
         /// <param name="_phieudatcho"></param>
         /// <returns></returns>
-        public bool LapPhieuDatCho(PhieuDatCho _phieudatcho)
+        public static bool LapPhieuDatCho(PhieuDatCho _phieudatcho)
         {
 
-            string query = "";
+            string query = "EXEC usp_NhapPhieuDatCho @maChuyenBay,@tenHanhKhach,@CMND,@SoDienThoai,@ngayDat,@maHangVe";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@TenHanhKhach",SqlDbType.NVarChar){Value =_phieudatcho.TenHanhKhach},
+                new SqlParameter("@tenHanhKhach",SqlDbType.NVarChar){Value =_phieudatcho.TenHanhKhach},
 
-                new SqlParameter("@SoDT",SqlDbType.VarChar){Value =_phieudatcho.SoDT},
+                new SqlParameter("@SoDienThoaiT",SqlDbType.VarChar){Value =_phieudatcho.SoDT},
 
-                new SqlParameter("@MaCB",SqlDbType.VarChar){Value =_phieudatcho.MaCB},
+                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value =_phieudatcho.MaCB},
 
                 new SqlParameter("@CMND",SqlDbType.VarChar){Value =_phieudatcho.CMND},
 
-                new SqlParameter("@GiaTien",SqlDbType.Int){Value =_phieudatcho.GiaTien},
+                new SqlParameter("@ngayDat",SqlDbType.DateTime){Value =_phieudatcho.NgayGioDat},
 
-                new SqlParameter("@NgayDat",SqlDbType.DateTime){Value =_phieudatcho.NgayGioDat},
-
-                new SqlParameter("@HangVe",SqlDbType.VarChar){Value =_phieudatcho.TenHanhKhach},
+                new SqlParameter("@maHangVe",SqlDbType.VarChar){Value =_phieudatcho.TenHanhKhach},
 
             };
 
             try
             {
-                if (Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+                if (Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0)
                 {
                     return true;
                 }
@@ -62,9 +52,21 @@ namespace DAO
                     return false;
                 }
             }
-            catch (Exception)
+            catch (SqlException err)
             {
-
+                if (err.ErrorCode == 16)
+                {
+                    if (LapPhieuDC_sqlException != null)
+                    {
+                        LapPhieuDC_sqlException(null, err);
+                    }
+                }
+                HelpFuction.Log(err);
+                return false;
+            }
+            catch (Exception err)
+            {
+                HelpFuction.Log(err);
                 return false;
             }
           
@@ -76,7 +78,7 @@ namespace DAO
         /// </summary>
         /// <param name="_maPhieuDatCho">mã phiếu đặt chỗ</param>
         /// <returns></returns>
-        public bool HuyPhieuDatCho(string _maPhieuDatCho)
+        public static bool HuyPhieuDatCho(string _maPhieuDatCho)
         {
             string query = "DELETE FROM PHIEUDATCHO WHERE MaPhieuDatCho = @maPhieuDatCho";
             List<SqlParameter> parameters = new List<SqlParameter>()
@@ -85,7 +87,7 @@ namespace DAO
             };
             try
             {
-                if (Dataprovider.Instance.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+                if (Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0)
                 {
                     return true;
                 }
@@ -94,9 +96,14 @@ namespace DAO
                     return false;
                 }
             }
-            catch (Exception)
+            catch(SqlException err)
             {
-
+                HelpFuction.Log(err);
+                return false;
+            }
+            catch (Exception err)
+            {
+                HelpFuction.Log(err);
                 return false;
             }
            
@@ -107,9 +114,9 @@ namespace DAO
         /// </summary>
         /// <param name="_phieudatcho"></param>
         /// <returns></returns>
-        public int DemPhieuDatCho(PhieuDatCho _phieudatcho)
+        public static int DemPhieuDatCho(PhieuDatCho _phieudatcho)
         {
-            string query = "";
+            string query = "EXEC usp_DemPhieuDatCho @tenHanhKhach,@CMND,@maChuyenBay,@maPhieuDatCho";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
@@ -124,12 +131,14 @@ namespace DAO
             };
             try
             {
-                return Convert.ToInt32(Dataprovider.Instance.ExcuteScalar(query, parameters.ToArray()));
+                return Convert.ToInt32(Dataprovider.ExcuteScalar(query, parameters.ToArray()));
 
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                HelpFuction.Log(err);
                 return 0;
+                
             }
         }
 
@@ -137,21 +146,21 @@ namespace DAO
         /// Load phiếu đặt chỗ
         /// </summary>
         /// <returns></returns>
-        public List<string> LoadPhieuDatCho()
+        public static List<string> LoadPhieuDatCho()
         {
             string query = "SELECT MaPhieuDatCho FROM PHIEUDATCHO";
 
             try
             {
-                DataTable table = Dataprovider.Instance.ExcuteQuery(query);
+                DataTable table = Dataprovider.ExcuteQuery(query);
 
                 return  table.AsEnumerable().ToList().ConvertAll(x => x[0].ToString());
 
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                return null;
-                
+                HelpFuction.Log(err);
+                return null;                
             }
        
         }
@@ -160,31 +169,32 @@ namespace DAO
         /// </summary>
         /// <param name="_phieuDatCho"></param>
         /// <returns></returns>
-        public DataTable TraCuuPhieuDatCho(PhieuDatCho _phieuDatCho,int pageSize,int pageNumber)
+        public static DataTable TraCuuPhieuDatCho(PhieuDatCho _phieuDatCho,int pageSize,int pageNumber)
         {
-            string query = "EXEC TRACUU_PHIEUDATCHO @tenHanhKhach,@CMND,@maChuyenBay,@maPhieuDatCho,@pageSize,@pageNumber";
+            string query = "EXEC usp_TraCuuPhieuDatCho @tenHanhKhach,@CMND,@maChuyenBay,@maPhieuDatCho,@pageSize,@pageNumber";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@tenHanhKhach",SqlDbType.NVarChar){IsNullable=true,Value=_phieuDatCho.TenHanhKhach??(Object)DBNull.Value},
+                new SqlParameter("@tenHanhKhach",SqlDbType.NVarChar){ IsNullable=true,Value=_phieuDatCho.TenHanhKhach??(Object)DBNull.Value},
 
-                new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_phieuDatCho.CMND??(Object)DBNull.Value},
+                new SqlParameter("@CMND",SqlDbType.VarChar){ IsNullable=true,Value=_phieuDatCho.CMND??(Object)DBNull.Value},
 
-                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){IsNullable=true,Value=_phieuDatCho.MaCB??(Object)DBNull.Value},
+                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){ IsNullable=true,Value=_phieuDatCho.MaCB??(Object)DBNull.Value},
 
-                new SqlParameter("@maPhieuDatCho",SqlDbType.VarChar){IsNullable=true,Value=_phieuDatCho.MaPhieuDatCho??(Object)DBNull.Value},
+                new SqlParameter("@maPhieuDatCho",SqlDbType.VarChar){ IsNullable=true,Value=_phieuDatCho.MaPhieuDatCho??(Object)DBNull.Value},
 
-                new SqlParameter("@pageSize",SqlDbType.Int){Value=pageSize},
+                new SqlParameter("@pageSize",SqlDbType.Int){ Value=pageSize},
 
-                new SqlParameter("@pageNumber",SqlDbType.Int){Value=pageNumber},
+                new SqlParameter("@pageNumber",SqlDbType.Int){ Value=pageNumber },
             };
             //Tránh lỗi kết nối cơ sở dữ liệu
             try
             {
-                return Dataprovider.Instance.ExcuteQuery(query, parameters.ToArray());
+                return Dataprovider.ExcuteQuery(query, parameters.ToArray());
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                HelpFuction.Log(err);
                 return null;              
             }
         }

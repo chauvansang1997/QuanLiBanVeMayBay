@@ -15,7 +15,7 @@ namespace BUS
         {
             string query = "'SELECT * FROM SANBAY WHERE dbo.fChuyenCoDauThanhKhongDau(TenSanBay) LIKE ''%''+'''+dbo.fChuyenCoDauThanhKhongDau(@TenSanBay)+'''+''%'''";
 
-            DataTable table = Dataprovider.Instance.ExcuteQuery(query,new List<SqlParameter> { new SqlParameter("@TenSanBay", SqlDbType.NVarChar) { Value=_tenSanBay} }.ToArray());
+            DataTable table = Dataprovider.ExcuteQuery(query,new List<SqlParameter> { new SqlParameter("@TenSanBay", SqlDbType.NVarChar) { Value=_tenSanBay} }.ToArray());
 
             return table;
         }

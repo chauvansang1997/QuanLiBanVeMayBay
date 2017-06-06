@@ -10,55 +10,46 @@ using System.Windows.Forms;
 
 namespace BUS
 {
-    public class SanBay_BUS
+    public static class SanBay_BUS
     {
 
-        private static SanBay_BUS instance;
 
-
-        public static SanBay_BUS Instance
+        public static DataTable XemSanBay(DataGridView data,int _page,int _pageSize)
         {
-            get
-            {
-                if (instance == null)
-                    instance = new SanBay_BUS();
-                return instance;
-            }
-
-        }
-        private SanBay_BUS()
-        {
-
-        }
-        public DataTable XemSanBay(DataGridView data,int _page,int _pageSize)
-        {
-            return SanBay_DAO.Instance.XemSanBay(_page,_pageSize);
+            return SanBay_DAO.XemSanBay(_page,_pageSize);
         }
       
-        public void ThemSanBay(string _sanBayDen,string _sanBayDi)
+        public static void ThemSanBay(string _sanBayDen,string _sanBayDi)
         {
 
         }
 
-        public void XoaSanBay(string _maSanBay)
+        public static void XoaSanBay(string _maSanBay)
         {
 
         }
+       
 
-        public void LoadSanBayDi(ComboBox _sanbaydi)
+        public static void LoadSanBay(ComboBox _sanbaydi)
         {
-            List<SanBay> danhsachSBDi = SanBay_DAO.Instance.LoadSanBayDi();
+            List<SanBay> danhsachSBDi = SanBay_DAO.LoadSanBayDi();
 
             _sanbaydi.DataSource = danhsachSBDi;
             _sanbaydi.DisplayMember = "tenSanBay";
+           
+            _sanbaydi.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            _sanbaydi.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
-        public void LoadSanBayDen(string _sanBayDi,ComboBox _sanBayDen)
+        public static void LoadSanBayDen(string _sanBayDi,ComboBox _sanBayDen)
         {
-            List<SanBay> danhsachSBDen = SanBay_DAO.Instance.LoadSanBayDen(_sanBayDi);
+            List<SanBay> danhsachSBDen = SanBay_DAO.LoadSanBayDen(_sanBayDi);
 
             _sanBayDen.DataSource = danhsachSBDen;
             _sanBayDen.DisplayMember = "tenSanBay";
+
+            _sanBayDen.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            _sanBayDen.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
     }
 }

@@ -3,31 +3,24 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace BUS
 {
-    public class PhieuDatCho_BUS
+    public static class PhieuDatCho_BUS
     {
-        private static PhieuDatCho_BUS instance;
 
-        public static PhieuDatCho_BUS Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new PhieuDatCho_BUS();
-                return instance;
-            }
-
-        }
+        public static event EventHandler<SqlException> LapPhieuDC_sqlException;
         /// <summary>
         /// Load phiếu đặt chỗ vào combobox
         /// </summary>
         /// <param name="_maPhieuatCho">danh sách phiếu đặt chỗ được load</param>
-        public List<string> LoadPhieuDatCho()
+        public static void LoadPhieuDatCho(ComboBox _phieuDatCho)
         {
-            return PhieuDatCho_DAO.Instance.LoadPhieuDatCho();
+            
+            _phieuDatCho.DataSource = PhieuDatCho_DAO.LoadPhieuDatCho();
+
         }
 
         /// <summary>
@@ -35,9 +28,9 @@ namespace BUS
         /// </summary>
         /// <param name="_maPhieuDatCho">mã phiếu đặt chỗ</param>
         /// <returns></returns>
-        public bool HuyPhieuDatCho(string _maPhieuDatCho)
+        public static bool HuyPhieuDatCho(string _maPhieuDatCho)
         {
-            return PhieuDatCho_DAO.Instance.HuyPhieuDatCho(_maPhieuDatCho);
+            return PhieuDatCho_DAO.HuyPhieuDatCho(_maPhieuDatCho);
         }
         /// <summary>
         /// Hủy phiếu đặt chổ
@@ -50,7 +43,7 @@ namespace BUS
         /// <param name="_giaTien">giá tiền</param>
         /// <param name="_ngayGioDat">ngày giờ đặt phiếu</param>
         /// <returns></returns>
-        public bool LapPhieuDatCho(string _tenHanhKhach, string _cmnd, string _soDienThoai, string _maChuyenBay,string _hangVe,int _giaTien,DateTime _ngayGioDat)
+        public static bool LapPhieuDatCho(string _tenHanhKhach, string _cmnd, string _soDienThoai, string _maChuyenBay,string _hangVe,DateTime _ngayGioDat)
         {
             PhieuDatCho phieudatcho = new PhieuDatCho()
             {
@@ -58,11 +51,13 @@ namespace BUS
                 CMND = _cmnd,
                 SoDT = _soDienThoai,
                 HangVe = _hangVe,
-                GiaTien = _giaTien,
                 MaCB = _maChuyenBay,
                 NgayGioDat = _ngayGioDat,
             };
-            return PhieuDatCho_DAO.Instance.LapPhieuDatCho(phieudatcho);
+
+            PhieuDatCho_DAO.LapPhieuDC_sqlException += LapPhieuDC_sqlException;
+
+            return PhieuDatCho_DAO.LapPhieuDatCho(phieudatcho);
         }
         /// <summary>
         /// Đếm số phiếu đặt chỗ
@@ -72,7 +67,7 @@ namespace BUS
         /// <param name="_maPhieuDatCho">mã phiếu đặt chỗ</param>
         /// <param name="_maChuyenBay">mã chuyến bay</param>
         /// <returns></returns>
-        public int DemPhieuDatCho(string _tenKhachHang,string _cmnd,string _maPhieuDatCho,string _maChuyenBay)
+        public static int DemPhieuDatCho(string _tenKhachHang,string _cmnd,string _maPhieuDatCho,string _maChuyenBay)
         {
             PhieuDatCho phieudatcho = new PhieuDatCho()
             {
@@ -81,7 +76,7 @@ namespace BUS
                 MaPhieuDatCho = _maPhieuDatCho,
                 MaCB = _maChuyenBay,
             };
-            return PhieuDatCho_DAO.Instance.DemPhieuDatCho(phieudatcho);
+            return PhieuDatCho_DAO.DemPhieuDatCho(phieudatcho);
         }
 
         /// <summary>
@@ -94,7 +89,7 @@ namespace BUS
         /// <param name="pageSize">Kích thước trang cần load</param>
         /// <param name="pageNumber">số trang cần load</param>
         /// <returns></returns>
-        public DataTable TraCuuPhieuDatCho(string _tenKhachHang, string _cmnd, string _maPhieuDatCho, string _maChuyenBay,int pageSize,int pageNumber)
+        public static DataTable TraCuuPhieuDatCho(string _tenKhachHang, string _cmnd, string _maPhieuDatCho, string _maChuyenBay,int pageSize,int pageNumber)
         {
             PhieuDatCho phieudattcho = new PhieuDatCho()
             {
@@ -103,7 +98,7 @@ namespace BUS
                 MaCB = _maChuyenBay,
                 MaPhieuDatCho = _maPhieuDatCho
             };
-            return PhieuDatCho_DAO.Instance.TraCuuPhieuDatCho(phieudattcho,pageSize,pageNumber);
+            return PhieuDatCho_DAO.TraCuuPhieuDatCho(phieudattcho,pageSize,pageNumber);
         }
     }
 }

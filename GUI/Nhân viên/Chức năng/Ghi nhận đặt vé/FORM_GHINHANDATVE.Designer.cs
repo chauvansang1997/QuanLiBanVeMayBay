@@ -40,19 +40,19 @@
             this.txtTenHanhKhach = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbHangVe = new System.Windows.Forms.ComboBox();
-            this.cmbMaChuyenBay = new System.Windows.Forms.ComboBox();
             this.txtGiaVe = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.errTenHanhKhach = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorTenHanhKhach = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorCMND = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorSoDT = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorMaCB = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorMaChuyenBay = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorHangVe = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errTenHanhKhach)).BeginInit();
+            this.txtMaChuyenBay = new System.Windows.Forms.TextBox();
+            this.txtTenHangVe = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTenHanhKhach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCMND)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSoDT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorMaCB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMaChuyenBay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHangVe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(468, 85);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 30);
+            this.label7.Size = new System.Drawing.Size(171, 26);
             this.label7.TabIndex = 40;
             this.label7.Text = "Chứng minh nhân dân:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -71,9 +71,10 @@
             // txtCMND
             // 
             this.txtCMND.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtCMND.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCMND.Location = new System.Drawing.Point(646, 85);
             this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(227, 22);
+            this.txtCMND.Size = new System.Drawing.Size(227, 26);
             this.txtCMND.TabIndex = 41;
             this.txtCMND.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
             this.txtCMND.Leave += new System.EventHandler(this.txtCMND_Leave);
@@ -85,7 +86,7 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(52, 145);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 30);
+            this.label9.Size = new System.Drawing.Size(105, 26);
             this.label9.TabIndex = 44;
             this.label9.Text = "Số điện Thoại:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -93,9 +94,10 @@
             // txtSoDT
             // 
             this.txtSoDT.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtSoDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDT.Location = new System.Drawing.Point(204, 145);
             this.txtSoDT.Name = "txtSoDT";
-            this.txtSoDT.Size = new System.Drawing.Size(227, 22);
+            this.txtSoDT.Size = new System.Drawing.Size(227, 26);
             this.txtSoDT.TabIndex = 45;
             this.txtSoDT.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
             this.txtSoDT.Leave += new System.EventHandler(this.txtSoDT_Leave);
@@ -107,7 +109,7 @@
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(472, 206);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(105, 34);
+            this.label10.Size = new System.Drawing.Size(105, 28);
             this.label10.TabIndex = 48;
             this.label10.Text = "Giá Tiền:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,7 +121,7 @@
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(52, 85);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 30);
+            this.label11.Size = new System.Drawing.Size(133, 26);
             this.label11.TabIndex = 53;
             this.label11.Text = "Tên hành khách:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,9 +155,10 @@
             // txtTenHanhKhach
             // 
             this.txtTenHanhKhach.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtTenHanhKhach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenHanhKhach.Location = new System.Drawing.Point(204, 85);
             this.txtTenHanhKhach.Name = "txtTenHanhKhach";
-            this.txtTenHanhKhach.Size = new System.Drawing.Size(227, 22);
+            this.txtTenHanhKhach.Size = new System.Drawing.Size(227, 26);
             this.txtTenHanhKhach.TabIndex = 57;
             this.txtTenHanhKhach.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
             this.txtTenHanhKhach.Leave += new System.EventHandler(this.txtTenHanhKhach_Leave);
@@ -179,40 +182,19 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(472, 145);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 30);
+            this.label2.Size = new System.Drawing.Size(127, 28);
             this.label2.TabIndex = 114;
             this.label2.Text = "Mã chuyến bay:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cmbHangVe
-            // 
-            this.cmbHangVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbHangVe.FormattingEnabled = true;
-            this.cmbHangVe.Location = new System.Drawing.Point(204, 206);
-            this.cmbHangVe.Name = "cmbHangVe";
-            this.cmbHangVe.Size = new System.Drawing.Size(227, 28);
-            this.cmbHangVe.TabIndex = 116;
-            this.cmbHangVe.TextChanged += new System.EventHandler(this.cmbMaChuyenBay_TextChanged);
-            this.cmbHangVe.Leave += new System.EventHandler(this.cmbHangVe_Leave);
-            // 
-            // cmbMaChuyenBay
-            // 
-            this.cmbMaChuyenBay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMaChuyenBay.FormattingEnabled = true;
-            this.cmbMaChuyenBay.Location = new System.Drawing.Point(646, 145);
-            this.cmbMaChuyenBay.Name = "cmbMaChuyenBay";
-            this.cmbMaChuyenBay.Size = new System.Drawing.Size(227, 28);
-            this.cmbMaChuyenBay.TabIndex = 117;
-            this.cmbMaChuyenBay.TextChanged += new System.EventHandler(this.cmbMaChuyenBay_TextChanged);
-            this.cmbMaChuyenBay.Leave += new System.EventHandler(this.cmbMaChuyenBay_Leave);
-            // 
             // txtGiaVe
             // 
             this.txtGiaVe.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtGiaVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaVe.Location = new System.Drawing.Point(646, 206);
             this.txtGiaVe.Name = "txtGiaVe";
             this.txtGiaVe.ReadOnly = true;
-            this.txtGiaVe.Size = new System.Drawing.Size(227, 22);
+            this.txtGiaVe.Size = new System.Drawing.Size(227, 26);
             this.txtGiaVe.TabIndex = 118;
             // 
             // label4
@@ -227,9 +209,9 @@
             this.label4.Text = "GHI NHẬN ĐẶT VÉ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // errTenHanhKhach
+            // errorTenHanhKhach
             // 
-            this.errTenHanhKhach.ContainerControl = this;
+            this.errorTenHanhKhach.ContainerControl = this;
             // 
             // errorCMND
             // 
@@ -239,13 +221,31 @@
             // 
             this.errorSoDT.ContainerControl = this;
             // 
-            // errorMaCB
+            // errorMaChuyenBay
             // 
-            this.errorMaCB.ContainerControl = this;
+            this.errorMaChuyenBay.ContainerControl = this;
             // 
             // errorHangVe
             // 
             this.errorHangVe.ContainerControl = this;
+            // 
+            // txtMaChuyenBay
+            // 
+            this.txtMaChuyenBay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtMaChuyenBay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaChuyenBay.Location = new System.Drawing.Point(646, 145);
+            this.txtMaChuyenBay.Name = "txtMaChuyenBay";
+            this.txtMaChuyenBay.Size = new System.Drawing.Size(227, 26);
+            this.txtMaChuyenBay.TabIndex = 119;
+            // 
+            // txtTenHangVe
+            // 
+            this.txtTenHangVe.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtTenHangVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenHangVe.Location = new System.Drawing.Point(204, 206);
+            this.txtTenHangVe.Name = "txtTenHangVe";
+            this.txtTenHangVe.Size = new System.Drawing.Size(227, 26);
+            this.txtTenHangVe.TabIndex = 120;
             // 
             // FORM_GHINHANDATVE
             // 
@@ -254,10 +254,10 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(904, 372);
+            this.Controls.Add(this.txtTenHangVe);
+            this.Controls.Add(this.txtMaChuyenBay);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtGiaVe);
-            this.Controls.Add(this.cmbMaChuyenBay);
-            this.Controls.Add(this.cmbHangVe);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTenHanhKhach);
@@ -273,10 +273,11 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "FORM_GHINHANDATVE";
             this.ShowIcon = false;
-            ((System.ComponentModel.ISupportInitialize)(this.errTenHanhKhach)).EndInit();
+            this.Load += new System.EventHandler(this.FORM_GHINHANDATVE_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorTenHanhKhach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCMND)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSoDT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorMaCB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMaChuyenBay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHangVe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -295,14 +296,14 @@
         private System.Windows.Forms.TextBox txtTenHanhKhach;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbHangVe;
-        private System.Windows.Forms.ComboBox cmbMaChuyenBay;
         private System.Windows.Forms.TextBox txtGiaVe;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ErrorProvider errTenHanhKhach;
+        private System.Windows.Forms.ErrorProvider errorTenHanhKhach;
         private System.Windows.Forms.ErrorProvider errorCMND;
         private System.Windows.Forms.ErrorProvider errorSoDT;
-        private System.Windows.Forms.ErrorProvider errorMaCB;
+        private System.Windows.Forms.ErrorProvider errorMaChuyenBay;
         private System.Windows.Forms.ErrorProvider errorHangVe;
+        private System.Windows.Forms.TextBox txtTenHangVe;
+        private System.Windows.Forms.TextBox txtMaChuyenBay;
     }
 }

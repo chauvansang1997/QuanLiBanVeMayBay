@@ -9,28 +9,18 @@ using System.Data;
 
 namespace BUS
 {
-    public class User_BUS
+    public static class User_BUS
     {
-        private static User_BUS instance;
-
-       public static User_BUS Instance
-       {
-            get
-            {
-                if (instance == null)
-                    instance = new User_BUS();
-                return instance;
-            }          
-       }
-        public bool DangNhap(string _userName,string _password)
+        
+        public static bool DangNhap(string _userName,string _password)
         {
 
-            return DAO.User_DAO.Instance.XemChuyenBay(_userName,_password);
+            return DAO.User_DAO.XemChuyenBay(_userName,_password);
         }
-        public DataTable DangNhap1(string txtUserName, string txtPassword)
+        public static DataTable DangNhap1(string txtUserName, string txtPassword)
         {
 
-            return User_DAO.Instance.XemChuyenBay1(txtUserName,txtPassword);
+            return User_DAO.XemChuyenBay1(txtUserName,txtPassword);
         }
     }
 }

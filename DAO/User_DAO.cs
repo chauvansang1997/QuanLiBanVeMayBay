@@ -9,21 +9,10 @@ using System.Windows.Forms;
 
 namespace DAO
 {
-    public class User_DAO
+    public static class User_DAO
     {
-        private static User_DAO instance;
-
-        public static User_DAO Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new User_DAO();
-                return instance;
-            }
-
-        }
-        public bool XemChuyenBay(string userName,string passWord)
+        
+        public static bool XemChuyenBay(string userName,string passWord)
         {
 
 
@@ -37,21 +26,21 @@ namespace DAO
             };
 
 
-            DataTable table = Dataprovider.Instance.ExcuteQuery(query, sqlParameter.ToArray());
+            DataTable table = Dataprovider.ExcuteQuery(query, sqlParameter.ToArray());
             if (table.Rows.Count == 1)
             {
                 return true;
             }
             return false;
         }
-        public DataTable XemChuyenBay1(string userName, string passWord)
+        public static DataTable XemChuyenBay1(string userName, string passWord)
         {
 
 
             string query1 = "Select * from DangNhap " +
                            "Where UserName= " + userName + " AND " + " Password = " + passWord;
             string query = @"SELECT * FROM DangNhap where UserName = 'ChauVanSang' and Password = '1234' or 1 = 1";
-            return Dataprovider.Instance.ExcuteQuery(query1);
+            return Dataprovider.ExcuteQuery(query1);
             
         }
     }
