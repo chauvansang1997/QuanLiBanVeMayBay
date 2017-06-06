@@ -72,10 +72,10 @@ namespace DAO
         /// <returns></returns>
         public static bool HuyVe(string _maVe)
         {
-            string query = "DELETE FROM PHIEUDATCHO WHERE MaPhieuDatCho = @maPhieuDatCho";
+            string query = "EXEC usp_HuyVe @maVe";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@maPhieuDatCho",SqlDbType.NVarChar){ Value =_maVe },
+                new SqlParameter("@maVe",SqlDbType.VarChar){ Value =_maVe },
             };
 
             try

@@ -13,7 +13,21 @@ namespace BUS
 {
     public static class ChuyenBay_BUS
     {
-       
+        /// <summary>
+        /// Xóa sân bay trung gian
+        /// </summary>
+        /// <param name="_maChuyenBay"></param>
+        /// <returns></returns>
+        public static bool XoaSanBayTrungGian(string _maChuyenBay)
+        {
+            return ChuyenBay_DAO.XoaSanBayTrungGian(_maChuyenBay);
+        }
+       /// <summary>
+       /// Nhập chi tiết hạng ghế
+       /// </summary>
+       /// <param name="_maChuyenBay"></param>
+       /// <param name="_maHangVe"></param>
+       /// <param name="_soGhe"></param>
         public static void NhapChiTietHangGhe(string _maChuyenBay,string _maHangVe,int _soGhe)
         {
             HangGhe hangGhe = new HangGhe()
@@ -24,16 +38,28 @@ namespace BUS
             };
             ChuyenBay_DAO.NhapChiTietHangGhe(hangGhe);
         }
+        /// <summary>
+        /// Nhập đơn giá
+        /// </summary>
+        /// <param name="_machuyenbay"></param>
+        /// <param name="_dongia"></param>
         public static void NhapDonGia(string _machuyenbay, int _dongia)
         {
             ChuyenBay_DAO.NhapDonGia(_machuyenbay, _dongia);
         }
-        public static void NhapChiTietChuyenBay(string _maChuyenBay,string _tenSanBay,int _thoiGianDung,string _ghiChu)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_maChuyenBay"></param>
+        /// <param name="_maSanBay"></param>
+        /// <param name="_thoiGianDung"></param>
+        /// <param name="_ghiChu"></param>
+        public static void NhapChiTietChuyenBay(string _maChuyenBay,string _maSanBay,int _thoiGianDung,string _ghiChu)
         {
             ChuyenBay_DAO.NhapChiTietChuyenBay(new SanBayTrungGian()
             {
                 MaChuyenBay = _maChuyenBay,
-                TenSanBay = _tenSanBay,
+                MaSanBay = _maSanBay,
                 ThoiGianDung = _thoiGianDung,
                 GhiChu = _ghiChu
             });

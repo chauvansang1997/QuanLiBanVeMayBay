@@ -55,6 +55,7 @@ namespace GUI
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
+
             txtPageNumber.Text = pageNumber.ToString();
 
             if (isClick)
@@ -132,6 +133,14 @@ namespace GUI
             {
                 if (PhieuDatCho_BUS.HuyPhieuDatCho(maPhieuDatCho))
                 {
+                    if (isClick)
+                    {
+                        dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(cmbTenHanhKhach.Text, cmbCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
+                    }
+                    else
+                    {
+                        dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
+                    }
                     MessageBox.Show("Xóa thành công");
                 }
             }

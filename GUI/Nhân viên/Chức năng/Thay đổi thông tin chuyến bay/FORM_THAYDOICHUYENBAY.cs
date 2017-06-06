@@ -21,6 +21,7 @@ namespace GUI
         private int totalPage;
 
         private bool isClick = false;
+        
         public FORM_THAYDOICHUYENBAY()
         {
             InitializeComponent();
@@ -35,6 +36,17 @@ namespace GUI
             string sanbayden = cmbSanBayDen.Text;
             DateTime ngayKHTu = dtPKNgayKHTu.Value;
             DateTime ngayKHDen = dtPKNgayKHDen.Value;
+            
+            if (DateTime.Compare(ngayKHTu, ngayKHDen) > 0)
+            {
+                MessageBox.Show("Ngày khởi hành đến phải sau ngày khởi hành từ");
+                return;
+            }
+            if (DateTime.Compare(ngayKHDen, DateTime.Now)<0)
+            {
+                MessageBox.Show("Không thể chọn ra những chuyến bay có ngày sớm hơn ngày hiện tại");
+                return;
+            }
 
             totalPage = ChuyenBay_BUS.DemChuyenBay(sanbaydi, sanbayden, ngayKHTu, ngayKHDen);
 
@@ -47,6 +59,8 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
             //dGVDachSanhCB.Columns.Clear();
+
+            
             dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, ngayKHTu, ngayKHDen);
         }
 
@@ -122,35 +136,19 @@ namespace GUI
             }
         }
 
-        private void btnThemSanBayTG_Click(object sender, EventArgs e)
-        {
-            if (dGVSanBayTG.Rows.Count == QuyDinh.SoSanBayTGToiDa)
-            {
-                string message = string.Format("Bạn chỉ được phép nhập tối đa {0} {1}", QuyDinh.SoSanBayTGToiDa, "sân bay trung gian");
-                MessageBox.Show(message);
-            }
-            else
-            {
-                FORM_SANBAYTRUNGGIAN form = new FORM_SANBAYTRUNGGIAN(this.dGVSanBayTG);
+        
 
-                form.ShowDialog();
-
-
-            }
-
-        }
-
-        private void btnXoaSanBayTG_Click(object sender, EventArgs e)
-        {
-            if (dGVSanBayTG.RowCount > 0 && dGVSanBayTG.SelectedRows.Count > 0)
-            {
-                dGVSanBayTG.Rows.Remove(dGVSanBayTG.SelectedRows[0]);
-            }
-        }
+        
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            if (dGVDanhSachCB.SelectedRows.Count > 0)
+            {
+                string maChuyenBay = dGVDanhSachCB.SelectedRows[0].Cells[0].Value.ToString();
+                DateTime ngayGioBay= Convert.ToDateTime( dGVDanhSachCB.SelectedRows[0].Cells[3].Value.ToString());
+                FORM_SUATHONGTINCHUYENBAY form = new FORM_SUATHONGTINCHUYENBAY(maChuyenBay,ngayGioBay);
+                form.ShowDialog();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -164,11 +162,16 @@ namespace GUI
         }
         private void Init()
         {
+            dGVDanhSachCB.TopLeftHeaderCell.Value = "STT";
+            dGVDanhSachCB.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
 
-
-            dGVSanBayTG.TopLeftHeaderCell.Value = "STT";
-            dGVSanBayTG.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            
         }
+        /// <summary>
+        /// Sự kiện load form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FORM_THAYDOICHUYENBAY_Load(object sender, EventArgs e)
         {
 
@@ -185,17 +188,11 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
 
-            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now, null);
 
             
 
-            ThreadPool.QueueUserWorkItem(p =>
-            {
-                dGVSanBayTG.PerformSafely(() =>
-                {
-                    ChuyenBay_BUS.LoadDanhSachSanBayTG(dGVSanBayTG);
-                });
-            });
+         
 
         }
 
@@ -232,18 +229,32 @@ namespace GUI
 
 
 
-            if (dataGV.SelectedRows.Count == 0)
+           
+        }
+
+        private void dGVDanhSachCB_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            dgv.setRowNumber();
+        }
+
+        private void dGVDanhSachCB_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            dgv.setRowNumber();
+        }
+
+        private void dtPKNgayKHDen_ValueChanged(object sender, EventArgs e)
+        {
+            int results = DateTime.Compare(dtPKNgayKHTu.Value, dtPKNgayKHDen.Value);
+            if (results > 0)
             {
-
-
-                dGVSanBayTG.DataSource = ChuyenBay_BUS.TraCuuSBTG("");
+                errorNgayGio.Icon = Properties.Resources.error_icon1;
+                errorNgayGio.SetError(dtPKNgayKHDen, "Ngày khởi hành đến phải sau ngày khởi hành từ");
             }
-            if (dataGV.SelectedRows.Count > 0)
+            else
             {
-
-                dGVSanBayTG.Columns.Clear();
-                dGVSanBayTG.DataSource = ChuyenBay_BUS.TraCuuSBTG(dataGV.SelectedRows[0].Cells[0].Value.ToString());
-
+                errorNgayGio.Clear();
             }
         }
     }

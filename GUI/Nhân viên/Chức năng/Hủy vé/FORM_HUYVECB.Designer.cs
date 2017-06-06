@@ -28,27 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGVDanhSachVe = new System.Windows.Forms.DataGridView();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbMaChuyenBay = new System.Windows.Forms.ComboBox();
             this.cmbMaVe = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.btnFristPage = new System.Windows.Forms.Button();
-            this.btnNextPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
+            this.btnNextPage = new System.Windows.Forms.Button();
             this.cmbTenHanhKhach = new System.Windows.Forms.ComboBox();
             this.cmbCMND = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachVe)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -112,17 +114,29 @@
             this.label3.Text = "Mã chuyến bay:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dataGridView1
+            // dGVDanhSachVe
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 250);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(832, 216);
-            this.dataGridView1.TabIndex = 124;
+            this.dGVDanhSachVe.AllowUserToAddRows = false;
+            this.dGVDanhSachVe.AllowUserToDeleteRows = false;
+            this.dGVDanhSachVe.AllowUserToResizeColumns = false;
+            this.dGVDanhSachVe.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSachVe.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dGVDanhSachVe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGVDanhSachVe.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dGVDanhSachVe.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dGVDanhSachVe.Location = new System.Drawing.Point(0, 250);
+            this.dGVDanhSachVe.MultiSelect = false;
+            this.dGVDanhSachVe.Name = "dGVDanhSachVe";
+            this.dGVDanhSachVe.ReadOnly = true;
+            this.dGVDanhSachVe.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSachVe.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dGVDanhSachVe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGVDanhSachVe.Size = new System.Drawing.Size(832, 216);
+            this.dGVDanhSachVe.TabIndex = 124;
+            this.dGVDanhSachVe.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dGVDanhSachVe_RowsAdded);
+            this.dGVDanhSachVe.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dGVDanhSachVe_RowsRemoved);
             // 
             // btnFind
             // 
@@ -160,15 +174,16 @@
             this.btnHuy.TabIndex = 130;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // textBox3
+            // txtPageNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(46, 231);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(37, 20);
-            this.textBox3.TabIndex = 136;
-            this.textBox3.Text = "1";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPageNumber.Location = new System.Drawing.Point(46, 231);
+            this.txtPageNumber.Name = "txtPageNumber";
+            this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
+            this.txtPageNumber.TabIndex = 136;
+            this.txtPageNumber.Text = "1";
+            this.txtPageNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -202,15 +217,15 @@
             this.cmbMaVe.Size = new System.Drawing.Size(186, 27);
             this.cmbMaVe.TabIndex = 138;
             // 
-            // textBox2
+            // txtTotalPage
             // 
-            this.textBox2.Location = new System.Drawing.Point(83, 231);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(37, 20);
-            this.textBox2.TabIndex = 139;
-            this.textBox2.Text = "1";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTotalPage.Location = new System.Drawing.Point(83, 231);
+            this.txtTotalPage.Name = "txtTotalPage";
+            this.txtTotalPage.ReadOnly = true;
+            this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
+            this.txtTotalPage.TabIndex = 139;
+            this.txtTotalPage.Text = "1";
+            this.txtTotalPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnLastPage
             // 
@@ -238,31 +253,31 @@
             this.btnFristPage.UseVisualStyleBackColor = false;
             this.btnFristPage.Click += new System.EventHandler(this.btnFristPage_Click);
             // 
-            // btnNextPage
-            // 
-            this.btnNextPage.BackColor = System.Drawing.Color.Teal;
-            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextPage.ForeColor = System.Drawing.Color.White;
-            this.btnNextPage.Location = new System.Drawing.Point(363, 211);
-            this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(75, 33);
-            this.btnNextPage.TabIndex = 141;
-            this.btnNextPage.Text = "Trang sau";
-            this.btnNextPage.UseVisualStyleBackColor = false;
-            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
-            // 
             // btnPrevPage
             // 
             this.btnPrevPage.BackColor = System.Drawing.Color.Teal;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.White;
-            this.btnPrevPage.Location = new System.Drawing.Point(474, 211);
+            this.btnPrevPage.Location = new System.Drawing.Point(363, 211);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(75, 33);
-            this.btnPrevPage.TabIndex = 140;
-            this.btnPrevPage.Text = "Trang trước";
+            this.btnPrevPage.TabIndex = 141;
+            this.btnPrevPage.Text = "Trang sau";
             this.btnPrevPage.UseVisualStyleBackColor = false;
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.BackColor = System.Drawing.Color.Teal;
+            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextPage.ForeColor = System.Drawing.Color.White;
+            this.btnNextPage.Location = new System.Drawing.Point(474, 211);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(75, 33);
+            this.btnNextPage.TabIndex = 140;
+            this.btnNextPage.Text = "Trang trước";
+            this.btnNextPage.UseVisualStyleBackColor = false;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // cmbTenHanhKhach
             // 
@@ -297,17 +312,17 @@
             this.Controls.Add(this.cmbTenHanhKhach);
             this.Controls.Add(this.btnLastPage);
             this.Controls.Add(this.btnFristPage);
-            this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.btnPrevPage);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btnNextPage);
+            this.Controls.Add(this.txtTotalPage);
             this.Controls.Add(this.cmbMaVe);
             this.Controls.Add(this.cmbMaChuyenBay);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPageNumber);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnFind);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dGVDanhSachVe);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
@@ -316,7 +331,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "FORM_HUYVECB";
             this.Load += new System.EventHandler(this.FORM_HUYVECB_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachVe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,19 +344,19 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGVDanhSachVe;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPageNumber;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbMaChuyenBay;
         private System.Windows.Forms.ComboBox cmbMaVe;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTotalPage;
         private System.Windows.Forms.Button btnLastPage;
         private System.Windows.Forms.Button btnFristPage;
-        private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnPrevPage;
+        private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.ComboBox cmbTenHanhKhach;
         private System.Windows.Forms.ComboBox cmbCMND;
     }

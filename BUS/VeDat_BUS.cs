@@ -36,5 +36,22 @@ namespace BUS
             return VeDat_DAO.TraCuuVe(veDat,pageSize,pageNumber);
 
         }
+
+        public static bool HuyVe(string _maVe)
+        {
+            return VeDat_DAO.HuyVe(_maVe);
+        } 
+        public static int DemVe(string _tenKhachHang, string _cmnd, string _maVe, string _maChuyenBay)
+        {
+
+            return VeDat_DAO.DemVe(new VeDat()
+            { 
+                TenHanhKhach=_tenKhachHang,
+                CMND=_cmnd,
+                MaVe=_maVe,
+                MaCB=_maChuyenBay
+            }
+            );
+        }
     }
 }

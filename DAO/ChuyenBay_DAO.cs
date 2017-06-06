@@ -13,7 +13,12 @@ namespace DAO
     public static class ChuyenBay_DAO
     {
 
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_tenSanBay"></param>
+        /// <returns></returns>
         public static List<SanBay> LoadDanhSachSBTG(string _tenSanBay)
         {
             string query = " EXEC usp_LoadTenSanBayTG @tenSanBay";
@@ -37,7 +42,30 @@ namespace DAO
           
         }
 
-        
+        public static bool XoaSanBayTrungGian(string _maChuyenBay)
+        {
+            string query = " EXEC usp_XoaSanBayTrungGian @maChuyenBay";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maChuyenBay",SqlDbType.NVarChar){Value=_maChuyenBay},
+            };
+            try
+            {
+                if (Dataprovider.ExcuteNonQuery(query,parameters.ToArray()) > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception err)
+            {
+
+                HelpFuction.Log(err);
+                return false;
+            }
+           
+        }
        /// <summary>
        /// 
        /// </summary>
@@ -161,13 +189,13 @@ namespace DAO
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value=_sanbay.MaChuyenBay },
+                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value =_sanbay.MaChuyenBay },
 
-                new SqlParameter("@maSanBay",SqlDbType.VarChar){Value=_sanbay.TenSanBay},
+                new SqlParameter("@maSanBay",SqlDbType.VarChar){Value =_sanbay.MaSanBay },
 
-                new SqlParameter("@thoiGianDung",SqlDbType.Int){Value=_sanbay.ThoiGianDung },
+                new SqlParameter("@thoiGianDung",SqlDbType.Int){Value =_sanbay.ThoiGianDung },
 
-                new SqlParameter("@ghiChu",SqlDbType.VarChar){IsNullable=true,Value=_sanbay.GhiChu??(Object)DBNull.Value },
+                new SqlParameter("@ghiChu",SqlDbType.VarChar){ Value =_sanbay.GhiChu },
 
             };
             try
@@ -176,7 +204,6 @@ namespace DAO
             }
             catch (Exception err)
             {
-
                 HelpFuction.Log(err);
             }
 

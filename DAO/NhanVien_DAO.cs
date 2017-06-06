@@ -35,17 +35,15 @@ namespace DAO
         public static int DemSoNhanVien(NhanVien _nhanVien)
         {
 
-            string query = "EXEC DEM_NHAN_VIEN @MaNhanVien,@TenNhanVien,@SoDT,@CMND";
+            string query = "EXEC usp_DemNhanVien @TenNhanVien,@CMND";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@MaNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.MaNV?? (Object)DBNull.Value},
 
-                new SqlParameter("@TenNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.TenNV?? (Object)DBNull.Value},
+                new SqlParameter("@tenNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.TenNV?? (Object)DBNull.Value},
 
                 new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.CMND?? (Object)DBNull.Value},
 
-                new SqlParameter("@SoDT",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.SoDT?? (Object)DBNull.Value},
 
             };
             try
@@ -67,17 +65,15 @@ namespace DAO
         /// <returns></returns>
         public static DataTable TraCuuNV(NhanVien _nhanVien, int pageSize, int pageNumber)
         {
-            string query = "EXEC sp_TimNhanVien @MaNhanVien,@TenNhanVien,@SoDT,@CMND,@pageSize,@pageNumber";
+            string query = "EXEC usp_TraCuuNhanVien @tenNhanVien,@CMND,@pageSize,@pageNumber";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("@MaNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.MaNV?? (Object)DBNull.Value},
 
-                new SqlParameter("@TenNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.TenNV?? (Object)DBNull.Value},
+                new SqlParameter("@tenNhanVien",SqlDbType.NVarChar){IsNullable=true,Value = _nhanVien.TenNV?? (Object)DBNull.Value},
 
                 new SqlParameter("@CMND",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.CMND?? (Object)DBNull.Value},
 
-                new SqlParameter("@SoDT",SqlDbType.VarChar){IsNullable=true,Value=_nhanVien.SoDT?? (Object)DBNull.Value},
 
                 new SqlParameter("@pageSize",SqlDbType.VarChar){Value=pageSize},
 

@@ -36,14 +36,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtMaNhanVien = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtCMND = new System.Windows.Forms.TextBox();
-            this.txtSoDT = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtTotalPage = new System.Windows.Forms.TextBox();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -84,40 +80,19 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(21, 69);
+            this.label11.Location = new System.Drawing.Point(282, 68);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(98, 22);
             this.label11.TabIndex = 64;
             this.label11.Text = "Tên nhân viên:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtMaNhanVien
-            // 
-            this.txtMaNhanVien.BackColor = System.Drawing.Color.LemonChiffon;
-            this.txtMaNhanVien.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNhanVien.Location = new System.Drawing.Point(151, 127);
-            this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(195, 22);
-            this.txtMaNhanVien.TabIndex = 63;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(21, 127);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 22);
-            this.label9.TabIndex = 62;
-            this.label9.Text = "Mã nhân viên:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(367, 69);
+            this.label7.Location = new System.Drawing.Point(282, 137);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(147, 22);
             this.label7.TabIndex = 60;
@@ -152,33 +127,11 @@
             // 
             this.txtCMND.BackColor = System.Drawing.Color.LemonChiffon;
             this.txtCMND.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCMND.Location = new System.Drawing.Point(520, 69);
+            this.txtCMND.Location = new System.Drawing.Point(435, 137);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(195, 22);
             this.txtCMND.TabIndex = 61;
             this.txtCMND.TextChanged += new System.EventHandler(this.txtCMND_TextChanged);
-            // 
-            // txtSoDT
-            // 
-            this.txtSoDT.BackColor = System.Drawing.Color.LemonChiffon;
-            this.txtSoDT.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDT.Location = new System.Drawing.Point(520, 128);
-            this.txtSoDT.Name = "txtSoDT";
-            this.txtSoDT.Size = new System.Drawing.Size(195, 22);
-            this.txtSoDT.TabIndex = 70;
-            this.txtSoDT.TextChanged += new System.EventHandler(this.txtSoDT_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(367, 128);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 22);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "Số điện thoại:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtTotalPage
             // 
@@ -377,7 +330,7 @@
             this.cmbTenNV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmbTenNV.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTenNV.FormattingEnabled = true;
-            this.cmbTenNV.Location = new System.Drawing.Point(151, 67);
+            this.cmbTenNV.Location = new System.Drawing.Point(435, 67);
             this.cmbTenNV.Name = "cmbTenNV";
             this.cmbTenNV.Size = new System.Drawing.Size(195, 23);
             this.cmbTenNV.TabIndex = 150;
@@ -397,13 +350,9 @@
             this.Controls.Add(this.txtTotalPage);
             this.Controls.Add(this.txtPageNumber);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtSoDT);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtMaNhanVien);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
@@ -423,14 +372,10 @@
         #endregion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtMaNhanVien;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txtCMND;
-        private System.Windows.Forms.TextBox txtSoDT;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotalPage;
         private System.Windows.Forms.TextBox txtPageNumber;
         private System.Windows.Forms.Label label6;

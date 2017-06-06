@@ -23,9 +23,9 @@ namespace BUS
             data.AddRange(temp.ToArray());
             _nhanvien.AutoCompleteCustomSource = data;
         }
-        public static int DemSoNhanVien(string _tenNV, string _cmnd, string _maNV, string _soDT)
+        public static int DemSoNhanVien(string _tenNV, string _cmnd)
         {
-            NhanVien nhanvien = new NhanVien(_tenNV, _maNV, _cmnd, _soDT);
+            NhanVien nhanvien = new NhanVien() { CMND=_cmnd,TenNV=_tenNV };
 
             return NhanVien_DAO.DemSoNhanVien(nhanvien);
         }
@@ -39,9 +39,9 @@ namespace BUS
         /// <param name="_danhSachNV"></param>
         /// <param name="pageSize"></param>
         /// <param name="pageNumber"></param>
-        public static  DataTable TraCuuNhanVien(string _tenNV, string _cmnd, string _maNV, string _soDT, int pageSize, int pageNumber)
+        public static  DataTable TraCuuNhanVien(string _tenNV, string _cmnd, int pageSize, int pageNumber)
         {
-            NhanVien nhanvien = new NhanVien(_tenNV, _maNV, _cmnd, _soDT);
+            NhanVien nhanvien = new NhanVien() { CMND=_cmnd,TenNV=_tenNV };
             return NhanVien_DAO.TraCuuNV(nhanvien, pageSize, pageNumber);
         }
     }

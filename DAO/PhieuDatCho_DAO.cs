@@ -80,7 +80,7 @@ namespace DAO
         /// <returns></returns>
         public static bool HuyPhieuDatCho(string _maPhieuDatCho)
         {
-            string query = "DELETE FROM PHIEUDATCHO WHERE MaPhieuDatCho = @maPhieuDatCho";
+            string query = "EXEC usp_HuyPhieuDatCho @maPhieuDatCho";
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@maPhieuDatCho",SqlDbType.NVarChar){Value =_maPhieuDatCho},
