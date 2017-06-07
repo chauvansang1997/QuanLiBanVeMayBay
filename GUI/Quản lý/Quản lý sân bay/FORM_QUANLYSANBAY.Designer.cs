@@ -28,24 +28,23 @@
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGVDanhSachSB = new System.Windows.Forms.DataGridView();
             this.clSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clMaSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenSanBay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_1 = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.txtTotalPage = new System.Windows.Forms.TextBox();
+            this.btnFirstPage = new System.Windows.Forms.Button();
+            this.btnLastPage = new System.Windows.Forms.Button();
             this.btnPrevPage = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachSB)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -61,21 +60,22 @@
             this.label4.Text = "QUẢN LÝ SÂN BAY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // dGVDanhSachSB
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dGVDanhSachSB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGVDanhSachSB.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dGVDanhSachSB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dGVDanhSachSB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVDanhSachSB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clSTT,
             this.clMaSanBay,
             this.clTenSanBay});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 161);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(724, 138);
-            this.dataGridView1.TabIndex = 4;
+            this.dGVDanhSachSB.Location = new System.Drawing.Point(0, 161);
+            this.dGVDanhSachSB.Name = "dGVDanhSachSB";
+            this.dGVDanhSachSB.RowHeadersVisible = false;
+            this.dGVDanhSachSB.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dGVDanhSachSB.Size = new System.Drawing.Size(724, 138);
+            this.dGVDanhSachSB.TabIndex = 4;
             // 
             // clSTT
             // 
@@ -92,50 +92,38 @@
             this.clTenSanBay.HeaderText = "Tên Sân Bay";
             this.clTenSanBay.Name = "clTenSanBay";
             // 
-            // button1
+            // btnThem
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(395, 320);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Thêm mới";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnThem.BackColor = System.Drawing.Color.Teal;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Location = new System.Drawing.Point(299, 322);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 33);
+            this.btnThem.TabIndex = 5;
+            this.btnThem.Text = "Thêm mới";
+            this.btnThem.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnXoa
             // 
-            this.button2.BackColor = System.Drawing.Color.Teal;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(518, 320);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 33);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnXoa.BackColor = System.Drawing.Color.Teal;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(417, 322);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 33);
+            this.btnXoa.TabIndex = 8;
+            this.btnXoa.Text = "Thoát";
+            this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // txtPageNumber
             // 
-            this.button4.BackColor = System.Drawing.Color.Teal;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(634, 320);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 33);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Thoát";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(46, 141);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(37, 20);
-            this.textBox1.TabIndex = 15;
-            this.textBox1.Text = "1";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPageNumber.Location = new System.Drawing.Point(46, 141);
+            this.txtPageNumber.Name = "txtPageNumber";
+            this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
+            this.txtPageNumber.TabIndex = 15;
+            this.txtPageNumber.Text = "1";
+            this.txtPageNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -149,7 +137,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(53, 60);
+            this.label1.Location = new System.Drawing.Point(209, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 24;
@@ -159,79 +147,79 @@
             // cb_1
             // 
             this.cb_1.FormattingEnabled = true;
-            this.cb_1.Location = new System.Drawing.Point(172, 60);
+            this.cb_1.Location = new System.Drawing.Point(328, 57);
             this.cb_1.Name = "cb_1";
             this.cb_1.Size = new System.Drawing.Size(191, 21);
             this.cb_1.TabIndex = 23;
             // 
-            // button7
+            // btnFind
             // 
-            this.button7.BackColor = System.Drawing.Color.Teal;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(0, 105);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 33);
-            this.button7.TabIndex = 28;
-            this.button7.Text = "Tìm";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnFind.BackColor = System.Drawing.Color.Teal;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.ForeColor = System.Drawing.Color.White;
+            this.btnFind.Location = new System.Drawing.Point(0, 105);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 33);
+            this.btnFind.TabIndex = 28;
+            this.btnFind.Text = "Tìm";
+            this.btnFind.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // txtTotalPage
             // 
-            this.textBox2.Location = new System.Drawing.Point(83, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(37, 20);
-            this.textBox2.TabIndex = 29;
-            this.textBox2.Text = "1";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTotalPage.Location = new System.Drawing.Point(83, 141);
+            this.txtTotalPage.Name = "txtTotalPage";
+            this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
+            this.txtTotalPage.TabIndex = 29;
+            this.txtTotalPage.Text = "1";
+            this.txtTotalPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button6
+            // btnFirstPage
             // 
-            this.button6.BackColor = System.Drawing.Color.Teal;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(516, 122);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 33);
-            this.button6.TabIndex = 147;
-            this.button6.Text = "Trang cuối";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnFirstPage.BackColor = System.Drawing.Color.Teal;
+            this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirstPage.ForeColor = System.Drawing.Color.White;
+            this.btnFirstPage.Location = new System.Drawing.Point(201, 122);
+            this.btnFirstPage.Name = "btnFirstPage";
+            this.btnFirstPage.Size = new System.Drawing.Size(75, 33);
+            this.btnFirstPage.TabIndex = 152;
+            this.btnFirstPage.Text = "Trang đầu";
+            this.btnFirstPage.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnLastPage
             // 
-            this.button3.BackColor = System.Drawing.Color.Teal;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(176, 122);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 33);
-            this.button3.TabIndex = 146;
-            this.button3.Text = "Trang đầu";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // btnNextPage
-            // 
-            this.btnNextPage.BackColor = System.Drawing.Color.Teal;
-            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextPage.ForeColor = System.Drawing.Color.White;
-            this.btnNextPage.Location = new System.Drawing.Point(296, 122);
-            this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(75, 33);
-            this.btnNextPage.TabIndex = 145;
-            this.btnNextPage.Text = "Trang sau";
-            this.btnNextPage.UseVisualStyleBackColor = false;
+            this.btnLastPage.BackColor = System.Drawing.Color.Teal;
+            this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLastPage.ForeColor = System.Drawing.Color.White;
+            this.btnLastPage.Location = new System.Drawing.Point(497, 122);
+            this.btnLastPage.Name = "btnLastPage";
+            this.btnLastPage.Size = new System.Drawing.Size(75, 33);
+            this.btnLastPage.TabIndex = 151;
+            this.btnLastPage.Text = "Trang cuối";
+            this.btnLastPage.UseVisualStyleBackColor = false;
             // 
             // btnPrevPage
             // 
             this.btnPrevPage.BackColor = System.Drawing.Color.Teal;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.White;
-            this.btnPrevPage.Location = new System.Drawing.Point(407, 122);
+            this.btnPrevPage.Location = new System.Drawing.Point(299, 122);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(75, 33);
-            this.btnPrevPage.TabIndex = 144;
-            this.btnPrevPage.Text = "Trang trước";
+            this.btnPrevPage.TabIndex = 150;
+            this.btnPrevPage.Text = "Trang sau";
             this.btnPrevPage.UseVisualStyleBackColor = false;
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.BackColor = System.Drawing.Color.Teal;
+            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextPage.ForeColor = System.Drawing.Color.White;
+            this.btnNextPage.Location = new System.Drawing.Point(392, 122);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(75, 33);
+            this.btnNextPage.TabIndex = 149;
+            this.btnNextPage.Text = "Trang trước";
+            this.btnNextPage.UseVisualStyleBackColor = false;
             // 
             // FORM_QUANLYSANBAY
             // 
@@ -239,25 +227,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(724, 390);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.btnNextPage);
+            this.Controls.Add(this.btnFirstPage);
+            this.Controls.Add(this.btnLastPage);
             this.Controls.Add(this.btnPrevPage);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnNextPage);
+            this.Controls.Add(this.txtTotalPage);
+            this.Controls.Add(this.btnFind);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPageNumber);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.dGVDanhSachSB);
             this.Controls.Add(this.label4);
             this.MaximizeBox = false;
             this.Name = "FORM_QUANLYSANBAY";
             this.ShowIcon = false;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachSB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,22 +253,21 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dGVDanhSachSB;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSTT;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaSanBay;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenSanBay;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPageNumber;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnNextPage;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.TextBox txtTotalPage;
+        private System.Windows.Forms.Button btnFirstPage;
+        private System.Windows.Forms.Button btnLastPage;
         private System.Windows.Forms.Button btnPrevPage;
+        private System.Windows.Forms.Button btnNextPage;
     }
 }

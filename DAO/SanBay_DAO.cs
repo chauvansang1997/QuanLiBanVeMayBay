@@ -11,6 +11,61 @@ namespace DAO
 {
     public static class SanBay_DAO
     {
+
+        public static int DemSanBay(string _tenSanBay)
+        {
+            string query = "EXEC usp_DemSanBay @tenSanBay";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@tenSanBay",SqlDbType.NVarChar){IsNullable=true,Value=_tenSanBay ??(Object)DBNull.Value },
+            };
+
+            try
+            {
+                return (int)Dataprovider.ExcuteScalar(query, parameters.ToArray());
+            }
+            catch (Exception err)
+            {
+
+                Help_Fuction.HelpFuction.Log(err);
+            }
+            return 0;
+        }
+        public static bool ThemSanBay(string _tenSanBay)
+        {
+            string query = "EXEC usp_ThemSanBay @tenSanBay";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@tenSanBay",SqlDbType.NVarChar){Value=_tenSanBay },
+            };
+            try
+            {
+                if (Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0)
+                {
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+
+                Help_Fuction.HelpFuction.Log(err);
+            }
+            return false;
+
+        }
+        public static DataTable TimSanBay(string _tenSanBay)
+        {
+            string query = "EXEC usp_TimSanBay @tenSanBay";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@tenSanBay",SqlDbType.NVarChar){IsNullable=true,Value=_tenSanBay ??(Object)DBNull.Value },
+            };
+
+            return Dataprovider.ExcuteQuery(query, parameters.ToArray()); 
+        }
         
         public static DataTable XemSanBay(int _page,int _pageSize)
         {

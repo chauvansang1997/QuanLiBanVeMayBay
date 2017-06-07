@@ -12,23 +12,23 @@ namespace BUS
 {
     public static class SanBay_BUS
     {
-
-
+        public static int DemSanBay(string _tenSanBay)
+        {
+            return SanBay_DAO.DemSanBay(_tenSanBay);
+        }
+        public static bool ThemSanBay(string _tenSanBay)
+        {
+            return SanBay_DAO.ThemSanBay(_tenSanBay);
+        }
+        public static DataTable TimSanBay(string _tenSanBay)
+        {
+            return SanBay_DAO.TimSanBay(_tenSanBay);
+        }
         public static DataTable XemSanBay(DataGridView data,int _page,int _pageSize)
         {
             return SanBay_DAO.XemSanBay(_page,_pageSize);
         }
       
-        public static void ThemSanBay(string _sanBayDen,string _sanBayDi)
-        {
-
-        }
-
-        public static void XoaSanBay(string _maSanBay)
-        {
-
-        }
-       
 
         public static void LoadSanBay(ComboBox _sanbaydi)
         {
