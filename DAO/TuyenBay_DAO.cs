@@ -5,14 +5,15 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAO
 {
     public static class TuyenBay_DAO
     {
-        public static int DemTuyenBay(string _sanBayDi,string _sanBayDen,int pageSize,int pageNumber)
+        public static int DemTuyenBay(string _sanBayDi,string _sanBayDen)
         {
-            string query = "EXEC usp_DemTuyenBay @sanBayDi,@sanBayDen,@pageSize,@pageNumber";
+            string query = "EXEC usp_DemTuyenBay @sanBayDi,@sanBayDen";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
@@ -20,11 +21,7 @@ namespace DAO
 
                 new SqlParameter("@sanBayDen",SqlDbType.VarChar){IsNullable=true,Value = _sanBayDen??(Object)DBNull.Value},
 
-                new SqlParameter("@pageSize",SqlDbType.Int){Value = _sanBayDen },
-
-                new SqlParameter("@pageNumber",SqlDbType.Int){Value = _sanBayDen },
-            };
-
+            };           
             try
             {
                 return (int)Dataprovider.ExcuteScalar(query, parameters.ToArray());
@@ -46,9 +43,9 @@ namespace DAO
 
                 new SqlParameter("@sanBayDen",SqlDbType.VarChar){IsNullable=true,Value = _sanBayDen??(Object)DBNull.Value},
 
-                new SqlParameter("@pageSize",SqlDbType.Int){Value = _sanBayDen },
+                new SqlParameter("@pageSize",SqlDbType.Int){Value = pageSize },
 
-                new SqlParameter("@pageNumber",SqlDbType.Int){Value = _sanBayDen },
+                new SqlParameter("@pageNumber",SqlDbType.Int){Value = pageNumber},
             };
 
             try
@@ -57,12 +54,40 @@ namespace DAO
             }
             catch (Exception err)
             {
+                MessageBox.Show(err.Message);
 
                 Help_Fuction.HelpFuction.Log(err);
             }
 
             return null;
         }
-        public 
+        public static bool ThemChuyenBay(string _sanBayDi,string _sanBayDen)
+        {
+            string query = "EXEC usp_ThemTuyenBay @sanBayDi,@sanBayDen";
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@sanBayDi",SqlDbType.VarChar){ Value = _sanBayDi },
+
+                new SqlParameter("@sanBayDen",SqlDbType.VarChar){ Value = _sanBayDen },
+
+            };
+
+            try
+            {
+                if (Dataprovider.ExcuteNonQuery(query, parameters.ToArray())>0)
+                {
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+
+                Help_Fuction.HelpFuction.Log(err);
+
+            }
+            return false;
+        }
     }
 }

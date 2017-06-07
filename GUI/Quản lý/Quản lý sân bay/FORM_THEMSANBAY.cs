@@ -24,7 +24,7 @@ namespace GUI
 
             if (txtTenSanBay.Text == "")
             {
-                MessageBox.Show("Bạn chưa điền tên");]
+                MessageBox.Show("Bạn chưa điền tên");
                 return;
             }
             if (Help_Fuction.HelpFuction.isContainsNumber(txtTenSanBay.Text))

@@ -30,11 +30,6 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.dGVDanhSachTB = new System.Windows.Forms.DataGridView();
-            this.clSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clMaTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clTenTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSanBayDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSanBayDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
@@ -60,60 +55,34 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(724, 32);
+            this.label4.Size = new System.Drawing.Size(954, 32);
             this.label4.TabIndex = 3;
             this.label4.Text = "QUẢN LÝ TUYẾN BAY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dGVDanhSachTB
             // 
+            this.dGVDanhSachTB.AllowUserToAddRows = false;
+            this.dGVDanhSachTB.AllowUserToDeleteRows = false;
+            this.dGVDanhSachTB.AllowUserToResizeColumns = false;
+            this.dGVDanhSachTB.AllowUserToResizeRows = false;
             this.dGVDanhSachTB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVDanhSachTB.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dGVDanhSachTB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVDanhSachTB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVDanhSachTB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clSTT,
-            this.clMaTB,
-            this.clTenTB,
-            this.clSanBayDi,
-            this.clSanBayDen});
             this.dGVDanhSachTB.Location = new System.Drawing.Point(0, 260);
             this.dGVDanhSachTB.Name = "dGVDanhSachTB";
-            this.dGVDanhSachTB.RowHeadersVisible = false;
-            this.dGVDanhSachTB.Size = new System.Drawing.Size(724, 167);
+            this.dGVDanhSachTB.ReadOnly = true;
+            this.dGVDanhSachTB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGVDanhSachTB.Size = new System.Drawing.Size(954, 167);
             this.dGVDanhSachTB.TabIndex = 4;
-            // 
-            // clSTT
-            // 
-            this.clSTT.HeaderText = "STT";
-            this.clSTT.Name = "clSTT";
-            // 
-            // clMaTB
-            // 
-            this.clMaTB.HeaderText = "Mã Tuyến Bay";
-            this.clMaTB.Name = "clMaTB";
-            // 
-            // clTenTB
-            // 
-            this.clTenTB.HeaderText = "Tên Tuyến Bay";
-            this.clTenTB.Name = "clTenTB";
-            // 
-            // clSanBayDi
-            // 
-            this.clSanBayDi.HeaderText = "Sân Bay Đi";
-            this.clSanBayDi.Name = "clSanBayDi";
-            // 
-            // clSanBayDen
-            // 
-            this.clSanBayDen.HeaderText = "Sân Bay Đến";
-            this.clSanBayDen.Name = "clSanBayDen";
             // 
             // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.Color.Teal;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(282, 444);
+            this.btnThem.Location = new System.Drawing.Point(418, 433);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 33);
             this.btnThem.TabIndex = 5;
@@ -126,7 +95,7 @@
             this.btnThoat.BackColor = System.Drawing.Color.Teal;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(404, 444);
+            this.btnThoat.Location = new System.Drawing.Point(540, 433);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 33);
             this.btnThoat.TabIndex = 8;
@@ -180,6 +149,7 @@
             this.cmbSanBayDi.Name = "cmbSanBayDi";
             this.cmbSanBayDi.Size = new System.Drawing.Size(191, 27);
             this.cmbSanBayDi.TabIndex = 24;
+            this.cmbSanBayDi.SelectedIndexChanged += new System.EventHandler(this.cmbSanBayDi_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -219,7 +189,7 @@
             this.btnFirstPage.BackColor = System.Drawing.Color.Teal;
             this.btnFirstPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirstPage.ForeColor = System.Drawing.Color.White;
-            this.btnFirstPage.Location = new System.Drawing.Point(197, 201);
+            this.btnFirstPage.Location = new System.Drawing.Point(320, 221);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(75, 33);
             this.btnFirstPage.TabIndex = 156;
@@ -232,7 +202,7 @@
             this.btnLastPage.BackColor = System.Drawing.Color.Teal;
             this.btnLastPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLastPage.ForeColor = System.Drawing.Color.White;
-            this.btnLastPage.Location = new System.Drawing.Point(493, 201);
+            this.btnLastPage.Location = new System.Drawing.Point(616, 221);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(75, 33);
             this.btnLastPage.TabIndex = 155;
@@ -245,7 +215,7 @@
             this.btnPrevPage.BackColor = System.Drawing.Color.Teal;
             this.btnPrevPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevPage.ForeColor = System.Drawing.Color.White;
-            this.btnPrevPage.Location = new System.Drawing.Point(295, 201);
+            this.btnPrevPage.Location = new System.Drawing.Point(418, 221);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(75, 33);
             this.btnPrevPage.TabIndex = 154;
@@ -258,7 +228,7 @@
             this.btnNextPage.BackColor = System.Drawing.Color.Teal;
             this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextPage.ForeColor = System.Drawing.Color.White;
-            this.btnNextPage.Location = new System.Drawing.Point(388, 201);
+            this.btnNextPage.Location = new System.Drawing.Point(511, 221);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(75, 33);
             this.btnNextPage.TabIndex = 153;
@@ -271,7 +241,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(724, 505);
+            this.ClientSize = new System.Drawing.Size(954, 505);
             this.Controls.Add(this.btnFirstPage);
             this.Controls.Add(this.btnLastPage);
             this.Controls.Add(this.btnPrevPage);
@@ -305,11 +275,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txtPageNumber;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSTT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clMaTB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clTenTB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSanBayDi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSanBayDen;
         private System.Windows.Forms.ComboBox cmbSanBayDen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbSanBayDi;

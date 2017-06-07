@@ -31,16 +31,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SanBayDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SanBayDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.cmbSanBayDi = new System.Windows.Forms.ComboBox();
+            this.cmbSanBayDen = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label4
@@ -51,7 +45,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(725, 32);
+            this.label4.Size = new System.Drawing.Size(456, 32);
             this.label4.TabIndex = 2;
             this.label4.Text = "THÊM MỚI TUYẾN BAY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -78,109 +72,66 @@
             this.label2.Text = "Sân bay đến:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // btnThem
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(178, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 26);
-            this.textBox1.TabIndex = 5;
+            this.btnThem.BackColor = System.Drawing.Color.Teal;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Location = new System.Drawing.Point(178, 181);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 33);
+            this.btnThem.TabIndex = 7;
+            this.btnThem.Text = "Thêm mới";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // textBox2
+            // btnThoat
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(178, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 26);
-            this.textBox2.TabIndex = 6;
+            this.btnThoat.BackColor = System.Drawing.Color.Teal;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(292, 181);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 33);
+            this.btnThoat.TabIndex = 8;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // button1
+            // cmbSanBayDi
             // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(178, 181);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Thêm mới";
-            this.button1.UseVisualStyleBackColor = false;
+            this.cmbSanBayDi.FormattingEnabled = true;
+            this.cmbSanBayDi.Location = new System.Drawing.Point(178, 77);
+            this.cmbSanBayDi.Name = "cmbSanBayDi";
+            this.cmbSanBayDi.Size = new System.Drawing.Size(189, 21);
+            this.cmbSanBayDi.TabIndex = 9;
             // 
-            // button2
+            // cmbSanBayDen
             // 
-            this.button2.BackColor = System.Drawing.Color.Teal;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(292, 181);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 33);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.SanBayDi,
-            this.SanBayDen});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridView1.Location = new System.Drawing.Point(410, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(303, 125);
-            this.dataGridView1.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Teal;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(410, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(303, 31);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "DANH SÁCH TUYẾN BAY ĐÃ THÊM";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // SanBayDi
-            // 
-            this.SanBayDi.HeaderText = "Sân bay đi";
-            this.SanBayDi.Name = "SanBayDi";
-            // 
-            // SanBayDen
-            // 
-            this.SanBayDen.HeaderText = "Sân bay đến";
-            this.SanBayDen.Name = "SanBayDen";
+            this.cmbSanBayDen.FormattingEnabled = true;
+            this.cmbSanBayDen.Location = new System.Drawing.Point(178, 121);
+            this.cmbSanBayDen.Name = "cmbSanBayDen";
+            this.cmbSanBayDen.Size = new System.Drawing.Size(189, 21);
+            this.cmbSanBayDen.TabIndex = 10;
             // 
             // FORM_THEMMOITUYENBAY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(725, 252);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(456, 252);
+            this.Controls.Add(this.cmbSanBayDen);
+            this.Controls.Add(this.cmbSanBayDi);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "FORM_THEMMOITUYENBAY";
             this.ShowIcon = false;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FORM_THEMMOITUYENBAY_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -189,14 +140,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SanBayDi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SanBayDen;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.ComboBox cmbSanBayDi;
+        private System.Windows.Forms.ComboBox cmbSanBayDen;
     }
 }
