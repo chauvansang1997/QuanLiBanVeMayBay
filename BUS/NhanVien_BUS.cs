@@ -12,16 +12,32 @@ namespace BUS
 {
     public static class NhanVien_BUS
     {
-
-        
+        public static bool SuaThongTinNhanVien(string _maNhanVien,string _tenNhanVien,string _cmnd,string _soDT,string _diaChi)
+        {
+            return NhanVien_DAO.SuaThongTinNhanVien(new NhanVien()
+            {
+                MaNV=_maNhanVien,
+                TenNV=_tenNhanVien,
+                CMND=_cmnd,
+                SoDT=_soDT,
+                DiaChi=_diaChi,
+            });
+        }
+        public static bool ThemNhanVien(string _tenNhanVien,string _cmnd,string _soDT,string _loaiNV,string _diaChi)
+        {
+            return NhanVien_DAO.ThemNhanVien(new NhanVien()
+            {
+                CMND = _cmnd,
+                TenNV=_tenNhanVien,
+                SoDT=_soDT,
+                LoaiNhanVien=_loaiNV,
+                DiaChi=_diaChi,
+            });
+        } 
         public static void LoadNhanVien(ComboBox _nhanvien)
         {
-            List<string> temp= NhanVien_DAO.LoadNhanVien();
+            List<NhanVien> temp= NhanVien_DAO.LoadNhanVien();
             _nhanvien.DataSource = temp;
-
-            AutoCompleteStringCollection data = new AutoCompleteStringCollection();
-            data.AddRange(temp.ToArray());
-            _nhanvien.AutoCompleteCustomSource = data;
         }
         public static int DemSoNhanVien(string _tenNV, string _cmnd)
         {

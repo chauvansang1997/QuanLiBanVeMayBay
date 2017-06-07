@@ -12,6 +12,7 @@ namespace DTO
         string cmnd;
         string soDT;
         string diaChi;
+        string loaiNhanVien;
 
         public string TenNV
         {
@@ -77,6 +78,20 @@ namespace DTO
                 diaChi = value;
             }
         }
+
+        public string LoaiNhanVien
+        {
+            get
+            {
+                return loaiNhanVien;
+            }
+
+            set
+            {
+                loaiNhanVien = value;
+            }
+        }
+
         public NhanVien()
         {
 

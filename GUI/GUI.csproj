@@ -37,6 +37,10 @@
     <Reference Include="69024-bunifu_ui_v1.52">
       <HintPath>..\Build\69024-bunifu_ui_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="AutoCompleteTextBoxDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\Visual Studio 2017\Projects\AutoCompleteTextBoxDll\AutoCompleteTextBoxDll\bin\Release\AutoCompleteTextBoxDll.dll</HintPath>
+    </Reference>
     <Reference Include="Exel handle">
       <HintPath>..\Build\Exel handle.dll</HintPath>
     </Reference>
@@ -93,6 +97,18 @@
     </Compile>
     <Compile Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.Designer.cs">
       <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Quản lý nhân viên\FORM_SUANHANVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Quản lý nhân viên\FORM_SUANHANVIEN.Designer.cs">
+      <DependentUpon>FORM_SUANHANVIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Quản lý nhân viên\FORM_THEMNHANVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Quản lý nhân viên\FORM_THEMNHANVIEN.Designer.cs">
+      <DependentUpon>FORM_THEMNHANVIEN.cs</DependentUpon>
     </Compile>
     <Compile Include="Quản lý\Quản lý sân bay\FORM_THEMSANBAY.cs">
       <SubType>Form</SubType>
@@ -251,6 +267,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.resx">
       <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Quản lý nhân viên\FORM_SUANHANVIEN.resx">
+      <DependentUpon>FORM_SUANHANVIEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Quản lý nhân viên\FORM_THEMNHANVIEN.resx">
+      <DependentUpon>FORM_THEMNHANVIEN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\Quản lý sân bay\FORM_THEMSANBAY.resx">
       <DependentUpon>FORM_THEMSANBAY.cs</DependentUpon>
@@ -448,6 +470,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\change-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

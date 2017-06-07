@@ -48,20 +48,7 @@ namespace GUI
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            isClick = true;
-
-            totalPage = NhanVien_BUS.DemSoNhanVien(cmbTenNV.Text, txtCMND.Text);
-
-            totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
-
-            pageNumber = 1;
-            txtPageNumber.Text = pageNumber.ToString();
-
-
-            txtTotalPage.Text = totalPage.ToString();
-
-            //dGVDachSanhCB.Columns.Clear();
-            dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(cmbTenNV.Text, txtCMND.Text,pageSize,pageNumber);
+            this.Close();
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
@@ -157,18 +144,7 @@ namespace GUI
             }
         }
 
-        private void txtSoDT_TextChanged(object sender, EventArgs e)
-        {
-            if (!HelpFuction.IsPhoneNumber(txtSoDT.Text))
-            {
-                errSODT.Icon = Properties.Resources.error_icon1;
-                errSODT.SetError(txtSoDT, "Tài khoản chưa được điền");
-            }
-            else
-            {
-                errSODT.Clear();
-            }
-        }
+      
 
         private void FORM_TRACUUTHONGTINNV_Load(object sender, EventArgs e)
         {
