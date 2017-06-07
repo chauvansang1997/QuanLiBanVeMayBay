@@ -12,6 +12,11 @@ namespace BUS
 {
     public static class SanBay_BUS
     {
+
+        public static List<SanBay> LoadSanBay()
+        {
+            return SanBay_DAO.LoadSanBay();
+        }
         public static int DemSanBay(string _tenSanBay)
         {
             return SanBay_DAO.DemSanBay(_tenSanBay);
@@ -20,17 +25,17 @@ namespace BUS
         {
             return SanBay_DAO.ThemSanBay(_tenSanBay);
         }
-        public static DataTable TimSanBay(string _tenSanBay)
+        public static DataTable TimSanBay(string _tenSanBay,int pageSize,int pageNumber)
         {
-            return SanBay_DAO.TimSanBay(_tenSanBay);
+            return SanBay_DAO.TimSanBay(_tenSanBay,pageSize,pageNumber);
         }
-        public static DataTable XemSanBay(DataGridView data,int _page,int _pageSize)
+        public static DataTable XemSanBay(int _page,int _pageSize)
         {
             return SanBay_DAO.XemSanBay(_page,_pageSize);
         }
       
 
-        public static void LoadSanBay(ComboBox _sanbaydi)
+        public static void LoadSanBayDi(ComboBox _sanbaydi)
         {
             List<SanBay> danhsachSBDi = SanBay_DAO.LoadSanBayDi();
 

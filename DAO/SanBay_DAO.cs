@@ -6,11 +6,28 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAO
 {
     public static class SanBay_DAO
     {
+
+        public static List<SanBay> LoadSanBay()
+        {
+            //Câu truy vấn
+            string query = "EXEC usp_LoadSanBay";
+
+            //Lấy dữ liệu lên
+            DataTable table = Dataprovider.ExcuteQuery(query);
+
+            //Chuyển Table thành List gồm có tên sân bay đi  và tên sân bay đến
+            List<SanBay> danhsachSBDi = table.AsEnumerable().ToList().ConvertAll(x =>
+                 new SanBay() { TenSanBay = x[1].ToString(), MaSanBay = x[0].ToString() });
+
+
+            return danhsachSBDi;
+        }
 
         public static int DemSanBay(string _tenSanBay)
         {
@@ -49,19 +66,23 @@ namespace DAO
             }
             catch (Exception err)
             {
-
+                MessageBox.Show(err.Message);
                 Help_Fuction.HelpFuction.Log(err);
             }
             return false;
 
         }
-        public static DataTable TimSanBay(string _tenSanBay)
+        public static DataTable TimSanBay(string _tenSanBay,int pageSize,int pageNumber)
         {
-            string query = "EXEC usp_TimSanBay @tenSanBay";
+            string query = "EXEC usp_TimSanBay @tenSanBay,@pageSize,@pageNumber";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@tenSanBay",SqlDbType.NVarChar){IsNullable=true,Value=_tenSanBay ??(Object)DBNull.Value },
+
+                new SqlParameter("@pageSize",SqlDbType.Int){Value=pageSize },
+
+                new SqlParameter("@pageNumber",SqlDbType.Int){Value=pageNumber },
             };
 
             return Dataprovider.ExcuteQuery(query, parameters.ToArray()); 

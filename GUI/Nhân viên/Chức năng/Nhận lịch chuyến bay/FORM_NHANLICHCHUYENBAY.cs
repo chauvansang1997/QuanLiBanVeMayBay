@@ -48,7 +48,7 @@ namespace GUI
 
             HangVe.SoLuongHangVe = HangVe_BUS.DemSoLuongHangVe();
 
-            SanBay_BUS.LoadSanBay(cmbSanBayDi);
+            SanBay_BUS.LoadSanBayDi(cmbSanBayDi);
 
             //Load thông tin vào danh sách hạng ghế
             dgvDanhSachGhe.Columns.Clear();

@@ -203,7 +203,7 @@ namespace GUI
         //Sự kiện load form
         private void FORM_TRACUU_CHUYENBAY_Load(object sender, EventArgs e)
         {
-            SanBay_BUS.LoadSanBay(cmbSanBayDi);
+            SanBay_BUS.LoadSanBayDi(cmbSanBayDi);
            
 
             totalPage = ChuyenBay_BUS.DemChuyenBay(null, null, null, null);

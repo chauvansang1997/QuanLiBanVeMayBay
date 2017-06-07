@@ -177,7 +177,7 @@ namespace GUI
 
             Init();
 
-            SanBay_BUS.LoadSanBay(cmbSanBayDi);
+            SanBay_BUS.LoadSanBayDi(cmbSanBayDi);
 
 
             totalPage = ChuyenBay_BUS.DemChuyenBay(null, null, null, null);
