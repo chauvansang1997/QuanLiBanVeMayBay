@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuyDinh_DAO.cs" />
     <Compile Include="SanBay_DAO.cs" />
+    <Compile Include="TuyenBay_DAO.cs" />
     <Compile Include="User_DAO.cs" />
     <Compile Include="VeDat_DAO.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />

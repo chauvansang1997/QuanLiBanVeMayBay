@@ -27,8 +27,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.dGVDanhSachSB = new System.Windows.Forms.DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
@@ -65,8 +65,8 @@
             this.dGVDanhSachSB.AllowUserToDeleteRows = false;
             this.dGVDanhSachSB.AllowUserToResizeColumns = false;
             this.dGVDanhSachSB.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dGVDanhSachSB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSachSB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVDanhSachSB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVDanhSachSB.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dGVDanhSachSB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -77,8 +77,8 @@
             this.dGVDanhSachSB.ReadOnly = true;
             this.dGVDanhSachSB.RowHeadersVisible = false;
             this.dGVDanhSachSB.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dGVDanhSachSB.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSachSB.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVDanhSachSB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDanhSachSB.Size = new System.Drawing.Size(724, 138);
             this.dGVDanhSachSB.TabIndex = 4;
@@ -204,7 +204,7 @@
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(75, 33);
             this.btnPrevPage.TabIndex = 150;
-            this.btnPrevPage.Text = "Trang sau";
+            this.btnPrevPage.Text = "Trang trước";
             this.btnPrevPage.UseVisualStyleBackColor = false;
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
             // 
@@ -217,7 +217,7 @@
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(75, 33);
             this.btnNextPage.TabIndex = 149;
-            this.btnNextPage.Text = "Trang trước";
+            this.btnNextPage.Text = "Trang sau";
             this.btnNextPage.UseVisualStyleBackColor = false;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
