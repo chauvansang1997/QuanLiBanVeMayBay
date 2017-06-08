@@ -30,13 +30,15 @@
         {
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtThoiGianHuyVe = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTGDatVe = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.bnt_2 = new System.Windows.Forms.Button();
-            this.bnt_1 = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSoLuongHangVe = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label9
@@ -63,13 +65,13 @@
             this.label8.TabIndex = 27;
             this.label8.Text = "Ngày";
             // 
-            // textBox2
+            // txtThoiGianHuyVe
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(318, 115);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 26;
+            this.txtThoiGianHuyVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThoiGianHuyVe.Location = new System.Drawing.Point(318, 115);
+            this.txtThoiGianHuyVe.Name = "txtThoiGianHuyVe";
+            this.txtThoiGianHuyVe.Size = new System.Drawing.Size(100, 26);
+            this.txtThoiGianHuyVe.TabIndex = 26;
             // 
             // label7
             // 
@@ -83,13 +85,13 @@
             this.label7.TabIndex = 25;
             this.label7.Text = "Thời gian chậm nhất hủy đặt vé:";
             // 
-            // textBox1
+            // txtTGDatVe
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(318, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 24;
+            this.txtTGDatVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTGDatVe.Location = new System.Drawing.Point(318, 73);
+            this.txtTGDatVe.Name = "txtTGDatVe";
+            this.txtTGDatVe.Size = new System.Drawing.Size(100, 26);
+            this.txtTGDatVe.TabIndex = 24;
             // 
             // label6
             // 
@@ -103,29 +105,33 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Thời gian chậm nhất đặt vé:";
             // 
-            // bnt_2
+            // btnThoat
             // 
-            this.bnt_2.BackColor = System.Drawing.Color.Teal;
-            this.bnt_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnt_2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_2.Location = new System.Drawing.Point(394, 172);
-            this.bnt_2.Name = "bnt_2";
-            this.bnt_2.Size = new System.Drawing.Size(82, 33);
-            this.bnt_2.TabIndex = 22;
-            this.bnt_2.Text = "Thoát";
-            this.bnt_2.UseVisualStyleBackColor = false;
+            this.btnThoat.BackColor = System.Drawing.Color.Teal;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnThoat.Location = new System.Drawing.Point(336, 247);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(82, 33);
+            this.btnThoat.TabIndex = 22;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // bnt_1
+            // btnCapNhat
             // 
-            this.bnt_1.BackColor = System.Drawing.Color.Teal;
-            this.bnt_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnt_1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_1.Location = new System.Drawing.Point(246, 172);
-            this.bnt_1.Name = "bnt_1";
-            this.bnt_1.Size = new System.Drawing.Size(90, 33);
-            this.bnt_1.TabIndex = 21;
-            this.bnt_1.Text = "Cập Nhật";
-            this.bnt_1.UseVisualStyleBackColor = false;
+            this.btnCapNhat.BackColor = System.Drawing.Color.Teal;
+            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCapNhat.Location = new System.Drawing.Point(191, 247);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(90, 33);
+            this.btnCapNhat.TabIndex = 21;
+            this.btnCapNhat.Text = "Cập Nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // label4
             // 
@@ -135,26 +141,49 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(505, 32);
+            this.label4.Size = new System.Drawing.Size(522, 32);
             this.label4.TabIndex = 29;
             this.label4.Text = "QUY ĐỊNH VÉ CHUYẾN BAY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(50, 164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 19);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Số lượng hạng vé";
+            // 
+            // txtSoLuongHangVe
+            // 
+            this.txtSoLuongHangVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuongHangVe.Location = new System.Drawing.Point(318, 157);
+            this.txtSoLuongHangVe.Name = "txtSoLuongHangVe";
+            this.txtSoLuongHangVe.Size = new System.Drawing.Size(100, 26);
+            this.txtSoLuongHangVe.TabIndex = 31;
             // 
             // FORM_THAYDOIQUYDINHVE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(505, 240);
+            this.ClientSize = new System.Drawing.Size(522, 315);
+            this.Controls.Add(this.txtSoLuongHangVe);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtThoiGianHuyVe);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTGDatVe);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.bnt_2);
-            this.Controls.Add(this.bnt_1);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnCapNhat);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FORM_THAYDOIQUYDINHVE";
             this.ShowIcon = false;
             this.ResumeLayout(false);
@@ -166,12 +195,14 @@
 
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtThoiGianHuyVe;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTGDatVe;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button bnt_2;
-        private System.Windows.Forms.Button bnt_1;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSoLuongHangVe;
     }
 }

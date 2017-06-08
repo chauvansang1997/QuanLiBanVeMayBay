@@ -12,15 +12,11 @@ namespace BUS
     public static class User_BUS
     {
         
-        public static bool DangNhap(string _userName,string _password)
+        public static int DangNhap(string _userName,string _password)
         {
 
-            return DAO.User_DAO.XemChuyenBay(_userName,_password);
+            return User_DAO.DangNhap(_userName,_password);
         }
-        public static DataTable DangNhap1(string txtUserName, string txtPassword)
-        {
-
-            return User_DAO.XemChuyenBay1(txtUserName,txtPassword);
-        }
+  
     }
 }

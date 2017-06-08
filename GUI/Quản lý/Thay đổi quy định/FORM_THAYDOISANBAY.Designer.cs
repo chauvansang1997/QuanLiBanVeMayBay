@@ -30,9 +30,9 @@
         {
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.bnt_2 = new System.Windows.Forms.Button();
-            this.bnt_1 = new System.Windows.Forms.Button();
+            this.txtSoLuongSB = new System.Windows.Forms.TextBox();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -58,46 +58,50 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Số lượng sân bay tối đa:";
             // 
-            // textBox1
+            // txtSoLuongSB
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(197, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 13;
+            this.txtSoLuongSB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuongSB.Location = new System.Drawing.Point(197, 84);
+            this.txtSoLuongSB.Name = "txtSoLuongSB";
+            this.txtSoLuongSB.Size = new System.Drawing.Size(100, 26);
+            this.txtSoLuongSB.TabIndex = 13;
             // 
-            // bnt_2
+            // btnThoat
             // 
-            this.bnt_2.BackColor = System.Drawing.Color.Teal;
-            this.bnt_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnt_2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_2.Location = new System.Drawing.Point(215, 142);
-            this.bnt_2.Name = "bnt_2";
-            this.bnt_2.Size = new System.Drawing.Size(82, 33);
-            this.bnt_2.TabIndex = 15;
-            this.bnt_2.Text = "Thoát";
-            this.bnt_2.UseVisualStyleBackColor = false;
+            this.btnThoat.BackColor = System.Drawing.Color.Teal;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(215, 142);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(82, 33);
+            this.btnThoat.TabIndex = 15;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // bnt_1
+            // btnCapNhat
             // 
-            this.bnt_1.BackColor = System.Drawing.Color.Teal;
-            this.bnt_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnt_1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_1.Location = new System.Drawing.Point(67, 142);
-            this.bnt_1.Name = "bnt_1";
-            this.bnt_1.Size = new System.Drawing.Size(90, 33);
-            this.bnt_1.TabIndex = 14;
-            this.bnt_1.Text = "Cập Nhật";
-            this.bnt_1.UseVisualStyleBackColor = false;
+            this.btnCapNhat.BackColor = System.Drawing.Color.Teal;
+            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhat.Location = new System.Drawing.Point(67, 142);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(90, 33);
+            this.btnCapNhat.TabIndex = 14;
+            this.btnCapNhat.Text = "Cập Nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // FORM_THAYDOISANBAY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 213);
-            this.Controls.Add(this.bnt_2);
-            this.Controls.Add(this.bnt_1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnCapNhat);
+            this.Controls.Add(this.txtSoLuongSB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Name = "FORM_THAYDOISANBAY";
@@ -111,8 +115,8 @@
 
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button bnt_2;
-        private System.Windows.Forms.Button bnt_1;
+        private System.Windows.Forms.TextBox txtSoLuongSB;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnCapNhat;
     }
 }

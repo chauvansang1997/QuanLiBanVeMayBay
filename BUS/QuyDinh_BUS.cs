@@ -30,5 +30,20 @@ namespace BUS
             QuyDinh.ThoiGianDungToiThieu = row.Field<int>("ThoiGianDungToiThieu");
             
         }
+
+        public static bool ThayDoiQuyDinhCB()
+        {
+            return QuyDinh_DAO.ThayDoiQuyDinhChuyenBay();
+        }
+
+        public static bool ThayDoiQuyDinhVe()
+        {
+            return QuyDinh_DAO.ThayDoiQuyDinhVe();
+        }
+
+        public static bool ThayDoiQuyDinhSanBay()
+        {
+            return QuyDinh_DAO.ThayDoiQuyDinhSanBay();
+        }
     }
 }

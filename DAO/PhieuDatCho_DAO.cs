@@ -39,6 +39,8 @@ namespace DAO
 
                 new SqlParameter("@maHangVe",SqlDbType.VarChar){Value =_phieudatcho.TenHanhKhach},
 
+                
+
             };
 
             try

@@ -12,36 +12,46 @@ namespace DAO
     public static class User_DAO
     {
         
-        public static bool XemChuyenBay(string userName,string passWord)
+        public static int DangNhap(string userName,string passWord)
         {
 
 
-            string query = "Select * from DangNhap Where UserName=@UserName AND Password =@PassWord";
+            string query = " EXEC usp_DangNhap @userName,@matkhau";
             
+
 
             List<SqlParameter> sqlParameter = new List<SqlParameter>()
             {
-                new SqlParameter("@UserName",SqlDbType.Char){ SqlValue=userName},
-                new SqlParameter("@PassWord",SqlDbType.Char){ SqlValue=passWord},
+                new SqlParameter("@userName",SqlDbType.Char){ SqlValue=userName},
+
+                new SqlParameter("@matkhau",SqlDbType.Char){ SqlValue=passWord},
+
             };
-
-
-            DataTable table = Dataprovider.ExcuteQuery(query, sqlParameter.ToArray());
-            if (table.Rows.Count == 1)
+            int temp=-1;
+            try
             {
-                return true;
+                object obj = Dataprovider.ExcuteScalar(query, sqlParameter.ToArray());
+                if (obj != null)
+                {
+                    if ((bool)obj)
+                    {
+                        temp = 1;
+                    }
+                    else
+                    {
+                        temp = 0;
+                    }
+                }
             }
-            return false;
-        }
-        public static DataTable XemChuyenBay1(string userName, string passWord)
-        {
+            catch (Exception err)
+            {
 
-
-            string query1 = "Select * from DangNhap " +
-                           "Where UserName= " + userName + " AND " + " Password = " + passWord;
-            string query = @"SELECT * FROM DangNhap where UserName = 'ChauVanSang' and Password = '1234' or 1 = 1";
-            return Dataprovider.ExcuteQuery(query1);
+                MessageBox.Show(err.Message);
+            }
+           
             
+            return temp;
         }
+
     }
 }

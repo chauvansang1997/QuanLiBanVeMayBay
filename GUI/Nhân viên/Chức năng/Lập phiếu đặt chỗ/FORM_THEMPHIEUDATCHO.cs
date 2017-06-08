@@ -26,8 +26,9 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+        
             string message="";
-            if(PhieuDatCho_BUS.LapPhieuDatCho(txtTenHanhKhach.Text, txtCMND.Text, txtSoDienThoai.Text, txtMaChuyenBay.Text,maHangVe , dtPKNgayDat.Value))
+            if(PhieuDatCho_BUS.LapPhieuDatCho(txtTenHanhKhach.Text, txtCMND.Text, txtSoDienThoai.Text, txtMaChuyenBay.Text,maHangVe, dtPKNgayDat.Value))
             {
                 message = "Đặt chỗ thành công";
                

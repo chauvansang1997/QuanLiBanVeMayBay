@@ -49,17 +49,26 @@ namespace GUI
 
         private void nhanLichCBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FORM_NHANLICHCHUYENBAY form = new FORM_NHANLICHCHUYENBAY();
+            this.Hide();
+            form.ShowDialog();
+            this.Hide();
         }
 
         private void thayDoiCBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FORM_THAYDOICHUYENBAY form = new FORM_THAYDOICHUYENBAY();
+            this.Hide();
+            form.ShowDialog();
+            this.Hide();
         }
 
         private void ghiNhanDVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FORM_TRACUU_CHUYENBAY form = new FORM_TRACUU_CHUYENBAY(Help_Fuction.State.DatVe);
+            this.Hide();
+            form.ShowDialog();
+            this.Hide();
         }
 
         private void lapPhieuDCToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,17 +78,26 @@ namespace GUI
 
         private void huyVeMBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FORM_HUYVECB form = new FORM_HUYVECB();
+            this.Hide();
+            form.ShowDialog();
+            this.Hide();
         }
 
         private void traCuuCBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FORM_TRACUU_CHUYENBAY form = new FORM_TRACUU_CHUYENBAY(Help_Fuction.State.TraCuu);
+            this.Hide();
+            form.ShowDialog();
+            this.Hide();
         }
 
         private void traCuuKHToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FORM_TRACUU_THONGTIN_KH form = new FORM_TRACUU_THONGTIN_KH();
+            this.Hide();
+            form.ShowDialog();
+            this.Hide();
         }
 
         private void huongDanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,6 +105,41 @@ namespace GUI
 
         }
 
+        private void nhanLichCBStripLabel_Click(object sender, EventArgs e)
+        {
+            FORM_NHANLICHCHUYENBAY form = new FORM_NHANLICHCHUYENBAY();
+            this.Hide();
+            form.ShowDialog();
+            this.Hide();
+        }
 
+        private void ghiNhanDVtoolStripLabel_Click(object sender, EventArgs e)
+        {
+            FORM_TRACUU_CHUYENBAY form = new FORM_TRACUU_CHUYENBAY(Help_Fuction.State.DatVe);
+            this.Hide();
+            form.ShowDialog();
+            this.Hide();
+        }
+
+        private void lapPhieuDCtoolStripLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void traCuuCBtoolStripLabel_Click(object sender, EventArgs e)
+        {
+            FORM_TRACUU_CHUYENBAY form = new FORM_TRACUU_CHUYENBAY(Help_Fuction.State.TraCuu);
+            this.Hide();
+            form.ShowDialog();
+            this.Hide();
+        }
+
+        private void huyPhieuDatChoToolStrip_Click(object sender, EventArgs e)
+        {
+            FORM_HUYPHIEUDATCHO form = new FORM_HUYPHIEUDATCHO();
+            this.Hide();
+            form.ShowDialog();
+            this.Hide();
+        }
     }
 }

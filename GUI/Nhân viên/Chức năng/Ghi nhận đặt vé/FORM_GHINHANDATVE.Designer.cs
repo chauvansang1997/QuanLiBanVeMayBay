@@ -75,7 +75,7 @@
             this.txtCMND.Location = new System.Drawing.Point(646, 85);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(227, 26);
-            this.txtCMND.TabIndex = 41;
+            this.txtCMND.TabIndex = 2;
             this.txtCMND.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
             this.txtCMND.Leave += new System.EventHandler(this.txtCMND_Leave);
             // 
@@ -98,7 +98,7 @@
             this.txtSoDT.Location = new System.Drawing.Point(204, 145);
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(227, 26);
-            this.txtSoDT.TabIndex = 45;
+            this.txtSoDT.TabIndex = 3;
             this.txtSoDT.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
             this.txtSoDT.Leave += new System.EventHandler(this.txtSoDT_Leave);
             // 
@@ -134,7 +134,7 @@
             this.btnSave.Location = new System.Drawing.Point(637, 290);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(87, 40);
-            this.btnSave.TabIndex = 55;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -147,7 +147,7 @@
             this.btnThoat.Location = new System.Drawing.Point(786, 290);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(87, 40);
-            this.btnThoat.TabIndex = 56;
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -159,7 +159,7 @@
             this.txtTenHanhKhach.Location = new System.Drawing.Point(204, 85);
             this.txtTenHanhKhach.Name = "txtTenHanhKhach";
             this.txtTenHanhKhach.Size = new System.Drawing.Size(227, 26);
-            this.txtTenHanhKhach.TabIndex = 57;
+            this.txtTenHanhKhach.TabIndex = 1;
             this.txtTenHanhKhach.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
             this.txtTenHanhKhach.Leave += new System.EventHandler(this.txtTenHanhKhach_Leave);
             // 
@@ -235,6 +235,7 @@
             this.txtMaChuyenBay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaChuyenBay.Location = new System.Drawing.Point(646, 145);
             this.txtMaChuyenBay.Name = "txtMaChuyenBay";
+            this.txtMaChuyenBay.ReadOnly = true;
             this.txtMaChuyenBay.Size = new System.Drawing.Size(227, 26);
             this.txtMaChuyenBay.TabIndex = 119;
             // 
@@ -244,6 +245,7 @@
             this.txtTenHangVe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenHangVe.Location = new System.Drawing.Point(204, 206);
             this.txtTenHangVe.Name = "txtTenHangVe";
+            this.txtTenHangVe.ReadOnly = true;
             this.txtTenHangVe.Size = new System.Drawing.Size(227, 26);
             this.txtTenHangVe.TabIndex = 120;
             // 

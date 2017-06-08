@@ -44,8 +44,6 @@
             this.thayDoiCBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ghiNhanDVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.lapPhieuDCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.huyVeMBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,10 +67,10 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.nhanLichCBStripLabel = new System.Windows.Forms.ToolStripButton();
             this.ghiNhanDVtoolStripLabel = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.lapPhieuDCtoolStripLabel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.traCuuCBtoolStripLabel = new System.Windows.Forms.ToolStripButton();
+            this.huyPhieuDatChoToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -164,10 +162,10 @@
             this.thayDoiCBToolStripMenuItem,
             this.toolStripSeparator4,
             this.ghiNhanDVToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.lapPhieuDCToolStripMenuItem,
             this.toolStripSeparator6,
-            this.huyVeMBToolStripMenuItem});
+            this.huyVeMBToolStripMenuItem,
+            this.toolStripSeparator8,
+            this.huyPhieuDatChoToolStrip});
             this.chứcNăngToolStripMenuItem.Image = global::GUI.Properties.Resources.k_job_viewer_icon;
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
             this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
@@ -177,59 +175,46 @@
             // 
             this.nhanLichCBToolStripMenuItem.Image = global::GUI.Properties.Resources.insert_plane;
             this.nhanLichCBToolStripMenuItem.Name = "nhanLichCBToolStripMenuItem";
-            this.nhanLichCBToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.nhanLichCBToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.nhanLichCBToolStripMenuItem.Text = "Nhận lịch chuyến bay";
             this.nhanLichCBToolStripMenuItem.Click += new System.EventHandler(this.nhanLichCBToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(264, 6);
             // 
             // thayDoiCBToolStripMenuItem
             // 
             this.thayDoiCBToolStripMenuItem.Image = global::GUI.Properties.Resources.fix_it_icon;
             this.thayDoiCBToolStripMenuItem.Name = "thayDoiCBToolStripMenuItem";
-            this.thayDoiCBToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.thayDoiCBToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.thayDoiCBToolStripMenuItem.Text = "Thay đổi lịch chuyến bay";
             this.thayDoiCBToolStripMenuItem.Click += new System.EventHandler(this.thayDoiCBToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(264, 6);
             // 
             // ghiNhanDVToolStripMenuItem
             // 
             this.ghiNhanDVToolStripMenuItem.Image = global::GUI.Properties.Resources.Inventory_icon;
             this.ghiNhanDVToolStripMenuItem.Name = "ghiNhanDVToolStripMenuItem";
-            this.ghiNhanDVToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.ghiNhanDVToolStripMenuItem.Text = "Ghi nhận đặt vé";
+            this.ghiNhanDVToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
+            this.ghiNhanDVToolStripMenuItem.Text = "Ghi nhận đặt vé và lập phiếu đặt chỗ";
             this.ghiNhanDVToolStripMenuItem.Click += new System.EventHandler(this.ghiNhanDVToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(203, 6);
-            // 
-            // lapPhieuDCToolStripMenuItem
-            // 
-            this.lapPhieuDCToolStripMenuItem.Image = global::GUI.Properties.Resources.insert_plane;
-            this.lapPhieuDCToolStripMenuItem.Name = "lapPhieuDCToolStripMenuItem";
-            this.lapPhieuDCToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.lapPhieuDCToolStripMenuItem.Text = "Lập phiếu đặt chỗ";
-            this.lapPhieuDCToolStripMenuItem.Click += new System.EventHandler(this.lapPhieuDCToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(264, 6);
             // 
             // huyVeMBToolStripMenuItem
             // 
             this.huyVeMBToolStripMenuItem.Image = global::GUI.Properties.Resources.cancel;
             this.huyVeMBToolStripMenuItem.Name = "huyVeMBToolStripMenuItem";
-            this.huyVeMBToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.huyVeMBToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.huyVeMBToolStripMenuItem.Text = "Hủy vé máy bay";
             this.huyVeMBToolStripMenuItem.Click += new System.EventHandler(this.huyVeMBToolStripMenuItem_Click);
             // 
@@ -276,7 +261,7 @@
             // 
             this.huongDanToolStripMenuItem.Image = global::GUI.Properties.Resources.guide;
             this.huongDanToolStripMenuItem.Name = "huongDanToolStripMenuItem";
-            this.huongDanToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.huongDanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.huongDanToolStripMenuItem.Text = "Hướng dẫn";
             this.huongDanToolStripMenuItem.Click += new System.EventHandler(this.huongDanToolStripMenuItem_Click);
             // 
@@ -364,8 +349,6 @@
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhanLichCBStripLabel,
             this.ghiNhanDVtoolStripLabel,
-            this.toolStripSeparator9,
-            this.lapPhieuDCtoolStripLabel,
             this.toolStripSeparator10,
             this.traCuuCBtoolStripLabel});
             this.toolStrip2.Location = new System.Drawing.Point(0, 24);
@@ -380,25 +363,15 @@
             this.nhanLichCBStripLabel.Name = "nhanLichCBStripLabel";
             this.nhanLichCBStripLabel.Size = new System.Drawing.Size(142, 22);
             this.nhanLichCBStripLabel.Text = "Nhận lịch chuyến bay";
+            this.nhanLichCBStripLabel.Click += new System.EventHandler(this.nhanLichCBStripLabel_Click);
             // 
             // ghiNhanDVtoolStripLabel
             // 
             this.ghiNhanDVtoolStripLabel.Image = global::GUI.Properties.Resources.Inventory_icon;
             this.ghiNhanDVtoolStripLabel.Name = "ghiNhanDVtoolStripLabel";
-            this.ghiNhanDVtoolStripLabel.Size = new System.Drawing.Size(110, 22);
-            this.ghiNhanDVtoolStripLabel.Text = "Ghi nhận đặt vé";
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
-            // 
-            // lapPhieuDCtoolStripLabel
-            // 
-            this.lapPhieuDCtoolStripLabel.Image = global::GUI.Properties.Resources.insert_plane;
-            this.lapPhieuDCtoolStripLabel.Name = "lapPhieuDCtoolStripLabel";
-            this.lapPhieuDCtoolStripLabel.Size = new System.Drawing.Size(122, 22);
-            this.lapPhieuDCtoolStripLabel.Text = "Lập phiếu đặt chỗ";
+            this.ghiNhanDVtoolStripLabel.Size = new System.Drawing.Size(223, 22);
+            this.ghiNhanDVtoolStripLabel.Text = "Ghi nhận đặt vé và lập phiếu đặt chỗ ";
+            this.ghiNhanDVtoolStripLabel.Click += new System.EventHandler(this.ghiNhanDVtoolStripLabel_Click);
             // 
             // toolStripSeparator10
             // 
@@ -411,6 +384,20 @@
             this.traCuuCBtoolStripLabel.Name = "traCuuCBtoolStripLabel";
             this.traCuuCBtoolStripLabel.Size = new System.Drawing.Size(130, 22);
             this.traCuuCBtoolStripLabel.Text = "Tra cứu chuyến bay";
+            this.traCuuCBtoolStripLabel.Click += new System.EventHandler(this.traCuuCBtoolStripLabel_Click);
+            // 
+            // huyPhieuDatChoToolStrip
+            // 
+            this.huyPhieuDatChoToolStrip.Image = global::GUI.Properties.Resources.cancel;
+            this.huyPhieuDatChoToolStrip.Name = "huyPhieuDatChoToolStrip";
+            this.huyPhieuDatChoToolStrip.Size = new System.Drawing.Size(267, 22);
+            this.huyPhieuDatChoToolStrip.Text = "Hủy phiếu đặt chỗ";
+            this.huyPhieuDatChoToolStrip.Click += new System.EventHandler(this.huyPhieuDatChoToolStrip_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(264, 6);
             // 
             // NHANVIEN
             // 
@@ -465,11 +452,9 @@
         private System.Windows.Forms.ToolStripMenuItem traCuuKHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem huongDanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ghiNhanDVToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripMenuItem thoatToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lapPhieuDCToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel lbTime;
         private System.Windows.Forms.Timer dateTimetimer;
         private System.Windows.Forms.ToolStripMenuItem xinChàoToolStripMenuItem;
@@ -477,11 +462,11 @@
         private System.Windows.Forms.ToolStripMenuItem huyVeMBToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripButton nhanLichCBStripLabel;
         private System.Windows.Forms.ToolStripButton ghiNhanDVtoolStripLabel;
-        private System.Windows.Forms.ToolStripButton lapPhieuDCtoolStripLabel;
         private System.Windows.Forms.ToolStripButton traCuuCBtoolStripLabel;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem huyPhieuDatChoToolStrip;
     }
 }

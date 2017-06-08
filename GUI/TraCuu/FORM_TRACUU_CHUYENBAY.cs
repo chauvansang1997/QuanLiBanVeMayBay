@@ -23,9 +23,17 @@ namespace GUI
 
         private bool isClick = false;
 
+        private State mystate;
 
+
+        private DateTime ngayKHTu;
+        private DateTime ngayKHDen;
+
+        private string sanbaydi;
+        private string sanbayden;
         public FORM_TRACUU_CHUYENBAY(State state)
         {
+            mystate = state;
             InitializeComponent();
             this.Icon = Properties.Resources.Search_icon1;
             pageNumber = 1;
@@ -89,10 +97,30 @@ namespace GUI
         private void bnt_Find_Click(object sender, EventArgs e)
         {
             isClick = true;
-            string sanbaydi = cmbSanBayDi.Text;
-            string sanbayden = cmbSanBayDen.Text;
-            DateTime ngayKHTu = dtPKNgayKHTu.Value;
-            DateTime ngayKHDen = dtPKNgayKhDen.Value;
+            sanbaydi = cmbSanBayDi.Text;
+            sanbayden = cmbSanBayDen.Text;
+            ngayKHTu = dtPKNgayKHTu.Value;
+            ngayKHDen = dtPKNgayKhDen.Value;
+
+            //Kiểm tra ngày khởi hành từ và ngày khởi hành đến
+            if (DateTime.Compare(ngayKHTu, ngayKHDen) > 0)
+            {
+                MessageBox.Show("Ngày khởi hành từ phải sớm hơn ngày khởi hành đến");
+                return;
+            }
+
+            //Nếu form này dùng cho việc đặt vé và đặt chỗ thì kiểm tra so với quy định
+            if (mystate == State.DatVe)
+            {
+                int day = QuyDinh.ThoiGianChamNhatDatVe*24;
+                
+                if (DateTime.Compare(ngayKHTu, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(day)) < 0)
+                {
+                    MessageBox.Show("Bạn chỉ có thể tìm những chuyến bay khởi hành có ngày lớn hơn ngày hiện tại " + day + " ngày");
+                    return;
+                }
+            }
+           
 
             totalPage = ChuyenBay_BUS.DemChuyenBay(sanbaydi, sanbayden, ngayKHTu, ngayKHDen);
 
@@ -104,8 +132,8 @@ namespace GUI
 
             txtTotalPage.Text = totalPage.ToString();
            
-            //dGVDachSanhCB.Columns.Clear();
-            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+
+            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
         }
 
 
@@ -120,7 +148,7 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
             }
             else
             {
@@ -138,7 +166,7 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
             }
             else
             {
@@ -164,7 +192,7 @@ namespace GUI
 
             if (isClick)
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
             }
             else
             {
@@ -187,15 +215,29 @@ namespace GUI
                 ++pageNumber;
             }
             txtPageNumber.Text = pageNumber.ToString();
-
-            if (isClick)
+            if (mystate == State.DatVe)
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, dtPKNgayKHTu.Value, dtPKNgayKhDen.Value);
+                if (isClick)
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                }
+                else
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now, null);
+                }
             }
             else
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                if (isClick)
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                }
+                else
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                }
             }
+            
         }
 
 
@@ -213,8 +255,17 @@ namespace GUI
 
             txtTotalPage.Text = totalPage.ToString();
 
+            if (mystate == State.DatVe)
+            {
+               
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now, null);
+            }
+            else
+            {
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+            }
 
-            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+            
         }
         //Sự kiện khi thay đổi chọn giá trị trong sân bay đi
         private void cmbSanBayDi_SelectedIndexChanged(object sender, EventArgs e)

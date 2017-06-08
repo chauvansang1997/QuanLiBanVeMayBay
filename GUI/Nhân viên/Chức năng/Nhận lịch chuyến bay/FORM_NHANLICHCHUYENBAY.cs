@@ -138,7 +138,7 @@ namespace GUI
             //Kiểm tra ngày bay phải lớn hơn ngày hiện tại 1 ngày
             if (dtpkNgayKhoiHanh.Value < DateTime.Now+HelpFuction.ConvertHoursToTotalDays(24))
             {
-                MessageBox.Show("Ngày giờ phải lớn hơn hoặc bằng ngày hiện tại");
+                MessageBox.Show("Ngày giờ phải lớn hơn hoặc bằng ngày hiện tại 1 ngày");
                 return;
             }
             //Kiểm tra thời gian bay phải đúng với quy định

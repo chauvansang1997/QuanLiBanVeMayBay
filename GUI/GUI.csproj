@@ -39,7 +39,7 @@
     </Reference>
     <Reference Include="AutoCompleteTextBoxDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\Visual Studio 2017\Projects\AutoCompleteTextBoxDll\AutoCompleteTextBoxDll\bin\Release\AutoCompleteTextBoxDll.dll</HintPath>
+      <HintPath>..\Build\AutoCompleteTextBoxDll.dll</HintPath>
     </Reference>
     <Reference Include="Exel handle">
       <HintPath>..\Build\Exel handle.dll</HintPath>

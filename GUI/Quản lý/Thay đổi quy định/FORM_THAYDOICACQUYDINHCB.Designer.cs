@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_1 = new System.Windows.Forms.TextBox();
+            this.txtThoiGianBay = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_2 = new System.Windows.Forms.TextBox();
+            this.txtSoSanBayToiDa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_3 = new System.Windows.Forms.TextBox();
+            this.txtThoiGianDungTT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_4 = new System.Windows.Forms.TextBox();
-            this.bnt_1 = new System.Windows.Forms.Button();
-            this.bnt_2 = new System.Windows.Forms.Button();
+            this.txtThoiGianDungTD = new System.Windows.Forms.TextBox();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -57,13 +57,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thời gian bay tối thiểu:";
             // 
-            // txt_1
+            // txtThoiGianBay
             // 
-            this.txt_1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_1.Location = new System.Drawing.Point(291, 63);
-            this.txt_1.Name = "txt_1";
-            this.txt_1.Size = new System.Drawing.Size(100, 26);
-            this.txt_1.TabIndex = 1;
+            this.txtThoiGianBay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThoiGianBay.Location = new System.Drawing.Point(291, 63);
+            this.txtThoiGianBay.Name = "txtThoiGianBay";
+            this.txtThoiGianBay.Size = new System.Drawing.Size(100, 26);
+            this.txtThoiGianBay.TabIndex = 1;
             // 
             // label2
             // 
@@ -77,13 +77,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Số sân bay trung gian bay tối đa:";
             // 
-            // txt_2
+            // txtSoSanBayToiDa
             // 
-            this.txt_2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_2.Location = new System.Drawing.Point(291, 109);
-            this.txt_2.Name = "txt_2";
-            this.txt_2.Size = new System.Drawing.Size(100, 26);
-            this.txt_2.TabIndex = 3;
+            this.txtSoSanBayToiDa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoSanBayToiDa.Location = new System.Drawing.Point(291, 109);
+            this.txtSoSanBayToiDa.Name = "txtSoSanBayToiDa";
+            this.txtSoSanBayToiDa.Size = new System.Drawing.Size(100, 26);
+            this.txtSoSanBayToiDa.TabIndex = 3;
             // 
             // label3
             // 
@@ -97,13 +97,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Thời gian dừng tối thiểu:";
             // 
-            // txt_3
+            // txtThoiGianDungTT
             // 
-            this.txt_3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_3.Location = new System.Drawing.Point(291, 157);
-            this.txt_3.Name = "txt_3";
-            this.txt_3.Size = new System.Drawing.Size(100, 26);
-            this.txt_3.TabIndex = 5;
+            this.txtThoiGianDungTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThoiGianDungTT.Location = new System.Drawing.Point(291, 157);
+            this.txtThoiGianDungTT.Name = "txtThoiGianDungTT";
+            this.txtThoiGianDungTT.Size = new System.Drawing.Size(100, 26);
+            this.txtThoiGianDungTT.TabIndex = 5;
             // 
             // label4
             // 
@@ -117,37 +117,41 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Thời gian dừng tối đa:";
             // 
-            // txt_4
+            // txtThoiGianDungTD
             // 
-            this.txt_4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_4.Location = new System.Drawing.Point(291, 205);
-            this.txt_4.Name = "txt_4";
-            this.txt_4.Size = new System.Drawing.Size(100, 26);
-            this.txt_4.TabIndex = 7;
+            this.txtThoiGianDungTD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThoiGianDungTD.Location = new System.Drawing.Point(291, 205);
+            this.txtThoiGianDungTD.Name = "txtThoiGianDungTD";
+            this.txtThoiGianDungTD.Size = new System.Drawing.Size(100, 26);
+            this.txtThoiGianDungTD.TabIndex = 7;
             // 
-            // bnt_1
+            // btnCapNhat
             // 
-            this.bnt_1.BackColor = System.Drawing.Color.Teal;
-            this.bnt_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnt_1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_1.Location = new System.Drawing.Point(219, 265);
-            this.bnt_1.Name = "bnt_1";
-            this.bnt_1.Size = new System.Drawing.Size(90, 33);
-            this.bnt_1.TabIndex = 8;
-            this.bnt_1.Text = "Cập Nhật";
-            this.bnt_1.UseVisualStyleBackColor = false;
+            this.btnCapNhat.BackColor = System.Drawing.Color.Teal;
+            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhat.Location = new System.Drawing.Point(219, 265);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(90, 33);
+            this.btnCapNhat.TabIndex = 8;
+            this.btnCapNhat.Text = "Cập Nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
-            // bnt_2
+            // btnThoat
             // 
-            this.bnt_2.BackColor = System.Drawing.Color.Teal;
-            this.bnt_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnt_2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_2.Location = new System.Drawing.Point(367, 265);
-            this.bnt_2.Name = "bnt_2";
-            this.bnt_2.Size = new System.Drawing.Size(82, 33);
-            this.bnt_2.TabIndex = 9;
-            this.bnt_2.Text = "Thoát";
-            this.bnt_2.UseVisualStyleBackColor = false;
+            this.btnThoat.BackColor = System.Drawing.Color.Teal;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(367, 265);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(82, 33);
+            this.btnThoat.TabIndex = 9;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // label5
             // 
@@ -222,15 +226,15 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.bnt_2);
-            this.Controls.Add(this.bnt_1);
-            this.Controls.Add(this.txt_4);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnCapNhat);
+            this.Controls.Add(this.txtThoiGianDungTD);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_3);
+            this.Controls.Add(this.txtThoiGianDungTT);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_2);
+            this.Controls.Add(this.txtSoSanBayToiDa);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_1);
+            this.Controls.Add(this.txtThoiGianBay);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -245,15 +249,15 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_1;
+        private System.Windows.Forms.TextBox txtThoiGianBay;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_2;
+        private System.Windows.Forms.TextBox txtSoSanBayToiDa;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_3;
+        private System.Windows.Forms.TextBox txtThoiGianDungTT;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_4;
-        private System.Windows.Forms.Button bnt_1;
-        private System.Windows.Forms.Button bnt_2;
+        private System.Windows.Forms.TextBox txtThoiGianDungTD;
+        private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;

@@ -56,7 +56,16 @@ namespace GUI
                 MessageBox.Show("Sân bay đi và sân bay đến không được trùng nhau");
                 return;
             }
-            if (TuyenBay_BUS.ThemTuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text))
+
+          
+
+            SanBay sanBayDi = cmbSanBayDi.SelectedItem as SanBay;
+  
+
+            SanBay sanBayDen = cmbSanBayDen.SelectedItem as SanBay;
+
+
+            if (TuyenBay_BUS.ThemTuyenBay(sanBayDi.MaSanBay, sanBayDen.MaSanBay))
             {
                 MessageBox.Show("Thêm tuyến bay thành công");
             }

@@ -55,7 +55,7 @@ namespace BUS
                 NgayGioDat = _ngayGioDat,
             };
 
-            PhieuDatCho_DAO.LapPhieuDC_sqlException += LapPhieuDC_sqlException;
+
 
             return PhieuDatCho_DAO.LapPhieuDatCho(phieudatcho);
         }

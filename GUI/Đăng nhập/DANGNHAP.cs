@@ -41,17 +41,27 @@ namespace GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (BUS.User_BUS.DangNhap(txtUserName.Text, txtPassword.Text))
+
+            if (User_BUS.DangNhap(txtUserName.Text, txtPassword.Text)==0)
             {
                 NHANVIEN formNhanVien = new NHANVIEN();
+
+                this.Hide();
                 formNhanVien.ShowDialog();
-                this.Close();
+                this.Show();
+                return;
+
             }
-            else
+            if(User_BUS.DangNhap(txtUserName.Text, txtPassword.Text) == 1)
             {
-                MessageBox.Show("Sai tài khoản hoặc mật khẩu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FORM_QUANLY quanly = new FORM_QUANLY();
+
+                this.Hide();
+                quanly.ShowDialog();
+                this.Show();
+                return;
             }
-            
+            MessageBox.Show("Sai tài khoản hoặc mật khẩu hoặc xảy ra lỗi");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

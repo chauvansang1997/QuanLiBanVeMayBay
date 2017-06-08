@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using Help_Fuction;
+
 namespace GUI
 {
     public partial class FORM_GHINHANDATVE : Form
@@ -26,18 +28,34 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {           
-            
-            string message = "";
+            if(HelpFuction.isContainsNumber(txtTenHanhKhach.Text))
+            {
+                MessageBox.Show("Tên người không được chứa số");
+                return;
+            }
+            if (HelpFuction.IsContainsText(txtSoDT.Text))
+            {
+                MessageBox.Show("Số điện thoại không được chứa số");
+                return;
+            }
+            if (HelpFuction.IsContainsText(txtCMND.Text))
+            {
+                MessageBox.Show("Số điện thoại không được chứa số");
+                return;
+            }
             if (VeDat_BUS.GhiNhanDatVe(txtTenHanhKhach.Text, txtSoDT.Text, txtMaChuyenBay.Text, txtCMND.Text, maHangVe))
             {
-                message = "Đặt vé thành công";
+                MessageBox.Show("Đặt vé thành công");
+                return;
 
             }
             else
             {
-                message = "Đặt vé không thành công";
+
+                MessageBox.Show("Đặt vé không thành công");
+                return;
             }
-            MessageBox.Show(message);
+
         }
 
         private void VeDat_BUS_sqlException(object sender, System.Data.SqlClient.SqlException e)
