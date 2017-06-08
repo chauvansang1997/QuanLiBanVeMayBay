@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -137,6 +138,11 @@ namespace GUI
             this.Hide();
             form.ShowDialog();
             this.Show();
+        }
+
+        private void NHANVIEN_Load(object sender, EventArgs e)
+        {
+            lbXinChao.Text = "Xin Chào"+User.TenNhanVien;
         }
     }
 }

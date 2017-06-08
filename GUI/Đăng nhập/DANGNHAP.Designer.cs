@@ -182,6 +182,7 @@
             this.Name = "DANGNHAP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Form";
+            this.Load += new System.EventHandler(this.DANGNHAP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorUser)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorPassword)).EndInit();

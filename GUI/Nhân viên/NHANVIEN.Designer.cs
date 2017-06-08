@@ -46,13 +46,15 @@
             this.ghiNhanDVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.huyVeMBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.huyPhieuDatChoToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.traCuuCBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.traCuuKHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợLíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.huongDanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xinChàoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbXinChao = new System.Windows.Forms.ToolStripMenuItem();
             this.xemThôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,8 +71,6 @@
             this.ghiNhanDVtoolStripLabel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.traCuuCBtoolStripLabel = new System.Windows.Forms.ToolStripButton();
-            this.huyPhieuDatChoToolStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -84,7 +84,7 @@
             this.chứcNăngToolStripMenuItem,
             this.tìmKiếmToolStripMenuItem1,
             this.trợLíToolStripMenuItem,
-            this.xinChàoToolStripMenuItem});
+            this.lbXinChao});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -218,6 +218,19 @@
             this.huyVeMBToolStripMenuItem.Text = "Hủy vé máy bay";
             this.huyVeMBToolStripMenuItem.Click += new System.EventHandler(this.huyVeMBToolStripMenuItem_Click);
             // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(264, 6);
+            // 
+            // huyPhieuDatChoToolStrip
+            // 
+            this.huyPhieuDatChoToolStrip.Image = global::GUI.Properties.Resources.cancel;
+            this.huyPhieuDatChoToolStrip.Name = "huyPhieuDatChoToolStrip";
+            this.huyPhieuDatChoToolStrip.Size = new System.Drawing.Size(267, 22);
+            this.huyPhieuDatChoToolStrip.Text = "Hủy phiếu đặt chỗ";
+            this.huyPhieuDatChoToolStrip.Click += new System.EventHandler(this.huyPhieuDatChoToolStrip_Click);
+            // 
             // tìmKiếmToolStripMenuItem1
             // 
             this.tìmKiếmToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -261,16 +274,16 @@
             // 
             this.huongDanToolStripMenuItem.Image = global::GUI.Properties.Resources.guide;
             this.huongDanToolStripMenuItem.Name = "huongDanToolStripMenuItem";
-            this.huongDanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.huongDanToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.huongDanToolStripMenuItem.Text = "Hướng dẫn";
             this.huongDanToolStripMenuItem.Click += new System.EventHandler(this.huongDanToolStripMenuItem_Click);
             // 
-            // xinChàoToolStripMenuItem
+            // lbXinChao
             // 
-            this.xinChàoToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.xinChàoToolStripMenuItem.Name = "xinChàoToolStripMenuItem";
-            this.xinChàoToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.xinChàoToolStripMenuItem.Text = "Xin chào";
+            this.lbXinChao.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.lbXinChao.Name = "lbXinChao";
+            this.lbXinChao.Size = new System.Drawing.Size(65, 20);
+            this.lbXinChao.Text = "Xin chào";
             // 
             // xemThôngTinToolStripMenuItem
             // 
@@ -386,19 +399,6 @@
             this.traCuuCBtoolStripLabel.Text = "Tra cứu chuyến bay";
             this.traCuuCBtoolStripLabel.Click += new System.EventHandler(this.traCuuCBtoolStripLabel_Click);
             // 
-            // huyPhieuDatChoToolStrip
-            // 
-            this.huyPhieuDatChoToolStrip.Image = global::GUI.Properties.Resources.cancel;
-            this.huyPhieuDatChoToolStrip.Name = "huyPhieuDatChoToolStrip";
-            this.huyPhieuDatChoToolStrip.Size = new System.Drawing.Size(267, 22);
-            this.huyPhieuDatChoToolStrip.Text = "Hủy phiếu đặt chỗ";
-            this.huyPhieuDatChoToolStrip.Click += new System.EventHandler(this.huyPhieuDatChoToolStrip_Click);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(264, 6);
-            // 
             // NHANVIEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,7 +412,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "NHANVIEN";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân viên";
+            this.Load += new System.EventHandler(this.NHANVIEN_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -457,7 +459,7 @@
         private System.Windows.Forms.ToolStripMenuItem thoatToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel lbTime;
         private System.Windows.Forms.Timer dateTimetimer;
-        private System.Windows.Forms.ToolStripMenuItem xinChàoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lbXinChao;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem huyVeMBToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;

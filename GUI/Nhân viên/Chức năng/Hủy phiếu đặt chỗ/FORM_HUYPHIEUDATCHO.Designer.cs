@@ -148,13 +148,14 @@
             this.dGVDSPDC.MultiSelect = false;
             this.dGVDSPDC.Name = "dGVDSPDC";
             this.dGVDSPDC.ReadOnly = true;
-            this.dGVDSPDC.RowHeadersVisible = false;
             this.dGVDSPDC.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
             this.dGVDSPDC.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dGVDSPDC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDSPDC.Size = new System.Drawing.Size(832, 171);
             this.dGVDSPDC.TabIndex = 124;
+            this.dGVDSPDC.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dGVDSPDC_RowsAdded);
+            this.dGVDSPDC.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dGVDSPDC_RowsRemoved);
             this.dGVDSPDC.SelectionChanged += new System.EventHandler(this.dGVDSPDC_SelectionChanged);
             // 
             // btnFind
@@ -165,7 +166,7 @@
             this.btnFind.Location = new System.Drawing.Point(0, 191);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 33);
-            this.btnFind.TabIndex = 125;
+            this.btnFind.TabIndex = 5;
             this.btnFind.Text = "Tìm";
             this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -178,7 +179,7 @@
             this.btnThoat.Location = new System.Drawing.Point(730, 481);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(90, 35);
-            this.btnThoat.TabIndex = 129;
+            this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -191,7 +192,7 @@
             this.btnHuy.Location = new System.Drawing.Point(614, 481);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(90, 35);
-            this.btnHuy.TabIndex = 130;
+            this.btnHuy.TabIndex = 6;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -222,7 +223,7 @@
             this.cmbMaCB.Location = new System.Drawing.Point(614, 127);
             this.cmbMaCB.Name = "cmbMaCB";
             this.cmbMaCB.Size = new System.Drawing.Size(189, 23);
-            this.cmbMaCB.TabIndex = 137;
+            this.cmbMaCB.TabIndex = 4;
             // 
             // cmbPhieuDC
             // 
@@ -231,7 +232,7 @@
             this.cmbPhieuDC.Location = new System.Drawing.Point(614, 75);
             this.cmbPhieuDC.Name = "cmbPhieuDC";
             this.cmbPhieuDC.Size = new System.Drawing.Size(189, 23);
-            this.cmbPhieuDC.TabIndex = 138;
+            this.cmbPhieuDC.TabIndex = 2;
             // 
             // txtTotalPage
             // 
@@ -251,7 +252,7 @@
             this.btnLastPage.Location = new System.Drawing.Point(565, 220);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(75, 33);
-            this.btnLastPage.TabIndex = 143;
+            this.btnLastPage.TabIndex = 11;
             this.btnLastPage.Text = "Trang cuối";
             this.btnLastPage.UseVisualStyleBackColor = false;
             this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
@@ -264,7 +265,7 @@
             this.btnFirstPage.Location = new System.Drawing.Point(230, 220);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(75, 33);
-            this.btnFirstPage.TabIndex = 142;
+            this.btnFirstPage.TabIndex = 8;
             this.btnFirstPage.Text = "Trang đầu";
             this.btnFirstPage.UseVisualStyleBackColor = false;
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
@@ -277,7 +278,7 @@
             this.btnPrevPage.Location = new System.Drawing.Point(348, 220);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(75, 33);
-            this.btnPrevPage.TabIndex = 141;
+            this.btnPrevPage.TabIndex = 9;
             this.btnPrevPage.Text = "Trang trước";
             this.btnPrevPage.UseVisualStyleBackColor = false;
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
@@ -290,7 +291,7 @@
             this.btnNextPage.Location = new System.Drawing.Point(457, 220);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(75, 33);
-            this.btnNextPage.TabIndex = 140;
+            this.btnNextPage.TabIndex = 10;
             this.btnNextPage.Text = "Trang sau";
             this.btnNextPage.UseVisualStyleBackColor = false;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
@@ -314,7 +315,7 @@
             this.cmbCMND.Location = new System.Drawing.Point(220, 125);
             this.cmbCMND.Name = "cmbCMND";
             this.cmbCMND.Size = new System.Drawing.Size(189, 23);
-            this.cmbCMND.TabIndex = 145;
+            this.cmbCMND.TabIndex = 3;
             // 
             // cmbTenHanhKhach
             // 
@@ -323,7 +324,7 @@
             this.cmbTenHanhKhach.Location = new System.Drawing.Point(220, 75);
             this.cmbTenHanhKhach.Name = "cmbTenHanhKhach";
             this.cmbTenHanhKhach.Size = new System.Drawing.Size(189, 23);
-            this.cmbTenHanhKhach.TabIndex = 146;
+            this.cmbTenHanhKhach.TabIndex = 1;
             // 
             // FORM_HUYPHIEUDATCHO
             // 
@@ -354,7 +355,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FORM_HUYPHIEUDATCHO";

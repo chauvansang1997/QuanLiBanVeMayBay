@@ -31,6 +31,10 @@ namespace GUI
 
         private string sanbaydi;
         private string sanbayden;
+        /// <summary>
+        /// Sự kiện load form
+        /// </summary>
+        /// <param name="state"></param>
         public FORM_TRACUU_CHUYENBAY(State state)
         {
             mystate = state;
@@ -93,7 +97,11 @@ namespace GUI
         }
 
 
-
+        /// <summary>
+        /// Sự kiện nhấn nút tìm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bnt_Find_Click(object sender, EventArgs e)
         {
             isClick = true;
@@ -137,6 +145,7 @@ namespace GUI
         }
 
 
+        #region Thêm trang
         /// <summary>
         /// Sự kiện nhấn vào trang đầu
         /// </summary>
@@ -281,7 +290,7 @@ namespace GUI
             }
             
         }
-
+        #endregion
 
 
         //Sự kiện load form
@@ -318,6 +327,12 @@ namespace GUI
             
         }
         //Sự kiện khi thay đổi chọn giá trị trong sân bay đi
+
+       /// <summary>
+       /// Sự kiện khi chọn sân bay đi thì sân bay đến tự động thay đổi
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void cmbSanBayDi_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox combobox = sender as ComboBox;
@@ -360,6 +375,7 @@ namespace GUI
             this.Close();
         }
 
+        #region Tạo số thứ tự cho dataGriView
         private void dGVSanBayTG_SelectionChanged(object sender, EventArgs e)
         {
             dGVSanBayTG.ClearSelection();
@@ -400,7 +416,13 @@ namespace GUI
             DataGridView dgv = sender as DataGridView;
             dgv.setRowNumber();
         }
+#endregion
 
+        /// <summary>
+        /// Sự kiện nhấn nút đặt chỗ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDatCho_Click(object sender, EventArgs e)
         {
             try
@@ -433,6 +455,11 @@ namespace GUI
             
         }
 
+        /// <summary>
+        /// Sự kiện nhấn nút đặt vé
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDatVe_Click(object sender, EventArgs e)
         {
             try

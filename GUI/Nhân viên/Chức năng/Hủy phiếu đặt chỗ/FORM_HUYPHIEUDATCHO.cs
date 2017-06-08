@@ -52,81 +52,87 @@ namespace GUI
             dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(cmbTenHanhKhach.Text, cmbCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text,pageSize,pageNumber);
         }
 
-        private void btnFirstPage_Click(object sender, EventArgs e)
-        {
-            pageNumber = 1;
+        #region Tạo trang
+                private void btnFirstPage_Click(object sender, EventArgs e)
+                {
+                    pageNumber = 1;
 
-            txtPageNumber.Text = pageNumber.ToString();
+                    txtPageNumber.Text = pageNumber.ToString();
 
-            if (isClick)
-            {
-                dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(cmbTenHanhKhach.Text, cmbCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
-            }
-            else
-            {
-                dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
-            }
-        }
+                    if (isClick)
+                    {
+                        dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(cmbTenHanhKhach.Text, cmbCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
+                    }
+                    else
+                    {
+                        dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
+                    }
+                }
 
-        private void btnPrevPage_Click(object sender, EventArgs e)
-        {
-            if (pageNumber - 1 == 0)
-            {
-                pageNumber = 1;
-            }
-            else
-            {
-                --pageNumber;
-            }
-            txtPageNumber.Text = pageNumber.ToString();
+                private void btnPrevPage_Click(object sender, EventArgs e)
+                {
+                    if (pageNumber - 1 == 0)
+                    {
+                        pageNumber = 1;
+                    }
+                    else
+                    {
+                        --pageNumber;
+                    }
+                    txtPageNumber.Text = pageNumber.ToString();
 
-            if (isClick)
-            {
-                dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(cmbTenHanhKhach.Text, cmbCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
-            }
-            else
-            {
-                dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
-            }
-        }
+                    if (isClick)
+                    {
+                        dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(cmbTenHanhKhach.Text, cmbCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
+                    }
+                    else
+                    {
+                        dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
+                    }
+                }
 
-        private void btnNextPage_Click(object sender, EventArgs e)
-        {
-            if (pageNumber + 1 > totalPage)
-            {
-                pageNumber = 1;
-            }
-            else
-            {
-                ++pageNumber;
-            }
-            txtPageNumber.Text = pageNumber.ToString();
-            if (isClick)
-            {
-                dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(cmbTenHanhKhach.Text, cmbCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
-            }
-            else
-            {
-                dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
-            }
-        }
+                private void btnNextPage_Click(object sender, EventArgs e)
+                {
+                    if (pageNumber + 1 > totalPage)
+                    {
+                        pageNumber = 1;
+                    }
+                    else
+                    {
+                        ++pageNumber;
+                    }
+                    txtPageNumber.Text = pageNumber.ToString();
+                    if (isClick)
+                    {
+                        dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(cmbTenHanhKhach.Text, cmbCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
+                    }
+                    else
+                    {
+                        dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
+                    }
+                }
 
-        private void btnLastPage_Click(object sender, EventArgs e)
-        {
-            pageNumber = totalPage;
+                private void btnLastPage_Click(object sender, EventArgs e)
+                {
+                    pageNumber = totalPage;
 
-            txtPageNumber.Text = pageNumber.ToString();
+                    txtPageNumber.Text = pageNumber.ToString();
 
-            if (isClick)
-            {
-                dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(cmbTenHanhKhach.Text, cmbCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
-            }
-            else
-            {
-                dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
-            }
-        }
-
+                    if (isClick)
+                    {
+                        dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(cmbTenHanhKhach.Text, cmbCMND.Text, cmbPhieuDC.Text, cmbMaCB.Text, pageSize, pageNumber);
+                    }
+                    else
+                    {
+                        dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
+                    }
+                }
+        #endregion
+        /// <summary>
+        /// Sự kiện nhấn nút hủy
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnHuy_Click(object sender, EventArgs e)
         {
             if (maPhieuDatCho != "")
@@ -152,8 +158,15 @@ namespace GUI
             this.Close();
         }
 
+        /// <summary>
+        /// Sự kiện load form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FORM_HUYPHIEUDATCHO_Load(object sender, EventArgs e)
         {
+            dGVDSPDC.TopLeftHeaderCell.Value = "STT";
+            dGVDSPDC.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
 
             ThreadPool.QueueUserWorkItem(p =>
             {
@@ -197,7 +210,11 @@ namespace GUI
 
             dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
         }
-
+        /// <summary>
+        /// Sự kiện khi thay đổi lựa chọn
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dGVDSPDC_SelectionChanged(object sender, EventArgs e)
         {
             if (dGVDSPDC.SelectedRows.Count > 0)
@@ -205,5 +222,18 @@ namespace GUI
                 maPhieuDatCho = dGVDSPDC.SelectedRows[0].Cells[4].Value.ToString();
             }
         }
+        #region Tạo số thứ tự cho dataGirView
+                private void dGVDSPDC_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+                {
+                    DataGridView dgv = sender as DataGridView;
+                    dgv.setRowNumber();
+                }
+
+                private void dGVDSPDC_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+                {
+                    DataGridView dgv = sender as DataGridView;
+                    dgv.setRowNumber();
+                }
+        #endregion
     }
 }

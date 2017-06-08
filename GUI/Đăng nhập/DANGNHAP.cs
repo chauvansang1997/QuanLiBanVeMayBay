@@ -68,5 +68,10 @@ namespace GUI
         {
             this.Close();
         }
+
+        private void DANGNHAP_Load(object sender, EventArgs e)
+        {
+            QuyDinh_BUS.LoadQuyDinh();
+        }
     }
 }

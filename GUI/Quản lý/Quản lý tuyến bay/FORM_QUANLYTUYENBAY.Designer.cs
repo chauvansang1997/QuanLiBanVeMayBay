@@ -71,11 +71,14 @@
             this.dGVDanhSachTB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVDanhSachTB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVDanhSachTB.Location = new System.Drawing.Point(0, 260);
+            this.dGVDanhSachTB.MultiSelect = false;
             this.dGVDanhSachTB.Name = "dGVDanhSachTB";
             this.dGVDanhSachTB.ReadOnly = true;
             this.dGVDanhSachTB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDanhSachTB.Size = new System.Drawing.Size(954, 167);
             this.dGVDanhSachTB.TabIndex = 4;
+            this.dGVDanhSachTB.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dGVDanhSachTB_RowsAdded);
+            this.dGVDanhSachTB.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dGVDanhSachTB_RowsRemoved);
             // 
             // btnThem
             // 

@@ -16,7 +16,8 @@ namespace GUI
 {
     public partial class FORM_NHANLICHCHUYENBAY : Form
     {
-     
+
+        private DataTable danhSachThem;
         /// <summary>
         /// Contructor
         /// </summary>
@@ -34,6 +35,10 @@ namespace GUI
 
             dGVSanBayTG.TopLeftHeaderCell.Value = "STT";
             dGVSanBayTG.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+
+
+            dGVChuyenBayThem.TopLeftHeaderCell.Value = "STT";
+            dGVChuyenBayThem.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
         }
         /// <summary>
         /// Sự kiện load form
@@ -42,10 +47,16 @@ namespace GUI
         /// <param name="e"></param>
         private void FORM_NHANLICHCHUYENBAY_Load(object sender, EventArgs e)
         {
+
+            danhSachThem = new DataTable();
+            DataColumn column = new DataColumn("Mã Chuyến Bay");
+            danhSachThem.Columns.Add(column);
+
+            dGVChuyenBayThem.DataSource = danhSachThem;
+
             Init();
             
-            QuyDinh_BUS.LoadQuyDinh();
-
+            
             HangVe.SoLuongHangVe = HangVe_BUS.DemSoLuongHangVe();
 
             SanBay_BUS.LoadSanBayDi(cmbSanBayDi);
@@ -147,7 +158,7 @@ namespace GUI
                 MessageBox.Show("Thời gian bay phải tối thiểu là:" + QuyDinh.ThoiGianBayToiThieu.ToString());
                 return;
             }
-
+            //Thêm chuyến bay 
             try
             {
                 string maChuyenBay;
@@ -179,6 +190,7 @@ namespace GUI
 
                     }
                     MessageBox.Show("Nhận lịch chuyến bay thành công");
+                    
                 }
             }
             catch (Exception err)
@@ -187,7 +199,9 @@ namespace GUI
                 HelpFuction.Log(err);
                 MessageBox.Show("Nhận chuyến bay không thành công");
             }
-        
+
+            
+            
         }
         /// <summary>
         /// Thêm hạng ghế 
@@ -291,46 +305,60 @@ namespace GUI
             this.Close();
         }
 
+        #region Tạo số thứ tự
+                /// <summary>
+                /// Sự kiện thêm sân bay tring gian
+                /// </summary>
+                /// <param name="sender"></param>
+                /// <param name="e"></param>
+                private void dGVSanBayTG_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+                {
+                    DataGridView dgv = sender as DataGridView;
+                    dgv.setRowNumber();
+                }
+                /// <summary>
+                /// Sự kiện xóa sân bay trung gian
+                /// </summary>
+                /// <param name="sender"></param>
+                /// <param name="e"></param>
+                private void dGVSanBayTG_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+                {
+                    DataGridView dgv = sender as DataGridView;
+                    dgv.setRowNumber();
+                }
+                /// <summary>
+                /// Sự kiện thêm hạng ghế
+                /// </summary>
+                /// <param name="sender"></param>
+                /// <param name="e"></param>
+                private void dgvDanhSachGhe_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+                {
+                    DataGridView dgv = sender as DataGridView;
+                    dgv.setRowNumber();
+                }
+                /// <summary>
+                /// Sự kiện xóa hạng ghế
+                /// </summary>
+                /// <param name="sender"></param>
+                /// <param name="e"></param>
+                private void dgvDanhSachGhe_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+                {
+                    DataGridView dgv = sender as DataGridView;
+                    dgv.setRowNumber();
+                }
+                private void dGVChuyenBayThem_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+                {
+                    DataGridView dgv = sender as DataGridView;
+                    dgv.setRowNumber();
+                }
 
-        /// <summary>
-        /// Sự kiện thêm sân bay tring gian
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dGVSanBayTG_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            DataGridView dgv = sender as DataGridView;
-            dgv.setRowNumber();
-        }
-        /// <summary>
-        /// Sự kiện xóa sân bay trung gian
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dGVSanBayTG_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            DataGridView dgv = sender as DataGridView;
-            dgv.setRowNumber();
-        }
-        /// <summary>
-        /// Sự kiện thêm hạng ghế
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dgvDanhSachGhe_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            DataGridView dgv = sender as DataGridView;
-            dgv.setRowNumber();
-        }
-        /// <summary>
-        /// Sự kiện xóa hạng ghế
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dgvDanhSachGhe_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            DataGridView dgv = sender as DataGridView;
-            dgv.setRowNumber();
-        }
+                private void dGVChuyenBayThem_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+                {
+                    DataGridView dgv = sender as DataGridView;
+                    dgv.setRowNumber();
+                }
+        #endregion
+
+
     }
 }
