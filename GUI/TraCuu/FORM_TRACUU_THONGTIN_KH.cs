@@ -143,6 +143,9 @@ namespace GUI
 
         private void FORM_TRACUU_THONGTIN_KH_Load(object sender, EventArgs e)
         {
+            dGVDanhSachHK.TopLeftHeaderCell.Value = "STT";
+            dGVDanhSachHK.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+
             HanhKhach_BUS.LoadHanhKhach(cmbTenHK);
 
 
@@ -155,6 +158,18 @@ namespace GUI
 
             dGVDanhSachHK.Columns.Clear();
             dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(null, null, null, pageSize, pageNumber);
+        }
+
+        private void dGVDanhSachHK_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            dgv.setRowNumber();
+        }
+
+        private void dGVDanhSachHK_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            dgv.setRowNumber();
         }
     }
 }

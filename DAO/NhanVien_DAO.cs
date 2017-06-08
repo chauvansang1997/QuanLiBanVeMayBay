@@ -84,6 +84,7 @@ namespace DAO
             }
             catch (Exception err)
             {
+                MessageBox.Show(err.Message);
                 HelpFuction.Log(err);
                
             }

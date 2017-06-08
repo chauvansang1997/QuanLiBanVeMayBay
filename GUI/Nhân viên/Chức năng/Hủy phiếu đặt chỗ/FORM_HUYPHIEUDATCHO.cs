@@ -154,23 +154,30 @@ namespace GUI
 
         private void FORM_HUYPHIEUDATCHO_Load(object sender, EventArgs e)
         {
-            ThreadPool.QueueUserWorkItem(p =>
-            {
-                cmbPhieuDC.PerformSafely(() =>
-                {
-                    PhieuDatCho_BUS.LoadPhieuDatCho(cmbPhieuDC);
-                });
 
-            });
-            
             ThreadPool.QueueUserWorkItem(p =>
             {
                 cmbMaCB.PerformSafely(() =>
                 {
-                    ChuyenBay_BUS.LoadMaChuyenBay(cmbMaCB);
+                    cmbMaCB.DataSource = ChuyenBay_BUS.LoadChuyenBayPDC();
+                    cmbMaCB.DisplayMember = "item2";
+                    cmbMaCB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    cmbMaCB.AutoCompleteSource = AutoCompleteSource.ListItems;
                 });
             });
-          
+           
+
+            ThreadPool.QueueUserWorkItem(p =>
+            {
+                cmbPhieuDC.PerformSafely(() =>
+                {
+                    cmbPhieuDC.DataSource = PhieuDatCho_BUS.LoadMaPhieuDatCho();
+                    cmbPhieuDC.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    cmbPhieuDC.AutoCompleteSource = AutoCompleteSource.ListItems;
+                });
+            });
+            
+
 
             ThreadPool.QueueUserWorkItem(p =>
             {

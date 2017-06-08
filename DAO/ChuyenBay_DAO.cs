@@ -13,7 +13,22 @@ namespace DAO
     public static class ChuyenBay_DAO
     {
 
+        /// <summary>
+        /// Hủy chuyến bay
+        /// </summary>
+        /// <param name="_maChuyenbay"></param>
+        /// <returns></returns>
+        public static bool HuyChuyenBay(string _maChuyenbay)
+        {
+            string query = " EXEC usp_HuyChuyenBay @maChuyenBay";
 
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value=_maChuyenbay},
+            };
+
+            return Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0 ? true : false;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -95,6 +110,27 @@ namespace DAO
             return danhSachMCB;
         }
 
+        public static List<string> LoadMaChuyenBayVe()
+        {
+            string query = " EXEC usp_LoadMaChuyenBayVe";
+
+            DataTable table = Dataprovider.ExcuteQuery(query);
+            List<string> list = table.AsEnumerable().ToList().ConvertAll(x => x[0].ToString());
+
+            return list;
+
+        }
+
+        public static List<string> LoadMaChuyenBayPDC()
+        {
+            string query = " EXEC usp_LoadMaChuyenBayPDC";
+
+            DataTable table = Dataprovider.ExcuteQuery(query);
+            List<string> list = table.AsEnumerable().ToList().ConvertAll(x => x[0].ToString());
+
+            return list;
+
+        }
         /// <summary>
         /// Nhận lịch chuyến bay
         /// </summary>
@@ -114,7 +150,6 @@ namespace DAO
                 new SqlParameter("@thoiGianBay",SqlDbType.Int){Value=_chuyenbay.ThoiGianBay},
 
                 new SqlParameter("@ngayGioKH",SqlDbType.DateTime){Value=_chuyenbay.NgayGioKH},
-
 
             };
 
@@ -262,34 +297,6 @@ namespace DAO
            
         }
 
-        /// <summary>
-        /// Hủy chuyến bay
-        /// </summary>
-        /// <param name="_maChuyenBay">Mã chuyến bay mà ta muốn xóa</param>
-        /// <returns></returns>
-        public static bool HuyChuyenBay(string _maChuyenBay)
-        {
-            string query = "";
-            List<SqlParameter> parameters = new List<SqlParameter>()
-            {
-                new SqlParameter("@MaChuyenBay",SqlDbType.VarChar){Value =_maChuyenBay },
-            };
-
-            try
-            {
-                if (Dataprovider.ExcuteNonQuery(query, parameters.ToArray()) > 0)
-                {
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception err)
-            {
-                HelpFuction.Log(err);
-                return false;
-            }
-            
-        }
 
         /// <summary>
         /// 

@@ -12,6 +12,11 @@ namespace BUS
     {
 
         public static event EventHandler<SqlException> LapPhieuDC_sqlException;
+
+        public static List<string> LoadMaPhieuDatCho()
+        {
+            return PhieuDatCho_DAO.LoadMaPhieuDatCho();
+        }
         /// <summary>
         /// Load phiếu đặt chỗ vào combobox
         /// </summary>

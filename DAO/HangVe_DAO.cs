@@ -11,6 +11,16 @@ namespace DAO
 {
     public  static class HangVe_DAO
     {
+        public static List<string> LoadMaVe()
+        {
+            string query = "EXEC usp_LoadMaVe";
+
+       
+            List<string> hangve = Dataprovider.ExcuteQuery(query).AsEnumerable().ToList().ConvertAll(x =>
+             x[0].ToString());
+
+            return hangve;
+        }
         public static List<string> LoadTenHangVe(string _tenHangVe)
         {
             string query = "EXEC usp_LoadHangGhe @tenHangVe";

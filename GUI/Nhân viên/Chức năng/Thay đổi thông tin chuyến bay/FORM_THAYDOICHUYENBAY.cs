@@ -31,7 +31,7 @@ namespace GUI
         private void btnFind_Click(object sender, EventArgs e)
         {
 
-            isClick = true;
+            
             string sanbaydi = cmbSanBayDi.Text;
             string sanbayden = cmbSanBayDen.Text;
             DateTime ngayKHTu = dtPKNgayKHTu.Value;
@@ -48,6 +48,13 @@ namespace GUI
                 return;
             }
 
+            if(DateTime.Compare(ngayKHTu,( DateTime.Now+HelpFuction.ConvertHoursToTotalDays(24) ) )  >0)
+            {
+                MessageBox.Show("Các chuyến bay phải có ngày khởi hành lớn hơn ngày hiện tại 1 ngày");
+                return;
+            }
+
+            isClick = true;
             totalPage = ChuyenBay_BUS.DemChuyenBay(sanbaydi, sanbayden, ngayKHTu, ngayKHDen);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
@@ -64,6 +71,7 @@ namespace GUI
             dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber, ngayKHTu, ngayKHDen);
         }
 
+        #region     Thay đổi trang 
         private void btnFirstPage_Click(object sender, EventArgs e)
         {
             pageNumber = 1;
@@ -74,7 +82,7 @@ namespace GUI
             }
             else
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(24), null);
             }
         }
 
@@ -96,7 +104,7 @@ namespace GUI
             }
             else
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(24), null);
             }
         }
 
@@ -118,7 +126,7 @@ namespace GUI
             }
             else
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(24), null);
             }
         }
 
@@ -132,14 +140,18 @@ namespace GUI
             }
             else
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(24), null);
             }
         }
+        #endregion 
 
-        
 
-        
 
+        /// <summary>
+        /// Nhấn nút cập nhật
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (dGVDanhSachCB.SelectedRows.Count > 0)
@@ -151,21 +163,44 @@ namespace GUI
             }
         }
 
+        /// <summary>
+        /// Nhấn nút hủy chuyến bay
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            if (dGVDanhSachCB.SelectedRows.Count > 0)
+            {
+                string maChuyenBay = dGVDanhSachCB.SelectedRows[0].Cells[0].Value.ToString();
+                if (ChuyenBay_BUS.HuyChuyenBay(maChuyenBay))
+                {
+                    MessageBox.Show("Hủy thành công");
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(24), null);
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra");
+                }
+            }
+      
         }
 
+        /// <summary>
+        /// Nhấn nút thoát
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void Init()
         {
             dGVDanhSachCB.TopLeftHeaderCell.Value = "STT";
             dGVDanhSachCB.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
 
-            
         }
         /// <summary>
         /// Sự kiện load form
@@ -188,14 +223,18 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
 
-            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now, null);
+            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now+HelpFuction.ConvertHoursToTotalDays(24), null);
 
-            
-
-         
 
         }
 
+        /// <summary>
+        /// Sự kiến thay đổi lựa chọn sân bay đi thì sân bay đến thay đổi theo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
+       
         private void cmbSanBayDi_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox combobox = sender as ComboBox;
@@ -211,6 +250,7 @@ namespace GUI
             }
         }
 
+        #region Thêm số thứ tự vào vào các datagridview
         private void dGVSanBayTG_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
@@ -243,7 +283,12 @@ namespace GUI
             DataGridView dgv = sender as DataGridView;
             dgv.setRowNumber();
         }
-
+    #endregion
+        /// <summary>
+        /// Kiểm tra xem ngày khởi hành từ có nhỏ hơn ngày khởi hành đến không
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtPKNgayKHDen_ValueChanged(object sender, EventArgs e)
         {
             int results = DateTime.Compare(dtPKNgayKHTu.Value, dtPKNgayKHDen.Value);

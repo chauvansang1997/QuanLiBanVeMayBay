@@ -29,7 +29,7 @@ namespace DAO
             {
                 new SqlParameter("@tenHanhKhach",SqlDbType.NVarChar){Value =_phieudatcho.TenHanhKhach},
 
-                new SqlParameter("@SoDienThoaiT",SqlDbType.VarChar){Value =_phieudatcho.SoDT},
+                new SqlParameter("@SoDienThoai",SqlDbType.VarChar){Value =_phieudatcho.SoDT},
 
                 new SqlParameter("@maChuyenBay",SqlDbType.VarChar){Value =_phieudatcho.MaCB},
 
@@ -37,7 +37,7 @@ namespace DAO
 
                 new SqlParameter("@ngayDat",SqlDbType.DateTime){Value =_phieudatcho.NgayGioDat},
 
-                new SqlParameter("@maHangVe",SqlDbType.VarChar){Value =_phieudatcho.TenHanhKhach},
+                new SqlParameter("@maHangVe",SqlDbType.VarChar){Value =_phieudatcho.HangVe},
 
                 
 
@@ -144,6 +144,13 @@ namespace DAO
             }
         }
 
+
+        public static List<string> LoadMaPhieuDatCho()
+        {
+            string query = "EXEC usp_LoadMaPDC";
+
+            return Dataprovider.ExcuteQuery(query).AsEnumerable().ToList().ConvertAll(x =>  x[0].ToString());
+        }
         /// <summary>
         /// Load phiếu đặt chỗ
         /// </summary>

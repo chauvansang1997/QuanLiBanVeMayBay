@@ -125,7 +125,7 @@
             // 
             // txtCMND
             // 
-            this.txtCMND.BackColor = System.Drawing.Color.LemonChiffon;
+            this.txtCMND.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtCMND.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCMND.Location = new System.Drawing.Point(435, 137);
             this.txtCMND.Name = "txtCMND";

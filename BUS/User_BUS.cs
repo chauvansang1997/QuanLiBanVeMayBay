@@ -11,7 +11,14 @@ namespace BUS
 {
     public static class User_BUS
     {
-        
+        public static bool ThayDoiMatKhau(string userName, string passWord)
+        {
+            return User_DAO.ThayDoiMatKhau(userName, passWord);
+        }
+        public static void Loaduser(string userName,string passWord)
+        {
+            User_DAO.LoadUser(userName,passWord);
+        }
         public static int DangNhap(string _userName,string _password)
         {
 

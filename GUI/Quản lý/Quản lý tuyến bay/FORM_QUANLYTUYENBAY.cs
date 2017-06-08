@@ -36,7 +36,7 @@ namespace GUI
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnFind_Click(object sender, EventArgs e)

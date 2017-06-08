@@ -59,9 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Nhân viên\Chức năng\Hủy phiếu đặt chỗ\FORM_HUYPHIEUDATCHO.cs">
       <SubType>Form</SubType>
     </Compile>

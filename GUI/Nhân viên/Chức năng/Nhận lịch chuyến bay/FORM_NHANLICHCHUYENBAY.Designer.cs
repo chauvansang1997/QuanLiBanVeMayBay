@@ -58,11 +58,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dGVSanBayTG = new System.Windows.Forms.DataGridView();
             this.dgvDanhSachGhe = new System.Windows.Forms.DataGridView();
-            this.cmbSanBayDen = new Custom.MyComboBox();
             this.btnThemHangGhe = new System.Windows.Forms.Button();
             this.btnXoaHangGhe = new System.Windows.Forms.Button();
             this.btnXoaSanBayTG = new System.Windows.Forms.Button();
             this.btnThemSanBayTG = new System.Windows.Forms.Button();
+            this.cmbSanBayDen = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenChuyenBay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSanBayDi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNgayGio)).BeginInit();
@@ -364,34 +364,6 @@
             this.dgvDanhSachGhe.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDanhSachGhe_RowsAdded);
             this.dgvDanhSachGhe.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvDanhSachGhe_RowsRemoved);
             // 
-            // cmbSanBayDen
-            // 
-            this.cmbSanBayDen.DropDownHeight = 80;
-            this.cmbSanBayDen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSanBayDen.FormattingEnabled = true;
-            this.cmbSanBayDen.IntegralHeight = false;
-            this.cmbSanBayDen.ItemHeight = 19;
-            this.cmbSanBayDen.Items.AddRange(new object[] {
-            "Cần Thơ",
-            "Đà Nẵng",
-            "Hải Phòng",
-            "Hà Nội",
-            "TP HCM",
-            "Cần Thơ",
-            "Đà Nẵng",
-            "Hải Phòng",
-            "Hà Nội",
-            "TP HCM",
-            "Cần Thơ",
-            "Đà Nẵng",
-            "Hải Phòng",
-            "Hà Nội",
-            "TP HCM"});
-            this.cmbSanBayDen.Location = new System.Drawing.Point(176, 113);
-            this.cmbSanBayDen.Name = "cmbSanBayDen";
-            this.cmbSanBayDen.Size = new System.Drawing.Size(242, 27);
-            this.cmbSanBayDen.TabIndex = 113;
-            // 
             // btnThemHangGhe
             // 
             this.btnThemHangGhe.BackColor = System.Drawing.Color.Teal;
@@ -448,6 +420,24 @@
             this.btnThemSanBayTG.UseVisualStyleBackColor = false;
             this.btnThemSanBayTG.Click += new System.EventHandler(this.btnThemSanBayTG_Click);
             // 
+            // cmbSanBayDen
+            // 
+            this.cmbSanBayDen.DropDownHeight = 90;
+            this.cmbSanBayDen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSanBayDen.FormattingEnabled = true;
+            this.cmbSanBayDen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbSanBayDen.IntegralHeight = false;
+            this.cmbSanBayDen.Items.AddRange(new object[] {
+            "Cần Thơ",
+            "Đà Nẵng",
+            "Hải Phòng",
+            "Hà Nội",
+            "TP HCM"});
+            this.cmbSanBayDen.Location = new System.Drawing.Point(176, 114);
+            this.cmbSanBayDen.Name = "cmbSanBayDen";
+            this.cmbSanBayDen.Size = new System.Drawing.Size(242, 28);
+            this.cmbSanBayDen.TabIndex = 121;
+            // 
             // FORM_NHANLICHCHUYENBAY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,11 +445,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1212, 542);
+            this.Controls.Add(this.cmbSanBayDen);
             this.Controls.Add(this.btnXoaSanBayTG);
             this.Controls.Add(this.btnThemSanBayTG);
             this.Controls.Add(this.btnXoaHangGhe);
             this.Controls.Add(this.btnThemHangGhe);
-            this.Controls.Add(this.cmbSanBayDen);
             this.Controls.Add(this.dgvDanhSachGhe);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
@@ -518,10 +508,11 @@
         private System.Windows.Forms.DataGridView dGVSanBayTG;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSTT1;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaCB;
-        private Custom.MyComboBox cmbSanBayDen;
+     
         private System.Windows.Forms.Button btnXoaHangGhe;
         private System.Windows.Forms.Button btnThemHangGhe;
         private System.Windows.Forms.Button btnXoaSanBayTG;
         private System.Windows.Forms.Button btnThemSanBayTG;
+        private System.Windows.Forms.ComboBox cmbSanBayDen;
     }
 }

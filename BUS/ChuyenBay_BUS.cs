@@ -13,6 +13,24 @@ namespace BUS
 {
     public static class ChuyenBay_BUS
     {
+
+        public static bool HuyChuyenBay(string _maChuyenBay)
+        {
+            return ChuyenBay_DAO.HuyChuyenBay(_maChuyenBay);
+        }
+        /// <summary>
+        /// Load ma chuyến bay trong form hủy vé
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> LoadChuyenBayVe()
+        {
+            return ChuyenBay_DAO.LoadMaChuyenBayVe();
+        }
+
+        public static List<string> LoadChuyenBayPDC()
+        {
+            return ChuyenBay_DAO.LoadMaChuyenBayPDC();
+        }
         /// <summary>
         /// Xóa sân bay trung gian
         /// </summary>
@@ -205,15 +223,7 @@ namespace BUS
             return ChuyenBay_DAO.TraCuuSanBayTG(_maChuyenBay);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="_maChyenBay"></param>
-        /// <returns></returns>
-        public static bool HuyChuyenBay(string _maChyenBay)
-        {
-            return ChuyenBay_DAO.HuyChuyenBay(_maChyenBay);
-        }
+
 
     }
 }

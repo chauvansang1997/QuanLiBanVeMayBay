@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace GUI
         public FORM_THONGTINNHANVIEN()
         {
             InitializeComponent();
+        }
+
+        private void FORM_THONGTINNHANVIEN_Load(object sender, EventArgs e)
+        {
+            txtTenNhanVien.Text = User.TenNhanVien;
+            txtCMND.Text = User.CMND;
+            txtDiaChi.Text = User.DiaChi;
+            txtSoDienThoai.Text = User.SoDienThoai;
+           
         }
     }
 }

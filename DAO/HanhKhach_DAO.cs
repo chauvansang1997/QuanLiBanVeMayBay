@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAO
 {
@@ -69,7 +70,7 @@ namespace DAO
         public static int DemSoHanhKhach(HanhKhach _hanhKhach)
         {
 
-            string query = "EXEC DEM_HANH_KHACH @TenHanhKhach,@CMND ,@SoDienThoai";
+            string query = "EXEC usp_DemHanhKhach @TenHanhKhach,@CMND ,@SoDienThoai";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
@@ -79,6 +80,7 @@ namespace DAO
 
                 new SqlParameter("@SoDienThoai",SqlDbType.VarChar){IsNullable=true,Value=_hanhKhach.SoDT?? (Object)DBNull.Value},
 
+
             };
 
 
@@ -86,8 +88,10 @@ namespace DAO
             {
                 return Convert.ToInt32(Dataprovider.ExcuteScalar(query, parameters.ToArray()));
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                MessageBox.Show(err.Message);
+                Help_Fuction.HelpFuction.Log(err);
                 return 0;
 
             }
@@ -99,7 +103,7 @@ namespace DAO
         /// <returns></returns>
         public static DataTable TraCuuHK(HanhKhach _hanhKhach, int pageSize, int pageNumber)
         {
-            string query = "EXEC sp_TimHanhKhach @TenKH,@CMND,@SoDT,@pageSize,@pageNumber";
+            string query = "EXEC usp_TimHanhKhach @TenKH,@CMND,@SoDT,@pageSize,@pageNumber";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {

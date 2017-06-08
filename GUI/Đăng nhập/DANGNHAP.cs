@@ -41,14 +41,14 @@ namespace GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            User_BUS.Loaduser(txtUserName.Text, txtPassword.Text);
             if (User_BUS.DangNhap(txtUserName.Text, txtPassword.Text)==0)
             {
+                
                 NHANVIEN formNhanVien = new NHANVIEN();
-
                 this.Hide();
                 formNhanVien.ShowDialog();
-                this.Show();
+                this.Close();
                 return;
 
             }
@@ -58,7 +58,7 @@ namespace GUI
 
                 this.Hide();
                 quanly.ShowDialog();
-                this.Show();
+                this.Close();
                 return;
             }
             MessageBox.Show("Sai tài khoản hoặc mật khẩu hoặc xảy ra lỗi");

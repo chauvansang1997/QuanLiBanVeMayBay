@@ -55,11 +55,11 @@ namespace GUI
                 return;
             }
 
-            //if(NhanVien_BUS.ThemNhanVien(txtTenNhanVien.Text, txtCMND.Text, txtSoDienThoai.Text, loaiNhanVien, txtDiaChi.Text))
-            //{
-            //    MessageBox.Show("Thêm thành công");
-            //}
-            
+            if (NhanVien_BUS.ThemNhanVien(txtTenNhanVien.Text, txtCMND.Text, txtSoDienThoai.Text, loaiNhanVien, txtDiaChi.Text))
+            {
+                MessageBox.Show("Thêm thành công");
+            }
+
         }
 
         private void Check(object sender, EventArgs e)

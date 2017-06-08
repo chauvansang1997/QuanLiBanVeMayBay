@@ -146,13 +146,27 @@ namespace GUI
         {
             pageNumber = 1;
             txtPageNumber.Text = pageNumber.ToString();
-            if (isClick)
+            if (mystate == State.DatVe)
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                if (isClick)
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                }
+                else
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(QuyDinh.ThoiGianChamNhatDatVe * 24), null);
+                }
             }
             else
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                if (isClick)
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                }
+                else
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                }
             }
         }
         /// <summary>
@@ -164,13 +178,27 @@ namespace GUI
         {
             pageNumber = totalPage;
             txtPageNumber.Text = pageNumber.ToString();
-            if (isClick)
+            if (mystate == State.DatVe)
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                if (isClick)
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                }
+                else
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(QuyDinh.ThoiGianChamNhatDatVe * 24), null);
+                }
             }
             else
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                if (isClick)
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                }
+                else
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                }
             }
         }
         /// <summary>
@@ -190,13 +218,27 @@ namespace GUI
             }
             txtPageNumber.Text = pageNumber.ToString();
 
-            if (isClick)
+            if (mystate == State.DatVe)
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                if (isClick)
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                }
+                else
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(QuyDinh.ThoiGianChamNhatDatVe * 24), null);
+                }
             }
             else
             {
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                if (isClick)
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                }
+                else
+                {
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, null, null);
+                }
             }
         }
         /// <summary>
@@ -223,7 +265,7 @@ namespace GUI
                 }
                 else
                 {
-                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now, null);
+                    dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(QuyDinh.ThoiGianChamNhatDatVe * 24), null);
                 }
             }
             else
@@ -246,9 +288,17 @@ namespace GUI
         private void FORM_TRACUU_CHUYENBAY_Load(object sender, EventArgs e)
         {
             SanBay_BUS.LoadSanBayDi(cmbSanBayDi);
-           
 
-            totalPage = ChuyenBay_BUS.DemChuyenBay(null, null, null, null);
+            if (mystate == State.DatVe)
+            {
+                int hours = QuyDinh.ThoiGianChamNhatDatVe * 24;
+
+                totalPage = ChuyenBay_BUS.DemChuyenBay(null, null, DateTime.Now+HelpFuction.ConvertHoursToTotalDays(hours), null);
+            }
+            else
+            {
+                totalPage = ChuyenBay_BUS.DemChuyenBay(null, null, null, null);
+            }
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 
@@ -258,7 +308,7 @@ namespace GUI
             if (mystate == State.DatVe)
             {
                
-                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now, null);
+                dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now+HelpFuction.ConvertHoursToTotalDays(QuyDinh.ThoiGianChamNhatDatVe * 24), null);
             }
             else
             {

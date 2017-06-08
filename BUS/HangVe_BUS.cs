@@ -10,6 +10,14 @@ namespace BUS
 {
     public static class HangVe_BUS
     {
+        /// <summary>
+        /// Load mã vé và chuyến bay lên form hủy vé
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> LoadMaVe()
+        {
+            return HangVe_DAO.LoadMaVe();
+        }
         public static void LoadTenHangVe(ComboBox _hangVe,string _tenHangVe)
         {
             _hangVe.DataSource = HangVe_DAO.LoadTenHangVe(_tenHangVe);

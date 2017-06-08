@@ -34,7 +34,11 @@ namespace GUI
             dGVDanhSachVe.TopLeftHeaderCell.Value = "STT";
             dGVDanhSachVe.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
 
-            HangVe_BUS.LoadHangVe(cmbMaVe);
+            cmbMaVe.DataSource = HangVe_BUS.LoadMaVe();
+            cmbMaVe.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbMaVe.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+
             HanhKhach_BUS.LoadHanhKhachVe(cmbTenHanhKhach);
             cmbTenHanhKhach.DisplayMember = "TenHanhKhach";
             cmbTenHanhKhach.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -45,9 +49,9 @@ namespace GUI
             cmbCMND.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbCMND.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            HangVe_BUS.LoadHangVe(cmbMaVe);
 
-            ChuyenBay_BUS.LoadMaChuyenBay(cmbMaChuyenBay);
+
+            cmbMaChuyenBay.DataSource=ChuyenBay_BUS.LoadChuyenBayVe();
             cmbMaChuyenBay.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbMaChuyenBay.AutoCompleteSource = AutoCompleteSource.ListItems;
 

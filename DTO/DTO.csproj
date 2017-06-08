@@ -52,6 +52,7 @@
     <Compile Include="QuyDinh.cs" />
     <Compile Include="SanBay.cs" />
     <Compile Include="SanBayTrungGian.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="VeDat.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>

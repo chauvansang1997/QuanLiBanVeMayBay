@@ -39,12 +39,16 @@ namespace GUI
 
         private void dangXuatToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DANGNHAP form = new DANGNHAP();
+            this.Hide();
+            form.ShowDialog();
 
+            this.Close();
         }
 
         private void thoatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void nhanLichCBToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,7 +56,7 @@ namespace GUI
             FORM_NHANLICHCHUYENBAY form = new FORM_NHANLICHCHUYENBAY();
             this.Hide();
             form.ShowDialog();
-            this.Hide();
+            this.Show();
         }
 
         private void thayDoiCBToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,7 +64,7 @@ namespace GUI
             FORM_THAYDOICHUYENBAY form = new FORM_THAYDOICHUYENBAY();
             this.Hide();
             form.ShowDialog();
-            this.Hide();
+            this.Show();
         }
 
         private void ghiNhanDVToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,20 +72,16 @@ namespace GUI
             FORM_TRACUU_CHUYENBAY form = new FORM_TRACUU_CHUYENBAY(Help_Fuction.State.DatVe);
             this.Hide();
             form.ShowDialog();
-            this.Hide();
+            this.Show();
         }
 
-        private void lapPhieuDCToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void huyVeMBToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FORM_HUYVECB form = new FORM_HUYVECB();
             this.Hide();
             form.ShowDialog();
-            this.Hide();
+            this.Show();
         }
 
         private void traCuuCBToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace GUI
             FORM_TRACUU_CHUYENBAY form = new FORM_TRACUU_CHUYENBAY(Help_Fuction.State.TraCuu);
             this.Hide();
             form.ShowDialog();
-            this.Hide();
+            this.Show();
         }
 
         private void traCuuKHToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace GUI
             FORM_TRACUU_THONGTIN_KH form = new FORM_TRACUU_THONGTIN_KH();
             this.Hide();
             form.ShowDialog();
-            this.Hide();
+            this.Show();
         }
 
         private void huongDanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace GUI
             FORM_NHANLICHCHUYENBAY form = new FORM_NHANLICHCHUYENBAY();
             this.Hide();
             form.ShowDialog();
-            this.Hide();
+            this.Show();
         }
 
         private void ghiNhanDVtoolStripLabel_Click(object sender, EventArgs e)
@@ -118,20 +118,17 @@ namespace GUI
             FORM_TRACUU_CHUYENBAY form = new FORM_TRACUU_CHUYENBAY(Help_Fuction.State.DatVe);
             this.Hide();
             form.ShowDialog();
-            this.Hide();
+            this.Show();
         }
 
-        private void lapPhieuDCtoolStripLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void traCuuCBtoolStripLabel_Click(object sender, EventArgs e)
         {
             FORM_TRACUU_CHUYENBAY form = new FORM_TRACUU_CHUYENBAY(Help_Fuction.State.TraCuu);
             this.Hide();
             form.ShowDialog();
-            this.Hide();
+            this.Show();
         }
 
         private void huyPhieuDatChoToolStrip_Click(object sender, EventArgs e)
@@ -139,7 +136,7 @@ namespace GUI
             FORM_HUYPHIEUDATCHO form = new FORM_HUYPHIEUDATCHO();
             this.Hide();
             form.ShowDialog();
-            this.Hide();
+            this.Show();
         }
     }
 }
