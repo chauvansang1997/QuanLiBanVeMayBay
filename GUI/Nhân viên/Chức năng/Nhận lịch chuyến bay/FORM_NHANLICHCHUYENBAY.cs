@@ -16,8 +16,6 @@ namespace GUI
 {
     public partial class FORM_NHANLICHCHUYENBAY : Form
     {
-        private uint check_thoiGianBay;
-        private uint check_GiaVe;
         private DataTable danhSachThem;
         /// <summary>
         /// Contructor
@@ -32,14 +30,14 @@ namespace GUI
         private void Init()
         {
             dgvDanhSachGhe.TopLeftHeaderCell.Value = "STT";
-            dgvDanhSachGhe.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvDanhSachGhe.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
 
             dGVSanBayTG.TopLeftHeaderCell.Value = "STT";
-            dGVSanBayTG.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dGVSanBayTG.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
 
 
             dGVChuyenBayThem.TopLeftHeaderCell.Value = "STT";
-            dGVChuyenBayThem.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dGVChuyenBayThem.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
         }
         /// <summary>
         /// Sự kiện load form
@@ -91,6 +89,12 @@ namespace GUI
             //Kiểm tra sân bay đi có chứa trong danh sách sân bay không
 
             bool check = false;
+            if (txtThoiGianBay.Text == ""||txtGiaVe.Text=="")
+            {
+                MessageBox.Show("Bạn chưa điền đủ thông tin");
+                return;
+            }
+            
             foreach (var item in cmbSanBayDi.Items)
             {
                 SanBay sanbay = item as SanBay;
@@ -119,6 +123,18 @@ namespace GUI
                 }
 
             }
+
+            if (dGVSanBayTG.RowCount > 0)
+            {
+                foreach (DataGridViewRow item in dGVSanBayTG.Rows)
+                {
+                    if(item.Cells[1].Value.ToString()==cmbSanBayDi.Text|| item.Cells[1].Value.ToString() == cmbSanBayDen.Text)
+                    {
+                        MessageBox.Show("Sân bay đi và đến không được trùng với sân bay trung gian");
+                        return;
+                    }
+                }
+            }
             if (!check)
             {
                 MessageBox.Show("Sân bay không có trong danh sách");
@@ -126,13 +142,13 @@ namespace GUI
             }
 
             //Kiểm tra ngày bay phải lớn hơn ngày hiện tại 1 ngày
-            if (dtpkNgayKhoiHanh.Value < DateTime.Now+HelpFuction.ConvertHoursToTotalDays(23.8))
+            if (dtpkNgayKhoiHanh.Value < DateTime.Now+HelpFuction.ConvertHoursToTotalDays(23.8+QuyDinh.ThoiGianChamNhatDatVe))
             {
                 MessageBox.Show("Ngày giờ phải lớn hơn hoặc bằng ngày hiện tại 1 ngày");
                 return;
             }
             //Kiểm tra thời gian bay phải đúng với quy định
-            if (check_thoiGianBay< QuyDinh.ThoiGianBayToiThieu)
+            if (Convert.ToInt32(txtThoiGianBay.Text)< QuyDinh.ThoiGianBayToiThieu)
             {
                 MessageBox.Show("Thời gian bay phải tối thiểu là:" + QuyDinh.ThoiGianBayToiThieu.ToString());
                 return;
@@ -143,9 +159,9 @@ namespace GUI
                 string maChuyenBay;
                 SanBay sanBayDi = cmbSanBayDi.SelectedItem as SanBay;
                 SanBay sanBayDen = cmbSanBayDen.SelectedItem as SanBay;
-                if (ChuyenBay_BUS.NhanLichChuyenBay(sanBayDi.MaSanBay, sanBayDen.MaSanBay, (int)check_GiaVe,(int)check_thoiGianBay, dtpkNgayKhoiHanh.Value, out maChuyenBay))
+                if (ChuyenBay_BUS.NhanLichChuyenBay(sanBayDi.MaSanBay, sanBayDen.MaSanBay,Convert.ToInt32 (txtGiaVe.Text), Convert.ToInt32(txtThoiGianBay.Text), dtpkNgayKhoiHanh.Value, out maChuyenBay))
                 {
-                    ChuyenBay_BUS.NhapDonGia(maChuyenBay, (int)check_GiaVe);
+                    ChuyenBay_BUS.NhapDonGia(maChuyenBay, Convert.ToInt32 (txtGiaVe.Text));
                     if (dGVSanBayTG.RowCount > 0)
                     {
                         for (int i = 0; i < dGVSanBayTG.RowCount; i++)
@@ -154,7 +170,7 @@ namespace GUI
                             string maSanBay = row.Cells[0].Value.ToString();
                             int thoigiandung = (int)row.Cells[2].Value;
                             string ghiChu = row.Cells[3].Value.ToString();
-                            ChuyenBay_BUS.NhapChiTietChuyenBay(maChuyenBay, maSanBay,(int) check_thoiGianBay, ghiChu);
+                            ChuyenBay_BUS.NhapChiTietChuyenBay(maChuyenBay, maSanBay, Convert.ToInt32(txtGiaVe.Text), ghiChu);
                         }
                     }
                     for (int i = 0; i < dgvDanhSachGhe.RowCount; i++)
@@ -238,7 +254,19 @@ namespace GUI
             }
             else
             {
-                FORM_SANBAYTRUNGGIAN form = new FORM_SANBAYTRUNGGIAN(this.dGVSanBayTG);
+                string sanbaydi = "";
+                string sanbayden = "";
+                if (cmbSanBayDi.SelectedItem != null)
+                {
+                    SanBay sanbay = cmbSanBayDi.SelectedItem as SanBay;
+                    sanbaydi = sanbay.MaSanBay;
+                }
+                if(cmbSanBayDen.SelectedItem != null)
+                {
+                    SanBay sanbay = cmbSanBayDen.SelectedItem as SanBay;
+                    sanbayden = sanbay.MaSanBay;
+                }
+                FORM_SANBAYTRUNGGIAN form = new FORM_SANBAYTRUNGGIAN(this.dGVSanBayTG,sanbaydi,sanbayden);
                 
                 form.ShowDialog();
 
@@ -346,27 +374,40 @@ namespace GUI
 
         private void txtThoiGianBay_TextChanged(object sender, EventArgs e)
         {
-            if (!HelpFuction.IsContainsText(txtThoiGianBay.Text))
+            if (txtThoiGianBay.Text == "")
             {
-                check_thoiGianBay = Convert.ToUInt32(txtThoiGianBay.Text);
+                return;
             }
-            else
+            if (HelpFuction.IsContainsText(txtThoiGianBay.Text))
             {
-                txtThoiGianBay.Text = check_thoiGianBay.ToString();
+                txtThoiGianBay.Text = txtThoiGianBay.Text.Remove(txtThoiGianBay.Text.Length - 1);
+                if (txtThoiGianBay.Text.Length == 0)
+                {
+                    return;
+                }
+                txtThoiGianBay.SelectionStart = txtThoiGianBay.Text.Length; // add some logic if length is 0
+                txtThoiGianBay.SelectionLength = 0;
             }
+        
         }
 
         private void txtGiaVe_TextChanged(object sender, EventArgs e)
         {
-
-            if (!HelpFuction.IsContainsText(txtGiaVe.Text))
+            if (txtGiaVe.Text == "")
             {
-                check_GiaVe = Convert.ToUInt32(txtGiaVe.Text);
+                return;
             }
-            else
+            if (HelpFuction.IsContainsText(txtGiaVe.Text))
             {
-                txtGiaVe.Text = check_GiaVe.ToString();
+                txtGiaVe.Text = txtGiaVe.Text.Remove(txtGiaVe.Text.Length - 1);
+                if (txtGiaVe.Text.Length == 0)
+                {
+                    return;
+                }
+                txtGiaVe.SelectionStart = txtGiaVe.Text.Length; // add some logic if length is 0
+                txtGiaVe.SelectionLength = 0;
             }
+     
         }
     }
 }

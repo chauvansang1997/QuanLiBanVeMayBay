@@ -34,13 +34,17 @@ namespace DAO
         /// </summary>
         /// <param name="_tenSanBay"></param>
         /// <returns></returns>
-        public static List<SanBay> LoadDanhSachSBTG(string _tenSanBay)
+        public static List<SanBay> LoadDanhSachSBTG(string _tenSanBay,string _sanBayDi,string _sanBayDen)
         {
-            string query = " EXEC usp_LoadTenSanBayTG @tenSanBay";
+            string query = " EXEC usp_LoadTenSanBayTG @tenSanBay,@sanBayDi,@sanBayDen";
 
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
                 new SqlParameter("@tenSanBay",SqlDbType.NVarChar){IsNullable =true,Value=_tenSanBay??(Object)DBNull.Value},
+
+                new SqlParameter("@sanBayDi",SqlDbType.VarChar){IsNullable =true,Value=_sanBayDi??(Object)DBNull.Value},
+
+                new SqlParameter("@sanBayDen",SqlDbType.VarChar){IsNullable =true,Value=_sanBayDen??(Object)DBNull.Value},
             };
 
             try

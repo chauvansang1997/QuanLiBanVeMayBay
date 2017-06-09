@@ -147,7 +147,7 @@ namespace GUI
                     {
                         dGVDSPDC.DataSource = PhieuDatCho_BUS.TraCuuPhieuDatCho(null, null, null, null, pageSize, pageNumber);
                     }
-                    MessageBox.Show("Xóa thành công");
+                    MessageBox.Show("Hủy thành công");
                 }
             }
 
@@ -196,7 +196,15 @@ namespace GUI
             {
                 cmbTenHanhKhach.PerformSafely(() =>
                 {
-                    HanhKhach_BUS.LoadHanhKhachPDC(cmbTenHanhKhach);
+                    cmbTenHanhKhach.DataSource=HanhKhach_BUS.LoadHanhKhachPDC();
+                    cmbTenHanhKhach.DisplayMember = "TenHanhKhach";
+                    cmbTenHanhKhach.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    cmbTenHanhKhach.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+                    cmbCMND.DataSource = cmbTenHanhKhach.DataSource;
+                    cmbCMND.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    cmbCMND.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    cmbCMND.DisplayMember = "CMND";
                 });
             });
            

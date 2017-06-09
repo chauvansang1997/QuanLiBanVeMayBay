@@ -102,7 +102,7 @@
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(227, 26);
             this.txtCMND.TabIndex = 2;
-            this.txtCMND.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
+            this.txtCMND.TextChanged += new System.EventHandler(this.txtCMND_TextChanged);
             this.txtCMND.Leave += new System.EventHandler(this.txtCMND_Leave);
             // 
             // label9
@@ -125,7 +125,7 @@
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(227, 26);
             this.txtSoDienThoai.TabIndex = 3;
-            this.txtSoDienThoai.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
+            this.txtSoDienThoai.TextChanged += new System.EventHandler(this.txtSoDienThoai_TextChanged);
             this.txtSoDienThoai.Leave += new System.EventHandler(this.txtSoDienThoai_Leave);
             // 
             // label10
@@ -156,11 +156,11 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.Teal;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(606, 345);
+            this.btnSave.Location = new System.Drawing.Point(612, 345);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 35);
             this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Lưu";
+            this.btnSave.Text = "Đặt";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -319,7 +319,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.FORM_THEMPHIEUDATCHO_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorTenHanhKhach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCMND)).EndInit();

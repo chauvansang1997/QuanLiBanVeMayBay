@@ -76,7 +76,7 @@
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(227, 26);
             this.txtCMND.TabIndex = 2;
-            this.txtCMND.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
+            this.txtCMND.TextChanged += new System.EventHandler(this.txtCMND_TextChanged);
             this.txtCMND.Leave += new System.EventHandler(this.txtCMND_Leave);
             // 
             // label9
@@ -99,7 +99,7 @@
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(227, 26);
             this.txtSoDT.TabIndex = 3;
-            this.txtSoDT.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
+            this.txtSoDT.TextChanged += new System.EventHandler(this.txtSoDT_TextChanged);
             this.txtSoDT.Leave += new System.EventHandler(this.txtSoDT_Leave);
             // 
             // label10
@@ -135,7 +135,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(87, 40);
             this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Lưu";
+            this.btnSave.Text = "Đặt";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -280,7 +280,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.FORM_GHINHANDATVE_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorTenHanhKhach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCMND)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorSoDT)).EndInit();

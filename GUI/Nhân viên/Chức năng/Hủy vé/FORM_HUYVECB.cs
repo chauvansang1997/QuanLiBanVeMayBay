@@ -196,7 +196,7 @@ namespace GUI
                     {
                         dGVDanhSachVe.DataSource = VeDat_BUS.TraCuuVe(null, null, null, null, pageSize, pageNumber);
                     }
-                    MessageBox.Show("Xóa thành công");
+                    MessageBox.Show("Hủy thành công");
                 }
                 else
                 {
@@ -205,6 +205,11 @@ namespace GUI
                 }
                
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

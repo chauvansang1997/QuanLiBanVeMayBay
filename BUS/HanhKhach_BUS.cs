@@ -12,14 +12,11 @@ namespace BUS
 {
     public static class HanhKhach_BUS
     {
-        public static void LoadHanhKhach(ComboBox _hanhKhach)
+        public static List<HanhKhach> LoadHanhKhach()
         {
-            List<string> danhsachHK = HanhKhach_DAO.LoadHanhKhach();
+           return HanhKhach_DAO.LoadHanhKhach();
 
-            _hanhKhach.DataSource = danhsachHK;
-
-            _hanhKhach.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            _hanhKhach.AutoCompleteSource = AutoCompleteSource.ListItems;
+            
         }
         /// <summary>
         /// Load những khách hàng có trong vé 
@@ -38,17 +35,10 @@ namespace BUS
         /// Load những khách hàng có trong phiếu đặt chổ
         /// </summary>
         /// <param name="_hanhKhach"></param>
-        public static void LoadHanhKhachPDC(ComboBox _hanhKhach)
+        public static List<HanhKhach> LoadHanhKhachPDC()
         {
-            List<string> danhsachHK = HanhKhach_DAO.LoadHanhKhachPDC();
-
-            _hanhKhach.DataSource = danhsachHK;
-
-            AutoCompleteStringCollection temp = new AutoCompleteStringCollection();
-
-            temp.AddRange(danhsachHK.ToArray());
-
-            _hanhKhach.AutoCompleteCustomSource = temp;
+            
+             return  HanhKhach_DAO.LoadHanhKhachPDC();
 
         }
         /// <summary>

@@ -122,9 +122,9 @@ namespace GUI
             {
                 int day = QuyDinh.ThoiGianChamNhatDatVe*24;
                 
-                if (DateTime.Compare(ngayKHTu, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(day)) < 0)
+                if (DateTime.Compare(ngayKHTu, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(day)) > 0)
                 {
-                    MessageBox.Show("Bạn chỉ có thể tìm những chuyến bay khởi hành có ngày lớn hơn ngày hiện tại " + day + " ngày");
+                    MessageBox.Show("Bạn chỉ có thể tìm những chuyến bay khởi hành có ngày lớn hơn ngày hiện tại " + day/24 + " ngày");
                     return;
                 }
             }

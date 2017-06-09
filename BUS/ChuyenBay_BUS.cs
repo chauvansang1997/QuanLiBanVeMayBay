@@ -87,13 +87,11 @@ namespace BUS
         /// <summary>
         /// Load san bay trung gian vao combobox
         /// </summary>
-        public static void LoadDanhSachSanBayTG(ComboBox _dsSanBayTG, string _tenSanBay)
+        public static List<SanBay> LoadDanhSachSanBayTG( string _tenSanBay,string sanBayDi,string sanBayDen)
         {
-            _dsSanBayTG.DataSource= ChuyenBay_DAO.LoadDanhSachSBTG(_tenSanBay);
+            return ChuyenBay_DAO.LoadDanhSachSBTG(_tenSanBay,sanBayDi,sanBayDen);
 
-            _dsSanBayTG.DisplayMember = "tenSanBay";
-            _dsSanBayTG.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            _dsSanBayTG.AutoCompleteSource = AutoCompleteSource.ListItems;
+     
         }
         /// <summary>
         /// Load san bay trung gian vào datagridview

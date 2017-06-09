@@ -38,7 +38,7 @@ namespace GUI
             }
             else
             {
-                FORM_SANBAYTRUNGGIAN form = new FORM_SANBAYTRUNGGIAN(dGVSanBayTG);
+                FORM_SANBAYTRUNGGIAN form = new FORM_SANBAYTRUNGGIAN(dGVSanBayTG,null,null);
 
                 form.ShowDialog();
 

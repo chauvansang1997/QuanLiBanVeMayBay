@@ -54,18 +54,22 @@ namespace GUI
 
         private void nhanLichCBToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            dateTimetimer.Enabled = false;
             FORM_NHANLICHCHUYENBAY form = new FORM_NHANLICHCHUYENBAY();
             this.Hide();
             form.ShowDialog();
             this.Show();
+            dateTimetimer.Enabled = true;
         }
 
         private void thayDoiCBToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            dateTimetimer.Enabled = false;
             FORM_THAYDOICHUYENBAY form = new FORM_THAYDOICHUYENBAY();
             this.Hide();
             form.ShowDialog();
             this.Show();
+            dateTimetimer.Enabled = true;
         }
 
         private void ghiNhanDVToolStripMenuItem_Click(object sender, EventArgs e)

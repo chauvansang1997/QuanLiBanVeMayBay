@@ -16,15 +16,27 @@ namespace GUI
     {
         private int thoiGianDung=QuyDinh.ThoiGianBayToiThieu;
         private DataGridView danhsachSBTG;
-        public FORM_SANBAYTRUNGGIAN(DataGridView _danhsachSBTG)
-        {
-            this.danhsachSBTG = _danhsachSBTG;
+
+        private string SanBayDi;
+        private string SanBayDen;
+        public FORM_SANBAYTRUNGGIAN(DataGridView _danhsachSBTG,string _sanBayDi,string _sanBayDen)
+        {           
             InitializeComponent();
+            this.danhsachSBTG = _danhsachSBTG;
+            SanBayDi = _sanBayDi;
+            SanBayDen = _sanBayDen;
         }
 
+        /// <summary>
+        /// Thêm sân bay trung gian
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnThemSanBayTG_Click(object sender, EventArgs e)
         {
             bool check = false;
+
+            //Kiểm tra quy định
             if (danhsachSBTG.Rows.Count == QuyDinh.SoSanBayTGToiDa)
             {
                 string message = string.Format("Bạn chỉ được phép nhập tối đa {0} {1}", QuyDinh.SoSanBayTGToiDa, "sân bay trung gian");
@@ -34,10 +46,7 @@ namespace GUI
 
             try
             {
-                if (txtThoiGianDung.Text == "")
-                {
-                    throw new Exception("Bạn chưa nhập thời gian dừng");
-                }
+                //Kiểm tra quy dinh thời gian dùng tối thiểu
                 if(Convert.ToInt32(txtThoiGianDung.Text)>=QuyDinh.ThoiGianDungToiThieu)
                 {
                     check = true;
@@ -48,6 +57,7 @@ namespace GUI
         
                 }
                 check = false;
+                //Kiểm tra thời gian dừng tối đa
                 if(Convert.ToInt32(txtThoiGianDung.Text) <= QuyDinh.ThoiGianDungToiDa)
                 {
                     check = true;
@@ -58,6 +68,7 @@ namespace GUI
 
                 }
                 check = false;
+                //Kiểm tra xem sân bay đã tồn tại chưa
                 foreach (var item in cmbSanBay.Items)
                 {
                     SanBay sanbay = item as SanBay;
@@ -104,29 +115,57 @@ namespace GUI
             }
         }
 
+        /// <summary>
+        /// Thoát
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Load form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FORM_SANBAYTRUNGGIAN_Load(object sender, EventArgs e)
         {
             txtThoiGianDung.Text = QuyDinh.ThoiGianDungToiThieu.ToString();
-            if (danhsachSBTG.SelectedRows.Count > 0)
+
+
+            if (danhsachSBTG.RowCount > 0)
             {
-                //ChuyenBay_BUS.LoadSanBayTG()
-                ChuyenBay_BUS.LoadDanhSachSanBayTG(cmbSanBay, danhsachSBTG.SelectedRows[0].Cells[0].Value.ToString());
+               cmbSanBay.DataSource= ChuyenBay_BUS.LoadDanhSachSanBayTG(danhsachSBTG.SelectedRows[0].Cells[0].Value.ToString(),SanBayDi,SanBayDen);
+                cmbSanBay.DisplayMember = "TenSanBay";
+               cmbSanBay.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+               cmbSanBay.AutoCompleteSource = AutoCompleteSource.ListItems;
             }
-                   
+            else
+            {
+                cmbSanBay.DataSource= ChuyenBay_BUS.LoadDanhSachSanBayTG( null, SanBayDi, SanBayDen);
+                cmbSanBay.DisplayMember = "TenSanBay";
+                cmbSanBay.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cmbSanBay.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
         }
 
+        /// <summary>
+        /// Tránh nhập kí tự 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtThoiGianDung_TextChanged(object sender, EventArgs e)
         {
-            
+            if (txtThoiGianDung.Text == "")
+            {
+                return;
+            }
             if (!HelpFuction.IsContainsText(txtThoiGianDung.Text))
             {
 
-                thoiGianDung =Convert.ToInt32( txtThoiGianDung.Text);
+                thoiGianDung = Convert.ToInt32( txtThoiGianDung.Text);
 
             }
             else

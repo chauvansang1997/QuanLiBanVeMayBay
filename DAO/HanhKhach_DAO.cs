@@ -16,17 +16,17 @@ namespace DAO
         /// 
         /// </summary>
         /// <returns></returns>
-        public static List<string> LoadHanhKhach()
+        public static List<HanhKhach> LoadHanhKhach()
         {
             string query = "EXEC usp_LoadHanhKhach";
 
             DataTable table = Dataprovider.ExcuteQuery(query);
 
             //Chuyển Table thành List tên hành khách
-            List<string> danhsachHK = table.AsEnumerable().ToList().ConvertAll(x =>
-                 x[0].ToString());
+            return table.AsEnumerable().ToList().ConvertAll(x =>
+                new HanhKhach() {TenHanhKhach= x[0].ToString(),CMND=x[1].ToString(),SoDT=x[2].ToString() });
 
-            return danhsachHK;
+
         }
         /// <summary>
         /// 
@@ -48,15 +48,15 @@ namespace DAO
         /// 
         /// </summary>
         /// <returns></returns>
-        public static List<string> LoadHanhKhachPDC()
+        public static List<HanhKhach> LoadHanhKhachPDC()
         {
             string query = "EXEC usp_LoadHKPhieuDatCho";
 
             DataTable table = Dataprovider.ExcuteQuery(query);
 
             //Chuyển Table thành List tên hành khách
-            List<string> danhsachHK = table.AsEnumerable().ToList().ConvertAll(x =>
-                 x[0].ToString());
+            List<HanhKhach> danhsachHK = table.AsEnumerable().ToList().ConvertAll(x =>new HanhKhach() {TenHanhKhach= x[0].ToString() 
+                ,CMND=x[1].ToString()});
 
 
             return danhsachHK;

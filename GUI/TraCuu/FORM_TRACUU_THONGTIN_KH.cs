@@ -31,7 +31,7 @@ namespace GUI
 
             isClick = true;
 
-            totalPage = HanhKhach_BUS.DemHanhKhach(cmbTenHK.Text,txtSoDT.Text,txtCMND.Text);
+            totalPage = HanhKhach_BUS.DemHanhKhach(cmbTenHK.Text, cmbCMND.Text, cmbSoDienThoai.Text);
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
 
@@ -42,7 +42,7 @@ namespace GUI
             txtTotalPage.Text = totalPage.ToString();
 
             //dGVDachSanhCB.Columns.Clear();
-            dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text,pageSize,pageNumber);
+            dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, cmbCMND.Text, cmbSoDienThoai.Text, pageSize,pageNumber);
         }
 
         private void btnFirstPage_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, cmbCMND.Text, cmbSoDienThoai.Text, pageSize, pageNumber);
             }
             else
             {
@@ -72,7 +72,7 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, cmbCMND.Text, cmbSoDienThoai.Text, pageSize, pageNumber);
             }
             else
             {
@@ -93,7 +93,7 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, cmbCMND.Text, cmbSoDienThoai.Text, pageSize, pageNumber);
             }
             else
             {
@@ -107,7 +107,7 @@ namespace GUI
             txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, txtCMND.Text, txtSoDT.Text, pageSize, pageNumber);
+                dGVDanhSachHK.DataSource = HanhKhach_BUS.TraCuuHanhKhach(cmbTenHK.Text, cmbCMND.Text, cmbSoDienThoai.Text, pageSize, pageNumber);
             }
             else
             {
@@ -146,8 +146,20 @@ namespace GUI
             dGVDanhSachHK.TopLeftHeaderCell.Value = "STT";
             dGVDanhSachHK.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
 
-            HanhKhach_BUS.LoadHanhKhach(cmbTenHK);
+            cmbTenHK.DataSource= HanhKhach_BUS.LoadHanhKhach();
+            cmbTenHK.DisplayMember = "TenHanhKhach";
+            cmbTenHK.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbTenHK.AutoCompleteSource = AutoCompleteSource.ListItems;
 
+            cmbCMND.DataSource = cmbTenHK.DataSource;
+            cmbCMND.DisplayMember = "CMND";
+            cmbCMND.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbCMND.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            cmbSoDienThoai.DataSource = cmbTenHK.DataSource;
+            cmbSoDienThoai.DisplayMember = "SoDT";
+            cmbSoDienThoai.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbSoDienThoai.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             totalPage = HanhKhach_BUS.DemHanhKhach(null, null, null);
 
@@ -170,6 +182,16 @@ namespace GUI
         {
             DataGridView dgv = sender as DataGridView;
             dgv.setRowNumber();
+        }
+
+        private void cmbSoDienThoai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCMND_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

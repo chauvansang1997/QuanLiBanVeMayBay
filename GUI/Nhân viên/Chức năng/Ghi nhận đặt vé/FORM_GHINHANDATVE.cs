@@ -14,9 +14,18 @@ namespace GUI
 {
     public partial class FORM_GHINHANDATVE : Form
     {
-        private bool isSave;
 
         private string maHangVe;
+        private string check_TenHanhKhach;
+        private uint check_SoDienThoai;
+        private uint check_CMND;
+        /// <summary>
+        /// Hàm khởi tạo 
+        /// </summary>
+        /// <param name="_maChuyenBay">mã sân bay mà ta đã chọn từ form trước</param>
+        /// <param name="_tenHangVe"></param>
+        /// <param name="_maHangVe">mã hạng vé</param>
+        /// <param name="_giaTien">giá tiền</param>
         public FORM_GHINHANDATVE(string _maChuyenBay,string _tenHangVe,string _maHangVe,string _giaTien)
         {
             InitializeComponent();
@@ -26,21 +35,26 @@ namespace GUI
             txtTenHangVe.Text = _tenHangVe;
         }
 
+        /// <summary>
+        /// Sự kiện nhấn nút đật
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {           
             if(HelpFuction.isContainsNumber(txtTenHanhKhach.Text))
             {
-                MessageBox.Show("Tên người không được chứa số");
+                MessageBox.Show("Tên người không đúng định dạng");
                 return;
             }
             if (HelpFuction.IsContainsText(txtSoDT.Text))
             {
-                MessageBox.Show("Số điện thoại không được chứa số");
+                MessageBox.Show("Số điện thoại không đúng định dạng");
                 return;
             }
             if (HelpFuction.IsContainsText(txtCMND.Text))
             {
-                MessageBox.Show("Số điện thoại không được chứa số");
+                MessageBox.Show("Chứng minh nhân dân không đúng định dạng");
                 return;
             }
             if (VeDat_BUS.GhiNhanDatVe(txtTenHanhKhach.Text, txtSoDT.Text, txtMaChuyenBay.Text, txtCMND.Text, maHangVe))
@@ -70,7 +84,7 @@ namespace GUI
             this.Close();
         }
 
-
+        #region Thông báo chưa nhập thông tin
         private void txtTenHanhKhach_Leave(object sender, EventArgs e)
         {
             if (txtTenHanhKhach.Text == "")
@@ -110,35 +124,70 @@ namespace GUI
             }
         }
 
-       
+#endregion
 
-       
 
+        /// <summary>
+        /// Tránh nhập số vào tên người
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtTenHanhKhach_TextChanged(object sender, EventArgs e)
         {
-            TextBox textbox = sender as TextBox;
-            if (textbox.Text != "")
+            if (txtTenHanhKhach.Text == "")
             {
-                if (textbox == txtCMND)
-                {
-                    errorCMND.Clear();
-                }
-                if (textbox == txtSoDT)
-                {
-                    errorSoDT.Clear();
-                }
-                if (textbox==txtTenHanhKhach)
-                {
-                    errorTenHanhKhach.Clear();
-                }
+                return;
+            }
+            if (!HelpFuction.isContainsNumber(txtTenHanhKhach.Text))
+            {
+                check_TenHanhKhach = txtTenHanhKhach.Text;
+            }
+            else
+            {
+                txtTenHanhKhach.Text = check_TenHanhKhach;
             }
         }
 
-       
-        private void FORM_GHINHANDATVE_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Trành nhập kí tự vào số
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtCMND_TextChanged(object sender, EventArgs e)
         {
-            
+            if (txtCMND.Text == "")
+            {
+                return;
+            }
+            if(!HelpFuction.IsContainsText(txtCMND.Text))
+            {
+                check_CMND = Convert.ToUInt32(txtCMND.Text);
+            }
+            else
+            {
+                txtCMND.Text = check_CMND.ToString();
+            }
+        }
 
+        /// <summary>
+        /// Trành nhập kí tự vào số
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtSoDT_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSoDT.Text == "")
+            {
+                return;
+            }
+            if(!HelpFuction.IsContainsText(txtSoDT.Text))
+            {
+                check_SoDienThoai = Convert.ToUInt32(txtSoDT.Text);
+            }
+            else
+            {
+                txtSoDT.Text = check_SoDienThoai.ToString();
+            }
         }
     }
 }
