@@ -111,7 +111,7 @@
             this.dGVDanhSachHK.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVDanhSachHK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVDanhSachHK.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dGVDanhSachHK.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dGVDanhSachHK.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVDanhSachHK.Location = new System.Drawing.Point(0, 239);
             this.dGVDanhSachHK.Name = "dGVDanhSachHK";
             this.dGVDanhSachHK.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -119,7 +119,7 @@
             this.dGVDanhSachHK.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVDanhSachHK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDanhSachHK.Size = new System.Drawing.Size(996, 214);
-            this.dGVDanhSachHK.TabIndex = 124;
+            this.dGVDanhSachHK.TabIndex = 6;
             this.dGVDanhSachHK.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVDanhSachHK_CellEnter);
             this.dGVDanhSachHK.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dGVDanhSachHK_RowsAdded);
             this.dGVDanhSachHK.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dGVDanhSachHK_RowsRemoved);
@@ -160,7 +160,7 @@
             this.txtSoDT.Location = new System.Drawing.Point(560, 70);
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(187, 22);
-            this.txtSoDT.TabIndex = 117;
+            this.txtSoDT.TabIndex = 2;
             // 
             // txtCMND
             // 
@@ -169,7 +169,7 @@
             this.txtCMND.Location = new System.Drawing.Point(192, 135);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(195, 22);
-            this.txtCMND.TabIndex = 115;
+            this.txtCMND.TabIndex = 3;
             // 
             // btnFirstPage
             // 
@@ -179,7 +179,7 @@
             this.btnFirstPage.Location = new System.Drawing.Point(342, 190);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(75, 36);
-            this.btnFirstPage.TabIndex = 152;
+            this.btnFirstPage.TabIndex = 5;
             this.btnFirstPage.Text = "Trang đầu";
             this.btnFirstPage.UseVisualStyleBackColor = false;
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
@@ -192,7 +192,7 @@
             this.btnLastPage.Location = new System.Drawing.Point(638, 190);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(75, 36);
-            this.btnLastPage.TabIndex = 151;
+            this.btnLastPage.TabIndex = 8;
             this.btnLastPage.Text = "Trang cuối";
             this.btnLastPage.UseVisualStyleBackColor = false;
             this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
@@ -205,7 +205,7 @@
             this.btnPrevPage.Location = new System.Drawing.Point(440, 190);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(75, 36);
-            this.btnPrevPage.TabIndex = 150;
+            this.btnPrevPage.TabIndex = 6;
             this.btnPrevPage.Text = "Trang trước";
             this.btnPrevPage.UseVisualStyleBackColor = false;
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
@@ -218,7 +218,7 @@
             this.btnNextPage.Location = new System.Drawing.Point(533, 190);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(75, 36);
-            this.btnNextPage.TabIndex = 149;
+            this.btnNextPage.TabIndex = 7;
             this.btnNextPage.Text = "Trang sau";
             this.btnNextPage.UseVisualStyleBackColor = false;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
@@ -232,7 +232,7 @@
             this.btnThoat.Location = new System.Drawing.Point(909, 459);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 35);
-            this.btnThoat.TabIndex = 153;
+            this.btnThoat.TabIndex = 9;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             // 
@@ -244,7 +244,7 @@
             this.btnFind.Location = new System.Drawing.Point(0, 172);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 35);
-            this.btnFind.TabIndex = 154;
+            this.btnFind.TabIndex = 4;
             this.btnFind.Text = "Tìm";
             this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -258,12 +258,13 @@
             this.cmbTenHK.Location = new System.Drawing.Point(192, 70);
             this.cmbTenHK.Name = "cmbTenHK";
             this.cmbTenHK.Size = new System.Drawing.Size(195, 23);
-            this.cmbTenHK.TabIndex = 155;
+            this.cmbTenHK.TabIndex = 1;
             // 
             // FORM_TRACUU_THONGTIN_KH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(996, 506);
             this.Controls.Add(this.cmbTenHK);
@@ -284,6 +285,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Name = "FORM_TRACUU_THONGTIN_KH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FORM_TRACUU_THONGTIN_KH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachHK)).EndInit();
             this.ResumeLayout(false);

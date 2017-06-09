@@ -146,7 +146,7 @@
             this.btnFind.Location = new System.Drawing.Point(0, 191);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 33);
-            this.btnFind.TabIndex = 125;
+            this.btnFind.TabIndex = 5;
             this.btnFind.Text = "Tìm";
             this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -159,7 +159,7 @@
             this.btnThoat.Location = new System.Drawing.Point(735, 472);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 33);
-            this.btnThoat.TabIndex = 129;
+            this.btnThoat.TabIndex = 11;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             // 
@@ -171,7 +171,7 @@
             this.btnHuy.Location = new System.Drawing.Point(614, 472);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 33);
-            this.btnHuy.TabIndex = 130;
+            this.btnHuy.TabIndex = 10;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -204,7 +204,7 @@
             this.cmbMaChuyenBay.Location = new System.Drawing.Point(614, 127);
             this.cmbMaChuyenBay.Name = "cmbMaChuyenBay";
             this.cmbMaChuyenBay.Size = new System.Drawing.Size(186, 27);
-            this.cmbMaChuyenBay.TabIndex = 137;
+            this.cmbMaChuyenBay.TabIndex = 4;
             // 
             // cmbMaVe
             // 
@@ -215,7 +215,7 @@
             this.cmbMaVe.Location = new System.Drawing.Point(614, 75);
             this.cmbMaVe.Name = "cmbMaVe";
             this.cmbMaVe.Size = new System.Drawing.Size(186, 27);
-            this.cmbMaVe.TabIndex = 138;
+            this.cmbMaVe.TabIndex = 2;
             // 
             // txtTotalPage
             // 
@@ -235,7 +235,7 @@
             this.btnLastPage.Location = new System.Drawing.Point(583, 211);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(75, 33);
-            this.btnLastPage.TabIndex = 143;
+            this.btnLastPage.TabIndex = 9;
             this.btnLastPage.Text = "Trang cuối";
             this.btnLastPage.UseVisualStyleBackColor = false;
             this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
@@ -248,7 +248,7 @@
             this.btnFristPage.Location = new System.Drawing.Point(243, 211);
             this.btnFristPage.Name = "btnFristPage";
             this.btnFristPage.Size = new System.Drawing.Size(75, 33);
-            this.btnFristPage.TabIndex = 142;
+            this.btnFristPage.TabIndex = 6;
             this.btnFristPage.Text = "Trang đầu";
             this.btnFristPage.UseVisualStyleBackColor = false;
             this.btnFristPage.Click += new System.EventHandler(this.btnFristPage_Click);
@@ -261,7 +261,7 @@
             this.btnPrevPage.Location = new System.Drawing.Point(363, 211);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(75, 33);
-            this.btnPrevPage.TabIndex = 141;
+            this.btnPrevPage.TabIndex = 7;
             this.btnPrevPage.Text = "Trang sau";
             this.btnPrevPage.UseVisualStyleBackColor = false;
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
@@ -274,7 +274,7 @@
             this.btnNextPage.Location = new System.Drawing.Point(474, 211);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(75, 33);
-            this.btnNextPage.TabIndex = 140;
+            this.btnNextPage.TabIndex = 8;
             this.btnNextPage.Text = "Trang trước";
             this.btnNextPage.UseVisualStyleBackColor = false;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
@@ -288,7 +288,7 @@
             this.cmbTenHanhKhach.Location = new System.Drawing.Point(219, 82);
             this.cmbTenHanhKhach.Name = "cmbTenHanhKhach";
             this.cmbTenHanhKhach.Size = new System.Drawing.Size(195, 25);
-            this.cmbTenHanhKhach.TabIndex = 144;
+            this.cmbTenHanhKhach.TabIndex = 1;
             // 
             // cmbCMND
             // 
@@ -299,7 +299,7 @@
             this.cmbCMND.Location = new System.Drawing.Point(219, 127);
             this.cmbCMND.Name = "cmbCMND";
             this.cmbCMND.Size = new System.Drawing.Size(195, 25);
-            this.cmbCMND.TabIndex = 145;
+            this.cmbCMND.TabIndex = 3;
             // 
             // FORM_HUYVECB
             // 
@@ -329,6 +329,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_HUYVECB";
             this.Load += new System.EventHandler(this.FORM_HUYVECB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachVe)).EndInit();

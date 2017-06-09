@@ -80,7 +80,7 @@
             this.btnThem.Location = new System.Drawing.Point(178, 181);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 33);
-            this.btnThem.TabIndex = 7;
+            this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm mới";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -93,26 +93,28 @@
             this.btnThoat.Location = new System.Drawing.Point(292, 181);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 33);
-            this.btnThoat.TabIndex = 8;
+            this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // cmbSanBayDi
             // 
+            this.cmbSanBayDi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSanBayDi.FormattingEnabled = true;
-            this.cmbSanBayDi.Location = new System.Drawing.Point(178, 77);
+            this.cmbSanBayDi.Location = new System.Drawing.Point(178, 72);
             this.cmbSanBayDi.Name = "cmbSanBayDi";
-            this.cmbSanBayDi.Size = new System.Drawing.Size(189, 21);
-            this.cmbSanBayDi.TabIndex = 9;
+            this.cmbSanBayDi.Size = new System.Drawing.Size(189, 24);
+            this.cmbSanBayDi.TabIndex = 1;
             // 
             // cmbSanBayDen
             // 
+            this.cmbSanBayDen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSanBayDen.FormattingEnabled = true;
-            this.cmbSanBayDen.Location = new System.Drawing.Point(178, 121);
+            this.cmbSanBayDen.Location = new System.Drawing.Point(178, 116);
             this.cmbSanBayDen.Name = "cmbSanBayDen";
-            this.cmbSanBayDen.Size = new System.Drawing.Size(189, 21);
-            this.cmbSanBayDen.TabIndex = 10;
+            this.cmbSanBayDen.Size = new System.Drawing.Size(189, 24);
+            this.cmbSanBayDen.TabIndex = 2;
             // 
             // FORM_THEMMOITUYENBAY
             // 
@@ -128,8 +130,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_THEMMOITUYENBAY";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FORM_THEMMOITUYENBAY_Load);
             this.ResumeLayout(false);
 

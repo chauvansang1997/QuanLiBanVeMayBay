@@ -114,7 +114,7 @@
             this.btnDelete.Location = new System.Drawing.Point(475, 458);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(107, 33);
-            this.btnDelete.TabIndex = 5;
+            this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Hủy chuyến bay";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -127,7 +127,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(300, 458);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(107, 33);
-            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -140,7 +140,7 @@
             this.btnThoat.Location = new System.Drawing.Point(664, 458);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(107, 33);
-            this.btnThoat.TabIndex = 7;
+            this.btnThoat.TabIndex = 12;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -170,7 +170,7 @@
             this.dtPKNgayKHDen.Location = new System.Drawing.Point(629, 135);
             this.dtPKNgayKHDen.Name = "dtPKNgayKHDen";
             this.dtPKNgayKHDen.Size = new System.Drawing.Size(133, 26);
-            this.dtPKNgayKHDen.TabIndex = 23;
+            this.dtPKNgayKHDen.TabIndex = 4;
             this.dtPKNgayKHDen.ValueChanged += new System.EventHandler(this.dtPKNgayKHDen_ValueChanged);
             // 
             // dtPKNgayKHTu
@@ -180,7 +180,7 @@
             this.dtPKNgayKHTu.Location = new System.Drawing.Point(413, 134);
             this.dtPKNgayKHTu.Name = "dtPKNgayKHTu";
             this.dtPKNgayKHTu.Size = new System.Drawing.Size(133, 26);
-            this.dtPKNgayKHTu.TabIndex = 22;
+            this.dtPKNgayKHTu.TabIndex = 3;
             // 
             // label6
             // 
@@ -222,7 +222,7 @@
             this.cmbSanBayDen.Location = new System.Drawing.Point(355, 91);
             this.cmbSanBayDen.Name = "cmbSanBayDen";
             this.cmbSanBayDen.Size = new System.Drawing.Size(191, 28);
-            this.cmbSanBayDen.TabIndex = 18;
+            this.cmbSanBayDen.TabIndex = 2;
             // 
             // label7
             // 
@@ -242,7 +242,7 @@
             this.cmbSanBayDi.Location = new System.Drawing.Point(355, 49);
             this.cmbSanBayDi.Name = "cmbSanBayDi";
             this.cmbSanBayDi.Size = new System.Drawing.Size(191, 28);
-            this.cmbSanBayDi.TabIndex = 16;
+            this.cmbSanBayDi.TabIndex = 1;
             this.cmbSanBayDi.SelectedIndexChanged += new System.EventHandler(this.cmbSanBayDi_SelectedIndexChanged);
             // 
             // label8
@@ -264,7 +264,7 @@
             this.btnFind.Location = new System.Drawing.Point(3, 167);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(83, 33);
-            this.btnFind.TabIndex = 24;
+            this.btnFind.TabIndex = 5;
             this.btnFind.Text = "Tìm";
             this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -299,7 +299,7 @@
             this.btnLastPage.Location = new System.Drawing.Point(664, 185);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(75, 33);
-            this.btnLastPage.TabIndex = 45;
+            this.btnLastPage.TabIndex = 9;
             this.btnLastPage.Text = "Trang cuối";
             this.btnLastPage.UseVisualStyleBackColor = false;
             this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
@@ -312,7 +312,7 @@
             this.btnFirstPage.Location = new System.Drawing.Point(324, 185);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(75, 33);
-            this.btnFirstPage.TabIndex = 44;
+            this.btnFirstPage.TabIndex = 6;
             this.btnFirstPage.Text = "Trang đầu";
             this.btnFirstPage.UseVisualStyleBackColor = false;
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
@@ -325,7 +325,7 @@
             this.btnPrevPage.Location = new System.Drawing.Point(444, 185);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(75, 33);
-            this.btnPrevPage.TabIndex = 43;
+            this.btnPrevPage.TabIndex = 7;
             this.btnPrevPage.Text = "Trang trước";
             this.btnPrevPage.UseVisualStyleBackColor = false;
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
@@ -338,7 +338,7 @@
             this.btnNextPage.Location = new System.Drawing.Point(555, 185);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(75, 33);
-            this.btnNextPage.TabIndex = 42;
+            this.btnNextPage.TabIndex = 8;
             this.btnNextPage.Text = "Trang sau";
             this.btnNextPage.UseVisualStyleBackColor = false;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
@@ -377,6 +377,9 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_THAYDOICHUYENBAY";
             this.Load += new System.EventHandler(this.FORM_THAYDOICHUYENBAY_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachCB)).EndInit();

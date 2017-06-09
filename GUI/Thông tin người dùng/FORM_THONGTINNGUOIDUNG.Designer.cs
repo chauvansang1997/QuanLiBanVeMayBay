@@ -89,6 +89,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(443, 240);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.ReadOnly = true;
             this.txtDiaChi.Size = new System.Drawing.Size(219, 97);
             this.txtDiaChi.TabIndex = 18;
             // 
@@ -97,6 +98,7 @@
             this.txtSoDienThoai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDienThoai.Location = new System.Drawing.Point(443, 185);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.ReadOnly = true;
             this.txtSoDienThoai.Size = new System.Drawing.Size(219, 26);
             this.txtSoDienThoai.TabIndex = 19;
             // 
@@ -105,6 +107,7 @@
             this.txtTenNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNhanVien.Location = new System.Drawing.Point(442, 65);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
+            this.txtTenNhanVien.ReadOnly = true;
             this.txtTenNhanVien.Size = new System.Drawing.Size(220, 26);
             this.txtTenNhanVien.TabIndex = 21;
             // 
@@ -124,6 +127,7 @@
             this.txtCMND.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCMND.Location = new System.Drawing.Point(443, 119);
             this.txtCMND.Name = "txtCMND";
+            this.txtCMND.ReadOnly = true;
             this.txtCMND.Size = new System.Drawing.Size(219, 26);
             this.txtCMND.TabIndex = 24;
             // 

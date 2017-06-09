@@ -31,9 +31,16 @@ namespace GUI
                 MessageBox.Show("Mật khẩu cũ sai");
                 return;
             }
+            if (txtMatKhauMoi.Text != txtMatKhauMoi_Lai.Text)
+            {
+                MessageBox.Show("Mật khẩu mới và nhập lại mật khẩu không trùng nhau");
+            }
             try
             {
-                User_BUS.ThayDoiMatKhau(User.UserName, txtMatKhauMoi.Text);
+                if(User_BUS.ThayDoiMatKhau(User.UserName, txtMatKhauMoi.Text))
+                {
+                    MessageBox.Show("Thay đổi thành công");
+                }
             }
             catch (Exception)
             {

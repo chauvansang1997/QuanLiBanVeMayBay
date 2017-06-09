@@ -83,7 +83,7 @@
             this.txtSoSanBayToiDa.Location = new System.Drawing.Point(291, 109);
             this.txtSoSanBayToiDa.Name = "txtSoSanBayToiDa";
             this.txtSoSanBayToiDa.Size = new System.Drawing.Size(100, 26);
-            this.txtSoSanBayToiDa.TabIndex = 3;
+            this.txtSoSanBayToiDa.TabIndex = 2;
             // 
             // label3
             // 
@@ -103,7 +103,7 @@
             this.txtThoiGianDungTT.Location = new System.Drawing.Point(291, 157);
             this.txtThoiGianDungTT.Name = "txtThoiGianDungTT";
             this.txtThoiGianDungTT.Size = new System.Drawing.Size(100, 26);
-            this.txtThoiGianDungTT.TabIndex = 5;
+            this.txtThoiGianDungTT.TabIndex = 3;
             // 
             // label4
             // 
@@ -123,7 +123,7 @@
             this.txtThoiGianDungTD.Location = new System.Drawing.Point(291, 205);
             this.txtThoiGianDungTD.Name = "txtThoiGianDungTD";
             this.txtThoiGianDungTD.Size = new System.Drawing.Size(100, 26);
-            this.txtThoiGianDungTD.TabIndex = 7;
+            this.txtThoiGianDungTD.TabIndex = 4;
             // 
             // btnCapNhat
             // 
@@ -131,10 +131,10 @@
             this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
-            this.btnCapNhat.Location = new System.Drawing.Point(219, 265);
+            this.btnCapNhat.Location = new System.Drawing.Point(143, 265);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(90, 33);
-            this.btnCapNhat.TabIndex = 8;
+            this.btnCapNhat.TabIndex = 5;
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
@@ -145,10 +145,10 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(367, 265);
+            this.btnThoat.Location = new System.Drawing.Point(309, 265);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(82, 33);
-            this.btnThoat.TabIndex = 9;
+            this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -237,9 +237,13 @@
             this.Controls.Add(this.txtThoiGianBay);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_THAYDOICACQUYDINHCB";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();

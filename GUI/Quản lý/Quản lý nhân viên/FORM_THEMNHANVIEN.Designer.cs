@@ -99,21 +99,21 @@
             this.txtTenNhanVien.Location = new System.Drawing.Point(299, 71);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
             this.txtTenNhanVien.Size = new System.Drawing.Size(300, 20);
-            this.txtTenNhanVien.TabIndex = 165;
+            this.txtTenNhanVien.TabIndex = 1;
             // 
             // txtSoDienThoai
             // 
             this.txtSoDienThoai.Location = new System.Drawing.Point(299, 209);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(300, 20);
-            this.txtSoDienThoai.TabIndex = 166;
+            this.txtSoDienThoai.TabIndex = 3;
             // 
             // txtCMND
             // 
             this.txtCMND.Location = new System.Drawing.Point(299, 137);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(300, 20);
-            this.txtCMND.TabIndex = 167;
+            this.txtCMND.TabIndex = 2;
             // 
             // label4
             // 
@@ -136,7 +136,7 @@
             this.btnThem.Location = new System.Drawing.Point(299, 417);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 33);
-            this.btnThem.TabIndex = 172;
+            this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -149,7 +149,7 @@
             this.btnThoat.Location = new System.Drawing.Point(499, 417);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 33);
-            this.btnThoat.TabIndex = 171;
+            this.btnThoat.TabIndex = 8;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -172,7 +172,7 @@
             this.rbtnBanVe.Location = new System.Drawing.Point(25, 16);
             this.rbtnBanVe.Name = "rbtnBanVe";
             this.rbtnBanVe.Size = new System.Drawing.Size(59, 17);
-            this.rbtnBanVe.TabIndex = 174;
+            this.rbtnBanVe.TabIndex = 5;
             this.rbtnBanVe.TabStop = true;
             this.rbtnBanVe.Text = "Bán vé";
             this.rbtnBanVe.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@
             this.rbtnQuanLy.Location = new System.Drawing.Point(166, 16);
             this.rbtnQuanLy.Name = "rbtnQuanLy";
             this.rbtnQuanLy.Size = new System.Drawing.Size(61, 17);
-            this.rbtnQuanLy.TabIndex = 175;
+            this.rbtnQuanLy.TabIndex = 6;
             this.rbtnQuanLy.TabStop = true;
             this.rbtnQuanLy.Text = "Quản lý";
             this.rbtnQuanLy.UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(299, 275);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(300, 20);
-            this.txtDiaChi.TabIndex = 176;
+            this.txtDiaChi.TabIndex = 4;
             // 
             // FORM_THEMNHANVIEN
             // 
@@ -227,7 +227,10 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_THEMNHANVIEN";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

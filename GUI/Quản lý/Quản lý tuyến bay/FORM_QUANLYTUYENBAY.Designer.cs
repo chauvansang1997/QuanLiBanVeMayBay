@@ -88,7 +88,7 @@
             this.btnThem.Location = new System.Drawing.Point(418, 433);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 33);
-            this.btnThem.TabIndex = 5;
+            this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm mới";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -101,7 +101,7 @@
             this.btnThoat.Location = new System.Drawing.Point(540, 433);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 33);
-            this.btnThoat.TabIndex = 8;
+            this.btnThoat.TabIndex = 9;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -110,6 +110,7 @@
             // 
             this.txtPageNumber.Location = new System.Drawing.Point(46, 240);
             this.txtPageNumber.Name = "txtPageNumber";
+            this.txtPageNumber.ReadOnly = true;
             this.txtPageNumber.Size = new System.Drawing.Size(37, 20);
             this.txtPageNumber.TabIndex = 17;
             this.txtPageNumber.Text = "1";
@@ -128,16 +129,16 @@
             // 
             this.cmbSanBayDen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSanBayDen.FormattingEnabled = true;
-            this.cmbSanBayDen.Location = new System.Drawing.Point(320, 118);
+            this.cmbSanBayDen.Location = new System.Drawing.Point(422, 117);
             this.cmbSanBayDen.Name = "cmbSanBayDen";
             this.cmbSanBayDen.Size = new System.Drawing.Size(191, 27);
-            this.cmbSanBayDen.TabIndex = 26;
+            this.cmbSanBayDen.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(193, 118);
+            this.label7.Location = new System.Drawing.Point(295, 117);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 27);
             this.label7.TabIndex = 25;
@@ -148,17 +149,17 @@
             // 
             this.cmbSanBayDi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSanBayDi.FormattingEnabled = true;
-            this.cmbSanBayDi.Location = new System.Drawing.Point(320, 73);
+            this.cmbSanBayDi.Location = new System.Drawing.Point(422, 72);
             this.cmbSanBayDi.Name = "cmbSanBayDi";
             this.cmbSanBayDi.Size = new System.Drawing.Size(191, 27);
-            this.cmbSanBayDi.TabIndex = 24;
+            this.cmbSanBayDi.TabIndex = 1;
             this.cmbSanBayDi.SelectedIndexChanged += new System.EventHandler(this.cmbSanBayDi_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(194, 73);
+            this.label8.Location = new System.Drawing.Point(296, 72);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 27);
             this.label8.TabIndex = 23;
@@ -173,7 +174,7 @@
             this.btnFind.Location = new System.Drawing.Point(0, 201);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 33);
-            this.btnFind.TabIndex = 27;
+            this.btnFind.TabIndex = 3;
             this.btnFind.Text = "Tìm";
             this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -182,6 +183,7 @@
             // 
             this.txtTotalPage.Location = new System.Drawing.Point(82, 240);
             this.txtTotalPage.Name = "txtTotalPage";
+            this.txtTotalPage.ReadOnly = true;
             this.txtTotalPage.Size = new System.Drawing.Size(37, 20);
             this.txtTotalPage.TabIndex = 28;
             this.txtTotalPage.Text = "1";
@@ -195,7 +197,7 @@
             this.btnFirstPage.Location = new System.Drawing.Point(320, 221);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(75, 33);
-            this.btnFirstPage.TabIndex = 156;
+            this.btnFirstPage.TabIndex = 4;
             this.btnFirstPage.Text = "Trang đầu";
             this.btnFirstPage.UseVisualStyleBackColor = false;
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
@@ -208,7 +210,7 @@
             this.btnLastPage.Location = new System.Drawing.Point(616, 221);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(75, 33);
-            this.btnLastPage.TabIndex = 155;
+            this.btnLastPage.TabIndex = 7;
             this.btnLastPage.Text = "Trang cuối";
             this.btnLastPage.UseVisualStyleBackColor = false;
             this.btnLastPage.Click += new System.EventHandler(this.btnLastPage_Click);
@@ -221,7 +223,7 @@
             this.btnPrevPage.Location = new System.Drawing.Point(418, 221);
             this.btnPrevPage.Name = "btnPrevPage";
             this.btnPrevPage.Size = new System.Drawing.Size(75, 33);
-            this.btnPrevPage.TabIndex = 154;
+            this.btnPrevPage.TabIndex = 5;
             this.btnPrevPage.Text = "Trang trước";
             this.btnPrevPage.UseVisualStyleBackColor = false;
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
@@ -234,7 +236,7 @@
             this.btnNextPage.Location = new System.Drawing.Point(511, 221);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(75, 33);
-            this.btnNextPage.TabIndex = 153;
+            this.btnNextPage.TabIndex = 6;
             this.btnNextPage.Text = "Trang sau";
             this.btnNextPage.UseVisualStyleBackColor = false;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
@@ -243,6 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(954, 505);
             this.Controls.Add(this.btnFirstPage);

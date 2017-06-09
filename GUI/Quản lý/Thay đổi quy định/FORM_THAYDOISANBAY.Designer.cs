@@ -64,7 +64,7 @@
             this.txtSoLuongSB.Location = new System.Drawing.Point(197, 84);
             this.txtSoLuongSB.Name = "txtSoLuongSB";
             this.txtSoLuongSB.Size = new System.Drawing.Size(100, 26);
-            this.txtSoLuongSB.TabIndex = 13;
+            this.txtSoLuongSB.TabIndex = 1;
             // 
             // btnThoat
             // 
@@ -75,7 +75,7 @@
             this.btnThoat.Location = new System.Drawing.Point(215, 142);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(82, 33);
-            this.btnThoat.TabIndex = 15;
+            this.btnThoat.TabIndex = 3;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -89,7 +89,7 @@
             this.btnCapNhat.Location = new System.Drawing.Point(67, 142);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(90, 33);
-            this.btnCapNhat.TabIndex = 14;
+            this.btnCapNhat.TabIndex = 2;
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
@@ -98,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(333, 213);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnCapNhat);

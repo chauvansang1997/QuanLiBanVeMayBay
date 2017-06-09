@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FORM_QUANLY));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.thôngTinCáNhânToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xemThôngTinToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -377,6 +376,7 @@
             // 
             // toolStrip2
             // 
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quanLySanBaytoolstrip,
             this.quanLyTBtoolStrip,
@@ -389,31 +389,28 @@
             // 
             // quanLySanBaytoolstrip
             // 
-            this.quanLySanBaytoolstrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.quanLySanBaytoolstrip.Image = ((System.Drawing.Image)(resources.GetObject("quanLySanBaytoolstrip.Image")));
+            this.quanLySanBaytoolstrip.Image = global::GUI.Properties.Resources.Inventory_icon;
             this.quanLySanBaytoolstrip.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.quanLySanBaytoolstrip.Name = "quanLySanBaytoolstrip";
-            this.quanLySanBaytoolstrip.Size = new System.Drawing.Size(95, 22);
+            this.quanLySanBaytoolstrip.Size = new System.Drawing.Size(111, 22);
             this.quanLySanBaytoolstrip.Text = "Quản lý sân bay";
             this.quanLySanBaytoolstrip.Click += new System.EventHandler(this.quanLySanBaytoolstrip_Click);
             // 
             // quanLyTBtoolStrip
             // 
-            this.quanLyTBtoolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.quanLyTBtoolStrip.Image = ((System.Drawing.Image)(resources.GetObject("quanLyTBtoolStrip.Image")));
+            this.quanLyTBtoolStrip.Image = global::GUI.Properties.Resources.Inventory_icon;
             this.quanLyTBtoolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.quanLyTBtoolStrip.Name = "quanLyTBtoolStrip";
-            this.quanLyTBtoolStrip.Size = new System.Drawing.Size(107, 22);
+            this.quanLyTBtoolStrip.Size = new System.Drawing.Size(123, 22);
             this.quanLyTBtoolStrip.Text = "Quản lý tuyến bay";
             this.quanLyTBtoolStrip.Click += new System.EventHandler(this.quanLyTBtoolStrip_Click);
             // 
             // quanlyNVtoolStrip
             // 
-            this.quanlyNVtoolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.quanlyNVtoolStrip.Image = ((System.Drawing.Image)(resources.GetObject("quanlyNVtoolStrip.Image")));
+            this.quanlyNVtoolStrip.Image = global::GUI.Properties.Resources.Inventory_icon;
             this.quanlyNVtoolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.quanlyNVtoolStrip.Name = "quanlyNVtoolStrip";
-            this.quanlyNVtoolStrip.Size = new System.Drawing.Size(107, 22);
+            this.quanlyNVtoolStrip.Size = new System.Drawing.Size(123, 22);
             this.quanlyNVtoolStrip.Text = "Quản lý nhân viên";
             this.quanlyNVtoolStrip.Click += new System.EventHandler(this.quanlyNVtoolStrip_Click);
             // 
@@ -428,7 +425,10 @@
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_QUANLY";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý";

@@ -56,7 +56,7 @@
             this.cmbSanBay.Location = new System.Drawing.Point(207, 84);
             this.cmbSanBay.Name = "cmbSanBay";
             this.cmbSanBay.Size = new System.Drawing.Size(242, 28);
-            this.cmbSanBay.TabIndex = 101;
+            this.cmbSanBay.TabIndex = 1;
             // 
             // label2
             // 
@@ -88,7 +88,7 @@
             this.txtThoiGianDung.Location = new System.Drawing.Point(207, 151);
             this.txtThoiGianDung.Name = "txtThoiGianDung";
             this.txtThoiGianDung.Size = new System.Drawing.Size(125, 26);
-            this.txtThoiGianDung.TabIndex = 104;
+            this.txtThoiGianDung.TabIndex = 2;
             this.txtThoiGianDung.TextChanged += new System.EventHandler(this.txtThoiGianDung_TextChanged);
             // 
             // label3
@@ -109,7 +109,7 @@
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(229, 87);
-            this.txtGhiChu.TabIndex = 106;
+            this.txtGhiChu.TabIndex = 4;
             // 
             // label4
             // 
@@ -132,7 +132,7 @@
             this.btnThemSanBayTG.Location = new System.Drawing.Point(207, 327);
             this.btnThemSanBayTG.Name = "btnThemSanBayTG";
             this.btnThemSanBayTG.Size = new System.Drawing.Size(107, 33);
-            this.btnThemSanBayTG.TabIndex = 120;
+            this.btnThemSanBayTG.TabIndex = 5;
             this.btnThemSanBayTG.Text = "Thêm sân bay";
             this.btnThemSanBayTG.UseVisualStyleBackColor = false;
             this.btnThemSanBayTG.Click += new System.EventHandler(this.btnThemSanBayTG_Click);
@@ -146,7 +146,7 @@
             this.btnThoat.Location = new System.Drawing.Point(342, 327);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(107, 33);
-            this.btnThoat.TabIndex = 121;
+            this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -180,7 +180,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbSanBay);
             this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_SANBAYTRUNGGIAN";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

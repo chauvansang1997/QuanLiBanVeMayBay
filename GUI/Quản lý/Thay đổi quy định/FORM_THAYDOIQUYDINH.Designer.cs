@@ -34,8 +34,8 @@
             this.btnChangeSLSB = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnChangeCB = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,18 +93,18 @@
             this.btnChangeCB.Text = "Thay đổi quy định chuyến bay";
             this.btnChangeCB.Click += new System.EventHandler(this.btnChangeCB_Click);
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(87, 22);
-            this.toolStripLabel1.Text = "Thay đổi giá vé";
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = global::GUI.Properties.Resources.change_document;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(202, 22);
             this.toolStripButton1.Text = "Thay đổi quy định vé chuyến bay";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(87, 22);
+            this.toolStripLabel1.Text = "Thay đổi giá vé";
             // 
             // FORM_THAYDOIQUYDINH
             // 
@@ -115,8 +115,13 @@
             this.ClientSize = new System.Drawing.Size(735, 328);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_THAYDOIQUYDINH";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

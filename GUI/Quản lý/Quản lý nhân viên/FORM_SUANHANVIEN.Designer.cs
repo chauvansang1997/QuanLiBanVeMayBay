@@ -59,28 +59,28 @@
             this.txtDiaChi.Location = new System.Drawing.Point(360, 308);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(300, 20);
-            this.txtDiaChi.TabIndex = 184;
+            this.txtDiaChi.TabIndex = 4;
             // 
             // txtCMND
             // 
             this.txtCMND.Location = new System.Drawing.Point(360, 170);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(300, 20);
-            this.txtCMND.TabIndex = 183;
+            this.txtCMND.TabIndex = 2;
             // 
             // txtSoDienThoai
             // 
             this.txtSoDienThoai.Location = new System.Drawing.Point(360, 242);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(300, 20);
-            this.txtSoDienThoai.TabIndex = 182;
+            this.txtSoDienThoai.TabIndex = 3;
             // 
             // txtTenNhanVien
             // 
             this.txtTenNhanVien.Location = new System.Drawing.Point(360, 104);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
             this.txtTenNhanVien.Size = new System.Drawing.Size(300, 20);
-            this.txtTenNhanVien.TabIndex = 181;
+            this.txtTenNhanVien.TabIndex = 1;
             // 
             // label2
             // 
@@ -138,7 +138,7 @@
             this.btnCapNhat.Location = new System.Drawing.Point(360, 373);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(100, 33);
-            this.btnCapNhat.TabIndex = 186;
+            this.btnCapNhat.TabIndex = 5;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
@@ -151,7 +151,7 @@
             this.btnThoat.Location = new System.Drawing.Point(587, 373);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 33);
-            this.btnThoat.TabIndex = 185;
+            this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -173,7 +173,12 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_SUANHANVIEN";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

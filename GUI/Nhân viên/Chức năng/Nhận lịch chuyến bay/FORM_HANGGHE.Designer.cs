@@ -76,7 +76,7 @@
             this.cmbHangGhe.Location = new System.Drawing.Point(175, 56);
             this.cmbHangGhe.Name = "cmbHangGhe";
             this.cmbHangGhe.Size = new System.Drawing.Size(242, 28);
-            this.cmbHangGhe.TabIndex = 106;
+            this.cmbHangGhe.TabIndex = 1;
             // 
             // txtSoGhe
             // 
@@ -84,7 +84,7 @@
             this.txtSoGhe.Location = new System.Drawing.Point(175, 124);
             this.txtSoGhe.Name = "txtSoGhe";
             this.txtSoGhe.Size = new System.Drawing.Size(168, 26);
-            this.txtSoGhe.TabIndex = 107;
+            this.txtSoGhe.TabIndex = 2;
             this.txtSoGhe.TextChanged += new System.EventHandler(this.txtSoGhe_TextChanged);
             // 
             // btnThoat
@@ -96,7 +96,7 @@
             this.btnThoat.Location = new System.Drawing.Point(310, 203);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(107, 33);
-            this.btnThoat.TabIndex = 123;
+            this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -110,7 +110,7 @@
             this.btnThem.Location = new System.Drawing.Point(175, 203);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(107, 33);
-            this.btnThem.TabIndex = 122;
+            this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm hạng ghế";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -127,8 +127,11 @@
             this.Controls.Add(this.cmbHangGhe);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FORM_HANGGHE";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FORM_HANGGHE_Load);
             this.ResumeLayout(false);
