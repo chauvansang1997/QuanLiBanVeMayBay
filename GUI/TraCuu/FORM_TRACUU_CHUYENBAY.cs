@@ -441,6 +441,15 @@ namespace GUI
                         FORM_THEMPHIEUDATCHO form = new FORM_THEMPHIEUDATCHO(maChuyenBay,tenHangVe,maHangVe,giaVe);
                         form.ShowDialog();
                         this.Show();
+
+                        if (isClick)
+                        {
+                            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                        }
+                        else
+                        {
+                            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(QuyDinh.ThoiGianChamNhatDatVe * 24), null);
+                        }
                     }
                     else
                     {
@@ -478,6 +487,14 @@ namespace GUI
                         FORM_GHINHANDATVE form = new FORM_GHINHANDATVE(maChuyenBay, tenHangVe, maHangVe, giaVe);
                         form.ShowDialog();
                         this.Show();
+                        if (isClick)
+                        {
+                            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(sanbaydi, sanbayden, pageSize, pageNumber, ngayKHTu, ngayKHDen);
+                        }
+                        else
+                        {
+                            dGVDanhSachCB.DataSource = ChuyenBay_BUS.TraCuuChuyenBay(null, null, pageSize, pageNumber, DateTime.Now + HelpFuction.ConvertHoursToTotalDays(QuyDinh.ThoiGianChamNhatDatVe * 24), null);
+                        }
                     }
                     else
                     {

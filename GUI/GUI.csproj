@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>4</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="69024-bunifu_ui_v1.52">
@@ -44,9 +46,14 @@
     <Reference Include="Exel handle">
       <HintPath>..\Build\Exel handle.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -94,6 +101,17 @@
     </Compile>
     <Compile Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.Designer.cs">
       <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLBVDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBVDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý\Lập báo cáo tháng\FORM_BAOCAOTHANG_TEST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý\Lập báo cáo tháng\FORM_BAOCAOTHANG_TEST.Designer.cs">
+      <DependentUpon>FORM_BAOCAOTHANG_TEST.cs</DependentUpon>
     </Compile>
     <Compile Include="Quản lý\Quản lý nhân viên\FORM_SUANHANVIEN.cs">
       <SubType>Form</SubType>
@@ -259,6 +277,9 @@
     <EmbeddedResource Include="Nhân viên\Chức năng\Thay đổi thông tin chuyến bay\FORM_SUATHONGTINCHUYENBAY.resx">
       <DependentUpon>FORM_SUATHONGTINCHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý\Lập báo cáo tháng\FORM_BAOCAOTHANG_TEST.resx">
+      <DependentUpon>FORM_BAOCAOTHANG_TEST.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Quản lý\Quản lý nhân viên\FORM_SUANHANVIEN.resx">
       <DependentUpon>FORM_SUANHANVIEN.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +362,7 @@
     <EmbeddedResource Include="TraCuu\FORM_TRACUU_CHUYENBAY.resx">
       <DependentUpon>FORM_TRACUU_CHUYENBAY.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -373,6 +395,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLBVDataSet.xsc">
+      <DependentUpon>QLBVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLBVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBVDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBVDataSet.xss">
+      <DependentUpon>QLBVDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Key-icon.png" />
   </ItemGroup>
   <ItemGroup>

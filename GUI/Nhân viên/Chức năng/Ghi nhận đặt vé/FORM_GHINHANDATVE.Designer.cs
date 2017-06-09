@@ -134,7 +134,7 @@
             this.btnSave.Location = new System.Drawing.Point(637, 290);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(87, 40);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -147,7 +147,7 @@
             this.btnThoat.Location = new System.Drawing.Point(786, 290);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(87, 40);
-            this.btnThoat.TabIndex = 5;
+            this.btnThoat.TabIndex = 8;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -195,7 +195,7 @@
             this.txtGiaVe.Name = "txtGiaVe";
             this.txtGiaVe.ReadOnly = true;
             this.txtGiaVe.Size = new System.Drawing.Size(227, 26);
-            this.txtGiaVe.TabIndex = 118;
+            this.txtGiaVe.TabIndex = 6;
             // 
             // label4
             // 
@@ -237,7 +237,7 @@
             this.txtMaChuyenBay.Name = "txtMaChuyenBay";
             this.txtMaChuyenBay.ReadOnly = true;
             this.txtMaChuyenBay.Size = new System.Drawing.Size(227, 26);
-            this.txtMaChuyenBay.TabIndex = 119;
+            this.txtMaChuyenBay.TabIndex = 4;
             // 
             // txtTenHangVe
             // 
@@ -247,7 +247,7 @@
             this.txtTenHangVe.Name = "txtTenHangVe";
             this.txtTenHangVe.ReadOnly = true;
             this.txtTenHangVe.Size = new System.Drawing.Size(227, 26);
-            this.txtTenHangVe.TabIndex = 120;
+            this.txtTenHangVe.TabIndex = 5;
             // 
             // FORM_GHINHANDATVE
             // 
@@ -273,8 +273,11 @@
             this.Controls.Add(this.label7);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FORM_GHINHANDATVE";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FORM_GHINHANDATVE_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorTenHanhKhach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCMND)).EndInit();

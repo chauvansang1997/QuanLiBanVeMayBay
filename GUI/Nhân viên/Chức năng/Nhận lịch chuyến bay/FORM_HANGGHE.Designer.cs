@@ -85,6 +85,7 @@
             this.txtSoGhe.Name = "txtSoGhe";
             this.txtSoGhe.Size = new System.Drawing.Size(168, 26);
             this.txtSoGhe.TabIndex = 107;
+            this.txtSoGhe.TextChanged += new System.EventHandler(this.txtSoGhe_TextChanged);
             // 
             // btnThoat
             // 
@@ -126,7 +127,9 @@
             this.Controls.Add(this.cmbHangGhe);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FORM_HANGGHE";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FORM_HANGGHE_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

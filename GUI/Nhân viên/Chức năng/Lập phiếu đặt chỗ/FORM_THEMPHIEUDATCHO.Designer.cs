@@ -101,7 +101,7 @@
             this.txtCMND.Location = new System.Drawing.Point(639, 85);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(227, 26);
-            this.txtCMND.TabIndex = 41;
+            this.txtCMND.TabIndex = 2;
             this.txtCMND.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
             this.txtCMND.Leave += new System.EventHandler(this.txtCMND_Leave);
             // 
@@ -124,7 +124,7 @@
             this.txtSoDienThoai.Location = new System.Drawing.Point(204, 145);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(227, 26);
-            this.txtSoDienThoai.TabIndex = 45;
+            this.txtSoDienThoai.TabIndex = 3;
             this.txtSoDienThoai.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
             this.txtSoDienThoai.Leave += new System.EventHandler(this.txtSoDienThoai_Leave);
             // 
@@ -159,7 +159,7 @@
             this.btnSave.Location = new System.Drawing.Point(606, 345);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 35);
-            this.btnSave.TabIndex = 55;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -171,7 +171,7 @@
             this.btnThoat.Location = new System.Drawing.Point(766, 345);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 35);
-            this.btnThoat.TabIndex = 56;
+            this.btnThoat.TabIndex = 8;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -183,7 +183,7 @@
             this.txtTenHanhKhach.Location = new System.Drawing.Point(204, 85);
             this.txtTenHanhKhach.Name = "txtTenHanhKhach";
             this.txtTenHanhKhach.Size = new System.Drawing.Size(227, 26);
-            this.txtTenHanhKhach.TabIndex = 57;
+            this.txtTenHanhKhach.TabIndex = 1;
             this.txtTenHanhKhach.TextChanged += new System.EventHandler(this.txtTenHanhKhach_TextChanged);
             this.txtTenHanhKhach.Leave += new System.EventHandler(this.txtTenHanhKhach_Leave);
             // 
@@ -209,7 +209,7 @@
             this.dtPKNgayDat.Location = new System.Drawing.Point(204, 282);
             this.dtPKNgayDat.Name = "dtPKNgayDat";
             this.dtPKNgayDat.Size = new System.Drawing.Size(227, 26);
-            this.dtPKNgayDat.TabIndex = 112;
+            this.dtPKNgayDat.TabIndex = 6;
             // 
             // label3
             // 
@@ -244,7 +244,7 @@
             this.txtGiaVe.Name = "txtGiaVe";
             this.txtGiaVe.ReadOnly = true;
             this.txtGiaVe.Size = new System.Drawing.Size(227, 26);
-            this.txtGiaVe.TabIndex = 118;
+            this.txtGiaVe.TabIndex = 5;
             // 
             // errorTenHanhKhach
             // 
@@ -284,7 +284,7 @@
             this.txtTenHangVe.Name = "txtTenHangVe";
             this.txtTenHangVe.ReadOnly = true;
             this.txtTenHangVe.Size = new System.Drawing.Size(227, 26);
-            this.txtTenHangVe.TabIndex = 120;
+            this.txtTenHangVe.TabIndex = 4;
             // 
             // FORM_THEMPHIEUDATCHO
             // 
@@ -314,6 +314,8 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "FORM_THEMPHIEUDATCHO";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FORM_THEMPHIEUDATCHO_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorTenHanhKhach)).EndInit();

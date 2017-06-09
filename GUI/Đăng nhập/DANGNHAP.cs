@@ -71,7 +71,11 @@ namespace GUI
 
         private void DANGNHAP_Load(object sender, EventArgs e)
         {
-            QuyDinh_BUS.LoadQuyDinh();
+            System.Threading.ThreadPool.QueueUserWorkItem((p =>
+            {
+                QuyDinh_BUS.LoadQuyDinh();
+            }));
+         
         }
     }
 }

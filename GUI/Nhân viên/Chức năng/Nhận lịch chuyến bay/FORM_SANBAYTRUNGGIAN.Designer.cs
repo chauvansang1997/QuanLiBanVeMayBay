@@ -89,6 +89,7 @@
             this.txtThoiGianDung.Name = "txtThoiGianDung";
             this.txtThoiGianDung.Size = new System.Drawing.Size(125, 26);
             this.txtThoiGianDung.TabIndex = 104;
+            this.txtThoiGianDung.TextChanged += new System.EventHandler(this.txtThoiGianDung_TextChanged);
             // 
             // label3
             // 
@@ -179,8 +180,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbSanBay);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FORM_SANBAYTRUNGGIAN";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FORM_SANBAYTRUNGGIAN_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

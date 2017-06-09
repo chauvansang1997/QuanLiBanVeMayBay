@@ -115,43 +115,43 @@
             // 
             this.xemThôngTinToolStripMenuItem1.Image = global::GUI.Properties.Resources.Actions_help_about_icon;
             this.xemThôngTinToolStripMenuItem1.Name = "xemThôngTinToolStripMenuItem1";
-            this.xemThôngTinToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.xemThôngTinToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.xemThôngTinToolStripMenuItem1.Text = "Xem thông tin";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(147, 6);
             // 
             // đổiMậtKhẩuToolStripMenuItem2
             // 
             this.đổiMậtKhẩuToolStripMenuItem2.Image = global::GUI.Properties.Resources.change_password_icon;
             this.đổiMậtKhẩuToolStripMenuItem2.Name = "đổiMậtKhẩuToolStripMenuItem2";
-            this.đổiMậtKhẩuToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.đổiMậtKhẩuToolStripMenuItem2.Size = new System.Drawing.Size(150, 22);
             this.đổiMậtKhẩuToolStripMenuItem2.Text = "Đổi mật khẩu";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(147, 6);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Image = global::GUI.Properties.Resources.Button_Log_Off_icon;
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(147, 6);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Image = global::GUI.Properties.Resources.Sign_Shutdown_icon;
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             // 
             // chứcNăngToolStripMenuItem

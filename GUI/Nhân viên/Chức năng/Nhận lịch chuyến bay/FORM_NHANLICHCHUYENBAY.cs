@@ -16,7 +16,8 @@ namespace GUI
 {
     public partial class FORM_NHANLICHCHUYENBAY : Form
     {
-
+        private uint check_thoiGianBay;
+        private uint check_GiaVe;
         private DataTable danhSachThem;
         /// <summary>
         /// Contructor
@@ -47,6 +48,8 @@ namespace GUI
         /// <param name="e"></param>
         private void FORM_NHANLICHCHUYENBAY_Load(object sender, EventArgs e)
         {
+            txtGiaVe.Text = "1000000";
+            txtThoiGianBay.Text = QuyDinh.ThoiGianBayToiThieu.ToString();
 
             danhSachThem = new DataTable();
             DataColumn column = new DataColumn("Mã Chuyến Bay");
@@ -84,31 +87,7 @@ namespace GUI
         /// <param name="e"></param>
         private void btnThem_Click(object sender, EventArgs e)
         {
-            int thoigianbay = 0;
-            int giave = 0;
-            //Kiểm tra giá tiền cco1 đúng định dạng không
-            try
-            {
-                giave = Convert.ToInt32(txtGiaVe.Text);
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Nhập sai định dạng của giá vé");
-                return;
-            }
 
-            //Kiểm tra thời gian bay có đúng định dạng không
-            try
-            {
-                 thoigianbay = Convert.ToInt32( txtThoiGianBay.Text);
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Nhập sai định dạng của thời gian bay");
-                return;
-            }
             //Kiểm tra sân bay đi có chứa trong danh sách sân bay không
 
             bool check = false;
@@ -147,13 +126,13 @@ namespace GUI
             }
 
             //Kiểm tra ngày bay phải lớn hơn ngày hiện tại 1 ngày
-            if (dtpkNgayKhoiHanh.Value < DateTime.Now+HelpFuction.ConvertHoursToTotalDays(24))
+            if (dtpkNgayKhoiHanh.Value < DateTime.Now+HelpFuction.ConvertHoursToTotalDays(23.8))
             {
                 MessageBox.Show("Ngày giờ phải lớn hơn hoặc bằng ngày hiện tại 1 ngày");
                 return;
             }
             //Kiểm tra thời gian bay phải đúng với quy định
-            if (thoigianbay < QuyDinh.ThoiGianBayToiThieu)
+            if (check_thoiGianBay< QuyDinh.ThoiGianBayToiThieu)
             {
                 MessageBox.Show("Thời gian bay phải tối thiểu là:" + QuyDinh.ThoiGianBayToiThieu.ToString());
                 return;
@@ -164,9 +143,9 @@ namespace GUI
                 string maChuyenBay;
                 SanBay sanBayDi = cmbSanBayDi.SelectedItem as SanBay;
                 SanBay sanBayDen = cmbSanBayDen.SelectedItem as SanBay;
-                if (ChuyenBay_BUS.NhanLichChuyenBay(sanBayDi.MaSanBay, sanBayDen.MaSanBay, giave, thoigianbay, dtpkNgayKhoiHanh.Value, out maChuyenBay))
+                if (ChuyenBay_BUS.NhanLichChuyenBay(sanBayDi.MaSanBay, sanBayDen.MaSanBay, (int)check_GiaVe,(int)check_thoiGianBay, dtpkNgayKhoiHanh.Value, out maChuyenBay))
                 {
-                    ChuyenBay_BUS.NhapDonGia(maChuyenBay, giave);
+                    ChuyenBay_BUS.NhapDonGia(maChuyenBay, (int)check_GiaVe);
                     if (dGVSanBayTG.RowCount > 0)
                     {
                         for (int i = 0; i < dGVSanBayTG.RowCount; i++)
@@ -175,7 +154,7 @@ namespace GUI
                             string maSanBay = row.Cells[0].Value.ToString();
                             int thoigiandung = (int)row.Cells[2].Value;
                             string ghiChu = row.Cells[3].Value.ToString();
-                            ChuyenBay_BUS.NhapChiTietChuyenBay(maChuyenBay, maSanBay, thoigianbay, ghiChu);
+                            ChuyenBay_BUS.NhapChiTietChuyenBay(maChuyenBay, maSanBay,(int) check_thoiGianBay, ghiChu);
                         }
                     }
                     for (int i = 0; i < dgvDanhSachGhe.RowCount; i++)
@@ -190,8 +169,13 @@ namespace GUI
 
                     }
                     MessageBox.Show("Nhận lịch chuyến bay thành công");
-                    
+
+                    DataRow row_Them = danhSachThem.NewRow();
+                    row_Them[0] = maChuyenBay;
+
+                    danhSachThem.Rows.Add(row_Them);
                 }
+                
             }
             catch (Exception err)
             {
@@ -357,8 +341,32 @@ namespace GUI
                     DataGridView dgv = sender as DataGridView;
                     dgv.setRowNumber();
                 }
+
         #endregion
 
+        private void txtThoiGianBay_TextChanged(object sender, EventArgs e)
+        {
+            if (!HelpFuction.IsContainsText(txtThoiGianBay.Text))
+            {
+                check_thoiGianBay = Convert.ToUInt32(txtThoiGianBay.Text);
+            }
+            else
+            {
+                txtThoiGianBay.Text = check_thoiGianBay.ToString();
+            }
+        }
 
+        private void txtGiaVe_TextChanged(object sender, EventArgs e)
+        {
+
+            if (!HelpFuction.IsContainsText(txtGiaVe.Text))
+            {
+                check_GiaVe = Convert.ToUInt32(txtGiaVe.Text);
+            }
+            else
+            {
+                txtGiaVe.Text = check_GiaVe.ToString();
+            }
+        }
     }
 }

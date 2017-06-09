@@ -14,6 +14,7 @@ namespace GUI
 {
     public partial class FORM_SANBAYTRUNGGIAN : Form
     {
+        private int thoiGianDung=QuyDinh.ThoiGianBayToiThieu;
         private DataGridView danhsachSBTG;
         public FORM_SANBAYTRUNGGIAN(DataGridView _danhsachSBTG)
         {
@@ -23,7 +24,7 @@ namespace GUI
 
         private void btnThemSanBayTG_Click(object sender, EventArgs e)
         {
-            int check = 0;
+            bool check = false;
             if (danhsachSBTG.Rows.Count == QuyDinh.SoSanBayTGToiDa)
             {
                 string message = string.Format("Bạn chỉ được phép nhập tối đa {0} {1}", QuyDinh.SoSanBayTGToiDa, "sân bay trung gian");
@@ -33,20 +34,40 @@ namespace GUI
 
             try
             {
-                if (HelpFuction.IsContainsText(txtThoiGianDung.Text))
+                if (txtThoiGianDung.Text == "")
                 {
-                    throw new Exception("Thời gian dừng chỉ chứa số");
+                    throw new Exception("Bạn chưa nhập thời gian dừng");
                 }
+                if(Convert.ToInt32(txtThoiGianDung.Text)>=QuyDinh.ThoiGianDungToiThieu)
+                {
+                    check = true;
+                }
+                if (!check)
+                {
+                    throw new Exception(string.Format("Thời gian dừng tối thiểu phải là {0}",QuyDinh.ThoiGianDungToiThieu));
+        
+                }
+                check = false;
+                if(Convert.ToInt32(txtThoiGianDung.Text) <= QuyDinh.ThoiGianDungToiDa)
+                {
+                    check = true;
+                }
+                if (!check)
+                {
+                    throw new Exception(string.Format("Thời gian dừng tối đa phải là {0}",QuyDinh.ThoiGianDungToiDa));
+
+                }
+                check = false;
                 foreach (var item in cmbSanBay.Items)
                 {
                     SanBay sanbay = item as SanBay;
                     if (sanbay.TenSanBay == cmbSanBay.Text)
                     {
-                        check++;
+                        check=true;
                         break;
                     }
                 }
-                if (check == 0)
+                if (!check)
                 {
                     throw new Exception("Sân bay không có trong danh sách");
 
@@ -90,12 +111,28 @@ namespace GUI
 
         private void FORM_SANBAYTRUNGGIAN_Load(object sender, EventArgs e)
         {
+            txtThoiGianDung.Text = QuyDinh.ThoiGianDungToiThieu.ToString();
             if (danhsachSBTG.SelectedRows.Count > 0)
             {
                 //ChuyenBay_BUS.LoadSanBayTG()
                 ChuyenBay_BUS.LoadDanhSachSanBayTG(cmbSanBay, danhsachSBTG.SelectedRows[0].Cells[0].Value.ToString());
             }
                    
+        }
+
+        private void txtThoiGianDung_TextChanged(object sender, EventArgs e)
+        {
+            
+            if (!HelpFuction.IsContainsText(txtThoiGianDung.Text))
+            {
+
+                thoiGianDung =Convert.ToInt32( txtThoiGianDung.Text);
+
+            }
+            else
+            {
+                txtThoiGianDung.Text = thoiGianDung.ToString();
+            }
         }
     }
 }

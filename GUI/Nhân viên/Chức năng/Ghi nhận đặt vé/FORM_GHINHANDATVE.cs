@@ -46,7 +46,9 @@ namespace GUI
             if (VeDat_BUS.GhiNhanDatVe(txtTenHanhKhach.Text, txtSoDT.Text, txtMaChuyenBay.Text, txtCMND.Text, maHangVe))
             {
                 MessageBox.Show("Đặt vé thành công");
-                return;
+                txtCMND.Text = "";
+                txtTenHanhKhach.Text = "";
+                txtSoDT.Text = "";
 
             }
             else

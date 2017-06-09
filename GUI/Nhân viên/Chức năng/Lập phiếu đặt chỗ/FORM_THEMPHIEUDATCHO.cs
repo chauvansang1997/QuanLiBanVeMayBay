@@ -31,7 +31,9 @@ namespace GUI
             if(PhieuDatCho_BUS.LapPhieuDatCho(txtTenHanhKhach.Text, txtCMND.Text, txtSoDienThoai.Text, txtMaChuyenBay.Text,maHangVe, dtPKNgayDat.Value))
             {
                 message = "Đặt chỗ thành công";
-               
+                txtTenHanhKhach.Text = "";
+                txtCMND.Text = "";
+                txtSoDienThoai.Text = "";
             }
             else
             {
