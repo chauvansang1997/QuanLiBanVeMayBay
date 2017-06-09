@@ -100,6 +100,7 @@ namespace GUI
 
         private void btnFind_Click(object sender, EventArgs e)
         {
+            isClick = true;
             if (cmbCMND.SelectedItem == null)
             {
                 MessageBox.Show("Chứng minh nhân dân của nhân viên không có trong danh sách");
@@ -112,6 +113,12 @@ namespace GUI
             }
             try
             {
+                totalPage = NhanVien_BUS.DemSoNhanVien(cmbTenNV.Text, cmbCMND.Text);
+
+                totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
+
+
+                txtTotalPage.Text = totalPage.ToString();
                 dGVDanhSachNV.DataSource = NhanVien_BUS.TraCuuNhanVien(cmbTenNV.Text, cmbCMND.Text, pageSize, pageNumber);
             }
             catch (Exception)

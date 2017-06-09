@@ -133,6 +133,7 @@
             this.cmbSanBayDen.Name = "cmbSanBayDen";
             this.cmbSanBayDen.Size = new System.Drawing.Size(191, 27);
             this.cmbSanBayDen.TabIndex = 2;
+            this.cmbSanBayDen.SelectedIndexChanged += new System.EventHandler(this.cmbSanBayDen_SelectedIndexChanged);
             // 
             // label7
             // 

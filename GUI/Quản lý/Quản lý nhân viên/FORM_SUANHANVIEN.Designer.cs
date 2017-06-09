@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
-            this.txtDiaChi = new AutoCompleteTextBoxDll.AutoCompleteTextBox();
             this.txtCMND = new System.Windows.Forms.TextBox();
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.txtTenNhanVien = new System.Windows.Forms.TextBox();
@@ -39,6 +38,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.txtDiaChi = new AutoComlpete.autoTextBox();
             this.SuspendLayout();
             // 
             // label4
@@ -53,13 +53,6 @@
             this.label4.TabIndex = 170;
             this.label4.Text = "SỬA THÔNG NHÂN VIÊN";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Location = new System.Drawing.Point(360, 308);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(300, 20);
-            this.txtDiaChi.TabIndex = 4;
             // 
             // txtCMND
             // 
@@ -156,15 +149,22 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(360, 310);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(300, 20);
+            this.txtDiaChi.TabIndex = 181;
+            // 
             // FORM_SUANHANVIEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(764, 430);
+            this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.txtSoDienThoai);
             this.Controls.Add(this.txtTenNhanVien);
@@ -187,7 +187,7 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private AutoCompleteTextBoxDll.AutoCompleteTextBox txtDiaChi;
+
         private System.Windows.Forms.TextBox txtCMND;
         private System.Windows.Forms.TextBox txtSoDienThoai;
         private System.Windows.Forms.TextBox txtTenNhanVien;
@@ -197,5 +197,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnThoat;
+        private AutoComlpete.autoTextBox txtDiaChi;
     }
 }

@@ -39,9 +39,8 @@
     <Reference Include="69024-bunifu_ui_v1.52">
       <HintPath>..\Build\69024-bunifu_ui_v1.52.dll</HintPath>
     </Reference>
-    <Reference Include="AutoCompleteTextBoxDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Build\AutoCompleteTextBoxDll.dll</HintPath>
+    <Reference Include="AutoComlpete">
+      <HintPath>..\Build\AutoComlpete.dll</HintPath>
     </Reference>
     <Reference Include="Exel handle">
       <HintPath>..\Build\Exel handle.dll</HintPath>

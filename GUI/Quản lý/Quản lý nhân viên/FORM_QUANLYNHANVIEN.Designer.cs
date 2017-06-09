@@ -309,6 +309,7 @@
             this.Name = "FORM_QUANLYNHANVIEN";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FORM_QUANLYNHANVIEN_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGVDanhSachNV)).EndInit();

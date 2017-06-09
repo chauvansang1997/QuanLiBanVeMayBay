@@ -19,6 +19,8 @@ namespace GUI
         private int pageNumber;
         private int totalPage;
 
+        private string sanBayDi;
+        private string sanBayDen;
         private bool isClick = false;
         public FORM_QUANLYTUYENBAY()
         {
@@ -52,37 +54,56 @@ namespace GUI
         private void btnFind_Click(object sender, EventArgs e)
         {
             isClick = true;
+
+            bool check = false;
+
+            foreach (var item in cmbSanBayDi.Items)
+            {
+                SanBay sanbay = item as SanBay;
+                if (sanbay.TenSanBay == cmbSanBayDi.Text)
+                {
+                    check = true;
+                }
+            }
+            if (!check)
+            {
+                MessageBox.Show("Sân bay đi không có trong danh sách");
+                return;
+            }
+            check = false;
+            foreach (var item in cmbSanBayDen.Items)
+            {
+                SanBay sanbay = item as SanBay;
+                if (sanbay.TenSanBay == cmbSanBayDen.Text)
+                {
+                    check = true;
+                }
+            }
+            if (!check)
+            {
+                MessageBox.Show("Sân bay đến không có trong danh sách");
+                return;
+            }
+
+            pageNumber = 1;
+            txtPageNumber.Text = pageNumber.ToString();
+            totalPage = TuyenBay_BUS.DemTuyenBay(sanBayDi, sanBayDen);
+            totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
+            txtTotalPage.Text = totalPage.ToString();
+
+            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(sanBayDi, sanBayDen, pageSize, pageNumber);
+            dGVDanhSachTB.Columns[1].Visible = false;
+            dGVDanhSachTB.Columns[3].Visible = false;
+
+        }
+        #region Thêm trang
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+            pageNumber = 1;
+            txtPageNumber.Text = pageNumber.ToString();
             if (isClick)
             {
-                string sanbaydi;
-                string sanbayden;
-                if(cmbSanBayDi.Text=="")
-                {
-                    sanbaydi = null;
-                }
-                else
-                {
-                    sanbaydi = cmbSanBayDi.Text;
-                }
-                if (cmbSanBayDen.Text == "")
-                {
-                    sanbayden = null;
-                }
-                else
-                {
-                    sanbayden = cmbSanBayDen.Text;
-                }
-                if (cmbSanBayDi.SelectedItem != null)
-                {
-                    SanBay sanbay = cmbSanBayDi.SelectedItem as SanBay;
-                    sanbaydi = sanbay.MaSanBay;
-                }
-                if (cmbSanBayDen.SelectedItem != null)
-                {
-                    SanBay sanbay = cmbSanBayDen.SelectedItem as SanBay;
-                    sanbayden = sanbay.MaSanBay;
-                }
-                dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(sanbaydi, sanbayden, pageSize, pageNumber);
+                dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(sanBayDi, sanBayDen, pageSize, pageNumber);
                 dGVDanhSachTB.Columns[1].Visible = false;
                 dGVDanhSachTB.Columns[3].Visible = false;
             }
@@ -93,97 +114,79 @@ namespace GUI
                 dGVDanhSachTB.Columns[3].Visible = false;
             }
         }
-        #region Thêm trang
-                    private void btnFirstPage_Click(object sender, EventArgs e)
-                    {
-                        pageNumber = 1;
-                        txtPageNumber.Text = pageNumber.ToString();
-                        if (isClick)
-                        {
-                            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(cmbSanBayDi.Text,cmbSanBayDen.Text, pageSize, pageNumber);
-                            dGVDanhSachTB.Columns[1].Visible = false;
-                            dGVDanhSachTB.Columns[3].Visible = false;
-                        }
-                        else
-                        {
-                            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(null,null, pageSize, pageNumber);
-                            dGVDanhSachTB.Columns[1].Visible = false;
-                            dGVDanhSachTB.Columns[3].Visible = false;
-                        }
-                    }
 
-                    private void btnPrevPage_Click(object sender, EventArgs e)
-                    {
-                        if (pageNumber - 1 == 0)
-                        {
-                            pageNumber = 1;
-                        }
-                        else
-                        {
-                            --pageNumber;
-                        }
-                        txtPageNumber.Text = pageNumber.ToString();
+        private void btnPrevPage_Click(object sender, EventArgs e)
+        {
+            if (pageNumber - 1 == 0)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                --pageNumber;
+            }
+            txtPageNumber.Text = pageNumber.ToString();
 
-                        if (isClick)
-                        {
-                            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber);
-                            dGVDanhSachTB.Columns[1].Visible = false;
-                            dGVDanhSachTB.Columns[3].Visible = false;
-                        }
-                        else
-                        {
-                            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(null, null, pageSize, pageNumber);
-                            dGVDanhSachTB.Columns[1].Visible = false;
-                            dGVDanhSachTB.Columns[3].Visible = false;
-                        }
-                    }
+            if (isClick)
+            {
+                dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(sanBayDi, sanBayDen, pageSize, pageNumber);
+                dGVDanhSachTB.Columns[1].Visible = false;
+                dGVDanhSachTB.Columns[3].Visible = false;
+            }
+            else
+            {
+                dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(null, null, pageSize, pageNumber);
+                dGVDanhSachTB.Columns[1].Visible = false;
+                dGVDanhSachTB.Columns[3].Visible = false;
+            }
+        }
 
-                    private void btnNextPage_Click(object sender, EventArgs e)
-                    {
-                        if (pageNumber + 1 > totalPage)
-                        {
-                            pageNumber = 1;
-                        }
-                        else
-                        {
-                            ++pageNumber;
-                        }
-                        txtPageNumber.Text = pageNumber.ToString();
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if (pageNumber + 1 > totalPage)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                ++pageNumber;
+            }
+            txtPageNumber.Text = pageNumber.ToString();
 
-                        if (isClick)
-                        {
-                            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber);
-                            dGVDanhSachTB.Columns[1].Visible = false;
-                            dGVDanhSachTB.Columns[3].Visible = false;
-                        }
-                        else
-                        {
-                            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(null, null, pageSize, pageNumber);
-                            dGVDanhSachTB.Columns[1].Visible = false;
-                            dGVDanhSachTB.Columns[3].Visible = false;
-                        }
-                    }
+            if (isClick)
+            {
+                dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(sanBayDi, sanBayDen, pageSize, pageNumber);
+                dGVDanhSachTB.Columns[1].Visible = false;
+                dGVDanhSachTB.Columns[3].Visible = false;
+            }
+            else
+            {
+                dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(null, null, pageSize, pageNumber);
+                dGVDanhSachTB.Columns[1].Visible = false;
+                dGVDanhSachTB.Columns[3].Visible = false;
+            }
+        }
 
-                    private void btnLastPage_Click(object sender, EventArgs e)
-                    {
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
 
-                        pageNumber = totalPage;
-                        txtPageNumber.Text = pageNumber.ToString();
+            pageNumber = totalPage;
+            txtPageNumber.Text = pageNumber.ToString();
 
-                        if (isClick)
-                        {
-                            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(cmbSanBayDi.Text, cmbSanBayDen.Text, pageSize, pageNumber);
-                            dGVDanhSachTB.Columns[1].Visible = false;
-                            dGVDanhSachTB.Columns[3].Visible = false;
-                        }
-                        else
-                        {
-                            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(null, null, pageSize, pageNumber);
-                            dGVDanhSachTB.Columns[1].Visible = false;
-                            dGVDanhSachTB.Columns[3].Visible = false;
-                        }
-                    }
-            #endregion
+            if (isClick)
+            {
+                dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(sanBayDi, sanBayDen, pageSize, pageNumber);
+                dGVDanhSachTB.Columns[1].Visible = false;
+                dGVDanhSachTB.Columns[3].Visible = false;
+            }
+            else
+            {
+                dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(null, null, pageSize, pageNumber);
+                dGVDanhSachTB.Columns[1].Visible = false;
+                dGVDanhSachTB.Columns[3].Visible = false;
+            }
+        }
+        #endregion
         /// <summary>
         /// Sự kiện load form
         /// </summary>
@@ -195,17 +198,17 @@ namespace GUI
             dGVDanhSachTB.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
 
             pageNumber = 1;
-            totalPage = TuyenBay_BUS.DemTuyenBay(null,null);
+            totalPage = TuyenBay_BUS.DemTuyenBay(null, null);
 
 
 
             totalPage = HelpFuction.TinhKichThuocTrang(totalPage, pageSize);
             txtTotalPage.Text = totalPage.ToString();
 
-             SanBay_BUS.LoadSanBayDi(cmbSanBayDi);
-           
+            SanBay_BUS.LoadSanBayDi(cmbSanBayDi);
 
-            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(null,null, pageSize, pageNumber);
+
+            dGVDanhSachTB.DataSource = TuyenBay_BUS.TimTuyenBay(null, null, pageSize, pageNumber);
             dGVDanhSachTB.Columns[1].Visible = false;
             dGVDanhSachTB.Columns[3].Visible = false;
         }
@@ -217,10 +220,12 @@ namespace GUI
         /// <param name="e"></param>
         private void cmbSanBayDi_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (cmbSanBayDi.SelectedItem != null)
             {
                 SanBay sanbay = cmbSanBayDi.SelectedItem as SanBay;
                 SanBay_BUS.LoadSanBayDen(sanbay.MaSanBay, cmbSanBayDen);
+                sanBayDi = sanbay.MaSanBay;
             }
         }
         #region Thêm số thứ tự cho DataGridView
@@ -236,5 +241,15 @@ namespace GUI
             dgv.setRowNumber();
         }
         #endregion
+
+        private void cmbSanBayDen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSanBayDen.SelectedItem != null)
+            {
+                SanBay sanbay = cmbSanBayDen.SelectedItem as SanBay;
+
+                sanBayDen = sanbay.MaSanBay;
+            }
+        }
     }
 }

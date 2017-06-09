@@ -42,7 +42,7 @@
             this.rbtnBanVe = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbtnQuanLy = new System.Windows.Forms.RadioButton();
-            this.txtDiaChi = new AutoCompleteTextBoxDll.AutoCompleteTextBox();
+            this.txtDiaChi = new AutoComlpete.autoTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -205,7 +205,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(299, 275);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(300, 20);
-            this.txtDiaChi.TabIndex = 4;
+            this.txtDiaChi.TabIndex = 176;
             // 
             // FORM_THEMNHANVIEN
             // 
@@ -255,6 +255,6 @@
         private System.Windows.Forms.RadioButton rbtnBanVe;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbtnQuanLy;
-        private AutoCompleteTextBoxDll.AutoCompleteTextBox txtDiaChi;
+        private AutoComlpete.autoTextBox txtDiaChi;
     }
 }

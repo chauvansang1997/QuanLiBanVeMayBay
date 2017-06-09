@@ -186,12 +186,44 @@ namespace GUI
 
         private void cmbSoDienThoai_TextChanged(object sender, EventArgs e)
         {
+            if (cmbSoDienThoai.Text == "")
+            {
+                return;
+            }
+            if (HelpFuction.IsContainsText(cmbSoDienThoai.Text))
+            {
+                cmbSoDienThoai.Text = cmbSoDienThoai.Text.Remove(cmbSoDienThoai.Text.Length - 1);
+                if (cmbSoDienThoai.Text.Length == 0)
+                {
+                    return;
+                }
+                cmbSoDienThoai.SelectionStart = cmbSoDienThoai.Text.Length; // add some logic if length is 0
+                cmbSoDienThoai.SelectionLength = 0;
+            }
 
         }
 
         private void cmbCMND_TextChanged(object sender, EventArgs e)
         {
+            if (cmbCMND.Text == "")
+            {
+                return;
+            }
+            if (HelpFuction.IsContainsText(cmbCMND.Text))
+            {
+                cmbCMND.Text = cmbCMND.Text.Remove(cmbCMND.Text.Length - 1);
+                if (cmbCMND.Text.Length == 0)
+                {
+                    return;
+                }
+                cmbCMND.SelectionStart = cmbCMND.Text.Length; // add some logic if length is 0
+                cmbCMND.SelectionLength = 0;
+            }
+        }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

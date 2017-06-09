@@ -30,8 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -107,16 +107,16 @@
             this.dGVDanhSachHK.AllowUserToDeleteRows = false;
             this.dGVDanhSachHK.AllowUserToResizeColumns = false;
             this.dGVDanhSachHK.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.dGVDanhSachHK.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSachHK.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVDanhSachHK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVDanhSachHK.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dGVDanhSachHK.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dGVDanhSachHK.Location = new System.Drawing.Point(0, 239);
             this.dGVDanhSachHK.Name = "dGVDanhSachHK";
             this.dGVDanhSachHK.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.dGVDanhSachHK.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dGVDanhSachHK.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVDanhSachHK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVDanhSachHK.Size = new System.Drawing.Size(996, 214);
             this.dGVDanhSachHK.TabIndex = 6;
@@ -217,6 +217,7 @@
             this.btnThoat.TabIndex = 9;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnFind
             // 

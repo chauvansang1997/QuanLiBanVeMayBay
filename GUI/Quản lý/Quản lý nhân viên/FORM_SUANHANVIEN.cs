@@ -23,14 +23,14 @@ namespace GUI
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             
-            if (txtCMND.Text != "" || txtDiaChi.Text != "" || txtSoDienThoai.Text != "" || txtTenNhanVien.Text != "")
-            {
-                if(NhanVien_BUS.SuaThongTinNhanVien(maNhanVien, txtTenNhanVien.Text, txtCMND.Text, txtSoDienThoai.Text, txtDiaChi.Text))
-                {
-                    MessageBox.Show("Cập nhật thành công");
-                    this.Close();
-                }
-            }
+            //if (txtCMND.Text != "" || txtDiaChi.Text != "" || txtSoDienThoai.Text != "" || txtTenNhanVien.Text != "")
+            //{
+            //    if(NhanVien_BUS.SuaThongTinNhanVien(maNhanVien, txtTenNhanVien.Text, txtCMND.Text, txtSoDienThoai.Text, txtDiaChi.Text))
+            //    {
+            //        MessageBox.Show("Cập nhật thành công");
+            //        this.Close();
+            //    }
+            //}
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

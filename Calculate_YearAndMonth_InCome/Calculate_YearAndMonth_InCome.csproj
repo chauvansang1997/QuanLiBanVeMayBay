@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
     <Compile Include="DoanhThu.cs" />
+    <Compile Include="PhieuDatChoHetHan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisTry_Help.cs" />
